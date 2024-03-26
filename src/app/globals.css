@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer components {
+  .background-image-car {
+    background-image: url("/car.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
