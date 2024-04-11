@@ -1,10 +1,12 @@
+import "@/styles/globals.css";
+
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import RaceCountdown from "@/components/race-countdown";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { type PropsWithChildren } from "react";
-import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +22,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={inter.className}>
         <RaceCountdown />
         <Navbar />
-        {/* <div className="min-h-screen"> */}
         {children}
-        {/* </div> */}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,0 +1,28 @@
+import type { IconType } from "react-icons";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const socialLinks: { name: string; href: string; icon: IconType }[] = [
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/company/team-bath-racing-electric/",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/teambathracingelectric/",
+    icon: FaInstagram,
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/TeamBathRacingElectric/",
+    icon: FaFacebook,
+  },
+  {
+    name: "XTwitter",
+    href: "https://twitter.com/TeamBathRacingE/",
+    icon: FaXTwitter,
+  },
+];
+
+export default socialLinks;
