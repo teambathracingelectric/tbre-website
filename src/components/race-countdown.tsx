@@ -16,7 +16,7 @@ export default function RaceCountdown() {
   return (
     <div className="text-white p-2 w-full flex justify-center items-center bg-tbre-yellow">
       <p className="text-sm">
-        <span className="font-bold">Next Race:</span> {nextRace.location} in{" "}
+        <span className="font-bold">Next Race:</span> {nextRace.name} in{" "}
         {daysToRace} days!
       </p>
     </div>

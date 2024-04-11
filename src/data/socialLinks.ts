@@ -1,5 +1,11 @@
 import type { IconType } from "react-icons";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const socialLinks: { name: string; href: string; icon: IconType }[] = [
@@ -22,6 +28,16 @@ const socialLinks: { name: string; href: string; icon: IconType }[] = [
     name: "XTwitter",
     href: "https://twitter.com/TeamBathRacingE/",
     icon: FaXTwitter,
+  },
+  {
+    name: "Email",
+    href: "mailto:teambathracingelectric@gmail.com",
+    icon: FaEnvelope,
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@TeamBathRacingElectric",
+    icon: FaYoutube,
   },
 ];
 

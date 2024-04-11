@@ -4,6 +4,7 @@ export default function Page() {
       <h1 className="text-4xl text-center font-extrabold tracking-tighter">
         Contact
       </h1>
+      <br />
       <p>Some content about the contact</p>
     </main>
   );

@@ -1,11 +1,11 @@
 type Race = {
-  location: string;
+  name: string;
   date: Date;
 };
 
 const racesData: Race[] = [
   {
-    location: "England",
+    name: "FSUK - Silverstone",
     date: new Date("2024-07-12"),
   },
 ];

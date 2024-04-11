@@ -29,6 +29,11 @@ const nextConfig = {
         destination: "https://x.com/TeamBathRacingE/",
         permanent: true,
       },
+      {
+        source: "/youtube",
+        destination: "https://youtube.com/@TeamBathRacingElectric",
+        permanent: true,
+      },
     ];
   },
 };

@@ -1,4 +1,5 @@
 const navLinks: { name: string; href: string }[] = [
+  { name: "About", href: "/about" },
   { name: "Team", href: "/team" },
   { name: "Cars", href: "/cars" },
   { name: "Sponsors", href: "/sponsors" },
