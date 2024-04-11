@@ -11,7 +11,7 @@ export default function Page() {
       <br />
       <section>
         {carsData.map((c) => (
-          <Link href={`/cars/${c.year}`}>
+          <Link key={c.year} href={`/cars/${c.year}`}>
             <div>
               <h2>{c.name}</h2>
               <p>{c.year}</p>
