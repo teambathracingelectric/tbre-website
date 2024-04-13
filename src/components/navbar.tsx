@@ -28,7 +28,7 @@ export default function Navbar() {
             <Link
               href={link.href}
               className={cn(
-                "font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md border-2 border-transparent hover:border-tbre-yellow hover:bg-white/",
+                "uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md border-2 border-transparent hover:border-tbre-yellow hover:bg-white/",
                 pathname === link.href && "text-tbre-yellow",
               )}
             >

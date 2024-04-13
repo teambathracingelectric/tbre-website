@@ -1,7 +1,17 @@
 import CarModel from "@/components/car-model";
+import ResultsSection from "@/components/results-section";
+import TeamSection from "@/components/team-section";
+import carsData from "@/data/cars";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default function Page({ params }: { params: { carId: string } }) {
+  const data = carsData.find((c) => c.year === parseInt(params.carId));
+
+  if (!data) {
+    notFound();
+  }
+
   return (
     <main className="pt-8 min-h-screen flex flex-col items-center">
       <h1 className="text-4xl text-center font-extrabold tracking-tighter">
@@ -64,8 +74,9 @@ export default function Page({ params }: { params: { carId: string } }) {
         forward the team is set to continue challenging the best formula student
         teams in the UK and abroad.
       </p>
-      <br />
       <CarModel />
+      {data.results && <ResultsSection results={data.results} />}
+      {data.team && <TeamSection team={data.team} />}
     </main>
   );
 }

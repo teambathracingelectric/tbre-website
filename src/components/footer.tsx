@@ -9,7 +9,10 @@ export default function Footer() {
       <ul className="w-1/3 space-x-4 flex justify-center">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <Link href={link.href} className="hover:text-tbre-yellow">
+            <Link
+              href={link.href}
+              className="uppercase text-sm hover:text-tbre-yellow transition-all"
+            >
               {link.name}
             </Link>
           </li>
@@ -33,9 +36,9 @@ export default function Footer() {
           <li key={link.name}>
             <a
               href={link.href}
-              className="text-xl hover:text-tbre-yellow"
               rel="noopener noreferrer"
               target="_blank"
+              className="text-2xl hover:text-tbre-yellow transition-all"
             >
               <link.icon />
             </a>

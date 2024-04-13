@@ -1,7 +1,7 @@
 import sponsorsData from "@/data/sponsors";
 import Image from "next/image";
 
-export default function SponsorsSection() {
+export default function SponsorsFooterSection() {
   return (
     <section className="bg-black text-white p-16">
       {sponsorsData
