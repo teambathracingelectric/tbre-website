@@ -11,7 +11,7 @@ export default function Footer() {
           <li key={link.name}>
             <Link
               href={link.href}
-              className="uppercase text-sm hover:text-tbre-yellow transition-all"
+              className="uppercase text-sm font-semibold hover:text-tbre-yellow transition-all"
             >
               {link.name}
             </Link>

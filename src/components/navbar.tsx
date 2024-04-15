@@ -14,7 +14,6 @@ export default function Navbar() {
       <div className="w-1/3 flex justify-start">
         <Link href="/">
           <Image
-            // src="/tbre_logo_white.png"
             src="/tbre_logo_colour.png"
             alt="tbre logo"
             width={200}
