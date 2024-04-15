@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import RaceCountdown from "@/components/race-countdown";
+import EventCountdown from "@/components/event-countdown";
 import SponsorsFooterSection from "@/components/sponsors-footer-section";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <RaceCountdown />
+        <EventCountdown />
         <Navbar />
         {children}
         <SponsorsFooterSection />
