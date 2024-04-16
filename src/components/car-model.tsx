@@ -6,7 +6,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       "model-viewer": ModelViewerJSX &
-        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
@@ -49,6 +49,7 @@ export default function CarModel() {
       ar
       autoplay
       ar-modes="webxr scene-viewer quick-look"
+      ar-camera-controls
       auto-rotate
       camera-controls
       camera-orbit="0deg 90deg 0deg 8.37364m"
@@ -63,6 +64,10 @@ export default function CarModel() {
       }
       className="w-full h-full"
     >
+      <button slot="ar-button" id="ar-button">
+        View in your space
+      </button>
+
       <div className="poster" slot="poster">
         <img className="pre-prompt" src="/prompt.svg" />
       </div>
