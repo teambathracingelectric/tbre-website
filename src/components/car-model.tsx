@@ -55,10 +55,12 @@ export default function CarModel() {
       alt="3D model"
       // className="w-full h-full"
       // className="w-[800px] h-full"
-      style={{
-        // width: "800px",
-        // height: "400px",
-      }}
+      style={
+        {
+          // width: "800px",
+          // height: "400px",
+        }
+      }
       className="w-full h-full"
     >
       <div className="poster" slot="poster">

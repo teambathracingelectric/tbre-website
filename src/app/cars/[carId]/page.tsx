@@ -14,11 +14,11 @@ export default function Page({ params }: { params: { carId: string } }) {
 
   return (
     <main className="pt-8 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold tracking-tighter">
+      <h1 className="text-4xl text-center font-extrabold">
         TBRe{params.carId}
       </h1>
       <br />
-      <div className="flex gap-4 items-center w-full md:w-1/3 justify-center flex-wrap">
+      <div className="flex gap-4 items-center w-full md:w-1/3 justify-center flex-wrap md:flex-nowrap">
         <Image
           src="/cars/2021/car-2021-1.jpg"
           alt="Car 2021"
@@ -76,10 +76,12 @@ export default function Page({ params }: { params: { carId: string } }) {
       </p>
       <CarModel />
       {data.results && <ResultsSection results={data.results} />}
-      {data.team && (<>
-        <h2 className="text-3xl font-extrabold tracking-tighter">Meet the Team</h2>
-        <TeamSection team={data.team} />
-      </>)}
+      {data.team && (
+        <>
+          <h2 className="text-3xl font-extrabold">Meet the Team</h2>
+          <TeamSection team={data.team} />
+        </>
+      )}
     </main>
   );
 }

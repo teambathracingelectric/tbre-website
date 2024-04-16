@@ -1,9 +1,7 @@
 export default function Page() {
   return (
     <main className="pt-8 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold tracking-tighter">
-        About
-      </h1>
+      <h1 className="text-4xl text-center font-extrabold">About</h1>
       <br />
       <p>
         Team Bath Racing Electric (TBRe) was founded in 2015. We are an exciting

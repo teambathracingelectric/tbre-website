@@ -3,9 +3,7 @@ import statsData from "@/data/stats";
 export default function StatsSection() {
   return (
     <section className="w-1/2 mx-auto">
-      <h2 className="text-4xl text-center font-extrabold tracking-tighter">
-        Stats
-      </h2>
+      <h2 className="text-4xl text-center font-extrabold">Stats</h2>
       <div className="grid grid-cols-2">
         <div>
           <p className="text-5xl font-bold underline decoration-tbre-yellow">

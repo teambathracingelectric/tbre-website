@@ -6,11 +6,12 @@ import Navbar from "@/components/navbar";
 import SponsorsFooterSection from "@/components/sponsors-footer-section";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import { type PropsWithChildren } from "react";
 
 // const font = Inter({ subsets: ["latin"] });
-const font = Roboto({ subsets: ["latin"], weight: "500" });
+// const font = Roboto({ subsets: ["latin"], weight: "500" });
+const font = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Team Bath Racing Electric",

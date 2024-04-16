@@ -4,6 +4,8 @@ export type Sponsor = {
   image: string;
   imageHeight: number;
   imageWidth: number;
+  description?: string;
+  imageOther?: string;
 };
 
 const sponsorsData: {
@@ -19,6 +21,14 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 200,
         imageWidth: 400,
+        description: `
+          Team Bath Racing Electric (TBRe) is a student-led electric racing team
+          based at the University of Bath. We design, build, and race an electric
+          single-seater racing car to compete in the Formula Student competition.
+          Our team is made up of students from a variety of disciplines, including
+          engineering, business, and design.
+        `,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
     ],
   },
@@ -39,6 +49,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 100,
         imageWidth: 200,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -46,6 +57,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 100,
         imageWidth: 200,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
     ],
   },
@@ -58,6 +70,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 75,
         imageWidth: 150,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -65,6 +78,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 75,
         imageWidth: 150,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -72,6 +86,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 75,
         imageWidth: 150,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -79,6 +94,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 75,
         imageWidth: 150,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
     ],
   },
@@ -91,6 +107,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 50,
         imageWidth: 100,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -98,6 +115,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 50,
         imageWidth: 100,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -105,6 +123,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 50,
         imageWidth: 100,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
       {
         name: "TBRe",
@@ -112,6 +131,7 @@ const sponsorsData: {
         image: "/sponsors/tbre.png",
         imageHeight: 50,
         imageWidth: 100,
+        imageOther: "/sponsors/tbre-other.jpg",
       },
     ],
   },

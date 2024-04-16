@@ -1,9 +1,11 @@
+import sponsorsData from "@/data/sponsors";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Page() {
   return (
     <main className="pt-8 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold tracking-tighter">
-        Sponsors
-      </h1>
+      <h1 className="text-4xl text-center font-extrabold">Sponsors</h1>
       <br />
       <p>
         Meet our stunning sponsors. We work closely with each of our sponsors to
@@ -12,6 +14,89 @@ export default function Page() {
         more about supporting our team. More information about the team is
         provided in our new prospectus: Sponsorship Prospectus 2023/24
       </p>
+      <br />
+      <section>
+        <div className="flex gap-16 p-16 group">
+          <div className="w-2/3 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
+            <Image
+              src={sponsorsData[0].sponsors[0].imageOther!}
+              alt="TBRe"
+              width={sponsorsData[0].sponsors[0].imageWidth}
+              height={sponsorsData[0].sponsors[0].imageHeight}
+              className="w-full transition-all group-hover:scale-105"
+            />
+          </div>
+          <div className="w-1/3">
+            <h2 className="text-4xl font-extrabold">Title Sponsor</h2>
+            <br />
+            <h3 className="text-2xl font-semibold">
+              {sponsorsData[0].sponsors[0].name}
+            </h3>
+            <br />
+            <p>{sponsorsData[0].sponsors[0].description}</p>
+            <br />
+            <a
+              href={sponsorsData[0].sponsors[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-tbre-yellow underline font-bold text-lg decoration-tbre-yellow"
+            >
+              Visit {sponsorsData[0].sponsors[0].name}
+            </a>
+          </div>
+        </div>
+        <br />
+        <h2 className="text-4xl font-extrabold">Sponsors</h2>
+        <div className="p-16 grid grid-cols-1 md:grid-cols-4 gap-4">
+          {sponsorsData.slice(1).map((sponsorLevel, i) =>
+            sponsorLevel.sponsors.map((sponsor, j) => (
+              <a
+                href={sponsor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={`${i}-${j}`}
+                className="group overflow-hidden"
+              >
+                <div>
+                  <Image
+                    src={sponsor.imageOther!}
+                    alt={sponsor.name}
+                    width={400}
+                    height={200}
+                    className="rounded-xl border-transparent group-hover:border-tbre-yellow border-4 transition-all"
+                  />
+                  <p className="font-bold text-lg group-hover:underline decoration-tbre-yellow">
+                    {sponsor.name}
+                  </p>
+                </div>
+              </a>
+            )),
+          )}
+        </div>
+      </section>
+      <br />
+      <section className="p-16">
+        <h2 className="text-4xl font-extrabold">
+          Apply to sponsor us
+        </h2>
+        <br />
+        <p>
+          Interested in sponsoring us? Get in touch to find out more about
+          supporting our team. More information about the team is provided in
+          our new prospectus: Sponsorship Prospectus 2023/24
+        </p>
+        <br />
+        {/* TODO: get download link working */}
+        <Link
+          href="/Sponsorship+Prospectus+2023-2024.pdf"
+          locale={false}
+          download
+        >
+          <button className="bg-tbre-yellow text-white font-bold py-2 px-4 rounded-lg">
+            Download our sponsorship prospectus
+          </button>
+        </Link>
+      </section>
     </main>
   );
 }
