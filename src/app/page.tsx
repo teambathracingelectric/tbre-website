@@ -1,15 +1,29 @@
+"use client";
+
 import StatsSection from "@/components/stats-section";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Page() {
   return (
     <main className="min-h-screen">
       <section className="min-h-[80vh] p-8 md:p-64 background-image-car flex flex-col md:justify-center">
-        <div className="md:w-1/3">
+        {/* <div className="md:w-1/3">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white pb-4 border-b-8 border-tbre-yellow">
             Team Bath Racing Electric
           </h1>
-        </div>
+        </div> */}
+        <motion.div
+          className="md:w-1/3"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white pb-4 border-b-8 border-tbre-yellow">
+            Team Bath Racing Electric
+          </h1>
+        </motion.div>
       </section>
       <section className="flex flex-col items-center p-16 space-y-16">
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap-reverse md:flex-nowrap">
