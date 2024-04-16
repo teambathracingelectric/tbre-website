@@ -66,7 +66,7 @@ export default function EventCountdown() {
 
   return (
     <div className="text-white p-2 w-full flex justify-center items-center bg-tbre-yellow">
-      <p className="text-lg">
+      <p className="md:text-lg">
         <span className="font-bold">Next {nextEvent?.type ?? "Event"}:</span>{" "}
         {/* {nextEvent.name} in {daysToEvent} days! */}
         {nextEvent.name} in {remainingTime.days}d, {remainingTime.hours}h,{" "}

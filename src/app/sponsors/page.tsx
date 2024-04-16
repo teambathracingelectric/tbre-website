@@ -16,8 +16,8 @@ export default function Page() {
       </p>
       <br />
       <section>
-        <div className="flex gap-16 p-16 group">
-          <div className="w-2/3 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
+        <div className="flex gap-8 p-16 group flex-wrap md:flex-nowrap">
+          <div className="md:w-2/3 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
             <Image
               src={sponsorsData[0].sponsors[0].imageOther!}
               alt="TBRe"
@@ -26,7 +26,7 @@ export default function Page() {
               className="w-full transition-all group-hover:scale-105"
             />
           </div>
-          <div className="w-1/3">
+          <div className="md:w-1/3">
             <h2 className="text-4xl font-extrabold">Title Sponsor</h2>
             <br />
             <h3 className="text-2xl font-semibold">
@@ -47,7 +47,7 @@ export default function Page() {
         </div>
         <br />
         <h2 className="text-4xl font-extrabold">Sponsors</h2>
-        <div className="p-16 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="p-16 grid md:grid-cols-4 gap-4">
           {sponsorsData.slice(1).map((sponsorLevel, i) =>
             sponsorLevel.sponsors.map((sponsor, j) => (
               <a
@@ -65,7 +65,7 @@ export default function Page() {
                     height={200}
                     className="rounded-xl border-transparent group-hover:border-tbre-yellow border-4 transition-all"
                   />
-                  <p className="font-bold text-lg group-hover:underline decoration-tbre-yellow">
+                  <p className="ml-2 font-bold text-lg group-hover:underline decoration-tbre-yellow">
                     {sponsor.name}
                   </p>
                 </div>
@@ -76,9 +76,7 @@ export default function Page() {
       </section>
       <br />
       <section className="p-16">
-        <h2 className="text-4xl font-extrabold">
-          Apply to sponsor us
-        </h2>
+        <h2 className="text-4xl font-extrabold">Apply to sponsor us</h2>
         <br />
         <p>
           Interested in sponsoring us? Get in touch to find out more about

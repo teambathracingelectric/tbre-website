@@ -12,7 +12,7 @@ export default function Page() {
         </div>
       </section>
       <section className="flex flex-col items-center p-16 space-y-16">
-        <div className="flex justify-center gap-8 w-2/3 items-center">
+        <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap-reverse md:flex-nowrap">
           <p>
             Team Bath Racing Electric is an electric Formula Student team based
             out of the University of Bath's Faculty of Engineering and Design.
@@ -39,16 +39,16 @@ export default function Page() {
             alt="Car"
             width={1920}
             height={1080}
-            className="rounded-md w-1/2"
+            className="rounded-md md:w-1/2"
           />
         </div>
-        <div className="flex justify-center gap-8 w-2/3 items-center">
+        <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
           <Image
             src="/landing_car_2.jpg"
             alt="Car"
             width={1920}
             height={1080}
-            className="rounded-md w-1/2"
+            className="rounded-md md:w-1/2"
           />
           <p>
             We take pride in our consistent position as one of the foremost
