@@ -7,7 +7,10 @@ export default function SponsorsFooterSection() {
       {sponsorsData
         .filter((sponsorLevel) => sponsorLevel.sponsors.length > 0)
         .map((sponsorLevel) => (
-          <div key={sponsorLevel.level} className="flex mb-4 flex-col md:flex-row">
+          <div
+            key={sponsorLevel.level}
+            className="flex mb-4 flex-col md:flex-row"
+          >
             <h3 className="max-w-sm w-full font-bold text-2xl">
               {sponsorLevel.level}
             </h3>

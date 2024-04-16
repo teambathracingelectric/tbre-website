@@ -76,7 +76,10 @@ export default function Page({ params }: { params: { carId: string } }) {
       </p>
       <CarModel />
       {data.results && <ResultsSection results={data.results} />}
-      {data.team && <TeamSection team={data.team} />}
+      {data.team && (<>
+        <h2 className="text-3xl font-extrabold tracking-tighter">Meet the Team</h2>
+        <TeamSection team={data.team} />
+      </>)}
     </main>
   );
 }
