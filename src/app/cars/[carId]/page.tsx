@@ -18,7 +18,7 @@ export default function Page({ params }: { params: { carId: string } }) {
         TBRe{params.carId}
       </h1>
       <br />
-      <div className="flex gap-4 items-center w-1/3 justify-center">
+      <div className="flex gap-4 items-center w-full md:w-1/3 justify-center flex-wrap">
         <Image
           src="/cars/2021/car-2021-1.jpg"
           alt="Car 2021"
@@ -42,7 +42,7 @@ export default function Page({ params }: { params: { carId: string } }) {
         />
       </div>
       <br />
-      <p className="w-1/2 mx-auto">
+      <p className="w-full md:w-1/2 mx-auto">
         Due to the effects of the COVID 19 pandemic, the 2021 car was an
         iteration of the 2019 chassis. The car had a completely overhauled
         electrical system, improved firewall and adjusted rear packaging,

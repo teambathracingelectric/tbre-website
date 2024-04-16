@@ -56,9 +56,10 @@ export default function CarModel() {
       // className="w-full h-full"
       // className="w-[800px] h-full"
       style={{
-        width: "800px",
-        height: "400px",
+        // width: "800px",
+        // height: "400px",
       }}
+      className="w-full h-full"
     >
       <div className="poster" slot="poster">
         <img className="pre-prompt" src="/prompt.svg" />

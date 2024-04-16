@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function ResultsSection({ results }: { results: Results }) {
   return (
-    <section className="py-8 space-y-8 w-1/2">
+    <section className="py-8 space-y-8 w-full md:w-1/2">
       <h2 className="font-semibold text-2xl">Results</h2>
       {results.map((r) => (
-        <div className="flex space-x-8">
+        <div className="flex space-x-8 flex-wrap md:flex-nowrap">
           <Image
             src={r.image}
             alt="result photo"
