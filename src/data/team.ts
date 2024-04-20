@@ -1,3 +1,11 @@
+// TODO: use this
+export type SubTeam = {
+  name: string;
+  role: string;
+  image?: string;
+  link?: string;
+}[];
+
 export type Team = {
   category: string;
   members: {
@@ -16,6 +24,7 @@ const teamData: Team = [
         name: "Alexandra Sharankova",
         role: "Team Principal",
         link: "https://linkedin.com/in/alexandra-sharankova-396991176/",
+        image: "/team/2022/alexandra-sharankova.jpg",
       },
       {
         name: "Alexandre About",
