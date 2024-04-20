@@ -24,11 +24,12 @@ const teamData: Team = [
         name: "Alexandra Sharankova",
         role: "Team Principal",
         link: "https://linkedin.com/in/alexandra-sharankova-396991176/",
-        image: "/team/2022/alexandra-sharankova.jpg",
+        image: "/team/2022/alexandra_sharankova.png",
       },
       {
         name: "Alexandre About",
         role: "Technical Director",
+        link: "https://linkedin.com/in/alexandra-sharankova-396991176/",
       },
     ],
   },
