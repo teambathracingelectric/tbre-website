@@ -21,12 +21,11 @@ export default function Footer() {
       <div className="w-1/3 flex justify-center">
         <Link href="/">
           <Image
-            // src="/tbre_logo_white.png"
             src="/tbre_logo_colour.png"
             alt="tbre logo"
             width={200}
             height={200}
-            className="filter grayscale hover:filter-none"
+            className="filter grayscale hover:filter-none transition-all"
           />
         </Link>
       </div>

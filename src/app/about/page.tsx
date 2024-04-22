@@ -9,7 +9,7 @@ export default function Page() {
     <main className="pt-8 min-h-screen flex flex-col items-center">
       <h1 className="text-4xl text-center font-extrabold">About</h1>
       <br />
-      <p>
+      <p className="md:w-2/3 p-4">
         Team Bath Racing Electric (TBRe) was founded in 2015. We are an exciting
         and innovative student motorsport team based at the University of Bath.
         Our team of undergraduates from across the university design, build and

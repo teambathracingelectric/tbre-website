@@ -33,6 +33,7 @@ export default function Page() {
           </Link>
         ))}
       </section>
+      <br />
     </main>
   );
 }

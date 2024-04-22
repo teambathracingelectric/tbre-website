@@ -1,4 +1,4 @@
-import type { Team } from "@/data/team";
+import teamData, { type Team } from "@/data/team";
 
 export type Results = {
   title: string;
@@ -19,21 +19,7 @@ const carsData: Car[] = [
     year: 2023,
     name: "TBRe23",
     image: "/cars/2023/car-2023.jpg",
-    team: [
-      {
-        category: "Management",
-        members: [
-          {
-            name: "Alexandra Sharankova",
-            role: "Team Principal",
-          },
-          {
-            name: "Alexandre About",
-            role: "Technical Director",
-          },
-        ],
-      },
-    ],
+    team: teamData,
     results: [
       {
         title: "FS UK",
@@ -65,81 +51,25 @@ const carsData: Car[] = [
     year: 2022,
     name: "TBRe22",
     image: "/cars/2022/car-2022.jpg",
-    team: [
-      {
-        category: "Management",
-        members: [
-          {
-            name: "Alexandra Sharankova",
-            role: "Team Principal",
-          },
-          {
-            name: "Alexandre About",
-            role: "Technical Director",
-          },
-        ],
-      },
-    ],
+    team: teamData,
   },
   {
     year: 2021,
     name: "TBRe21",
     image: "/cars/2021/car-2021.jpg",
-    team: [
-      {
-        category: "Management",
-        members: [
-          {
-            name: "Alexandra Sharankova",
-            role: "Team Principal",
-          },
-          {
-            name: "Alexandre About",
-            role: "Technical Director",
-          },
-        ],
-      },
-    ],
+    team: teamData,
   },
   {
     year: 2020,
     name: "TBRe20",
     image: "/cars/2020/car-2020.jpg",
-    team: [
-      {
-        category: "Management",
-        members: [
-          {
-            name: "Alexandra Sharankova",
-            role: "Team Principal",
-          },
-          {
-            name: "Alexandre About",
-            role: "Technical Director",
-          },
-        ],
-      },
-    ],
+    team: teamData,
   },
   {
     year: 2019,
     name: "TBRe19",
     image: "/cars/2019/car-2019.jpg",
-    team: [
-      {
-        category: "Management",
-        members: [
-          {
-            name: "Alexandra Sharankova",
-            role: "Team Principal",
-          },
-          {
-            name: "Alexandre About",
-            role: "Technical Director",
-          },
-        ],
-      },
-    ],
+    team: teamData,
   },
 ];
 

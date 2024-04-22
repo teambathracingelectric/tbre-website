@@ -1,4 +1,5 @@
 import type { Team } from "@/data/team";
+import { cn } from "@/utils";
 import Image from "next/image";
 
 export default function TeamSection({ team }: { team: Team }) {
@@ -8,7 +9,19 @@ export default function TeamSection({ team }: { team: Team }) {
         <div key={s.category}>
           <h2 className="text-center font-semibold text-2xl">{s.category}</h2>
           <br />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div
+            className={cn(
+              "grid gap-y-8",
+              // "md:grid-cols-3",
+              // TODO: get this working
+              s.members.length > 2
+                ? "md:grid-cols-3"
+                : s.members.length === 1
+                  ? "md:grid-cols-1"
+                  : "md:grid-cols-2",
+              // "border-2 border-red-500",
+            )}
+          >
             {s.members.map((m) => (
               <div key={m.name} className="flex flex-col items-center">
                 <Image

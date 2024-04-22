@@ -12,7 +12,7 @@ export default function Page() {
     <main className="pt-8 min-h-screen flex flex-col items-center">
       <h1 className="text-4xl text-center font-extrabold">Sponsors</h1>
       <br />
-      <p>
+      <p className="md:w-2/3 p-4">
         Meet our stunning sponsors. We work closely with each of our sponsors to
         ensure a mutually beneficial relationship, with many of our team alumni
         choosing our sponsors as graduate employers. Get in touch to find out
@@ -22,7 +22,7 @@ export default function Page() {
       <br />
       <section>
         <div className="flex gap-8 p-16 group flex-wrap md:flex-nowrap">
-          <div className="md:w-2/3 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
+          <div className="md:w-3/5 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
             <Image
               src={sponsorsData[0].sponsors[0].imageOther!}
               alt="TBRe"
@@ -31,7 +31,7 @@ export default function Page() {
               className="w-full transition-all group-hover:scale-105"
             />
           </div>
-          <div className="md:w-1/3">
+          <div className="md:w-2/5">
             <h2 className="text-4xl font-extrabold">Title Sponsor</h2>
             <br />
             <h3 className="text-2xl font-semibold">
@@ -51,7 +51,7 @@ export default function Page() {
           </div>
         </div>
         <br />
-        <h2 className="text-4xl font-extrabold">Sponsors</h2>
+        <h2 className="px-8 text-4xl font-extrabold">Sponsors</h2>
         <div className="p-16 grid md:grid-cols-4 gap-4">
           {sponsorsData.slice(1).map((sponsorLevel, i) =>
             sponsorLevel.sponsors.map((sponsor, j) => (

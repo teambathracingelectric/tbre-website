@@ -31,6 +31,7 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-2 items-center">
           {navLinks.map((link) => (
             <Link
+              key={link.name}
               href={link.href}
               className={cn(
                 "text-white uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
@@ -61,6 +62,7 @@ export default function Navbar() {
       >
         {navLinks.map((link) => (
           <Link
+            key={link.name}
             href={link.href}
             className={cn(
               "block text-white uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
