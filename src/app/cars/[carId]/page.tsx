@@ -18,7 +18,7 @@ export default function Page({ params }: { params: { carId: string } }) {
         TBRe{params.carId}
       </h1>
       <br />
-      <div className="flex gap-4 items-center w-full md:w-1/3 justify-center flex-wrap md:flex-nowrap">
+      {/* <div className="flex gap-4 items-center w-full md:w-1/3 justify-center flex-wrap md:flex-nowrap">
         <Image
           src="/cars/2021/car-2021-1.jpg"
           alt="Car 2021"
@@ -40,7 +40,14 @@ export default function Page({ params }: { params: { carId: string } }) {
           height={200}
           className="rounded-lg"
         />
-      </div>
+      </div> */}
+      <Image
+        src="/cars/2023/car-2023.jpg"
+        alt="Car 2021"
+        width={800}
+        height={400}
+        className="rounded-lg"
+      />
       <br />
       <p className="w-full md:w-1/2 mx-auto">
         Due to the effects of the COVID 19 pandemic, the 2021 car was an
