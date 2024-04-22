@@ -7,7 +7,8 @@ export default function TeamSection({ team }: { team: Team }) {
       {team.map((s) => (
         <div key={s.category}>
           <h2 className="text-center font-semibold text-2xl">{s.category}</h2>
-          <div className="grid grid-cols-3">
+          <br />
+          <div className="grid grid-cols-3 gap-8">
             {s.members.map((m) => (
               <div key={m.name} className="flex flex-col items-center">
                 <Image
@@ -15,6 +16,7 @@ export default function TeamSection({ team }: { team: Team }) {
                   alt={`Photo of ${m.name}`}
                   width={200}
                   height={200}
+                  className="rounded-full"
                 />
                 {m.link ? (
                   <a
