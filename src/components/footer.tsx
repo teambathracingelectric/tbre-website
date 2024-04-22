@@ -26,7 +26,6 @@ export default function Footer() {
             alt="tbre logo"
             width={200}
             height={200}
-            // grayscale then colour on hover
             className="filter grayscale hover:filter-none"
           />
         </Link>

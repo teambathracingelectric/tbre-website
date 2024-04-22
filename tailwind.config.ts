@@ -5,12 +5,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        // OLD
-        // "tbre-yellow": "#D7B537",
-        // "tbre-blue": "#005CAA",
-        // NEW
-        "tbre-yellow": "#FEB91D",
-        "tbre-blue": "#094D9B",
+        // CLASSIC
+        "tbre-blue": "#105BAB",
+        "tbre-yellow": "#FFC423",
+        // COOL
+        // "tbre-blue": "#1F2B46",
+        // "tbre-yellow": "#F0B323",
       },
     },
   },

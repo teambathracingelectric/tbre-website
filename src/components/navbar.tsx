@@ -11,11 +11,13 @@ import { useState } from "react";
 export default function Navbar() {
   const pathname = usePathname();
 
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className="border-b-8 border-tbre-yellow bg-black text-white px-8 w-full flex justify-between md:justify-evenly items-center">
-      <div className="md:w-1/3 flex justify-start">
+    <nav className="bg-black border-b-8 border-tbre-yellow">
+      {/*  Logo + desktop + mobile button */}
+      <div className="w-full lg:w-4/5 mx-auto flex justify-between items-center px-4">
+        {/* Logo link */}
         <Link href="/">
           <Image
             src="/tbre_logo_colour.png"
@@ -24,59 +26,52 @@ export default function Navbar() {
             height={200}
           />
         </Link>
-      </div>
 
-      <ul className="w-1/3 space-x-2 hidden md:flex justify-center">
-        {navLinks.map((link) => (
-          <li key={link.name}>
+        {/* Desktop navigation menu */}
+        <div className="hidden md:flex space-x-2 items-center">
+          {navLinks.map((link) => (
             <Link
               href={link.href}
               className={cn(
-                "uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
+                "text-white uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
                 pathname === link.href && "text-tbre-yellow",
               )}
+              onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
-          </li>
-        ))}
-      </ul>
-
-      {!showMobileMenu && (
-        <button
-          className="md:hidden"
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-        >
-          <MenuIcon />
-        </button>
-      )}
-
-      {showMobileMenu && (
-        <div className="">
-          <button
-            className="md:hidden"
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-          >
-            <XIcon />
-          </button>
-
-          <ul className="bg-black md:hidden flex flex-col absolute top-0 left-0">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
-                    pathname === link.href && "text-tbre-yellow",
-                  )}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          ))}
         </div>
-      )}
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsOpen((p) => !p)}
+          className="md:hidden flex items-center justify-center p-2 rounded-md text-white"
+        >
+          {isOpen ? <XIcon /> : <MenuIcon />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div
+        className={cn(
+          "md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3",
+          isOpen ? "block" : "hidden",
+        )}
+      >
+        {navLinks.map((link) => (
+          <Link
+            href={link.href}
+            className={cn(
+              "block text-white uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
+              pathname === link.href && "text-tbre-yellow",
+            )}
+            onClick={() => setIsOpen(false)}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 }

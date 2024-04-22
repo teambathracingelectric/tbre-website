@@ -8,7 +8,7 @@ export default function TeamSection({ team }: { team: Team }) {
         <div key={s.category}>
           <h2 className="text-center font-semibold text-2xl">{s.category}</h2>
           <br />
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {s.members.map((m) => (
               <div key={m.name} className="flex flex-col items-center">
                 <Image
