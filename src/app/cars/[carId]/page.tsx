@@ -2,10 +2,21 @@ import CarModel from "@/components/car-model";
 import ResultsSection from "@/components/results-section";
 import TeamSection from "@/components/team-section";
 import carsData from "@/data/cars";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function Page({ params }: { params: { carId: string } }) {
+type Params = {
+  carId: string;
+};
+
+export function generateMetadata({ params }: { params: Params }): Metadata {
+  return {
+    title: `${params.carId} Car`,
+  };
+}
+
+export default function Page({ params }: { params: Params }) {
   const data = carsData.find((c) => c.year === parseInt(params.carId));
 
   if (!data) {

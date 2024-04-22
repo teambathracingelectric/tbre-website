@@ -10,7 +10,7 @@ export type Team = {
   category: string;
   members: {
     name: string;
-    role: string;
+    role?: string;
     image?: string;
     link?: string;
   }[];
@@ -231,25 +231,21 @@ const teamData: Team = [
     members: [
       {
         name: "Dr. Christopher Vagg",
-        role: "x",
         link: "https://www.linkedin.com/in/chrisvagg/",
         image: "/team/2023/dr_christopher_vagg.jpeg",
       },
       {
         name: "Dr. Benjamin Metcalfe",
-        role: "x",
         link: "https://www.linkedin.com/in/benjamin-metcalfe-021a3554/",
         image: "/team/2023/dr_benjamin_metcalfe.jpeg",
       },
       {
         name: "Dr. Jonathan Graham-Harper Cater",
-        role: "x",
         link: "https://www.linkedin.com/in/jonathan-graham-harper-cater/",
         image: "/team/2023/dr_jonathan_graham-harper_cater.jpeg",
       },
       {
         name: "Dr. Pedram Asef",
-        role: "x",
         link: "https://www.linkedin.com/in/pedram-asef-350870b8/",
         image: "/team/2023/dr_pedram_asef.jpeg",
       },

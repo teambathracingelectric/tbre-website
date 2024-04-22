@@ -1,6 +1,11 @@
 import carsData from "@/data/cars";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Cars",
+};
 
 export default function Page() {
   return (

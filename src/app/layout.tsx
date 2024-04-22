@@ -9,12 +9,13 @@ import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { type PropsWithChildren } from "react";
 
-// const font = Inter({ subsets: ["latin"] });
-// const font = Roboto({ subsets: ["latin"], weight: "500" });
 const font = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Team Bath Racing Electric",
+  title: {
+    template: "%s ~ Team Bath Racing Electric",
+    default: "Team Bath Racing Electric",
+  },
   description:
     "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
 };

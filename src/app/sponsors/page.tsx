@@ -1,6 +1,11 @@
 import sponsorsData from "@/data/sponsors";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Sponsors",
+};
 
 export default function Page() {
   return (

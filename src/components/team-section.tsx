@@ -30,7 +30,7 @@ export default function TeamSection({ team }: { team: Team }) {
                 ) : (
                   <h3 className="font-bold text-lg">{m.name}</h3>
                 )}
-                <p>{m.role}</p>
+                {m.role && <p>{m.role}</p>}
               </div>
             ))}
           </div>
