@@ -1,3 +1,4 @@
+import StatsSection from "@/components/stats-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,6 +38,8 @@ export default function Page() {
         powertrains, a distinction consistently upheld since the 2017
         competition.
       </p>
+      <br />
+      <StatsSection />
     </main>
   );
 }

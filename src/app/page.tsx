@@ -1,6 +1,5 @@
 "use client";
 
-import StatsSection from "@/components/stats-section";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -77,7 +76,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <StatsSection />
     </main>
   );
 }
