@@ -1,4 +1,4 @@
-import navLinks from "@/data/navLinks";
+// import navLinks from "@/data/navLinks";
 import socialLinks from "@/data/socialLinks";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,10 @@ export default function Footer() {
   return (
     <footer className="border-t-8 border-tbre-yellow bg-black text-white p-8 w-full flex flex-col md:flex-row justify-evenly items-center gap-y-4">
       <ul className="w-1/3 space-x-4 flex justify-center">
-        {navLinks.map((link) => (
+        <p className="uppercase text-sm font-semibold">
+          Team Bath Racing Electric &copy; {new Date().getFullYear()}
+        </p>
+        {/* {navLinks.map((link) => (
           <li key={link.name}>
             <Link
               href={link.href}
@@ -16,7 +19,7 @@ export default function Footer() {
               {link.name}
             </Link>
           </li>
-        ))}
+        ))} */}
       </ul>
       <div className="w-1/3 flex justify-center">
         <Link href="/">

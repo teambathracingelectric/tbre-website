@@ -17,14 +17,14 @@ export default function Page() {
           <Link
             key={c.year}
             href={`/cars/${c.year}`}
-            className="flex flex-col hover:translate-x-2 hover:-translate-y-2 transition-all"
+            className="flex flex-col hover:translate-x-2 hover:-translate-y-2 transition-all group"
           >
             <Image
               src={c.image}
               alt={c.name}
               width={400}
               height={200}
-              className="rounded-lg"
+              className="rounded-lg border-transparent group-hover:border-tbre-yellow border-4"
             />
             <div className="mt-2 flex justify-between items-center">
               <h2 className="font-semibold text-2xl">{c.name}</h2>

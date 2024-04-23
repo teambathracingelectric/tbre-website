@@ -50,8 +50,8 @@ export default function Page() {
             </a>
           </div>
         </div>
-        <br />
-        <h2 className="px-8 text-4xl font-extrabold">Sponsors</h2>
+        <br />F
+        <h2 className="px-16 text-4xl font-extrabold">Sponsors</h2>
         <div className="p-16 grid md:grid-cols-4 gap-4">
           {sponsorsData.slice(1).map((sponsorLevel, i) =>
             sponsorLevel.sponsors.map((sponsor, j) => (
@@ -60,7 +60,7 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={`${i}-${j}`}
-                className="group overflow-hidden"
+                className="group overflow-hidden hover:translate-x-2 hover:-translate-y-2 transition-all"
               >
                 <div>
                   <Image
