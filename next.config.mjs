@@ -4,6 +4,7 @@
 const nextConfig = {
   redirects: async () => {
     return [
+      // social media redirects
       {
         source: "/linkedin",
         destination: "https://linkedin.com/company/team-bath-racing-electric/",
@@ -34,6 +35,32 @@ const nextConfig = {
         destination: "https://youtube.com/@TeamBathRacingElectric",
         permanent: true,
       },
+      // old website redirects
+      {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/contact-use",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/our-cars",
+        destination: "/cars",
+        permanent: true,
+      },
+      {
+        source: "/:year-car",
+        destination: "/cars/:year",
+        permanent: true,
+      },
+      {
+        source: "/team-members",
+        destination: "/team",
+        permanent: true,
+      }
     ];
   },
 };
