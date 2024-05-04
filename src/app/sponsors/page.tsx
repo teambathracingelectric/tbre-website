@@ -50,7 +50,7 @@ export default function Page() {
             </a>
           </div>
         </div>
-        <br />F
+        <br />
         <h2 className="px-16 text-4xl font-extrabold">Sponsors</h2>
         <div className="p-16 grid md:grid-cols-4 gap-4">
           {sponsorsData.slice(1).map((sponsorLevel, i) =>

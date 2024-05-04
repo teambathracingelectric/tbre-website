@@ -60,7 +60,7 @@ const nextConfig = {
         source: "/team-members",
         destination: "/team",
         permanent: true,
-      }
+      },
     ];
   },
 };
