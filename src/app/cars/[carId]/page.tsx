@@ -60,12 +60,8 @@ export default function Page({ params }: { params: Params }) {
         className="rounded-lg"
       />
       <br />
-      {data.text && (
-        <p className="w-full md:w-1/2 mx-auto">
-          {data.text}
-        </p>
-      )}
-      <CarModel />
+      {data.text && <p className="w-full md:w-1/2 mx-auto">{data.text}</p>}
+      {data.model && <CarModel src={data.model} />}
       {data.results && <ResultsSection results={data.results} />}
       {data.team && (
         <>

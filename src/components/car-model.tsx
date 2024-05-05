@@ -30,14 +30,12 @@ interface ModelViewerJSX {
   sx?: any;
 }
 
-const glbSrc = "/models/ferrari_f1_2019.glb";
-// const iosSrc = "/assets/model.usdz";
-
-export default function CarModel() {
+export default function CarModel({ src }: { src: string }) {
   return (
     <model-viewer
       id="first"
-      src={glbSrc}
+      src={src}
+      // TODO: add iosSrc?
       // ios-src={iosSrc}
       seamless-poster
       // poster="poster.webp"

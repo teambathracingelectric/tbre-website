@@ -13,6 +13,7 @@ export type Car = {
   text?: string;
   team?: Team;
   results?: Results;
+  model?: string;
 };
 
 const carsData: Car[] = [
@@ -21,6 +22,7 @@ const carsData: Car[] = [
     name: "TBRe23",
     image: "/cars/2023/car.jpg",
     team: teamData,
+    model: "/cars/2023/model.glb",
   },
   {
     year: 2022,
