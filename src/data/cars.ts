@@ -29,26 +29,35 @@ const carsData: Car[] = [
       {
         title: "FS UK",
         description: `
-        Our home competition, Formula Student UK is organised by the IMechE and runs at Silverstone international race circuit. This year, the team achieved the title of top UK-based EV team - a position familiar to TBRe. The team faced many challenges at this competition, but we persevered and passed scrutineering in time to compete in some dynamics events. This helped us secure our position as the UK's top electric formula student team.
+        Our home competition, Formula Student UK is organised by the IMechE and runs at Silverstone international race circuit.
+        This year, the team achieved the title of top UK-based EV team - a position familiar to TBRe.
+        The team faced many challenges at this competition, but we persevered and passed scrutineering in time to compete in some dynamics events.
+        This helped us secure our position as the UK's top electric formula student team.
 
-        The AI team also did very well at the 2022 formula student, coming away with the overall win after winning many of the static events.`,
-        image: "/cars/2022/car-2022.jpg",
+        The AI team also did very well at the 2022 formula student, coming away with the overall win after winning many of the static events.
+        `,
+        image: "/cars/2022/fs-uk-2022.jpg",
       },
       {
-        title: "FS UK",
+        title: "FSAE Italy",
         description: `
-        Our home competition, Formula Student UK is organised by the IMechE and runs at Silverstone international race circuit. This year, the team achieved the title of top UK-based EV team - a position familiar to TBRe. The team faced many challenges at this competition, but we persevered and passed scrutineering in time to compete in some dynamics events. This helped us secure our position as the UK's top electric formula student team.
-
-        The AI team also did very well at the 2022 formula student, coming away with the overall win after winning many of the static events.`,
-        image: "/cars/2022/car-2022.jpg",
+        The TBRe team competed in two European events in 2022- Italy and Spain.
+        Formula SAE Italy provided many valuable challenges, from logistical challenges (the Italian competition was scheduled for the week after the UK competition) to physical challenges, with an intense heatwave hitting the country.
+        Despite this, the team achieved a fantastic result of 9th overall EV team.
+        `,
+        image: "/cars/2022/fs-italy-2022.jpg",
       },
       {
-        title: "FS UK",
+        title: "FS Spain",
         description: `
-        Our home competition, Formula Student UK is organised by the IMechE and runs at Silverstone international race circuit. This year, the team achieved the title of top UK-based EV team - a position familiar to TBRe. The team faced many challenges at this competition, but we persevered and passed scrutineering in time to compete in some dynamics events. This helped us secure our position as the UK's top electric formula student team.
+        Our second European competition of the season was in Spain.
+        This is a competition known for its fierce competition from the top teams in the world.
+        The team brought an updated car to Spain, with revisions to the vehicle dynamics and aerodynamics systems.
 
-        The AI team also did very well at the 2022 formula student, coming away with the overall win after winning many of the static events.`,
-        image: "/cars/2022/car-2022.jpg",
+        The team came away from the event with a fantastic 18th-place overall finish.
+        A great way to finish a very successful year for Team Bath Racing Electric.
+        `,
+        image: "/cars/2022/fs-spain-2022.jpg",
       },
     ],
   },
