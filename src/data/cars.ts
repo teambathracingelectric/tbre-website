@@ -66,6 +66,38 @@ const carsData: Car[] = [
     year: 2021,
     name: "TBRe21",
     image: "/cars/2021/car.jpg",
+    text: `
+    Due to the effects of the COVID 19 pandemic, the 2021 car was an
+    iteration of the 2019 chassis. The car had a completely overhauled
+    electrical system, improved firewall and adjusted rear packaging,
+    utilising the same powertrain components found in the 2019 car. The team
+    also made its first-ever aerodynamics package that was mounted to the
+    car at the competition but wasn't utilised in the dynamic events. The
+    process of manufacturing these aerofoils allowed the team to expand
+    their knowledge on composites manufacture and transfer that knowledge to
+    future years.
+    <br />
+    <br />
+    With only two and a half months of lab access, the team was very happy
+    to walk away from the competition with two trophies, one for efficiency
+    and another for the cost and manufacture event. The car was by far the
+    fastest electric vehicle on the track, but due to a lack of testing
+    time, the reliability was not good enough to allow the full completion
+    of the endurance event. With a little more tuning and fixing some bugs,
+    this vehicle can form the starting point of a fantastic car capable of
+    competing at the highest levels of the formula student competition.
+    <br />
+    <br />
+    The AI team also did very well at the 2021 formula student, coming away
+    with the overall win after winning all of the static events they
+    entered.
+    <br />
+    <br />
+    The results of the 2021 competition are a testament to what the team can
+    achieve regardless of how tough the circumstances are and looking
+    forward the team is set to continue challenging the best formula student
+    teams in the UK and abroad.
+    `,
   },
   {
     year: 2020,
@@ -86,6 +118,38 @@ const carsData: Car[] = [
     year: 2017,
     name: "TBRe17",
     image: "/cars/2017/car.jpg",
+    team: [
+      {
+        category: "Main",
+        members: [
+          {
+            name: "Stefano Dallavalle",
+            role: "Project Manager",
+            link: "https://linkedin.com/in/stefano-dallavalle/",
+          },
+          {
+            name: "Gregory Tzermias",
+            role: "Mechanical Lead",
+            link: "https://linkedin.com/in/dr-gregory-tzermias-12a26677/",
+          },
+          {
+            name: "Alex Stokoe",
+            role: "Electrical Lead",
+            link: "https://linkedin.com/in/alex-stokoe/",
+          },
+          {
+            name: "Assad George Farhat",
+            role: "Software Lead",
+            link: "https://linkedin.com/in/assad-george-farhat-1b4a1bb8/",
+          },
+          {
+            name: "Antonio Pessanha",
+            role: "Marketing/Media Manager",
+            link: "https://linkedin.com/in/ant%C3%B3nio-pessanha/",
+          },
+        ],
+      },
+    ],
   },
   {
     year: 2016,

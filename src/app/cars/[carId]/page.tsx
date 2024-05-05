@@ -53,45 +53,18 @@ export default function Page({ params }: { params: Params }) {
         />
       </div> */}
       <Image
-        src="/cars/2023/car-2023.jpg"
-        alt="Car 2021"
+        src={data.image}
+        alt={`${data.year} Car`}
         width={800}
         height={400}
         className="rounded-lg"
       />
       <br />
-      <p className="w-full md:w-1/2 mx-auto">
-        Due to the effects of the COVID 19 pandemic, the 2021 car was an
-        iteration of the 2019 chassis. The car had a completely overhauled
-        electrical system, improved firewall and adjusted rear packaging,
-        utilising the same powertrain components found in the 2019 car. The team
-        also made its first-ever aerodynamics package that was mounted to the
-        car at the competition but wasn't utilised in the dynamic events. The
-        process of manufacturing these aerofoils allowed the team to expand
-        their knowledge on composites manufacture and transfer that knowledge to
-        future years.
-        <br />
-        <br />
-        With only two and a half months of lab access, the team was very happy
-        to walk away from the competition with two trophies, one for efficiency
-        and another for the cost and manufacture event. The car was by far the
-        fastest electric vehicle on the track, but due to a lack of testing
-        time, the reliability was not good enough to allow the full completion
-        of the endurance event. With a little more tuning and fixing some bugs,
-        this vehicle can form the starting point of a fantastic car capable of
-        competing at the highest levels of the formula student competition.
-        <br />
-        <br />
-        The AI team also did very well at the 2021 formula student, coming away
-        with the overall win after winning all of the static events they
-        entered.
-        <br />
-        <br />
-        The results of the 2021 competition are a testament to what the team can
-        achieve regardless of how tough the circumstances are and looking
-        forward the team is set to continue challenging the best formula student
-        teams in the UK and abroad.
-      </p>
+      {data.text && (
+        <p className="w-full md:w-1/2 mx-auto">
+          {data.text}
+        </p>
+      )}
       <CarModel />
       {data.results && <ResultsSection results={data.results} />}
       {data.team && (
