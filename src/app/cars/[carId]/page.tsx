@@ -61,8 +61,11 @@ export default function Page({ params }: { params: Params }) {
       />
       <br />
       {data.text && <p className="w-full md:w-1/2 mx-auto">{data.text}</p>}
+      <br />
       {data.model && <CarModel src={data.model} />}
+      <br />
       {data.results && <ResultsSection results={data.results} />}
+      <br />
       {data.team && (
         <>
           <h2 className="text-3xl font-extrabold">Meet the Team</h2>

@@ -110,11 +110,122 @@ const carsData: Car[] = [
     year: 2019,
     name: "TBRe19",
     image: "/cars/2019/car.jpg",
+    text: `
+    The design of the Team Bath Racing Electric 2019 car had a large focus on mass reduction. Through the use of composite materials, a first for the team, 10Kg was saved in the hybrid chassis and a further 25Kg was saved in the accumulator (battery).
+
+This light-weighting of the car had a large impact on the design of the vehicle dynamics allowing for improvements across the board. Thanks to the reliability of the 2018 car, a lot of testing was possible, allowing for data to be collected, analysed and improvements to be implemented on the 2019 car.
+
+The team was targeting a 20% mass reduction, hoping to bring the car under 200kg. At the UK competition, the final weight achieved was 196Kg meaning an almost 23% mass reduction from the 2018 car!
+
+A half monocoque half spaceframe chassis for improved torsional stiffness and mounting locations helped achieve this weight saving with a hybrid backplate and composite steering wheel all shaving weight off the design.
+
+All composite components and moulds were made in house by the team, a massive amount of work when considering this was the first time composites were used in the team's designs.
+
+The new inverter, as well as the teams Emrax 228 motor, meant a total of 700Nm was transferred to the rear wheels. This is thanks to the motors 8Kw per Kg of motor mass.
+
+Another huge innovation made in 2019 was the accumulator design. This consisted of 714 Sony Murata VTC6 18650 cells providing 428.4V and 9.36KWh of energy storage. A combination of advanced material techniques and an optimised design resulted in a 40% mass reduction within a year of development. FDM 3D printing was used to make extremely lightweight and fully optimised sub packs which were surrounded by a composite battery container consisting of a carbon fibre sandwich structure. More safety systems were also integrated into the battery and the higher voltage output also improved the powertrain systems efficiency whilst reducing cabling thickness.
+
+Optimised ECU software and a redesigned CAN bus architecture helped improve the cars control and safety systems with a comprehensive fault monitoring system also being implemented. A fully custom dashboard with an integrated letterbox screen also massively improved the driver environment.
+
+Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the torque increase with the new inverter as well as the light-weighting.
+    `,
   },
   {
     year: 2018,
     name: "TBRe18",
     image: "/cars/2018/car.jpg",
+    text: `
+    The biggest innovation in the design of the Team Bath Racing Electric 2018 car was the new accumulator (Battery) designed from scratch.
+
+The accumulator consisted of 720 Sony 18650 cells in a 15 series 8 parallel configuration per sub pack. For the 8 cells in parallel, copper busbars that were spot welded to the cells provided a very low resistance path. The 15 cells in series were held with a cell clamping design allowing the sub packs to be easily serviceable by removing and changing cells. This cell configuration provided 378V and 7KWh of energy storage.
+
+The accumulator consisted of 6 sub packs in a steel enclosure and moved to cylindrical cells to improve charging times and packaging. Each sub pack was also no longer high voltage, making them much easier to work on and service. A full thermal management system was also implemented, measuring 238 data points of temperature as well as 90 cell voltages and the currents entering and exiting the accumulator. Two accumulators were built for added redundancy and reliability which was a primary focus for 2018
+
+New centre-lock wheels were used on the 2018 car due to excessive wear being found on the previous design. Bespoke wheel hubs and centre lock nuts were designed to mitigate this.
+
+A redesigned chassis was used, and the 2018 design was the first year to have a chassis designed from scratch that accommodated the electrical powertrain. This new design saved 20Kg compared to the previous years and consisted of a steel spaceframe. The overall length of the car was manufactured to within 1mm of the designs thanks to the use of an aluminium jig during the chassis manufacture.
+
+The battery was moved from the side-pods to just behind the driver, allowing for better vehicle dynamics. The suspension was optimised to lower ground clearance and improve the vehicle dynamics with the centre of mass now vastly different from the previous year.
+
+The powertrain used the same Emrax 228 motor used in 2019, 2020 and 2021 designs with a fixed rear axle which was a simple and reliable design. A gearing ratio of 3.6:1 was used, and Finite Element Analysis was used to optimise the design of each component and reduce weight resulting in a 13% weight saving across the powertrain.
+
+A rapid prototyping ECU was used, and a detailed diagnostic system was implemented in software allowing the ECU to output lots of data for better fault finding and detailed data logging. The electronic system developed for the 2018 design was focused on being safe and reliable, with a wide array of sensors and 7 custom-designed PCBs.
+
+The focus for the 2018 cars design was on reliability and redundancy. A complete redesign of the vehicle was undertaken to achieve this, and it resulted in the most advanced and lightest vehicle that the team had produced to date. This reliability was demonstrated in the FSUK competition when the vehicle passed scrutineering in time for the dynamic events and retained the title of #1 UK electric team.
+
+This redundancy was integral to success and the teams build not buy mentality showed what could be accomplished with commitment and a passion for engineering. The TBRe18 design was highly commended at FSUK, to the extent that it was used as exemplar material for other teams.
+    `,
+    team: [
+      {
+        category: "Management",
+        members: [
+          {
+            name: "Elizabeth Maclennan",
+            role: "Project Manager",
+          },
+          {
+            name: "Will Minter-Kemp",
+            role: "Business Manager, Control Systems Lead",
+            link: "https://linkedin.com/in/will-minter-kemp/",
+          },
+          {
+            name: "Jacob Clapp",
+            role: "Technical Lead",
+            link: "https://linkedin.com/in/jacob-clapp-168428126/",
+          },
+          {
+            name: "Tom Dormand",
+            role: "Accumulator Lead, Integration Lead",
+            link: "https://linkedin.com/in/tomdormand/",
+          },
+        ],
+      },
+      {
+        category: "Mechanical",
+        members: [
+          {
+            name: "Daniel Palmer",
+            role: "Chassis Lead",
+            link: "https://linkedin.com/in/daniel-palmer-2018/",
+          },
+          {
+            name: "Simon Julyan",
+            role: "Powertrain Lead",
+            link: "https://linkedin.com/in/simon-julyan/",
+          },
+          {
+            name: "Natalie Kyprianou",
+            role: "Mechanical",
+            link: "https://linkedin.com/in/natalie-kyprianou-7a44609a/",
+          },
+        ],
+      },
+      {
+        category: "Electrical and Electronics",
+        members: [
+          {
+            name: "George Balkwill",
+            role: "Electrical Lead",
+            link: "https://linkedin.com/in/george-balkwill-845655152/",
+          },
+          {
+            name: "Oliver Wilkins",
+            role: "Electrical",
+            link: "https://linkedin.com/in/oliver-wilkins/",
+          },
+          {
+            name: "Ben Carretta",
+            role: "Electrical",
+            link: "https://linkedin.com/in/bencarretta/",
+          },
+          {
+            name: "Uvindu Wijesinghe",
+            role: "Electrical",
+            link: "https://linkedin.com/in/uvindu-wijesinghe/",
+          },
+        ],
+      },
+    ],
   },
   {
     year: 2017,
