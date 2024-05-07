@@ -95,7 +95,7 @@ export default function Page() {
           locale={false}
           download
         >
-          <button className="bg-tbre-yellow text-white font-bold py-2 px-4 rounded-lg">
+          <button className="bg-tbre-yellow text-white font-bold py-2 px-4 rounded-lg hover:scale-105 transition-all">
             Download our sponsorship prospectus
           </button>
         </Link>
