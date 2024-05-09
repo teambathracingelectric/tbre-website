@@ -80,25 +80,98 @@ export default function Page() {
       <br />
       <section className="flex bg-tbre-yellow p-16 gap-16">
         <p className="flex-1">
-          Team Bath Racing Electric (TBRe) was founded in 2015.
-          We are an exciting and innovative student motorsport team based at the University of Bath.
-          Our team of undergraduates from across the university design, build and race a formula-style car for the Formula Student competition against teams from all around the world.
+          Team Bath Racing Electric (TBRe) was founded in 2015. We are an
+          exciting and innovative student motorsport team based at the
+          University of Bath. Our team of undergraduates from across the
+          university design, build and race a formula-style car for the Formula
+          Student competition against teams from all around the world.
           <br />
           <br />
-          We compete at Silverstone each year for the UK event and travel around the world to compete in international Formula student events.
-          We were the first UK electric team to compete abroad, competing in Zhuhai, China in 2018.
+          We compete at Silverstone each year for the UK event and travel around
+          the world to compete in international Formula student events. We were
+          the first UK electric team to compete abroad, competing in Zhuhai,
+          China in 2018.
         </p>
         <p className="flex-1">
-          In 2022 we competed in Italy and Spain which helped maintain our spot as #1 UK Electric Formula Student Team.
+          In 2022 we competed in Italy and Spain which helped maintain our spot
+          as #1 UK Electric Formula Student Team.
           <br />
           <br />
-          Unlike many competitors, TBRe utilises a fully electric powertrain with an Emrax 228 motor rear-wheel drive and a custom in-house designed and built battery pack.
+          Unlike many competitors, TBRe utilises a fully electric powertrain
+          with an Emrax 228 motor rear-wheel drive and a custom in-house
+          designed and built battery pack.
           <br />
           <br />
-          TBRe is widely recognized as a leading Formula Student team in the United Kingdom, particularly distinguished for its mastery of electric powertrains, a distinction consistently upheld since the 2017 competition.
+          TBRe is widely recognized as a leading Formula Student team in the
+          United Kingdom, particularly distinguished for its mastery of electric
+          powertrains, a distinction consistently upheld since the 2017
+          competition.
         </p>
       </section>
       <br />
+      <section className="flex flex-col items-center p-16 space-y-16">
+        <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
+          <Image
+            src="/landing_car_2.jpg"
+            alt="Car"
+            width={1920}
+            height={1080}
+            className="rounded-md md:w-1/2"
+          />
+          <div>
+            <h3 className="text-2xl font-semibold">Our Achievements</h3>
+            <br />
+            <p>
+              Since our formation in 2015, TBRe has grown and developed at an
+              astonishing rate. In 2018 a very reliable platform was designed,
+              allowing for the 2019 team to design a hybrid carbon fiber and
+              spaceframe chassis as well as a minimised battery pack, dropping
+              the weight of the car to under 200kg.
+            </p>
+          </div>
+        </div>
+        <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap-reverse md:flex-nowrap">
+          <div>
+            <h3 className="text-2xl font-semibold">Our Members</h3>
+            <br />
+            <p>
+              We comprise over 50 professional, motivated and committed students
+              from across our Electrical and Mechanical Engineering departments
+              as well as Management and Computer Science, making our team truly
+              cross-disciplinary and allowing students from any discipline to
+              share and gain knowledge.
+            </p>
+          </div>
+          <Image
+            src="/landing_car_1.jpg"
+            alt="Car"
+            width={1920}
+            height={1080}
+            className="rounded-md md:w-1/2"
+          />
+        </div>
+        <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
+          <Image
+            src="/landing_car_2.jpg"
+            alt="Car"
+            width={1920}
+            height={1080}
+            className="rounded-md md:w-1/2"
+          />
+          <div>
+            <h3 className="text-2xl font-semibold">Our Sponsors</h3>
+            <br />
+            <p>
+              Our project would not be possible without the generous support of
+              our many sponsors. We work hard to provide a mutually beneficial
+              relationship with each of our supporting organisations. This can
+              range from a simple promotion in our team media to close technical
+              collaboration on some of the exciting and innovative aspects of
+              our car.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
