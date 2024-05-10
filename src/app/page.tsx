@@ -78,42 +78,46 @@ export default function Page() {
         </div>
       </section>
       <br />
-      <section className="flex bg-tbre-yellow p-16 gap-16">
-        <p className="flex-1">
-          Team Bath Racing Electric (TBRe) was founded in 2015. We are an
-          exciting and innovative student motorsport team based at the
-          University of Bath. Our team of undergraduates from across the
-          university design, build and race a formula-style car for the Formula
-          Student competition against teams from all around the world.
-          <br />
-          <br />
-          We compete at Silverstone each year for the UK event and travel around
-          the world to compete in international Formula student events. We were
-          the first UK electric team to compete abroad, competing in Zhuhai,
-          China in 2018.
-        </p>
-        <p className="flex-1">
-          In 2022 we competed in Italy and Spain which helped maintain our spot
-          as #1 UK Electric Formula Student Team.
-          <br />
-          <br />
-          Unlike many competitors, TBRe utilises a fully electric powertrain
-          with an Emrax 228 motor rear-wheel drive and a custom in-house
-          designed and built battery pack.
-          <br />
-          <br />
-          TBRe is widely recognized as a leading Formula Student team in the
-          United Kingdom, particularly distinguished for its mastery of electric
-          powertrains, a distinction consistently upheld since the 2017
-          competition.
-        </p>
+      <section className=" bg-tbre-yellow p-16 text-white">
+        <h2 className="text-4xl font-semibold text-center">About Us</h2>
+        <br />
+        <div className="md:flex gap-16">
+          <p className="flex-1">
+            Team Bath Racing Electric (TBRe) was founded in 2015. We are an
+            exciting and innovative student motorsport team based at the
+            University of Bath. Our team of undergraduates from across the
+            university design, build and race a formula-style car for the
+            Formula Student competition against teams from all around the world.
+            <br />
+            <br />
+            We compete at Silverstone each year for the UK event and travel
+            around the world to compete in international Formula student events.
+            We were the first UK electric team to compete abroad, competing in
+            Zhuhai, China in 2018.
+          </p>
+          <p className="flex-1">
+            In 2022 we competed in Italy and Spain which helped maintain our
+            spot as #1 UK Electric Formula Student Team.
+            <br />
+            <br />
+            Unlike many competitors, TBRe utilises a fully electric powertrain
+            with an Emrax 228 motor rear-wheel drive and a custom in-house
+            designed and built battery pack.
+            <br />
+            <br />
+            TBRe is widely recognized as a leading Formula Student team in the
+            United Kingdom, particularly distinguished for its mastery of
+            electric powertrains, a distinction consistently upheld since the
+            2017 competition.
+          </p>
+        </div>
       </section>
       <br />
       <section className="flex flex-col items-center p-16 space-y-16">
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
           <Image
-            src="/landing_car_2.jpg"
-            alt="Car"
+            src="/our_achievements.jpg"
+            alt="Our Achievements"
             width={1920}
             height={1080}
             className="rounded-md md:w-1/2"
@@ -143,8 +147,8 @@ export default function Page() {
             </p>
           </div>
           <Image
-            src="/landing_car_1.jpg"
-            alt="Car"
+            src="/our_members.jpeg"
+            alt="Our Members"
             width={1920}
             height={1080}
             className="rounded-md md:w-1/2"
@@ -152,8 +156,8 @@ export default function Page() {
         </div>
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
           <Image
-            src="/landing_car_2.jpg"
-            alt="Car"
+            src="/our_sponsors.jpeg"
+            alt="Our Sponsors"
             width={1920}
             height={1080}
             className="rounded-md md:w-1/2"
