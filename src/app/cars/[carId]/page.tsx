@@ -24,7 +24,7 @@ export default function Page({ params }: { params: Params }) {
   }
 
   return (
-    <main className="pt-8 min-h-screen flex flex-col items-center">
+    <main className="p-8 min-h-screen flex flex-col items-center">
       <h1 className="text-4xl text-center font-extrabold">
         TBRe{params.carId}
       </h1>

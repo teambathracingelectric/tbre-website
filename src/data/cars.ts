@@ -129,6 +129,148 @@ Optimised ECU software and a redesigned CAN bus architecture helped improve the 
 
 Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the torque increase with the new inverter as well as the light-weighting.
     `,
+    team: [
+      {
+        category: "Management",
+        members: [
+          {
+            name: "Kieran Shopland",
+            role: "Project Manager",
+            link: "https://www.linkedin.com/in/kieran-shopland-3b791110a/",
+          },
+          {
+            name: "Ben Carretta",
+            role: "Technical Manager",
+            link: "",
+          },
+          {
+            name: "Afkar Ansar",
+            role: "Business Manager",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Mechanical",
+        members: [
+          {
+            name: "Valerio Pellicciari",
+            role: "Chassis Lead",
+            link: "",
+          },
+          {
+            name: "Natalie Kyprianou",
+            role: "Battery Lead",
+            link: "",
+          },
+          {
+            name: "Sam Gray",
+            role: "Vehicle Dynamics Lead",
+            link: "",
+          },
+          {
+            name: "Oliver Hopkinson",
+            role: "Aerodynamics Lead",
+            link: "",
+          },
+          {
+            name: "Kieron Holt",
+            role: "Safety Lead",
+            link: "",
+          },
+          {
+            name: "William Taylor",
+            role: "Vehicle Dynamics",
+            link: "",
+          },
+          {
+            name: "George Bridgewater",
+            role: "Spaceframe",
+            link: "",
+          },
+          {
+            name: "Thomas Coxon",
+            role: "Nose Cone, Mechanical",
+            link: "",
+          },
+          {
+            name: "Joe Capper",
+            role: "Integration Engineer",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Electrical and Electronics",
+        members: [
+          {
+            name: "Oliver Wilkins",
+            role: "Electrical Lead",
+            link: "",
+          },
+          {
+            name: "Pete Walker",
+            role: "Powertrain Lead",
+            link: "",
+          },
+          {
+            name: "Charlotte Deleay",
+            role: "Sensors and Telemetry",
+            link: "",
+          },
+          {
+            name: "Uvindu Wijesinghe",
+            role: "Driverless Technical Manager, Electronics, Dashboard",
+            link: "",
+          },
+          {
+            name: "Glen Chadburn",
+            role: "Electronics",
+            link: "",
+          },
+          {
+            name: "Alex Dyer",
+            role: "Electronics",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Artificial Intelligence",
+        members: [
+          {
+            name: "Eduard Gascon",
+            role: "Autonomous Systems Project Manager",
+            link: "https://www.linkedin.com/in/eduardgascon/",
+          },
+        ],
+      },
+      {
+        category: "Commercial",
+        members: [
+          {
+            name: "Sofya Morozova",
+            role: "Sponsorships",
+            link: "https://www.linkedin.com/in/sofya-morozova-114758150/",
+          },
+          {
+            name: "Samuel Akinwumi",
+            role: "Photography/Videography",
+            link: "https://www.linkedin.com/in/samuel-akinwumi-abb22a88/",
+          },
+          {
+            name: "Bassel Ghazali",
+            role: "Photography",
+            link: "https://www.linkedin.com/in/basselghazali/",
+          },
+          {
+            name: "Fred Millman",
+            role: "Web Development/Design",
+            link: "https://www.linkedin.com/in/fjmillman/",
+          },
+        ],
+      },
+    ],
   },
   {
     year: 2018,
