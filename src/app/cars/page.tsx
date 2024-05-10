@@ -24,7 +24,7 @@ export default function Page() {
               alt={c.name}
               width={400}
               height={200}
-              className="rounded-lg border-transparent group-hover:border-tbre-yellow border-4"
+              className="rounded-xl border-transparent group-hover:border-tbre-yellow border-4"
             />
             <div className="mt-2 flex justify-between items-center">
               <h2 className="font-semibold text-2xl">{c.name}</h2>

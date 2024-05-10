@@ -15,6 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-black border-b-8 border-tbre-yellow">
+      {/* <nav className="bg-tbre-blue-cool border-b-8 border-tbre-yellow"> */}
       {/*  Logo + desktop + mobile button */}
       <div className="w-full lg:w-4/5 mx-auto flex justify-between items-center px-4">
         {/* Logo link */}
@@ -24,6 +25,7 @@ export default function Navbar() {
             alt="tbre logo"
             width={200}
             height={200}
+            // className="filter grayscale"
           />
         </Link>
 

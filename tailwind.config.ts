@@ -9,8 +9,8 @@ export default {
         "tbre-blue": "#105BAB",
         "tbre-yellow": "#FFC423",
         // COOL
-        // "tbre-blue": "#1F2B46",
-        // "tbre-yellow": "#F0B323",
+        "tbre-blue-cool": "#1F2B46",
+        "tbre-yellow-cool": "#F0B323",
       },
     },
   },

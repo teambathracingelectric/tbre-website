@@ -53,7 +53,7 @@ export default function Page() {
             alt="Car"
             width={1920}
             height={1080}
-            className="rounded-md md:w-1/2"
+            className="rounded-xl md:w-1/2 border-transparent hover:border-tbre-yellow border-4 transition-all hover:translate-x-2 hover:-translate-y-2"
           />
         </div>
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
@@ -62,7 +62,7 @@ export default function Page() {
             alt="Car"
             width={1920}
             height={1080}
-            className="rounded-md md:w-1/2"
+            className="rounded-xl md:w-1/2 border-transparent hover:border-tbre-yellow border-4 transition-all hover:translate-x-2 hover:-translate-y-2"
           />
           <p>
             We take pride in our consistent position as one of the foremost
@@ -78,10 +78,10 @@ export default function Page() {
         </div>
       </section>
       <br />
-      <section className=" bg-tbre-yellow p-16 text-white">
+      <section className="bg-tbre-yellow p-16 text-white">
         <h2 className="text-4xl font-semibold text-center">About Us</h2>
         <br />
-        <div className="md:flex gap-16">
+        <div className="md:flex gap-16 md:w-2/3 mx-auto">
           <p className="flex-1">
             Team Bath Racing Electric (TBRe) was founded in 2015. We are an
             exciting and innovative student motorsport team based at the
@@ -120,7 +120,7 @@ export default function Page() {
             alt="Our Achievements"
             width={1920}
             height={1080}
-            className="rounded-md md:w-1/2"
+            className="rounded-xl md:w-1/2 border-transparent hover:border-tbre-yellow border-4 transition-all hover:translate-x-2 hover:-translate-y-2"
           />
           <div>
             <h3 className="text-2xl font-semibold">Our Achievements</h3>
@@ -151,7 +151,7 @@ export default function Page() {
             alt="Our Members"
             width={1920}
             height={1080}
-            className="rounded-md md:w-1/2"
+            className="rounded-xl md:w-1/2 border-transparent hover:border-tbre-yellow border-4 transition-all hover:translate-x-2 hover:-translate-y-2"
           />
         </div>
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap md:flex-nowrap">
@@ -160,7 +160,7 @@ export default function Page() {
             alt="Our Sponsors"
             width={1920}
             height={1080}
-            className="rounded-md md:w-1/2"
+            className="rounded-xl md:w-1/2 border-transparent hover:border-tbre-yellow border-4 transition-all hover:translate-x-2 hover:-translate-y-2"
           />
           <div>
             <h3 className="text-2xl font-semibold">Our Sponsors</h3>
