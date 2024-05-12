@@ -8,6 +8,8 @@ export type Sponsor = {
   imageOther?: string;
 };
 
+// TODO: get list of sponsors
+
 const sponsorsData: {
   level: string;
   sponsors: Sponsor[];

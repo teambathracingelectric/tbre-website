@@ -16,6 +16,8 @@ export type Car = {
   model?: string;
 };
 
+// TODO: move cars to separate files
+
 const carsData: Car[] = [
   {
     year: 2023,

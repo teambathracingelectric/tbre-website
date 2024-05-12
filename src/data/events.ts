@@ -4,6 +4,8 @@ type Event = {
   type?: string;
 };
 
+// TODO: get list of upcoming events
+
 const eventsData: Event[] = [
   {
     name: "FS UK",

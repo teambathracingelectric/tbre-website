@@ -1,3 +1,5 @@
+// TODO: get list of stats
+
 const statsData: {
   members: number;
   departments: number;
