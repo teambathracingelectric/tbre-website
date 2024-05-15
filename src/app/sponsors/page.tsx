@@ -24,10 +24,10 @@ export default function Page() {
         <div className="flex gap-8 p-16 group flex-wrap md:flex-nowrap">
           <div className="md:w-3/5 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
             <Image
-              src={sponsorsData[0].sponsors[0].imageOther!}
+              src={sponsorsData[0].sponsors[0].image!}
               alt="TBRe"
-              width={sponsorsData[0].sponsors[0].imageWidth}
-              height={sponsorsData[0].sponsors[0].imageHeight}
+              width={sponsorsData[0].sponsors[0].logoWidth}
+              height={sponsorsData[0].sponsors[0].logoHeight}
               className="w-full transition-all group-hover:scale-105"
             />
           </div>
@@ -64,7 +64,7 @@ export default function Page() {
               >
                 <div>
                   <Image
-                    src={sponsor.imageOther!}
+                    src={sponsor.image!}
                     alt={sponsor.name}
                     width={400}
                     height={200}

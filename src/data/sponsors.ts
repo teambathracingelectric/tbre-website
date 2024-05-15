@@ -1,14 +1,14 @@
 export type Sponsor = {
   name: string;
   link: string;
-  image: string;
-  imageHeight: number;
-  imageWidth: number;
+  logo: string;
+  logoHeight: number;
+  logoWidth: number;
   description?: string;
-  imageOther?: string;
+  image?: string;
 };
 
-// TODO: get list of sponsors
+// TODO: add donations
 
 const sponsorsData: {
   level: string;
@@ -18,19 +18,17 @@ const sponsorsData: {
     level: "Title Sponsor",
     sponsors: [
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 200,
-        imageWidth: 400,
+        name: "Rotork",
+        link: "https://rotork.com",
+        logo: "/sponsors/rotork.svg",
+        logoHeight: 200,
+        logoWidth: 400,
         description: `
-          Team Bath Racing Electric (TBRe) is a student-led electric racing team
-          based at the University of Bath. We design, build, and race an electric
-          single-seater racing car to compete in the Formula Student competition.
-          Our team is made up of students from a variety of disciplines, including
-          engineering, business, and design.
+        Rotork is a market-leading global provider of mission-critical flow control and instrumentation solutions for the industrial actuation and flow control markets, with a purpose of "Keeping the World Flowing for Future Generations".
+        As our title sponsor, Rotork is providing us with a financial donation along with technical and marketing support, all contributing to the overall production of our car and TBRe's success!
+        We look forward to this partnership in the 2024 season!
         `,
-        imageOther: "/sponsors/tbre-other.jpg",
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
@@ -40,26 +38,59 @@ const sponsorsData: {
   },
   {
     level: "Platinum Sponsors",
-    sponsors: [],
+    sponsors: [
+      {
+        name: "Mewburn Ellis",
+        link: "https://mewburn.com",
+        logo: "/sponsors/mewburn-ellis.webp",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
+        name: "Zuken",
+        link: "https://zuken.com",
+        logo: "/sponsors/zuken.svg",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
+        name: "MPC DesignWorks",
+        link: "https://mpcdesignworks.com",
+        logo: "/sponsors/mpc.png",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
+        name: "Multimatic",
+        link: "https://multimatic.com",
+        logo: "/sponsors/multimatic.png",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
+        name: "Vector",
+        link: "https://vector.com",
+        logo: "/sponsors/vector.png",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
+      },
+    ],
   },
   {
     level: "Gold Sponsors",
     sponsors: [
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 100,
-        imageWidth: 200,
-        imageOther: "/sponsors/tbre-other.jpg",
-      },
-      {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 100,
-        imageWidth: 200,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Babcock",
+        link: "https://babcockinternational.com",
+        logo: "/sponsors/babcock.svg",
+        logoHeight: 100,
+        logoWidth: 200,
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
@@ -67,36 +98,44 @@ const sponsorsData: {
     level: "Silver Sponsors",
     sponsors: [
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 75,
-        imageWidth: 150,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "AB Dynamics",
+        link: "https://abdynamics.com/",
+        logo: "/sponsors/ab-dynamics.png",
+        logoHeight: 75,
+        logoWidth: 150,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 75,
-        imageWidth: 150,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Newbury Electronics",
+        link: "https://newburyelectronics.co.uk/",
+        logo: "/sponsors/newbury-electronics.svg",
+        logoHeight: 75,
+        logoWidth: 150,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 75,
-        imageWidth: 150,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Altium",
+        link: "https://altium.com",
+        logo: "/sponsors/altium.png",
+        logoHeight: 75,
+        logoWidth: 150,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 75,
-        imageWidth: 150,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Ansys",
+        link: "https://ansys.com",
+        logo: "/sponsors/ansys.svg",
+        logoHeight: 75,
+        logoWidth: 150,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
+        name: "Brunner",
+        link: "https://brunner-uk.com",
+        logo: "/sponsors/brunner.webp",
+        logoHeight: 75,
+        logoWidth: 150,
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
@@ -104,36 +143,36 @@ const sponsorsData: {
     level: "Bronze Sponsors",
     sponsors: [
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 50,
-        imageWidth: 100,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Redbull",
+        link: "https://redbull.com",
+        logo: "/sponsors/redbull.svg",
+        logoHeight: 50,
+        logoWidth: 100,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 50,
-        imageWidth: 100,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Accu",
+        link: "https://accu.co.uk",
+        logo: "/sponsors/accu.webp",
+        logoHeight: 50,
+        logoWidth: 100,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 50,
-        imageWidth: 100,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Renishaw",
+        link: "https://renishaw.com",
+        logo: "/sponsors/renishaw.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        image: "/sponsors/tbre-image.jpg",
       },
       {
-        name: "TBRe",
-        link: "https://teambathracingelectric.com",
-        image: "/sponsors/tbre.png",
-        imageHeight: 50,
-        imageWidth: 100,
-        imageOther: "/sponsors/tbre-other.jpg",
+        name: "Get It Made",
+        link: "https://get-it-made.co.uk/",
+        logo: "/sponsors/get-it-made.svg",
+        logoHeight: 50,
+        logoWidth: 100,
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
