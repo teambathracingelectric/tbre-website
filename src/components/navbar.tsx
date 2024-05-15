@@ -8,6 +8,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+// TODO: black bg and coloured logo or blue bg and white logo?
+
 export default function Navbar() {
   const pathname = usePathname();
 
@@ -15,17 +17,19 @@ export default function Navbar() {
 
   return (
     <nav className="bg-black border-b-8 border-tbre-yellow">
-      {/* <nav className="bg-tbre-blue-cool border-b-8 border-tbre-yellow"> */}
+      {/* <nav className="bg-tbre-blue border-b-8 border-tbre-yellow"> */}
       {/*  Logo + desktop + mobile button */}
       <div className="w-full lg:w-4/5 mx-auto flex justify-between items-center px-4">
         {/* Logo link */}
         <Link href="/">
           <Image
             src="/tbre_logo_colour.png"
+            // src="/tbre_logo_white.png"
             alt="tbre logo"
             width={200}
             height={200}
-            // className="filter grayscale"
+            className="filter grayscale"
+          // className="py-4"
           />
         </Link>
 
