@@ -1,4 +1,4 @@
-import sponsorsData from "@/data/sponsors";
+import { donationData, sponsorsData } from "@/data/sponsors";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -78,15 +78,28 @@ export default function Page() {
             )),
           )}
         </div>
+        <br />
+        <h2 className="px-16 text-4xl font-extrabold">Donations</h2>
+        <div className="p-16 flex flex-wrap gap-4">
+          {donationData.map((donator) => (
+            <p
+              key={donator}
+              className="ml-2 font-bold text-lg group-hover:underline decoration-tbre-yellow"
+            >
+              {donator}
+            </p>
+          ))}
+        </div>
       </section>
       <br />
       <section className="p-16">
-        <h2 className="text-4xl font-extrabold">Apply to sponsor us</h2>
+        <h2 className="text-4xl font-extrabold">
+          Interested in sponsoring us?
+        </h2>
         <br />
         <p>
-          Interested in sponsoring us? Get in touch to find out more about
-          supporting our team. More information about the team is provided in
-          our new prospectus: Sponsorship Prospectus 2023/24
+          Get in touch to find out more about supporting our team. More
+          information about the team is provided in our new prospectus.
         </p>
         <br />
         {/* TODO: get download link working */}

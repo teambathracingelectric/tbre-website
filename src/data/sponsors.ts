@@ -8,9 +8,7 @@ export type Sponsor = {
   image?: string;
 };
 
-// TODO: add donations
-
-const sponsorsData: {
+export const sponsorsData: {
   level: string;
   sponsors: Sponsor[];
 }[] = [
@@ -45,6 +43,10 @@ const sponsorsData: {
         logo: "/sponsors/mewburn-ellis.webp",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        Mewburn Ellis is one of Europe's top specialist Intellectual Property firms, providing strategic advice to maximise the potential of their clients IP as an asset, increasing the value of businesses.
+        As a platinum sponsor, Mewburn Ellis offer us a generous financial deliverable contributing to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -53,6 +55,10 @@ const sponsorsData: {
         logo: "/sponsors/zuken.svg",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        Zuken is a global software company offering advanced design solutions for the creation and management of PCB designs, electrical and fluid systems and 3D cabinet and wire harness layouts.
+        As a platinum sponsor Zuken offer us E3 Software a leading single-platform electrical CAD software capable of taking a design from concept to manufacture, which will contribute to the overall design and production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -61,6 +67,10 @@ const sponsorsData: {
         logo: "/sponsors/mpc.png",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        MPC DesignWorks is an engineering and design company specialised in advanced composites, providing multidisciplinary product development and production-oriented design services to the automotive industry.
+        As a platinum sponsor MPC DesignWorks offer us technical consulting which will contribute to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -69,6 +79,11 @@ const sponsorsData: {
         logo: "/sponsors/multimatic.png",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        Multimatic are suppliers of innovative automotive components, systems and engineering services worldwide.
+        Multimatic aim to solve their customers' problems through their know-how, embedded in the products and services they sell.
+        As a platinum sponsor, Multimatic offer us support contributing to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -77,6 +92,11 @@ const sponsorsData: {
         logo: "/sponsors/vector.png",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        Vector is the leading manufacturer of software tools and embedded components for the development of electronic systems and their networking with many different systems from CAN to Automotive Ethernet.
+        Vector's mission is to simplify the development of automotive electronics with solutions made for engineers, by engineers.
+        As a Platinum sponsor Vector generously offer us software, hardware and training which all contributes to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
@@ -90,6 +110,12 @@ const sponsorsData: {
         logo: "/sponsors/babcock.svg",
         logoHeight: 100,
         logoWidth: 200,
+        description: `
+        Babcock design and manufacture specialist defence and civil equipment, from ships and submarine components to liquid gas and weapons handling systems.
+        They provide through-life technical and engineering support for their customers' assets, delivering improvements in performance, availability and programme cost.
+        Babcock's purpose is to create a safe and secure world, together.
+        As a gold sponsor, Babcock offer us a financial deliverable, which assists with the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
@@ -103,6 +129,10 @@ const sponsorsData: {
         logo: "/sponsors/ab-dynamics.png",
         logoHeight: 75,
         logoWidth: 150,
+        description: `
+        AB Dynamics is one of the world’s leading specialists in automotive test systems, developing cutting-edge products and solutions for customers which include all the major automotive brands, high-tech autonomous vehicle developers, motorsport racing teams, and global test facilities.
+        As a silver sponsor, AB Dynamics offer us a financial deliverable, which assists with the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -111,6 +141,10 @@ const sponsorsData: {
         logo: "/sponsors/newbury-electronics.svg",
         logoHeight: 75,
         logoWidth: 150,
+        description: `
+        Newbury Electrics (PCB Train) are a leading PCB manufacturer with over 60 years of experience designing and assembling PCBs.
+        As a silver sponsor, Newbury Electronics offer us website credit to be able to spend of PCB technology for our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -119,6 +153,10 @@ const sponsorsData: {
         logo: "/sponsors/altium.png",
         logoHeight: 75,
         logoWidth: 150,
+        description: `
+        Altium are the #1 choice for PCB designers worldwide and have years experience creating software tools to empower designers and manufacturers to create products more efficiently.
+        As a silver sponsor, Altium offer is a software license, allowing us to design the best possible PCBs for our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -127,6 +165,10 @@ const sponsorsData: {
         logo: "/sponsors/ansys.svg",
         logoHeight: 75,
         logoWidth: 150,
+        description: `
+        Ansys are innovators in the simulation software engineering space, with over 50 years experience pushing the boundaries of the predictive power of simulation.
+        As a silver sponsor, Ansys offer us a software license, allowing us to design simulations assisting with the designing of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -135,6 +177,10 @@ const sponsorsData: {
         logo: "/sponsors/brunner.webp",
         logoHeight: 75,
         logoWidth: 150,
+        description: `
+        Brunner are a UK-based furniture manufacturer, focused on state-of-the-art designs which help to transform the workplaces of numerous high-profile clients all around the world.
+        As a silver sponsor, Brunner offer us a financial deliverable, which assists with the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
@@ -148,6 +194,10 @@ const sponsorsData: {
         logo: "/sponsors/redbull.svg",
         logoHeight: 50,
         logoWidth: 100,
+        description: `
+        Red Bull are a global brand, who started manufacturing energy drinks in 1987, and have since made groundbreaking steps into new ventures, including the creation of a Formula One racing team.
+        As a bronze sponsor, Red Bull provide us with their award-winning energy drinks, giving us enough energy to put maximum effort into the creation of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -156,6 +206,10 @@ const sponsorsData: {
         logo: "/sponsors/accu.webp",
         logoHeight: 50,
         logoWidth: 100,
+        description: `
+        Accu is a UK based, high precision engineering company specialising in small mechanical components and sub-assemblies.
+        Accu offer us website credit, allowing us to order mechanical components which go into the creation of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -164,6 +218,10 @@ const sponsorsData: {
         logo: "/sponsors/renishaw.png",
         logoHeight: 50,
         logoWidth: 100,
+        description: `
+        Renishaw are an internationally focused company, skilled in many sectors, including motion control and manufacturing.
+        As a bronze sponsor, Renishaw offer us a discount on their metal manufacturing, which allow us to ensure we have the skills needed to build our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -172,6 +230,10 @@ const sponsorsData: {
         logo: "/sponsors/get-it-made.svg",
         logoHeight: 50,
         logoWidth: 100,
+        description: `
+        Get It Made are a manufacturer, specialising in bespoke metal and plastic parts, tailor-made for unique engineering projects.
+        As a bronze sponsor, Get It Made offer us a generous discount on their metal materials, which go into the creation of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
@@ -182,4 +244,7 @@ const sponsorsData: {
   },
 ];
 
-export default sponsorsData;
+export const donationData: string[] = [
+  "Professor Gary Hawley",
+  "Mr. Bob Rogers",
+];

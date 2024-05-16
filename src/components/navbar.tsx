@@ -29,7 +29,7 @@ export default function Navbar() {
             width={200}
             height={200}
             className="filter grayscale"
-          // className="py-4"
+            // className="py-4"
           />
         </Link>
 

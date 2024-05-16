@@ -1,4 +1,4 @@
-import sponsorsData from "@/data/sponsors";
+import { sponsorsData } from "@/data/sponsors";
 import Image from "next/image";
 
 export default function SponsorsFooterSection() {
@@ -12,7 +12,7 @@ export default function SponsorsFooterSection() {
             <h3 className="max-w-sm w-full font-bold text-2xl">
               {sponsorLevel.level}
             </h3>
-            <div className="flex flex-wrap gap-x-8 justify-center md:justify-start items-center">
+            <div className="flex flex-wrap gap-8 justify-center md:justify-start items-center">
               {sponsorLevel.sponsors.map((sponsor) => (
                 <a
                   key={sponsor.name}
