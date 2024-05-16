@@ -28,7 +28,7 @@ export default function Navbar() {
             alt="tbre logo"
             width={200}
             height={200}
-            className="filter grayscale"
+            // className="filter grayscale"
             // className="py-4"
           />
         </Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen((p) => !p)}
-          className="md:hidden flex items-center justify-center p-2 rounded-md text-white"
+          className="md:hidden flex items-center justify-center p-2 rounded-md text-white transition-all"
         >
           {isOpen ? <XIcon /> : <MenuIcon />}
         </button>
