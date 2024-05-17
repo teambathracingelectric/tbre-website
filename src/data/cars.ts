@@ -18,7 +18,7 @@ export type Car = {
 
 // TODO: move cars to separate files
 
-const carsData: Car[] = [
+export const carsData: Car[] = [
   {
     year: 2023,
     name: "TBRe23",
@@ -414,5 +414,3 @@ This redundancy was integral to success and the teams build not buy mentality sh
     image: "/cars/2016/car.jpg",
   },
 ];
-
-export default carsData;

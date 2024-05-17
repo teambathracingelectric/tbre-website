@@ -1,4 +1,5 @@
 export type Sponsor = {
+  id: string;
   name: string;
   link: string;
   logo: string;
@@ -8,6 +9,7 @@ export type Sponsor = {
   image?: string;
 };
 
+// TODO: refactor this to have typed sponsor levels
 export const sponsorsData: {
   level: string;
   sponsors: Sponsor[];
@@ -16,6 +18,7 @@ export const sponsorsData: {
     level: "Title Sponsor",
     sponsors: [
       {
+        id: "rotork",
         name: "Rotork",
         link: "https://rotork.com",
         logo: "/sponsors/rotork.svg",
@@ -38,6 +41,7 @@ export const sponsorsData: {
     level: "Platinum Sponsors",
     sponsors: [
       {
+        id: "mewburn-ellis",
         name: "Mewburn Ellis",
         link: "https://mewburn.com",
         logo: "/sponsors/mewburn-ellis.webp",
@@ -50,6 +54,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "zuken",
         name: "Zuken",
         link: "https://zuken.com",
         logo: "/sponsors/zuken.svg",
@@ -62,6 +67,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "mpc-designworks",
         name: "MPC DesignWorks",
         link: "https://mpcdesignworks.com",
         logo: "/sponsors/mpc.png",
@@ -74,6 +80,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "multimatic",
         name: "Multimatic",
         link: "https://multimatic.com",
         logo: "/sponsors/multimatic.png",
@@ -87,6 +94,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "vector",
         name: "Vector",
         link: "https://vector.com",
         logo: "/sponsors/vector.png",
@@ -105,6 +113,7 @@ export const sponsorsData: {
     level: "Gold Sponsors",
     sponsors: [
       {
+        id: "babcock",
         name: "Babcock",
         link: "https://babcockinternational.com",
         logo: "/sponsors/babcock.svg",
@@ -124,6 +133,7 @@ export const sponsorsData: {
     level: "Silver Sponsors",
     sponsors: [
       {
+        id: "ab-dynamics",
         name: "AB Dynamics",
         link: "https://abdynamics.com/",
         logo: "/sponsors/ab-dynamics.png",
@@ -136,6 +146,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "newbury-electronics",
         name: "Newbury Electronics",
         link: "https://newburyelectronics.co.uk/",
         logo: "/sponsors/newbury-electronics.svg",
@@ -148,6 +159,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "altium",
         name: "Altium",
         link: "https://altium.com",
         logo: "/sponsors/altium.png",
@@ -160,6 +172,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "ansys",
         name: "Ansys",
         link: "https://ansys.com",
         logo: "/sponsors/ansys.svg",
@@ -172,6 +185,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "brunner",
         name: "Brunner",
         link: "https://brunner-uk.com",
         logo: "/sponsors/brunner.webp",
@@ -189,6 +203,7 @@ export const sponsorsData: {
     level: "Bronze Sponsors",
     sponsors: [
       {
+        id: "redbull",
         name: "Redbull",
         link: "https://redbull.com",
         logo: "/sponsors/redbull.svg",
@@ -201,6 +216,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "accu",
         name: "Accu",
         link: "https://accu.co.uk",
         logo: "/sponsors/accu.webp",
@@ -213,6 +229,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "renishaw",
         name: "Renishaw",
         link: "https://renishaw.com",
         logo: "/sponsors/renishaw.png",
@@ -225,6 +242,7 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
+        id: "get-it-made",
         name: "Get It Made",
         link: "https://get-it-made.co.uk/",
         logo: "/sponsors/get-it-made.svg",

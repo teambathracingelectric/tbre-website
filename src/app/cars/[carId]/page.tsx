@@ -1,7 +1,7 @@
 import CarModel from "@/components/car-model";
 import ResultsSection from "@/components/results-section";
 import TeamSection from "@/components/team-section";
-import carsData from "@/data/cars";
+import { carsData } from "@/data/cars";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
