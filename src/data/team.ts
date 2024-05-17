@@ -40,7 +40,7 @@ const teamData: Team = [
       {
         name: "Joao Maria Jorge",
         role: "Head of Chassis",
-        link: "https://www.linkedin.com/in/joao-maria-jorge/",
+        link: "https://linkedin.com/in/joao-maria-jorge/",
         image: "/team/2023/joao_maria_jorge.jpeg",
       },
       {
@@ -231,22 +231,22 @@ const teamData: Team = [
     members: [
       {
         name: "Dr. Christopher Vagg",
-        link: "https://www.linkedin.com/in/chrisvagg/",
+        link: "https://linkedin.com/in/chrisvagg/",
         image: "/team/2023/dr_christopher_vagg.jpeg",
       },
       {
         name: "Dr. Benjamin Metcalfe",
-        link: "https://www.linkedin.com/in/benjamin-metcalfe-021a3554/",
+        link: "https://linkedin.com/in/benjamin-metcalfe-021a3554/",
         image: "/team/2023/dr_benjamin_metcalfe.jpeg",
       },
       {
         name: "Dr. Jonathan Graham-Harper Cater",
-        link: "https://www.linkedin.com/in/jonathan-graham-harper-cater/",
+        link: "https://linkedin.com/in/jonathan-graham-harper-cater/",
         image: "/team/2023/dr_jonathan_graham-harper_cater.jpeg",
       },
       {
         name: "Dr. Pedram Asef",
-        link: "https://www.linkedin.com/in/pedram-asef-350870b8/",
+        link: "https://linkedin.com/in/pedram-asef-350870b8/",
         image: "/team/2023/dr_pedram_asef.jpeg",
       },
     ],

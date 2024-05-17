@@ -138,7 +138,7 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Kieran Shopland",
             role: "Project Manager",
-            link: "https://www.linkedin.com/in/kieran-shopland-3b791110a/",
+            link: "https://linkedin.com/in/kieran-shopland-3b791110a/",
           },
           {
             name: "Ben Carretta",
@@ -243,7 +243,7 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Eduard Gascon",
             role: "Autonomous Systems Project Manager",
-            link: "https://www.linkedin.com/in/eduardgascon/",
+            link: "https://linkedin.com/in/eduardgascon/",
           },
         ],
       },
@@ -253,22 +253,22 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Sofya Morozova",
             role: "Sponsorships",
-            link: "https://www.linkedin.com/in/sofya-morozova-114758150/",
+            link: "https://linkedin.com/in/sofya-morozova-114758150/",
           },
           {
             name: "Samuel Akinwumi",
             role: "Photography/Videography",
-            link: "https://www.linkedin.com/in/samuel-akinwumi-abb22a88/",
+            link: "https://linkedin.com/in/samuel-akinwumi-abb22a88/",
           },
           {
             name: "Bassel Ghazali",
             role: "Photography",
-            link: "https://www.linkedin.com/in/basselghazali/",
+            link: "https://linkedin.com/in/basselghazali/",
           },
           {
             name: "Fred Millman",
             role: "Web Development/Design",
-            link: "https://www.linkedin.com/in/fjmillman/",
+            link: "https://linkedin.com/in/fjmillman/",
           },
         ],
       },
