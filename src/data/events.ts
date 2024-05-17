@@ -5,9 +5,7 @@ type Event = {
   type?: string;
 };
 
-// TODO: add duration to these events
-
-const eventsData: Event[] = [
+export const eventsData: Event[] = [
   {
     name: "FS UK",
     date: new Date("2024-07-17"),
@@ -27,5 +25,3 @@ const eventsData: Event[] = [
     type: "Competition",
   },
 ];
-
-export default eventsData;

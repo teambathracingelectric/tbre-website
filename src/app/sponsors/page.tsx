@@ -15,11 +15,8 @@ export default function Page() {
       <p className="md:w-1/2 p-4">
         Meet our stunning sponsors. We work closely with each of our sponsors to
         ensure a mutually beneficial relationship, with many of our team alumni
-        choosing our sponsors as graduate employers. Get in touch to find out
-        more about supporting our team. More information about the team is
-        provided in our new prospectus: Sponsorship Prospectus 2023/24
+        choosing our sponsors as graduate employers.
       </p>
-      <br />
       <section>
         <div className="flex gap-8 p-16 group flex-wrap md:flex-nowrap">
           <div className="md:w-3/5 rounded-3xl group-hover:border-4 border-tbre-yellow transition-all overflow-hidden">
@@ -91,7 +88,6 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <br />
       <section className="p-16">
         <h2 className="text-4xl font-extrabold">
           Interested in sponsoring us?
