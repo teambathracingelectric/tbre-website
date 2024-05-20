@@ -29,7 +29,7 @@ const teamData: Team = [
       {
         name: "Alexandre About",
         role: "Technical Director",
-        link: "https://linkedin.com/in/alexandra-sharankova-396991176/",
+        link: "https://linkedin.com/in/alexandre-about-a3a6031b0/",
         image: "/team/2023/alexandre_about.jpeg",
       },
     ],
