@@ -19,6 +19,16 @@ export const metadata: Metadata = {
   },
   description:
     "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
+  openGraph: {
+    images: [
+      {
+        url: new URL(
+          "/tbre_logo_colour.png",
+          process.env.NEXT_PUBLIC_BASE_URL,
+        ).toString(),
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
