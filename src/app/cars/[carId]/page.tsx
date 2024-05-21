@@ -13,13 +13,15 @@ type Params = {
 export function generateMetadata({ params }: { params: Params }): Metadata {
   return {
     title: `${params.carId} Car`,
+    description: `The ${params.carId} car.`,
     openGraph: {
       images: [
         {
           url: new URL(
-            `/cars/${params.carId}/car.jpg`,
-            process.env.NEXT_PUBLIC_BASE_URL,
-          ).toString(),
+            `https://tbre.tomheaton.dev/cars/${params.carId}/car.jpg`,
+            // `/cars/${params.carId}/car.jpg`,
+            // process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
+          ),
         },
       ],
     },

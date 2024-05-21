@@ -23,9 +23,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: new URL(
-          "/tbre_logo_colour.png",
-          process.env.NEXT_PUBLIC_BASE_URL,
-        ).toString(),
+          "https://tbre.tomheaton.dev/tbre_logo_colour.png",
+          // "/tbre_logo_colour.png",
+          // process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
+        ),
       },
     ],
   },
