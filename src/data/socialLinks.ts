@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const socialLinks: { name: string; href: string; icon: IconType }[] = [
+export const socialLinks: { name: string; href: string; icon: IconType }[] = [
   {
     name: "LinkedIn",
     href: "https://linkedin.com/company/team-bath-racing-electric/",
@@ -40,5 +40,3 @@ const socialLinks: { name: string; href: string; icon: IconType }[] = [
     icon: FaYoutube,
   },
 ];
-
-export default socialLinks;

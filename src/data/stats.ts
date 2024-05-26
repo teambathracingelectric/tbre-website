@@ -1,6 +1,6 @@
 // TODO: get list of stats
 
-const statsData: {
+export const statsData: {
   members: number;
   departments: number;
   years: number;
@@ -11,5 +11,3 @@ const statsData: {
   years: 15,
   prototypes: 10,
 };
-
-export default statsData;

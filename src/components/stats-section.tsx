@@ -1,4 +1,4 @@
-import statsData from "@/data/stats";
+import { statsData } from "@/data/stats";
 
 export default function StatsSection() {
   return (

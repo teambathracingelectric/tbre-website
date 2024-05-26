@@ -1,4 +1,4 @@
-const navLinks: { name: string; href: string }[] = [
+export const navigationLinks: { name: string; href: string }[] = [
   // { name: "About", href: "/about" },
   { name: "Team", href: "/team" },
   { name: "Cars", href: "/cars" },
@@ -6,5 +6,3 @@ const navLinks: { name: string; href: string }[] = [
   // { name: "Gallery", href: "/gallery" },
   // { name: "Contact", href: "/contact" },
 ];
-
-export default navLinks;

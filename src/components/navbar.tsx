@@ -1,6 +1,6 @@
 "use client";
 
-import navLinks from "@/data/navLinks";
+import { navigationLinks } from "@/data/navigationLinks";
 import { cn } from "@/utils";
 import { MenuIcon, XIcon } from "lucide-react";
 import Image from "next/image";
@@ -35,7 +35,7 @@ export default function Navbar() {
 
         {/* Desktop navigation menu */}
         <div className="hidden md:flex space-x-2 items-center">
-          {navLinks.map((link) => (
+          {navigationLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
@@ -66,7 +66,7 @@ export default function Navbar() {
           isOpen ? "block" : "hidden",
         )}
       >
-        {navLinks.map((link) => (
+        {navigationLinks.map((link) => (
           <Link
             key={link.name}
             href={link.href}

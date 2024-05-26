@@ -1,5 +1,5 @@
-// import navLinks from "@/data/navLinks";
-import socialLinks from "@/data/socialLinks";
+// import { navigationLinks } from "@/data/navLinks";
+import { socialLinks } from "@/data/socialLinks";
 import Image from "next/image";
 import Link from "next/link";
 
