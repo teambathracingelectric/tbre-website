@@ -72,17 +72,17 @@ export const carsData: Car[] = [
           {
             name: "Akshay Khanna",
             role: "Team Principal",
-            link: "",
+            link: "https://www.linkedin.com/in/akshay-khanna-uniofbath/",
           },
           {
             name: "Eddie Waggot",
             role: "Technical Director",
-            link: "",
+            link: "https://www.linkedin.com/in/edwardwaggott/",
           },
           {
             name: "Adam Meyohas",
             role: "AI Team Principal",
-            link: "",
+            link: "https://www.linkedin.com/in/adam-meyohas/",
           },
         ],
       },
@@ -92,17 +92,16 @@ export const carsData: Car[] = [
           {
             name: "Liam Neary",
             role: "Head of Vehicle Dynamics",
-            link: "",
+            link: "https://www.linkedin.com/in/liam-neary023/",
           },
           {
             name: "Scott van Breda",
             role: "Driver",
-            link: "",
+            link: "https://www.linkedin.com/in/scottvanbreda/",
           },
           {
             name: "Ben Shellie",
-            role: "",
-            link: "",
+            link: "https://www.linkedin.com/in/ben-shellie/",
           },
         ],
       },
@@ -112,7 +111,7 @@ export const carsData: Car[] = [
           {
             name: "Ben Liddington",
             role: "Head of Chassis",
-            link: "",
+            link: "https://www.linkedin.com/in/benliddington/",
           },
         ],
       },
@@ -122,7 +121,7 @@ export const carsData: Car[] = [
           {
             name: "James Wilton",
             role: "Head of Powertrain",
-            link: "",
+            link: "https://www.linkedin.com/in/james-wilton/",
           },
         ],
       },
@@ -132,16 +131,20 @@ export const carsData: Car[] = [
           {
             name: "Glen Chadburn",
             role: "Head of Electrical Systems",
+            link: "https://www.linkedin.com/in/glen-chadburn/",
           },
           {
             name: "Luke Crutchley",
             role: "Head of Electrical Powertrain Development",
+            link: "https://www.linkedin.com/in/luke-crutchley/",
           },
           {
             name: "David Cleland",
+            link: "https://www.linkedin.com/in/david-cleland-aa5187244/",
           },
           {
             name: "Harley Mak",
+            link: "https://www.linkedin.com/in/hau-lai-harley-mak-5b9b681b2/",
           },
         ],
       },
@@ -150,12 +153,15 @@ export const carsData: Car[] = [
         members: [
           {
             name: "Jacob Collinson",
+            link: "https://www.linkedin.com/in/jacob-collinson-4877171b7/",
           },
           {
             name: "James Wilson",
+            link: "https://www.linkedin.com/in/james-wilson-677abb209/",
           },
           {
             name: "Callum Hallworth",
+            link: "https://www.linkedin.com/in/callumhallworth/",
           },
         ],
       },
@@ -165,12 +171,15 @@ export const carsData: Car[] = [
           {
             name: "Onish Sutradhar",
             role: "Head of AI Pipeline Development",
+            link: "https://www.linkedin.com/in/onish-sutradhar-8197b6167/",
           },
           {
             name: "Ricardo Pradi Barbosa",
+            link: "https://www.linkedin.com/in/ricardopradibarbosa/",
           },
           {
             name: "James Macrae",
+            link: "https://www.linkedin.com/in/j-macrae/",
           },
         ],
       },
@@ -179,21 +188,27 @@ export const carsData: Car[] = [
         members: [
           {
             name: "Dr. Benjamin Metcalfe",
+            link: "https://www.linkedin.com/in/benjamin-metcalfe-021a3554/",
           },
           {
             name: "Dr. Joseph Flynn",
+            link: "https://www.linkedin.com/in/joseph-flynn-70744a15/",
           },
           {
             name: "Prof. Peter Wilson",
+            link: "https://www.linkedin.com/in/peter-wilson-b119111/",
           },
           {
             name: "Dr. Jonathan Graham-Harper-Cater",
+            link: "https://www.linkedin.com/in/jonathan-graham-harper-cater/",
           },
           {
             name: "Dr. Christopher Vagg",
+            link: "https://www.linkedin.com/in/chrisvagg/",
           },
           {
             name: "Dr. Yunjie Gu",
+            link: "https://www.linkedin.com/in/yunjie-gu-698172131/",
           },
         ],
       },
