@@ -291,12 +291,10 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Ben Carretta",
             role: "Technical Manager",
-            link: "",
           },
           {
             name: "Afkar Ansar",
             role: "Business Manager",
-            link: "",
           },
         ],
       },
@@ -306,47 +304,38 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Valerio Pellicciari",
             role: "Chassis Lead",
-            link: "",
           },
           {
             name: "Natalie Kyprianou",
             role: "Battery Lead",
-            link: "",
           },
           {
             name: "Sam Gray",
             role: "Vehicle Dynamics Lead",
-            link: "",
           },
           {
             name: "Oliver Hopkinson",
             role: "Aerodynamics Lead",
-            link: "",
           },
           {
             name: "Kieron Holt",
             role: "Safety Lead",
-            link: "",
           },
           {
             name: "William Taylor",
             role: "Vehicle Dynamics",
-            link: "",
           },
           {
             name: "George Bridgewater",
             role: "Spaceframe",
-            link: "",
           },
           {
             name: "Thomas Coxon",
             role: "Nose Cone, Mechanical",
-            link: "",
           },
           {
             name: "Joe Capper",
             role: "Integration Engineer",
-            link: "",
           },
         ],
       },
@@ -356,32 +345,26 @@ Finally, a lower gear ratio of 3:1 instead of 3.6:1 was implemented due to the t
           {
             name: "Oliver Wilkins",
             role: "Electrical Lead",
-            link: "",
           },
           {
             name: "Pete Walker",
             role: "Powertrain Lead",
-            link: "",
           },
           {
             name: "Charlotte Deleay",
             role: "Sensors and Telemetry",
-            link: "",
           },
           {
             name: "Uvindu Wijesinghe",
             role: "Driverless Technical Manager, Electronics, Dashboard",
-            link: "",
           },
           {
             name: "Glen Chadburn",
             role: "Electronics",
-            link: "",
           },
           {
             name: "Alex Dyer",
             role: "Electronics",
-            link: "",
           },
         ],
       },

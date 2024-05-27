@@ -177,7 +177,6 @@ const teamData: Team = [
       {
         name: "Khayaam Waris",
         role: "Driver Environment Engineer",
-        // image: "/team/2023/khayaam_waris.jpeg",
       },
     ],
   },
