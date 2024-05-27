@@ -65,6 +65,139 @@ export const carsData: Car[] = [
         image: "/cars/2022/fs-spain.jpg",
       },
     ],
+    team: [
+      {
+        category: "Management",
+        members: [
+          {
+            name: "Akshay Khanna",
+            role: "Team Principal",
+            link: "",
+          },
+          {
+            name: "Eddie Waggot",
+            role: "Technical Director",
+            link: "",
+          },
+          {
+            name: "Adam Meyohas",
+            role: "AI Team Principal",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Vehicle Dynamics",
+        members: [
+          {
+            name: "Liam Neary",
+            role: "Head of Vehicle Dynamics",
+            link: "",
+          },
+          {
+            name: "Scott van Breda",
+            role: "Driver",
+            link: "",
+          },
+          {
+            name: "Ben Shellie",
+            role: "",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Chassis",
+        members: [
+          {
+            name: "Ben Liddington",
+            role: "Head of Chassis",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Powertrain",
+        members: [
+          {
+            name: "James Wilton",
+            role: "Head of Powertrain",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Electrical",
+        members: [
+          {
+            name: "Glen Chadburn",
+            role: "Head of Electrical Systems",
+          },
+          {
+            name: "Luke Crutchley",
+            role: "Head of Electrical Powertrain Development",
+          },
+          {
+            name: "David Cleland",
+          },
+          {
+            name: "Harley Mak",
+          },
+        ],
+      },
+      {
+        category: "Aerodynamics",
+        members: [
+          {
+            name: "Jacob Collinson",
+          },
+          {
+            name: "James Wilson",
+          },
+          {
+            name: "Callum Hallworth",
+          },
+        ],
+      },
+      {
+        category: "Driverless",
+        members: [
+          {
+            name: "Onish Sutradhar",
+            role: "Head of AI Pipeline Development",
+          },
+          {
+            name: "Ricardo Pradi Barbosa",
+          },
+          {
+            name: "James Macrae",
+          },
+        ],
+      },
+      {
+        category: "Faculty Advisors",
+        members: [
+          {
+            name: "Dr. Benjamin Metcalfe",
+          },
+          {
+            name: "Dr. Joseph Flynn",
+          },
+          {
+            name: "Prof. Peter Wilson",
+          },
+          {
+            name: "Dr. Jonathan Graham-Harper-Cater",
+          },
+          {
+            name: "Dr. Christopher Vagg",
+          },
+          {
+            name: "Dr. Yunjie Gu",
+          },
+        ],
+      },
+    ],
   },
   {
     year: 2021,
