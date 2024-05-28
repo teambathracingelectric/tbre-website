@@ -16,7 +16,7 @@ export type Team = {
   }[];
 }[];
 
-const teamData: Team = [
+export const teamData: Team = [
   {
     category: "Management",
     members: [
@@ -251,5 +251,3 @@ const teamData: Team = [
     ],
   },
 ];
-
-export default teamData;

@@ -1,4 +1,4 @@
-import teamData, { type Team } from "@/data/team";
+import { teamData, type Team } from "@/data/team";
 
 export type Results = {
   title: string;
