@@ -203,6 +203,17 @@ export const sponsorsData: {
     level: "Bronze Sponsors",
     sponsors: [
       {
+        id: "pro-carve",
+        name: "Pro Carve",
+        link: "https://procarve.co.uk/",
+        logo: "/sponsors/pro-carve.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        description: `
+        Pro Carve provide specialist CNC routing services to designers, engineers, model makers, cabinetmakers and artists, cutting a wide range of materials. As a bronze sponsor, Pro Carve offer us discounts on machining contributing to the overall production of our car!`,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
         id: "redbull",
         name: "Redbull",
         link: "https://redbull.com",
