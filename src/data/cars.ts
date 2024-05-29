@@ -250,6 +250,114 @@ export const carsData: Car[] = [
     forward the team is set to continue challenging the best formula student
     teams in the UK and abroad.
     `,
+    team: [
+      {
+        category: "Management",
+        members: [
+          {
+            name: "Sostafa Ismail",
+            role: "Project Manager",
+            link: "",
+          },
+          {
+            name: "Federica Arcidiaco",
+            role: "Build Manager",
+            link: "",
+          },
+          {
+            name: "Aled Griffiths",
+            role: "Chief Engineer",
+            link: "",
+          },
+          {
+            name: "Alex Dyer",
+            role: "Electrical Lead",
+            link: "",
+          },
+          {
+            name: "Harry Green",
+            role: "Mechanical Integration Lead",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Management",
+        members: [
+          {
+            name: "Pablo Penalosa",
+            role: "Vehicle Dynamics Lead",
+            link: "",
+          },
+          {
+            name: "Callum Anderson",
+            link: "",
+          },
+          {
+            name: "James Beumee",
+            role: "Mechanical Testing Officer",
+            link: "",
+          },
+          {
+            name: "Itziar Pomares Chavarri",
+            role: "Chassis Lead",
+            link: "",
+          },
+          {
+            name: "Arda Cayonlu",
+            link: "",
+          },
+          {
+            name: "Theo Jeremiah",
+            role: "Aerodynamics Lead",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "Electrical and Electronics",
+        members: [
+          {
+            name: "Taylor De Caux",
+            role: "Tractive system Lead",
+            link: "",
+          },
+          {
+            name: "Glen Chadburn",
+            role: "Low Voltage Lead",
+            link: "",
+          },
+          {
+            name: "Alex Kastrinos",
+            role: "ECU programmer - Electrical Testing Officer",
+            link: "",
+          },
+          {
+            name: "Ross Hamer",
+            role: "Electrical Integration Lead",
+            link: "",
+          },
+          {
+            name: "Davide Corridi",
+            link: "",
+          },
+        ],
+      },
+      {
+        category: "AI - Driverless",
+        members: [
+          {
+            name: "Harry Crocker",
+            role: "AI & Driverless Lead",
+            link: "",
+          },
+          {
+            name: "Adam Meyohas",
+            link: "",
+          },
+        ],
+      },
+    ],
   },
   {
     year: 2020,
@@ -517,6 +625,9 @@ This redundancy was integral to success and the teams build not buy mentality sh
     year: 2017,
     name: "TBRe17",
     image: "/cars/2017/car.jpg",
+    text: `
+    The 2017 team was crowned the UK's No. 1 Electric Formula Student team after an amazing performance at Silverstone in July 2017.
+    `,
     team: [
       {
         category: "Main",
