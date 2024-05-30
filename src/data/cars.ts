@@ -72,17 +72,17 @@ export const carsData: Car[] = [
           {
             name: "Akshay Khanna",
             role: "Team Principal",
-            link: "https://www.linkedin.com/in/akshay-khanna-uniofbath/",
+            link: "https://linkedin.com/in/akshay-khanna-uniofbath/",
           },
           {
             name: "Eddie Waggot",
             role: "Technical Director",
-            link: "https://www.linkedin.com/in/edwardwaggott/",
+            link: "https://linkedin.com/in/edwardwaggott/",
           },
           {
             name: "Adam Meyohas",
             role: "AI Team Principal",
-            link: "https://www.linkedin.com/in/adam-meyohas/",
+            link: "https://linkedin.com/in/adam-meyohas/",
           },
         ],
       },
@@ -92,16 +92,16 @@ export const carsData: Car[] = [
           {
             name: "Liam Neary",
             role: "Head of Vehicle Dynamics",
-            link: "https://www.linkedin.com/in/liam-neary023/",
+            link: "https://linkedin.com/in/liam-neary023/",
           },
           {
             name: "Scott van Breda",
             role: "Driver",
-            link: "https://www.linkedin.com/in/scottvanbreda/",
+            link: "https://linkedin.com/in/scottvanbreda/",
           },
           {
             name: "Ben Shellie",
-            link: "https://www.linkedin.com/in/ben-shellie/",
+            link: "https://linkedin.com/in/ben-shellie/",
           },
         ],
       },
@@ -111,7 +111,7 @@ export const carsData: Car[] = [
           {
             name: "Ben Liddington",
             role: "Head of Chassis",
-            link: "https://www.linkedin.com/in/benliddington/",
+            link: "https://linkedin.com/in/benliddington/",
           },
         ],
       },
@@ -121,7 +121,7 @@ export const carsData: Car[] = [
           {
             name: "James Wilton",
             role: "Head of Powertrain",
-            link: "https://www.linkedin.com/in/james-wilton/",
+            link: "https://linkedin.com/in/james-wilton/",
           },
         ],
       },
@@ -131,20 +131,20 @@ export const carsData: Car[] = [
           {
             name: "Glen Chadburn",
             role: "Head of Electrical Systems",
-            link: "https://www.linkedin.com/in/glen-chadburn/",
+            link: "https://linkedin.com/in/glen-chadburn/",
           },
           {
             name: "Luke Crutchley",
             role: "Head of Electrical Powertrain Development",
-            link: "https://www.linkedin.com/in/luke-crutchley/",
+            link: "https://linkedin.com/in/luke-crutchley/",
           },
           {
             name: "David Cleland",
-            link: "https://www.linkedin.com/in/david-cleland-aa5187244/",
+            link: "https://linkedin.com/in/david-cleland-aa5187244/",
           },
           {
             name: "Harley Mak",
-            link: "https://www.linkedin.com/in/hau-lai-harley-mak-5b9b681b2/",
+            link: "https://linkedin.com/in/hau-lai-harley-mak-5b9b681b2/",
           },
         ],
       },
@@ -153,15 +153,15 @@ export const carsData: Car[] = [
         members: [
           {
             name: "Jacob Collinson",
-            link: "https://www.linkedin.com/in/jacob-collinson-4877171b7/",
+            link: "https://linkedin.com/in/jacob-collinson-4877171b7/",
           },
           {
             name: "James Wilson",
-            link: "https://www.linkedin.com/in/james-wilson-677abb209/",
+            link: "https://linkedin.com/in/james-wilson-677abb209/",
           },
           {
             name: "Callum Hallworth",
-            link: "https://www.linkedin.com/in/callumhallworth/",
+            link: "https://linkedin.com/in/callumhallworth/",
           },
         ],
       },
@@ -171,15 +171,15 @@ export const carsData: Car[] = [
           {
             name: "Onish Sutradhar",
             role: "Head of AI Pipeline Development",
-            link: "https://www.linkedin.com/in/onish-sutradhar-8197b6167/",
+            link: "https://linkedin.com/in/onish-sutradhar-8197b6167/",
           },
           {
             name: "Ricardo Pradi Barbosa",
-            link: "https://www.linkedin.com/in/ricardopradibarbosa/",
+            link: "https://linkedin.com/in/ricardopradibarbosa/",
           },
           {
             name: "James Macrae",
-            link: "https://www.linkedin.com/in/j-macrae/",
+            link: "https://linkedin.com/in/j-macrae/",
           },
         ],
       },
@@ -188,27 +188,27 @@ export const carsData: Car[] = [
         members: [
           {
             name: "Dr. Benjamin Metcalfe",
-            link: "https://www.linkedin.com/in/benjamin-metcalfe-021a3554/",
+            link: "https://linkedin.com/in/benjamin-metcalfe-021a3554/",
           },
           {
             name: "Dr. Joseph Flynn",
-            link: "https://www.linkedin.com/in/joseph-flynn-70744a15/",
+            link: "https://linkedin.com/in/joseph-flynn-70744a15/",
           },
           {
             name: "Prof. Peter Wilson",
-            link: "https://www.linkedin.com/in/peter-wilson-b119111/",
+            link: "https://linkedin.com/in/peter-wilson-b119111/",
           },
           {
             name: "Dr. Jonathan Graham-Harper-Cater",
-            link: "https://www.linkedin.com/in/jonathan-graham-harper-cater/",
+            link: "https://linkedin.com/in/jonathan-graham-harper-cater/",
           },
           {
             name: "Dr. Christopher Vagg",
-            link: "https://www.linkedin.com/in/chrisvagg/",
+            link: "https://linkedin.com/in/chrisvagg/",
           },
           {
             name: "Dr. Yunjie Gu",
-            link: "https://www.linkedin.com/in/yunjie-gu-698172131/",
+            link: "https://linkedin.com/in/yunjie-gu-698172131/",
           },
         ],
       },
@@ -257,27 +257,27 @@ export const carsData: Car[] = [
           {
             name: "Mostafa Ismail",
             role: "Project Manager",
-            link: "https://www.linkedin.com/in/mostafa-123/",
+            link: "https://linkedin.com/in/mostafa-123/",
           },
           {
             name: "Federica Arcidiaco",
             role: "Build Manager",
-            link: "https://www.linkedin.com/in/federica-arcidiaco-b03499173/",
+            link: "https://linkedin.com/in/federica-arcidiaco-b03499173/",
           },
           {
             name: "Aled Griffiths",
             role: "Chief Engineer",
-            link: "https://www.linkedin.com/in/aled-griffiths-bb8236173/",
+            link: "https://linkedin.com/in/aled-griffiths-bb8236173/",
           },
           {
             name: "Alex Dyer",
             role: "Electrical Lead",
-            link: "https://www.linkedin.com/in/alex-dyer-53223a129/",
+            link: "https://linkedin.com/in/alex-dyer-53223a129/",
           },
           {
             name: "Harry Green",
             role: "Mechanical Integration Lead",
-            link: "https://www.linkedin.com/in/harry-green-83a276147/",
+            link: "https://linkedin.com/in/harry-green-83a276147/",
           },
         ],
       },
@@ -287,22 +287,22 @@ export const carsData: Car[] = [
           {
             name: "Pablo Penalosa",
             role: "Vehicle Dynamics Lead",
-            link: "https://www.linkedin.com/in/pablo-penalosa-ezpeleta-983a87190/",
+            link: "https://linkedin.com/in/pablo-penalosa-ezpeleta-983a87190/",
           },
           {
             name: "Callum Anderson",
             // NOTE: cannot find
-            // link: "https://www.linkedin.com/in/callum-anderson-378485179/",
+            // link: "https://linkedin.com/in/callum-anderson-378485179/",
           },
           {
             name: "James Beumee",
             role: "Mechanical Testing Officer",
-            link: "https://www.linkedin.com/in/james-b-676555110/",
+            link: "https://linkedin.com/in/james-b-676555110/",
           },
           {
             name: "Itziar Pomares Chavarri",
             role: "Chassis Lead",
-            link: "https://www.linkedin.com/in/itziarpomares/",
+            link: "https://linkedin.com/in/itziarpomares/",
           },
           {
             name: "Arda Cayonlu",
@@ -310,7 +310,7 @@ export const carsData: Car[] = [
           {
             name: "Theo Jeremiah",
             role: "Aerodynamics Lead",
-            link: "https://www.linkedin.com/in/theo-jeremiah/",
+            link: "https://linkedin.com/in/theo-jeremiah/",
           },
         ],
       },
@@ -320,26 +320,26 @@ export const carsData: Car[] = [
           {
             name: "Taylor De Caux",
             role: "Tractive system Lead",
-            link: "https://www.linkedin.com/in/taylor-de-caux-813b36134/",
+            link: "https://linkedin.com/in/taylor-de-caux-813b36134/",
           },
           {
             name: "Glen Chadburn",
             role: "Low Voltage Lead",
-            link: "https://www.linkedin.com/in/glen-chadburn-131753145/",
+            link: "https://linkedin.com/in/glen-chadburn-131753145/",
           },
           {
             name: "Alex Kastrinos",
             role: "ECU programmer - Electrical Testing Officer",
-            link: "https://www.linkedin.com/in/alexander-kastrinos-098657159/",
+            link: "https://linkedin.com/in/alexander-kastrinos-098657159/",
           },
           {
             name: "Ross Hamer",
             role: "Electrical Integration Lead",
-            link: "https://www.linkedin.com/in/ross-hamer/",
+            link: "https://linkedin.com/in/ross-hamer/",
           },
           {
             name: "Davide Corridi",
-            link: "https://www.linkedin.com/in/davide-corridi/",
+            link: "https://linkedin.com/in/davide-corridi/",
           },
         ],
       },
@@ -349,11 +349,11 @@ export const carsData: Car[] = [
           {
             name: "Harry Crocker",
             role: "AI & Driverless Lead",
-            link: "https://www.linkedin.com/in/hjcrocker/",
+            link: "https://linkedin.com/in/hjcrocker/",
           },
           {
             name: "Adam Meyohas",
-            link: "https://www.linkedin.com/in/adam-meyohas/",
+            link: "https://linkedin.com/in/adam-meyohas/",
           },
         ],
       },
