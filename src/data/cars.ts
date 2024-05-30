@@ -255,29 +255,29 @@ export const carsData: Car[] = [
         category: "Management",
         members: [
           {
-            name: "Sostafa Ismail",
+            name: "Mostafa Ismail",
             role: "Project Manager",
-            link: "",
+            link: "https://www.linkedin.com/in/mostafa-123/",
           },
           {
             name: "Federica Arcidiaco",
             role: "Build Manager",
-            link: "",
+            link: "https://www.linkedin.com/in/federica-arcidiaco-b03499173/",
           },
           {
             name: "Aled Griffiths",
             role: "Chief Engineer",
-            link: "",
+            link: "https://www.linkedin.com/in/aled-griffiths-bb8236173/",
           },
           {
             name: "Alex Dyer",
             role: "Electrical Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/alex-dyer-53223a129/",
           },
           {
             name: "Harry Green",
             role: "Mechanical Integration Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/harry-green-83a276147/",
           },
         ],
       },
@@ -287,30 +287,30 @@ export const carsData: Car[] = [
           {
             name: "Pablo Penalosa",
             role: "Vehicle Dynamics Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/pablo-penalosa-ezpeleta-983a87190/",
           },
           {
             name: "Callum Anderson",
-            link: "",
+            // NOTE: cannot find
+            // link: "https://www.linkedin.com/in/callum-anderson-378485179/",
           },
           {
             name: "James Beumee",
             role: "Mechanical Testing Officer",
-            link: "",
+            link: "https://www.linkedin.com/in/james-b-676555110/",
           },
           {
             name: "Itziar Pomares Chavarri",
             role: "Chassis Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/itziarpomares/",
           },
           {
             name: "Arda Cayonlu",
-            link: "",
           },
           {
             name: "Theo Jeremiah",
             role: "Aerodynamics Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/theo-jeremiah/",
           },
         ],
       },
@@ -320,26 +320,26 @@ export const carsData: Car[] = [
           {
             name: "Taylor De Caux",
             role: "Tractive system Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/taylor-de-caux-813b36134/",
           },
           {
             name: "Glen Chadburn",
             role: "Low Voltage Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/glen-chadburn-131753145/",
           },
           {
             name: "Alex Kastrinos",
             role: "ECU programmer - Electrical Testing Officer",
-            link: "",
+            link: "https://www.linkedin.com/in/alexander-kastrinos-098657159/",
           },
           {
             name: "Ross Hamer",
             role: "Electrical Integration Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/ross-hamer/",
           },
           {
             name: "Davide Corridi",
-            link: "",
+            link: "https://www.linkedin.com/in/davide-corridi/",
           },
         ],
       },
@@ -349,11 +349,11 @@ export const carsData: Car[] = [
           {
             name: "Harry Crocker",
             role: "AI & Driverless Lead",
-            link: "",
+            link: "https://www.linkedin.com/in/hjcrocker/",
           },
           {
             name: "Adam Meyohas",
-            link: "",
+            link: "https://www.linkedin.com/in/adam-meyohas/",
           },
         ],
       },
