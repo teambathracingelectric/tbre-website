@@ -30,6 +30,29 @@ export const carsData: Car[] = [
     year: 2022,
     name: "TBRe22",
     image: "/cars/2022/car.jpg",
+    text: `
+    In 2022, the team focused on reliability.
+    This drove us towards a steel space frame chassis, and the familiar to TBRe, single rear motor powertrain layout.
+    The car incorporated an overhauled vehicle dynamics package and a revised electronics system.
+
+    TBRe22 also saw the team run at competition with an aerodynamics package for the first time.
+
+    A new accumulator was designed and constructed and utilised additive manufacturing and composite materials to produce a very energy-dense and lightweight accumulator, capable of delivering the competition limit of 80kW without running into thermal limits and only weighing ~45kg.
+
+    The TBRe 2022 vehicle utilised an Emrax 228 axial flux electric machine paired with an Emsiso H300 inverter. This allowed the deployment of the full competition limit of 80kW with both the motor and inverter capable of power output far higher. The tunability of the control system was also greatly improved over previous inverters used within TBRe with the ability to interface and characterise the inverter's gains in far more detail with far more precision.
+
+    The car's best acceleration event at the Spanish competition was a 4.02-second run, made possible thanks to the ability to extract close to the competition limit of power, lightweight design weighing in at 221kg even with a 7.5kWh accumulator and a combination of the aerodynamics and vehicle dynamics packages being optimised further and in greater detail.
+
+    At all competitions, the accumulator was able to pass scrutineering first time, showing TBRe's aptitude in battery pack design. This year's accumulator built on the work of previous designs, sticking with the same configuration of 102s 7p Sony Murata VTC6s provided by our title sponsor, Electroflight. The airflow paths, 3D printed cell carriers, PCBs and electronics were all optimised in the revised design, housed within a kevlar casing utilising fire retardant epoxy.
+
+    The electrical systems followed suit in scrutineering, typically only needing a few adjustments in order to pass scrutineering thanks to the robust systems that have been iterated within the team for the last few years. Leveraging the in-house manufacturing capability the team has, reflow ovens, solder work stations and testing equipment, the electrical systems were able to be mostly sent for PCB manufacture in December/January with PCB assembly and testing taking place soon after the blank PCBs returned from our sponsor PCB train. This allowed early bench testing of the full electrical system in the lab and fault finding to occur early ensuring the system was reliable by the time the rest of the car was ready.
+
+    The vehicle dynamics were reengineered from the ground up, with a focus on modelling and tolerancing the system so it would perform exactly as intended when implemented. Comments were made by commentators at the 2022 FSUK event that this was “the best vehicle dynamics package seen from the team yet”.
+
+    The aerodynamics package designed for the 2022 car utilised CFD and composite manufacture that meant the team had to do a lot of learning quickly to meet the tight deadlines of Formula Student. Leveraging the knowledge of our sister team, TBR, and the very capable technicians available to us at the university, we were able to pick up composites skills and develop aerofoils to be used in the first rules-compliant aerodynamics package the team has made. Analysis of the design was done with CFD for all iterations of the aerodynamics package as it went through the manufacturing process.
+
+    Overall, the 2022 season was the most successful in TBRe's history, with fantastic results across multiple competitions outlined below:
+    `,
     results: [
       {
         title: "FS UK",
