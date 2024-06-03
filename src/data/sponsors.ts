@@ -203,6 +203,20 @@ export const sponsorsData: {
     level: "Bronze Sponsors",
     sponsors: [
       {
+        id: "easy-composites",
+        name: "Easy Composites",
+        link: "https://easycomposites.co.uk/",
+        logo: "/sponsors/easy-composites.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        description: `
+        Easy Composites are a global leader in the supply of advanced composite materials and equipment.
+        The principle of Easy Composites is to make a complex and challenging subject as straightforward and accessible as possible.
+        As a bronze sponsor, Easy Composites offer us discounts contributing to the overall production of our car!
+        `,
+        image: "/sponsors/tbre-image.jpg",
+      },
+      {
         id: "pro-carve",
         name: "Pro Carve",
         link: "https://procarve.co.uk/",
