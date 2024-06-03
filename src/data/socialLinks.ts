@@ -4,6 +4,7 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -11,22 +12,22 @@ import { FaXTwitter } from "react-icons/fa6";
 export const socialLinks: { name: string; href: string; icon: IconType }[] = [
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/company/team-bath-racing-electric/",
+    href: "https://linkedin.com/company/team-bath-racing-electric",
     icon: FaLinkedin,
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/teambathracingelectric/",
+    href: "https://instagram.com/teambathracingelectric",
     icon: FaInstagram,
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/TeamBathRacingElectric/",
+    href: "https://facebook.com/TeamBathRacingElectric",
     icon: FaFacebook,
   },
   {
     name: "XTwitter",
-    href: "https://twitter.com/TeamBathRacingE/",
+    href: "https://twitter.com/TeamBathRacingE",
     icon: FaXTwitter,
   },
   {
@@ -38,5 +39,10 @@ export const socialLinks: { name: string; href: string; icon: IconType }[] = [
     name: "YouTube",
     href: "https://youtube.com/@TeamBathRacingElectric",
     icon: FaYoutube,
+  },
+  {
+    name: "TikTok",
+    href: "https://tiktok.com/@teambathracingelectric",
+    icon: FaTiktok,
   },
 ];
