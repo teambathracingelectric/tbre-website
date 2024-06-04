@@ -7,6 +7,7 @@ export type Sponsor = {
   logoWidth: number;
   description?: string;
   image?: string;
+  invert?: boolean;
 };
 
 // TODO: refactor this to have typed sponsor levels
@@ -92,6 +93,7 @@ export const sponsorsData: {
         As a platinum sponsor, Multimatic offer us support contributing to the overall production of our car!
         `,
         image: "/sponsors/tbre-image.jpg",
+        invert: true,
       },
       {
         id: "vector",
@@ -170,6 +172,7 @@ export const sponsorsData: {
         As a silver sponsor, Altium offer is a software license, allowing us to design the best possible PCBs for our car!
         `,
         image: "/sponsors/tbre-image.jpg",
+        invert: true,
       },
       {
         id: "ansys",
@@ -196,6 +199,7 @@ export const sponsorsData: {
         As a silver sponsor, Brunner offer us a financial deliverable, which assists with the overall production of our car!
         `,
         image: "/sponsors/tbre-image.jpg",
+        invert: true,
       },
     ],
   },
@@ -252,6 +256,7 @@ export const sponsorsData: {
         Accu offer us website credit, allowing us to order mechanical components which go into the creation of our car!
         `,
         image: "/sponsors/tbre-image.jpg",
+        invert: true,
       },
       {
         id: "renishaw",
