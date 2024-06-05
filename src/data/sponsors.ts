@@ -284,6 +284,24 @@ export const sponsorsData: {
         `,
         image: "/sponsors/tbre-image.jpg",
       },
+      {
+        id: "textreme",
+        name: "TeXtreme",
+        link: "https://textreme.com/",
+        logo: "/sponsors/textreme.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        // TODO: add description
+      },
+      {
+        id: "rapid_harness",
+        name: "Rapid Harness",
+        link: "https://rapidharness.com/",
+        logo: "/sponsors/rapid_harness.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        // TODO: add description
+      },
     ],
   },
   {
