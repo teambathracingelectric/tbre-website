@@ -201,6 +201,24 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
         invert: true,
       },
+      {
+        id: "frewer",
+        name: "Frewer",
+        link: "https://frewer-engineering.com/",
+        logo: "/sponsors/frewer.png",
+        logoHeight: 75,
+        logoWidth: 150,
+        // TODO: add description
+      },
+      {
+        id: "cross",
+        name: "Cross Manufacturing",
+        link: "https://crossmanufacturing.com/",
+        logo: "/sponsors/cross.png",
+        logoHeight: 75,
+        logoWidth: 150,
+        // TODO: add description
+      },
     ],
   },
   {
@@ -298,6 +316,24 @@ export const sponsorsData: {
         name: "Rapid Harness",
         link: "https://rapidharness.com/",
         logo: "/sponsors/rapid_harness.png",
+        logoHeight: 50,
+        logoWidth: 100,
+        // TODO: add description
+      },
+      {
+        id: "creat3d",
+        name: "Creat3D",
+        link: "https://creat3d.shop/",
+        logo: "/sponsors/creat3d.jpg",
+        logoHeight: 50,
+        logoWidth: 100,
+        // TODO: add description
+      },
+      {
+        id: "3dconnexion",
+        name: "3Dconnexion",
+        link: "https://3dconnexion.com/uk/",
+        logo: "/sponsors/3dconnexion.png",
         logoHeight: 50,
         logoWidth: 100,
         // TODO: add description
