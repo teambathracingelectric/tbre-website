@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="border-t-8 border-tbre-yellow bg-black text-white p-8 w-full flex flex-col md:flex-row justify-evenly items-center gap-y-4">
-      <ul className="w-1/3 space-x-4 flex justify-center">
+      <ul className="md:w-1/3 space-x-4 flex justify-center">
         <p className="uppercase text-sm font-semibold">
           Team Bath Racing Electric &copy; {new Date().getFullYear()}
         </p>
@@ -21,7 +21,7 @@ export default function Footer() {
           </li>
         ))} */}
       </ul>
-      <div className="w-1/3 flex justify-center">
+      <div className="md:w-1/3 flex justify-center">
         <Link href="/">
           <Image
             src="/tbre_logo_colour.png"
@@ -32,7 +32,7 @@ export default function Footer() {
           />
         </Link>
       </div>
-      <ul className="w-1/3 space-x-4 flex justify-center">
+      <ul className="md:w-1/3 space-x-4 flex justify-center">
         {socialLinks.map((link) => (
           <li key={link.name}>
             <a
