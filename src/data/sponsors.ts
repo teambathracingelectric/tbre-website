@@ -209,6 +209,7 @@ export const sponsorsData: {
         logoHeight: 75,
         logoWidth: 150,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
       {
         id: "cross",
@@ -218,6 +219,7 @@ export const sponsorsData: {
         logoHeight: 75,
         logoWidth: 150,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
@@ -310,6 +312,7 @@ export const sponsorsData: {
         logoHeight: 50,
         logoWidth: 100,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
       {
         id: "rapid_harness",
@@ -319,6 +322,7 @@ export const sponsorsData: {
         logoHeight: 50,
         logoWidth: 100,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
       {
         id: "creat3d",
@@ -328,6 +332,7 @@ export const sponsorsData: {
         logoHeight: 50,
         logoWidth: 100,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
       {
         id: "3dconnexion",
@@ -337,6 +342,7 @@ export const sponsorsData: {
         logoHeight: 50,
         logoWidth: 100,
         // TODO: add description
+        image: "/sponsors/tbre-image.jpg",
       },
     ],
   },
