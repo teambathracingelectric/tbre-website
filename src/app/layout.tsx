@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import EventCountdown from "@/components/event-countdown";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import SponsorsFooterSection from "@/components/sponsors-footer-section";
+import SponsorsSection from "@/components/sponsors-section";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <EventCountdown />
         <Navbar />
         {children}
-        <SponsorsFooterSection />
+        <SponsorsSection />
         <Footer />
         <Analytics />
       </body>
