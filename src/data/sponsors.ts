@@ -326,12 +326,16 @@ export const sponsorsData: {
       },
       {
         id: "creat3d",
-        name: "Creat3D",
+        name: "CREAT3D",
         link: "https://creat3d.shop/",
         logo: "/sponsors/creat3d.jpg",
         logoHeight: 50,
         logoWidth: 100,
-        // TODO: add description
+        description: `
+        CREAT3D is a value-add partner specialising in Additive Manufacturing solutions.
+        They provide a broad range of Additive Manufacturing products, services and solutions to help organisations streamline their manufacturing, design and engineering processes.
+        As a bronze sponsor CREAT3D offer us discounts on their 3D printing services contributing to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
       {
