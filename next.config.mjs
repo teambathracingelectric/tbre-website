@@ -47,7 +47,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/contact-use",
+        source: "/contact-us",
         destination: "/contact",
         permanent: true,
       },
