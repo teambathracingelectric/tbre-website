@@ -81,21 +81,6 @@ export const sponsorsData: {
         image: "/sponsors/tbre-image.jpg",
       },
       {
-        id: "multimatic",
-        name: "Multimatic",
-        link: "https://multimatic.com",
-        logo: "/sponsors/multimatic.png",
-        logoHeight: 100,
-        logoWidth: 200,
-        description: `
-        Multimatic are suppliers of innovative automotive components, systems and engineering services worldwide.
-        Multimatic aim to solve their customers' problems through their know-how, embedded in the products and services they sell.
-        As a platinum sponsor, Multimatic offer us support contributing to the overall production of our car!
-        `,
-        image: "/sponsors/tbre-image.jpg",
-        invert: true,
-      },
-      {
         id: "vector",
         name: "Vector",
         link: "https://vector.com",
@@ -134,6 +119,21 @@ export const sponsorsData: {
   {
     level: "Silver Sponsors",
     sponsors: [
+      {
+        id: "multimatic",
+        name: "Multimatic",
+        link: "https://multimatic.com",
+        logo: "/sponsors/multimatic.png",
+        logoHeight: 100,
+        logoWidth: 200,
+        description: `
+        Multimatic are suppliers of innovative automotive components, systems and engineering services worldwide.
+        Multimatic aim to solve their customers' problems through their know-how, embedded in the products and services they sell.
+        As a platinum sponsor, Multimatic offer us support contributing to the overall production of our car!
+        `,
+        image: "/sponsors/tbre-image.jpg",
+        invert: true,
+      },
       {
         id: "ab-dynamics",
         name: "AB Dynamics",
