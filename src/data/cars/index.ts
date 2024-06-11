@@ -6,12 +6,28 @@ import { car2020 } from "@/data/cars/2020";
 import { car2021 } from "@/data/cars/2021";
 import { car2022 } from "@/data/cars/2022";
 import { car2023 } from "@/data/cars/2023";
-import type { Team } from "@/data/team";
 
 export type Results = {
   title: string;
   description: string;
   image: string;
+}[];
+
+export type SubTeam = {
+  name: string;
+  role: string;
+  image?: string;
+  link?: string;
+}[];
+
+export type Team = {
+  category: string;
+  members: {
+    name: string;
+    role?: string;
+    image?: string;
+    link?: string;
+  }[];
 }[];
 
 export type Car = {
