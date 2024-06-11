@@ -29,7 +29,8 @@ export default function TeamSection({ team }: { team: Team }) {
                   alt={`Photo of ${m.name}`}
                   width={200}
                   height={200}
-                  className="rounded-full"
+                  // className="rounded-full"
+                  className="rounded-full object-cover w-[200px] h-[200px]"
                 />
                 {m.link ? (
                   <a
