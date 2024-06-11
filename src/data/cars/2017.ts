@@ -1,0 +1,42 @@
+import type { Car } from "@/data/cars";
+
+export const car2017: Car = {
+  year: 2017,
+  name: "TBRe17",
+  image: "/cars/2017/car.jpg",
+  text: `
+  The 2017 team was crowned the UK's No. 1 Electric Formula Student team after an amazing performance at Silverstone in July 2017.
+  `,
+  team: [
+    {
+      category: "Main",
+      members: [
+        {
+          name: "Stefano Dallavalle",
+          role: "Project Manager",
+          link: "https://linkedin.com/in/stefano-dallavalle/",
+        },
+        {
+          name: "Gregory Tzermias",
+          role: "Mechanical Lead",
+          link: "https://linkedin.com/in/dr-gregory-tzermias-12a26677/",
+        },
+        {
+          name: "Alex Stokoe",
+          role: "Electrical Lead",
+          link: "https://linkedin.com/in/alex-stokoe/",
+        },
+        {
+          name: "Assad George Farhat",
+          role: "Software Lead",
+          link: "https://linkedin.com/in/assad-george-farhat-1b4a1bb8/",
+        },
+        {
+          name: "Antonio Pessanha",
+          role: "Marketing/Media Manager",
+          link: "https://linkedin.com/in/ant%C3%B3nio-pessanha/",
+        },
+      ],
+    },
+  ],
+};
