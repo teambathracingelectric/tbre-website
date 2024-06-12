@@ -1,4 +1,4 @@
-import type { Team } from "@/data/team";
+import type { Team } from "@/data/cars";
 import { cn } from "@/utils";
 import Image from "next/image";
 
