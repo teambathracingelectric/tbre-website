@@ -1,3 +1,4 @@
+import { carsData } from "@/data/cars";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     },
+    ...carsData.map((car) => ({
+      url: `https://dev.teambathracingelectric.com/cars/${car.year}`,
+      lastModified: new Date(),
+      priority: 0.8,
+    })),
     {
       url: "https://dev.teambathracingelectric.com/contact",
       lastModified: new Date(),
@@ -29,6 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://dev.teambathracingelectric.com/sponsors",
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: "https://dev.teambathracingelectric.com/sponsors/rotork",
       lastModified: new Date(),
       priority: 0.8,
     },
