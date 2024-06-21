@@ -208,7 +208,9 @@ export const sponsorsData: {
         logo: "/sponsors/frewer.png",
         logoHeight: 75,
         logoWidth: 150,
-        // TODO: add description
+        description: `
+        Frewer Engineering is an SME formed in 2003 to provide world-class design and analysis consultancy services to customers requiring innovative and creative solutions across a number of challenging industry sectors.
+        As a silver sponsor Frewer Engineering provides us with aero consultancy contributing to the overall production of our car!`,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -218,7 +220,10 @@ export const sponsorsData: {
         logo: "/sponsors/cross.png",
         logoHeight: 75,
         logoWidth: 150,
-        // TODO: add description
+        description: `
+        Cross Manufacturing Company is a world leading manufacturer of precision, bespoke engineered, high temperature & corrosion resistant metallic precision sealing solutions.
+        As a bronze sponsor Cross Manufacturing offer us support on the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
@@ -345,7 +350,10 @@ export const sponsorsData: {
         logo: "/sponsors/3dconnexion.png",
         logoHeight: 50,
         logoWidth: 100,
-        // TODO: add description
+        description: `
+        3Dconnexion designs powerful, research-based ergonomic hardware and smart, easy-to-use software that combine seamlessly to make working in the world's most popular CAD applications and 3D environments fast, comfortable and fun.
+        As a bronze sponsor 3Dconnexion provides us with access to a full range of 3Dconnexion products, special pricing and visibility opportunities, all contributing to the overall production of our car!
+        `,
         image: "/sponsors/tbre-image.jpg",
       },
     ],
