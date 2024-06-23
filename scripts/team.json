@@ -1,0 +1,248 @@
+[
+  {
+    "category": "Electrical",
+    "members": [
+      {
+        "name": "James White",
+        "image": "/team/2023/James White.jpg"
+      },
+      {
+        "name": "Euan Bell",
+        "image": "/team/2023/Euan Bell.jpg"
+      },
+      {
+        "name": "Owen Harms",
+        "image": "/team/2023/Owen Harms.jpg"
+      },
+      {
+        "name": "Eugene Levinson",
+        "image": "/team/2023/Eugene Levinson.jpg"
+      },
+      {
+        "name": "Amy Kinshuck",
+        "image": "/team/2023/Amy Kinshuck.jpg"
+      },
+      {
+        "name": "Tommy Lin",
+        "image": "/team/2023/Tommy Lin.jpg"
+      },
+      {
+        "name": "Abigail Adrian",
+        "image": "/team/2023/Abigail Adrian.jpg"
+      },
+      {
+        "name": "Ibraheem Rodrigues",
+        "image": "/team/2023/Ibraheem Rodrigues.jpg"
+      },
+      {
+        "name": "Alexander Cucciara",
+        "image": "/team/2023/Alexander Cucciara.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Bambini",
+    "members": [
+      {
+        "name": "tbre2-14",
+        "image": "/team/2023/tbre2-14.jpg"
+      },
+      {
+        "name": "tbre2-13",
+        "image": "/team/2023/tbre2-13.jpg"
+      },
+      {
+        "name": "Simeon Filipov",
+        "image": "/team/2023/Simeon Filipov.jpg"
+      },
+      {
+        "name": "Enrique Guau",
+        "image": "/team/2023/Enrique Guau.jpg"
+      },
+      {
+        "name": "Amy Sceri",
+        "image": "/team/2023/Amy Sceri.jpg"
+      },
+      {
+        "name": "tbre2-42",
+        "image": "/team/2023/tbre2-42.jpg"
+      },
+      {
+        "name": "tbre2-55",
+        "image": "/team/2023/tbre2-55.jpg"
+      },
+      {
+        "name": "Charlie Roberts",
+        "image": "/team/2023/Charlie Roberts.jpg"
+      },
+      {
+        "name": "tbre2-45",
+        "image": "/team/2023/tbre2-45.jpg"
+      },
+      {
+        "name": "tbre2-90",
+        "image": "/team/2023/tbre2-90.jpg"
+      },
+      {
+        "name": "Alain Kesterlian",
+        "image": "/team/2023/Alain Kesterlian.jpg"
+      },
+      {
+        "name": "Callum Donohue",
+        "image": "/team/2023/Callum Donohue.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Chassis",
+    "members": [
+      {
+        "name": "Mario Morel",
+        "image": "/team/2023/Mario Morel.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Cost",
+    "members": [
+      {
+        "name": "Bakr Al-Derzi",
+        "image": "/team/2023/Bakr Al-Derzi.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Driver Environment",
+    "members": [
+      {
+        "name": "Vincent Cavailhes",
+        "image": "/team/2023/Vincent Cavailhes.jpg"
+      },
+      {
+        "name": "Jesse Doorgeest",
+        "image": "/team/2023/Jesse Doorgeest.jpg"
+      },
+      {
+        "name": "Khayaam Waris",
+        "image": "/team/2023/Khayaam Waris.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Powertrain",
+    "members": [
+      {
+        "name": "Miles Dawson",
+        "image": "/team/2023/Miles Dawson.jpg"
+      },
+      {
+        "name": "Abbey Marsden",
+        "image": "/team/2023/Abbey Marsden.jpg"
+      },
+      {
+        "name": "Oliver Zilli",
+        "image": "/team/2023/Oliver Zilli.jpg"
+      },
+      {
+        "name": "Samuel Mutton",
+        "image": "/team/2023/Samuel Mutton.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Aerodynamics",
+    "members": [
+      {
+        "name": "Jamie Bradshaw",
+        "image": "/team/2023/Jamie Bradshaw.jpg"
+      },
+      {
+        "name": "Jamie Wilson",
+        "image": "/team/2023/Jamie Wilson.jpg"
+      },
+      {
+        "name": "Imran Choudhury",
+        "image": "/team/2023/Imran Choudhury.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Vehicle Dynamics",
+    "members": [
+      {
+        "name": "Daniel Perez Thomson",
+        "image": "/team/2023/Daniel Perez Thomson.jpg"
+      },
+      {
+        "name": "Josh Mobsby",
+        "image": "/team/2023/Josh Mobsby.jpg"
+      },
+      {
+        "name": "Ivan Chan",
+        "image": "/team/2023/Ivan Chan.jpg"
+      },
+      {
+        "name": "Jasmine Presho",
+        "image": "/team/2023/Jasmine Presho.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Marketing",
+    "members": [
+      {
+        "name": "Oskar Chu",
+        "image": "/team/2023/Oskar Chu.jpg"
+      },
+      {
+        "name": "Emma Dickinson",
+        "image": "/team/2023/Emma Dickinson.jpg"
+      },
+      {
+        "name": "Megan Galloway",
+        "image": "/team/2023/Megan Galloway.jpg"
+      },
+      {
+        "name": "Audrey Raguin",
+        "image": "/team/2023/Audrey Raguin.jpg"
+      },
+      {
+        "name": "Chiara Marquet",
+        "image": "/team/2023/Chiara Marquet.jpg"
+      },
+      {
+        "name": "Benjamin Fall",
+        "image": "/team/2023/Benjamin Fall.jpg"
+      },
+      {
+        "name": "James Wainwright",
+        "image": "/team/2023/James Wainwright.jpg"
+      },
+      {
+        "name": "Harriet Lamb",
+        "image": "/team/2023/Harriet Lamb.jpg"
+      },
+      {
+        "name": "Madison Tregonning",
+        "image": "/team/2023/Madison Tregonning.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Team Management",
+    "members": [
+      {
+        "name": "Alexandra Sharankova",
+        "image": "/team/2023/Alexandra Sharankova.jpg"
+      },
+      {
+        "name": "Alexandre About",
+        "image": "/team/2023/Alexandre About.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Business Operations",
+    "members": []
+  }
+]
