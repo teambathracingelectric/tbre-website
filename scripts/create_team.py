@@ -1,8 +1,13 @@
 import json
 import os
+import shutil
 
 # Define the base directory
 base_dir = '../resources/Website'
+output_dir = '../resources/All_Photos'
+
+# Create the output directory if it doesn't exist
+os.makedirs(output_dir, exist_ok=True)
 
 # Initialize the team structure
 team = []
@@ -10,7 +15,7 @@ team = []
 # Iterate through each sub-directory in the base directory
 for category_dir in os.listdir(base_dir):
     category_path = os.path.join(base_dir, category_dir)
-    if os.path.isdir(category_path):
+    if os.path.isdir(category_path) and category_dir != 'All_Photos':
         category = category_dir
         members = []
 
@@ -18,13 +23,20 @@ for category_dir in os.listdir(base_dir):
         for file_name in os.listdir(category_path):
             if file_name.endswith('.jpg') or file_name.endswith('.jpeg') or file_name.endswith('.png'):
                 # Extract member name from the file name
-                name, _ = os.path.splitext(file_name)
-                name = name.replace('_', ' ')
+                name, ext = os.path.splitext(file_name)
+                name = name.replace(' ', '_').lower()
+
+                # Define the new file name and path
+                new_file_name = f"{name}{ext}"
+                new_file_path = os.path.join(output_dir, new_file_name)
+
+                # Copy and rename the file to the output directory
+                shutil.copyfile(os.path.join(category_path, file_name), new_file_path)
 
                 # Create a member dictionary
                 member = {
-                    "name": name,
-                    "image": f"/team/2023/{file_name}"
+                    "name": name.replace('_', ' ').title(),
+                    "image": f"/team/2023/{new_file_name}"
                 }
 
                 # Add the member to the members list
@@ -46,4 +58,4 @@ team_json = json.dumps(team, indent=4)
 with open('team.json', 'w') as json_file:
     json_file.write(team_json)
 
-print("JSON file created successfully.")
+print("JSON file and directory created successfully.")
