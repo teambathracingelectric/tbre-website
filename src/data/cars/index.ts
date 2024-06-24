@@ -6,6 +6,7 @@ import { car2020 } from "@/data/cars/2020";
 import { car2021 } from "@/data/cars/2021";
 import { car2022 } from "@/data/cars/2022";
 import { car2023 } from "@/data/cars/2023";
+import { car2024 } from "@/data/cars/2024";
 
 export type Results = {
   title: string;
@@ -41,6 +42,7 @@ export type Car = {
 };
 
 export const carsData: Car[] = [
+  car2024,
   car2023,
   car2022,
   car2021,
