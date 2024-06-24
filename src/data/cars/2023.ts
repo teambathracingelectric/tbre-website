@@ -239,5 +239,4 @@ export const car2023: Car = {
       ],
     },
   ],
-  model: "/cars/2023/model.glb",
 };
