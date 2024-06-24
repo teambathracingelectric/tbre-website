@@ -36,7 +36,7 @@ for category_dir in os.listdir(base_dir):
                 # Create a member dictionary
                 member = {
                     "name": name.replace('_', ' ').title(),
-                    "image": f"/team/2023/{new_file_name}"
+                    "image": f"/team/2024/{new_file_name}"
                 }
 
                 # Add the member to the members list
