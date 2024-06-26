@@ -67,8 +67,12 @@ export default function Page() {
                     height={200}
                     className="rounded-xl border-transparent group-hover:border-tbre-yellow border-4 transition-all"
                   />
-                  <p className="ml-2 font-bold text-lg group-hover:underline decoration-tbre-yellow">
+                  {/* <p className="ml-2 font-bold text-lg group-hover:underline decoration-tbre-yellow"> */}
+                  <p className="p-2 font-bold text-lg group-hover:underline decoration-tbre-yellow">
                     {sponsor.name}
+                  </p>
+                  <p className="p-2 hidden group-hover:block">
+                    {sponsor.description}
                   </p>
                 </div>
               </a>
