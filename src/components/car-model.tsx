@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 "use client";
 
 import "@google/model-viewer/lib/model-viewer";
+import Image from "next/image";
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
       "model-viewer": ModelViewerJSX &
-        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
@@ -27,6 +29,7 @@ interface ModelViewerJSX {
   cameraControls?: boolean;
   cameraOrbit?: string;
   alt?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   sx?: any;
 }
 
@@ -67,7 +70,7 @@ export default function CarModel({ src }: { src: string }) {
       </button>
 
       <div className="poster" slot="poster">
-        <img className="pre-prompt" src="/prompt.svg" />
+        <Image className="pre-prompt" src="/prompt.svg" alt="Tap to view in AR" />
       </div>
     </model-viewer>
   );
@@ -91,7 +94,7 @@ export default function CarModel({ src }: { src: string }) {
           View in your space
         </button>
         <div id="ar-prompt">
-          <img
+          <Image
             src="https://modelviewer.dev/shared-assets/icons/hand.png"
             alt="Hand icon"
           />

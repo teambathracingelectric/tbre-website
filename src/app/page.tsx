@@ -29,10 +29,10 @@ export default function Page() {
         <div className="flex justify-center gap-8 md:w-2/3 items-center flex-wrap-reverse md:flex-nowrap">
           <p>
             Team Bath Racing Electric is an electric Formula Student team based
-            out of the University of Bath's Faculty of Engineering and Design.
+            out of the University of Bath&apos;s Faculty of Engineering and Design.
             <br />
             <br />
-            Formula Student is the world's largest student engineering
+            Formula Student is the world&apos;s largest student engineering
             competition, with over 600 universities taking part in its numerous
             competitions internationally.
             <br />
