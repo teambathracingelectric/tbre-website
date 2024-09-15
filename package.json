@@ -5,7 +5,7 @@
   "private": true,
   "author": "Tom Heaton <tom@tomheaton.dev> (https://tomheaton.dev)",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
