@@ -5,9 +5,9 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return sponsorsData.flatMap((sponsorLevel) =>
-    sponsorLevel.sponsors.map((sponsor) => ({ sponsorId: sponsor.id }))
+    sponsorLevel.sponsors.map((sponsor) => ({ sponsorId: sponsor.id })),
   );
-};
+}
 
 type Params = {
   sponsorId: string;

@@ -24,4 +24,9 @@ export const eventsData: Event[] = [
     endDate: new Date("2024-09-07"),
     type: "Competition",
   },
+  {
+    name: "Test Event",
+    date: new Date("2024-12-12"),
+    endDate: new Date("2024-12-12"),
+  },
 ];

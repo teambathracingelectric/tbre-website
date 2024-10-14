@@ -8,7 +8,15 @@ import { useEffect, useMemo, useState } from "react";
 dayjs.extend(duration);
 
 export default function EventCountdown() {
-  const nextEvent = useMemo(() => eventsData.filter((event) => event.date.getTime() > Date.now()).sort((a, b) => a.date.getTime() - b.date.getTime())[0], []);
+  const nextEvent = useMemo(
+    () =>
+      eventsData
+        .filter((event) => event.date.getTime() > Date.now())
+        .sort((a, b) => a.date.getTime() - b.date.getTime())[0],
+    [],
+  );
+
+  console.log(JSON.stringify(nextEvent));
 
   const [remainingTime, setRemainingTime] = useState<{
     years: number;
@@ -27,6 +35,10 @@ export default function EventCountdown() {
   });
 
   useEffect(() => {
+    if (!nextEvent) {
+      return;
+    }
+
     const interval = setInterval(() => {
       const currentTime = dayjs();
       const targetTime = dayjs(nextEvent.date);
@@ -51,7 +63,7 @@ export default function EventCountdown() {
     }, 1_000);
 
     return () => clearInterval(interval);
-  }, [nextEvent.date]);
+  }, [nextEvent]);
 
   if (!nextEvent) {
     return null;

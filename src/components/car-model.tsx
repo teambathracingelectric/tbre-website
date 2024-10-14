@@ -8,7 +8,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       "model-viewer": ModelViewerJSX &
-      React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
@@ -70,7 +70,11 @@ export default function CarModel({ src }: { src: string }) {
       </button>
 
       <div className="poster" slot="poster">
-        <Image className="pre-prompt" src="/prompt.svg" alt="Tap to view in AR" />
+        <Image
+          className="pre-prompt"
+          src="/prompt.svg"
+          alt="Tap to view in AR"
+        />
       </div>
     </model-viewer>
   );

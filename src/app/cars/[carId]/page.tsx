@@ -8,9 +8,9 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return carsData.map((car) => ({
-    carId: car.year.toString()
+    carId: car.year.toString(),
   }));
-};
+}
 
 type Params = {
   carId: string;
