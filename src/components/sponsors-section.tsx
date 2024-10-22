@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function SponsorsSection() {
   return (
     // <section className="bg-black text-white p-16">
-    <section className="bg-tbre-blue-cool text-white p-16 space-y-8">
+    (<section className="bg-tbre-blue-cool text-white p-16 space-y-8">
       {sponsorsData
         .filter((sponsorLevel) => sponsorLevel.sponsors.length > 0)
         .map((sponsorLevel) => (
@@ -39,6 +39,6 @@ export default function SponsorsSection() {
             </div>
           </div>
         ))}
-    </section>
+    </section>)
   );
 }

@@ -1,7 +1,6 @@
-// @ts-check
+import type { NextConfig } from "next";
 
-/** @type {import("next").NextConfig} */
-const nextConfig = {
+export default {
   redirects: async () => {
     return [
       // social media redirects
@@ -68,6 +67,4 @@ const nextConfig = {
       },
     ];
   },
-};
-
-export default nextConfig;
+} satisfies NextConfig;

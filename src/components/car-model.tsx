@@ -1,40 +1,31 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 "use client";
 
 import "@google/model-viewer/lib/model-viewer";
 import Image from "next/image";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "model-viewer": ModelViewerJSX &
-        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
-}
-
-interface ModelViewerJSX {
-  src: string;
-  poster?: string;
-  iosSrc?: string;
-  seamlessPoster?: boolean;
-  autoplay?: boolean;
-  environmentImage?: string;
-  exposure?: string;
-  interactionPromptThreshold?: string;
-  shadowIntensity?: string;
-  ar?: boolean;
-  arModes?: string;
-  autoRotate?: boolean;
-  cameraControls?: boolean;
-  cameraOrbit?: string;
-  alt?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  sx?: any;
-}
+// interface ModelViewerJSX {
+//   src: string;
+//   poster?: string;
+//   iosSrc?: string;
+//   seamlessPoster?: boolean;
+//   autoplay?: boolean;
+//   environmentImage?: string;
+//   exposure?: string;
+//   interactionPromptThreshold?: string;
+//   shadowIntensity?: string;
+//   ar?: boolean;
+//   arModes?: string;
+//   autoRotate?: boolean;
+//   cameraControls?: boolean;
+//   cameraOrbit?: string;
+//   alt?: string;
+//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//   sx?: any;
+// }
 
 export default function CarModel({ src }: { src: string }) {
   return (
+    // @ts-expect-error model-viewer
     <model-viewer
       id="first"
       src={src}
@@ -76,11 +67,13 @@ export default function CarModel({ src }: { src: string }) {
           alt="Tap to view in AR"
         />
       </div>
+      {/* @ts-expect-error model-viewer */}
     </model-viewer>
   );
 
   return (
     <div>
+      {/* @ts-expect-error model-viewer */}
       <model-viewer
         src="/public/models/ferrari_f1_2019.glb"
         ar
@@ -103,6 +96,7 @@ export default function CarModel({ src }: { src: string }) {
             alt="Hand icon"
           />
         </div>
+        {/* @ts-expect-error model-viewer */}
       </model-viewer>
     </div>
   );

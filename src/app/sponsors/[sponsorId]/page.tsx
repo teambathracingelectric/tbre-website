@@ -13,7 +13,8 @@ type Params = {
   sponsorId: string;
 };
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   const data = sponsorsData
     .find((c) => c.level === "Title Sponsor")
     ?.sponsors.find((s) => s.id === params.sponsorId);
@@ -23,7 +24,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function Page({ params }: { params: Params }) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const data = sponsorsData
     .find((c) => c.level === "Title Sponsor")
     ?.sponsors.find((s) => s.id === params.sponsorId);

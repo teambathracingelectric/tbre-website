@@ -16,8 +16,6 @@ export default function EventCountdown() {
     [],
   );
 
-  console.log(JSON.stringify(nextEvent));
-
   const [remainingTime, setRemainingTime] = useState<{
     years: number;
     months: number;

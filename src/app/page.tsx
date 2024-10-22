@@ -13,6 +13,7 @@ export default function Page() {
           </h1>
         </div> */}
         <motion.div
+          // @ts-expect-error className is not a valid prop
           className="md:w-1/3"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

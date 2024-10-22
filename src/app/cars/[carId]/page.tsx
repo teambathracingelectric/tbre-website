@@ -16,7 +16,8 @@ type Params = {
   carId: string;
 };
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
+export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+  const params = await props.params;
   return {
     title: `${params.carId} Car`,
     description: `The ${params.carId} car.`,
@@ -34,7 +35,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function Page({ params }: { params: Params }) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const data = carsData.find((c) => c.year === parseInt(params.carId));
 
   if (!data) {
