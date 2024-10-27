@@ -1,6 +1,6 @@
-import CarModel from "@/components/car-model";
-import ResultsSection from "@/components/results-section";
-import TeamSection from "@/components/team-section";
+// import CarModel from "@/components/car-model";
+// import ResultsSection from "@/components/results-section";
+// import TeamSection from "@/components/team-section";
 import { carsData } from "@/data/cars";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -16,7 +16,9 @@ type Params = {
   carId: string;
 };
 
-export async function generateMetadata(props: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
   const params = await props.params;
   return {
     title: `${params.carId} Car`,
@@ -80,18 +82,18 @@ export default async function Page(props: { params: Promise<Params> }) {
         className="rounded-lg"
       />
       <br />
-      {data.text && <p className="w-full md:w-1/2 mx-auto">{data.text}</p>}
-      <br />
-      {data.model && <CarModel src={data.model} />}
-      <br />
-      {data.results && <ResultsSection results={data.results} />}
-      <br />
-      {data.team && (
+      {/* {data.text && <p className="w-full md:w-1/2 mx-auto">{data.text}</p>} */}
+      {/* <br /> */}
+      {/* {data.model && <CarModel src={data.model} />} */}
+      {/* <br /> */}
+      {/* {data.results && <ResultsSection results={data.results} />} */}
+      {/* <br /> */}
+      {/* {data.team && (
         <>
           <h2 className="text-3xl font-extrabold">Meet the Team</h2>
           <TeamSection team={data.team} />
         </>
-      )}
+      )} */}
     </main>
   );
 }

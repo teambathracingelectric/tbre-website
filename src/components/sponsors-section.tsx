@@ -5,12 +5,12 @@ import Image from "next/image";
 export default function SponsorsSection() {
   return (
     // <section className="bg-black text-white p-16">
-    (<section className="bg-tbre-blue-cool text-white p-16 space-y-8">
+    <section className="bg-tbre-blue-cool text-white p-16 space-y-8">
       {sponsorsData
         .filter((sponsorLevel) => sponsorLevel.sponsors.length > 0)
         .map((sponsorLevel) => (
           <div key={sponsorLevel.level} className="flex flex-col md:flex-row">
-            <h3 className="max-w-sm w-full font-bold text-2xl text-center md:text-left">
+            <h3 className="max-w-sm w-full font-bold text-2xl text-center md:text-left mb-2">
               {sponsorLevel.level}
             </h3>
             <div className="flex flex-wrap gap-8 justify-center md:justify-start items-center">
@@ -39,6 +39,6 @@ export default function SponsorsSection() {
             </div>
           </div>
         ))}
-    </section>)
+    </section>
   );
 }

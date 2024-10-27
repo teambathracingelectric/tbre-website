@@ -9,9 +9,9 @@ const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
+  allConfig: js.configs.all,
 });
-const gitignorePath = path.resolve(__dirname, '.gitignore');
+const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [

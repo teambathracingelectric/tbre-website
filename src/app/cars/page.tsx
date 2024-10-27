@@ -1,7 +1,7 @@
 import { carsData } from "@/data/cars";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cars",
@@ -14,9 +14,9 @@ export default function Page() {
       <br />
       <section className="grid md:grid-cols-2 gap-8">
         {carsData.map((c) => (
-          <Link
+          <div
             key={c.year}
-            href={`/cars/${c.year}`}
+            // href={`/cars/${c.year}`}
             className="flex flex-col hover:translate-x-2 hover:-translate-y-2 transition-all group"
           >
             <Image
@@ -30,7 +30,7 @@ export default function Page() {
               <h2 className="font-semibold text-2xl">{c.name}</h2>
               <p>{c.year}</p>
             </div>
-          </Link>
+          </div>
         ))}
       </section>
       <br />

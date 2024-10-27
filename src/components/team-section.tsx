@@ -12,13 +12,15 @@ export default function TeamSection({ team }: { team: Team }) {
           <div
             className={cn(
               "grid gap-y-8",
+              "grid-cols-3",
+              // s.members.length === 2 ? "grid-cols-2" : "grid-cols-3",
               // "md:grid-cols-3",
               // TODO: get this working
-              s.members.length > 2
-                ? "md:grid-cols-3"
-                : s.members.length === 1
-                  ? "md:grid-cols-1"
-                  : "md:grid-cols-2",
+              // s.members.length > 2
+              //   ? "md:grid-cols-3"
+              //   : s.members.length === 1
+              //     ? "md:grid-cols-1"
+              //     : "md:grid-cols-2",
               // "border-2 border-red-500",
             )}
           >
@@ -30,7 +32,7 @@ export default function TeamSection({ team }: { team: Team }) {
                   width={200}
                   height={200}
                   // className="rounded-full"
-                  className="rounded-full object-cover w-[200px] h-[200px]"
+                  className="rounded-full object-cover w-[200px] h-[200px] mb-2"
                 />
                 {m.link ? (
                   <a
