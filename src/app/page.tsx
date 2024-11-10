@@ -48,7 +48,7 @@ export default function Page() {
               className="hover:text-tbre-yellow underline decoration-tbre-yellow"
             >
               FSUK website
-            </a>
+            </a>.
           </p>
           <Image
             src="/landing_car_1.jpg"
