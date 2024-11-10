@@ -13,22 +13,24 @@ import type { PropsWithChildren } from "react";
 const font = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://teambathracingelectric.com"),
   title: {
     template: "%s ~ Team Bath Racing Electric",
     default: "Team Bath Racing Electric",
   },
   description:
     "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
+  keywords: "Team Bath Racing Electric, TBRe, Formula Student, University of Bath",
   openGraph: {
-    images: [
-      {
-        url: new URL(
-          "https://tbre.tomheaton.dev/tbre_logo_colour.png",
-          // "/tbre_logo_colour.png",
-          // process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
-        ),
-      },
-    ],
+    title: "Team Bath Racing Electric",
+    description: "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
+    type: "website",
+    url: "https://teambathracingelectric.com",
+    images: {
+      url: "/tbre_logo_colour.png",
+      alt: "Team Bath Racing Electric",
+    },
+    locale: "en_GB",
   },
 };
 
