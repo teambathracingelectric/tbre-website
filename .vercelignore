@@ -1,3 +1,5 @@
 .vscode
 resources
 scripts
+.editorconfig
+README.md
