@@ -3,7 +3,7 @@ import type { Car } from "@/data/cars";
 export const car2024: Car = {
   year: 2024,
   name: "TBRe24",
-  image: "/cars/2024/car.jpg",
+  image: "/cars/2024/car.jpeg",
   team: [
     {
       category: "Electrical",
