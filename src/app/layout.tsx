@@ -20,10 +20,12 @@ export const metadata: Metadata = {
   },
   description:
     "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
-  keywords: "Team Bath Racing Electric, TBRe, Formula Student, University of Bath",
+  keywords:
+    "Team Bath Racing Electric, TBRe, Formula Student, University of Bath",
   openGraph: {
     title: "Team Bath Racing Electric",
-    description: "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
+    description:
+      "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
     type: "website",
     url: "https://teambathracingelectric.com",
     images: {
