@@ -187,20 +187,20 @@ export const sponsorsData: {
         `,
         image: "/sponsors/tbre-image.jpg",
       },
-      {
-        id: "brunner",
-        name: "Brunner",
-        link: "https://brunner-uk.com",
-        logo: "/sponsors/brunner.webp",
-        logoHeight: 75,
-        logoWidth: 150,
-        description: `
-        Brunner are a UK-based furniture manufacturer, focused on state-of-the-art designs which help to transform the workplaces of numerous high-profile clients all around the world.
-        As a silver sponsor, Brunner offer us a financial deliverable, which assists with the overall production of our car!
-        `,
-        image: "/sponsors/tbre-image.jpg",
-        invert: true,
-      },
+      // {
+      //   id: "brunner",
+      //   name: "Brunner",
+      //   link: "https://brunner-uk.com",
+      //   logo: "/sponsors/brunner.webp",
+      //   logoHeight: 75,
+      //   logoWidth: 150,
+      //   description: `
+      //   Brunner are a UK-based furniture manufacturer, focused on state-of-the-art designs which help to transform the workplaces of numerous high-profile clients all around the world.
+      //   As a silver sponsor, Brunner offer us a financial deliverable, which assists with the overall production of our car!
+      //   `,
+      //   image: "/sponsors/tbre-image.jpg",
+      //   invert: true,
+      // },
       {
         id: "frewer",
         name: "Frewer",
@@ -256,19 +256,19 @@ export const sponsorsData: {
         Pro Carve provide specialist CNC routing services to designers, engineers, model makers, cabinetmakers and artists, cutting a wide range of materials. As a bronze sponsor, Pro Carve offer us discounts on machining contributing to the overall production of our car!`,
         image: "/sponsors/tbre-image.jpg",
       },
-      {
-        id: "redbull",
-        name: "Redbull",
-        link: "https://redbull.com",
-        logo: "/sponsors/redbull.svg",
-        logoHeight: 50,
-        logoWidth: 100,
-        description: `
-        Red Bull are a global brand, who started manufacturing energy drinks in 1987, and have since made groundbreaking steps into new ventures, including the creation of a Formula One racing team.
-        As a bronze sponsor, Red Bull provide us with their award-winning energy drinks, giving us enough energy to put maximum effort into the creation of our car!
-        `,
-        image: "/sponsors/tbre-image.jpg",
-      },
+      // {
+      //   id: "redbull",
+      //   name: "Redbull",
+      //   link: "https://redbull.com",
+      //   logo: "/sponsors/redbull.svg",
+      //   logoHeight: 50,
+      //   logoWidth: 100,
+      //   description: `
+      //   Red Bull are a global brand, who started manufacturing energy drinks in 1987, and have since made groundbreaking steps into new ventures, including the creation of a Formula One racing team.
+      //   As a bronze sponsor, Red Bull provide us with their award-winning energy drinks, giving us enough energy to put maximum effort into the creation of our car!
+      //   `,
+      //   image: "/sponsors/tbre-image.jpg",
+      // },
       {
         id: "accu",
         name: "Accu",
