@@ -7,7 +7,7 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaNewspaper, FaXTwitter } from "react-icons/fa6";
 
 export const socialLinks: { name: string; href: string; icon: IconType }[] = [
   {
@@ -44,5 +44,10 @@ export const socialLinks: { name: string; href: string; icon: IconType }[] = [
     name: "TikTok",
     href: "https://tiktok.com/@teambathracingelectric",
     icon: FaTiktok,
+  },
+  {
+    name: "Newsletter",
+    href: "https://share-eu1.hsforms.com/1ukabeofkRfmlDApsM4k01A2dfx7i",
+    icon: FaNewspaper,
   },
 ];

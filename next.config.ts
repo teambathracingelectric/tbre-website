@@ -39,6 +39,11 @@ export default {
         destination: "https://tiktok.com/@teambathracingelectric",
         permanent: true,
       },
+      {
+        source: "/newsletter",
+        destination: "https://share-eu1.hsforms.com/1ukabeofkRfmlDApsM4k01A2dfx7i",
+        permanent: true,
+      },
       // old website redirects
       {
         source: "/about-us",
