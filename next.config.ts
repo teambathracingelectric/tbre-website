@@ -41,7 +41,8 @@ export default {
       },
       {
         source: "/newsletter",
-        destination: "https://share-eu1.hsforms.com/1ukabeofkRfmlDApsM4k01A2dfx7i",
+        destination:
+          "https://share-eu1.hsforms.com/1ukabeofkRfmlDApsM4k01A2dfx7i",
         permanent: true,
       },
       // old website redirects
