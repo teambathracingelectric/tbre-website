@@ -1,50 +1,47 @@
-import { carsData } from "@/data/cars";
+// import { carsData } from "@/data/cars";
 import type { MetadataRoute } from "next";
+
+const domain = "https://eambathracingelectric.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://dev.teambathracingelectric.com",
+      url: domain,
       lastModified: new Date(),
       priority: 1.0,
     },
     {
-      url: "https://dev.teambathracingelectric.com/about",
+      url: `${domain}/about`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: "https://dev.teambathracingelectric.com/cars",
+      url: `${domain}/cars`,
       lastModified: new Date(),
       priority: 0.8,
     },
-    ...carsData.map((car) => ({
-      url: `https://dev.teambathracingelectric.com/cars/${car.year}`,
-      lastModified: new Date(),
-      priority: 0.8,
-    })),
+    // ...carsData.map((car) => ({
+    //   url: `${domain}/cars/${car.year}`,
+    //   lastModified: new Date(),
+    //   priority: 0.8,
+    // })),
+    // {
+    //   url: `${domain}/contact`,
+    //   lastModified: new Date(),
+    //   priority: 0.8,
+    // },
+    // {
+    //   url: `${domain}/gallery`,
+    //   lastModified: new Date(),
+    //   priority: 0.8,
+    // },
     {
-      url: "https://dev.teambathracingelectric.com/contact",
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
-      url: "https://dev.teambathracingelectric.com/gallery",
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
-      url: "https://dev.teambathracingelectric.com/sponsors",
-      lastModified: new Date(),
-      priority: 0.8,
-    },
-    {
-      url: "https://dev.teambathracingelectric.com/sponsors/rotork",
+      url: `${domain}/sponsors`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: "https://dev.teambathracingelectric.com/teams",
+      url: `${domain}/teams`,
       lastModified: new Date(),
       priority: 0.8,
     },
