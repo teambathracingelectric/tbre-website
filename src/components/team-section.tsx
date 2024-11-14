@@ -8,11 +8,12 @@ export default function TeamSection({ team }: { team: Team }) {
         <div key={s.category}>
           <h2 className="text-center font-semibold text-2xl">{s.category}</h2>
           <br />
-          <div className="grid gap-y-8 grid-cols-1 md:grid-cols-3">
+          <div className="grid gap-y-8 grid-cols-1 md:grid-cols-3 gap-x-8">
             {s.members.map((m) => (
               <div key={m.name} className="flex flex-col items-center">
                 <Image
                   src={m.image ?? "/team/placeholder.png"}
+                  // src={"/team/placeholder.png"}
                   alt={`Photo of ${m.name}`}
                   width={200}
                   height={200}

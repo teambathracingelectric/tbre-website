@@ -4,3 +4,7 @@ resources
 scripts
 
 *.pdf
+*.png
+*.jpg
+*.jpeg
+*.ico
