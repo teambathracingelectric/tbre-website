@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://dev.teambathracingelectric.com/sitemap.xml",
+    sitemap: "https://teambathracingelectric.com/sitemap.xml",
   };
 }
