@@ -31,7 +31,7 @@ export default function Page() {
         </p>
         <br />
         <Link
-          href="/Sponsorship+Prospectus+2023_2024.pdf"
+          href="/2024-25_TBRe_Sponsorship_brochure.pdf"
           locale={false}
           download
         >
