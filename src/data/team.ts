@@ -21,7 +21,10 @@ export const teamData: Team = [
         role: "Aerodynamics Lead",
         image: "/team/2025/alexander_crisan.png",
       },
-      { name: "Seb Hall", role: "AI Lead", image: "/team/2025/seb_hall.jpg" },
+      { name: "Seb Hall",
+        role: "AI Lead",
+        image: "/team/2025/seb_hall.png",
+      },
       {
         name: "Federica La Scala",
         role: "Chassis Lead",

@@ -13,7 +13,6 @@ export default function TeamSection({ team }: { team: Team }) {
               <div key={m.name} className="flex flex-col items-center">
                 <Image
                   src={m.image ?? "/team/placeholder.png"}
-                  // src={"/team/placeholder.png"}
                   alt={`Photo of ${m.name}`}
                   width={200}
                   height={200}
