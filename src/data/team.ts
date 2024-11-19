@@ -16,6 +16,11 @@ export const teamData: Team = [
         role: "Technical Director",
         image: "/team/2025/daniel_perez_thomson.png",
       },
+    ],
+  },
+  {
+    category: "",
+    members: [
       {
         name: "Alexander Crisan",
         role: "Aerodynamics Lead",
@@ -71,5 +76,5 @@ export const teamData: Team = [
         image: "/team/2025/emma_dickson.png",
       },
     ],
-  },
+  }
 ];

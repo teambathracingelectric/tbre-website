@@ -4,11 +4,11 @@ import Image from "next/image";
 export default function TeamSection({ team }: { team: Team }) {
   return (
     <section className="py-8 space-y-8">
-      {team.map((s) => (
-        <div key={s.category}>
+      {team.map((s, i) => (
+        <div key={`${i}-${s.category}`}>
           <h2 className="text-center font-semibold text-2xl">{s.category}</h2>
           <br />
-          <div className="grid gap-y-8 grid-cols-1 md:grid-cols-3 gap-x-8">
+          <div className={`grid gap-y-8 grid-cols-1 gap-x-8 ${s.members.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3 '}`}>
             {s.members.map((m) => (
               <div key={m.name} className="flex flex-col items-center">
                 <Image
