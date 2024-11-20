@@ -82,7 +82,10 @@ export default function EventCountdown() {
     <div className="text-white p-2 w-full flex justify-center items-center bg-tbre-yellow hover:underline">
       <a
         className="md:text-lg text-center"
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://imeche.org/events/formula-student"
+
       >
         <span className="font-bold">Next {nextEvent?.type ?? "Event"}:</span>{" "}
         <br className="block md:hidden" />
