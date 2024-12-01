@@ -6,11 +6,10 @@ import Navbar from "@/components/navbar";
 import SponsorsSection from "@/components/sponsors-section";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
-// const font = Roboto({ subsets: ["latin"], weight: "700" });
-const font = Nunito_Sans({ subsets: ["latin"] });
+const font = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://teambathracingelectric.com"),
