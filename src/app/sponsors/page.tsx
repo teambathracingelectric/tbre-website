@@ -44,7 +44,8 @@ export default function Page() {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// TODO: add me back
+// eslint -disable-next-line @typescript-eslint/no-unused-vars
 function SponsorsSection() {
   return (
     <section>
