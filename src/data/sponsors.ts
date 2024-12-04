@@ -21,7 +21,7 @@ export const sponsorsData: {
       {
         id: "rotork",
         name: "Rotork",
-        link: "https://rotork.com",
+        link: "https://rotork.com/en",
         logo: "/sponsors/rotork.svg",
         logoHeight: 200,
         logoWidth: 400,
