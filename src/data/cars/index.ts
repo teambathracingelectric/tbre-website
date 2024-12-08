@@ -14,13 +14,6 @@ export type Results = {
   image: string;
 }[];
 
-export type SubTeam = {
-  name: string;
-  role: string;
-  image?: string;
-  link?: string;
-}[];
-
 export type Team = {
   category: string;
   members: {
