@@ -21,6 +21,7 @@ export type Team = {
     role?: string;
     image?: string;
     link?: string;
+    important?: boolean;
   }[];
 }[];
 

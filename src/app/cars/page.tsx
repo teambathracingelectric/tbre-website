@@ -12,7 +12,7 @@ export default function Page() {
     <main className="pt-8 min-h-screen flex flex-col items-center">
       <h1 className="text-4xl text-center font-extrabold">Cars</h1>
       <br />
-      <section className="grid md:grid-cols-2 gap-8">
+      <section className="grid md:grid-cols-2 gap-8 p-4">
         {carsData.map((c) => (
           <div
             key={c.year}
