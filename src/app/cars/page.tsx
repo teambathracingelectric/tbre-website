@@ -46,43 +46,45 @@ export default function Page() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {carsData.map((car) => (
-            <Card
-              key={car.year}
-              className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg"
-            >
-              <CardContent className="p-0">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-blue hover:bg-tbre-blue/90">
-                    {car.year}
-                  </Badge>
-                  <Image
-                    src={car.image}
-                    alt={car.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <h2 className="text-2xl font-bold text-white">
-                      {car.name}
-                    </h2>
+          {carsData
+            .filter((c) => c.year !== 2025)
+            .map((car) => (
+              <Card
+                key={car.year}
+                className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg"
+              >
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-blue hover:bg-tbre-blue/90">
+                      {car.year}
+                    </Badge>
+                    <Image
+                      src={car.image}
+                      alt={car.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-6">
+                      <h2 className="text-2xl font-bold text-white">
+                        {car.name}
+                      </h2>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <p className="mb-4 text-zinc-600">
-                    {car.text?.slice(0, 64)}...
-                  </p>
-                  {/* <Link
+                  <div className="p-6">
+                    <p className="mb-4 text-zinc-600">
+                      {car.text?.slice(0, 64)}...
+                    </p>
+                    {/* <Link
                     href={`/cars/${car.year}`}
                     className="inline-flex items-center text-tbre-blue transition-colors hover:text-tbre-blue/80"
                   >
                     View Car <ArrowRightIcon className="ml-2 h-4 w-4" />
                   </Link> */}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
         </div>
       </section>
     </div>
