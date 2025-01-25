@@ -75,7 +75,18 @@ export function EventCountdown() {
             <span className="hidden sm:inline">
               Next {nextEvent.type ?? "Event"}:{" "}
             </span>
-            {nextEvent.name}
+            {nextEvent.link ? (
+              <a
+                href={nextEvent.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-tbre-yellow transition-colors"
+              >
+                {nextEvent.name}
+              </a>
+            ) : (
+              nextEvent.name
+            )}
           </span>
         </div>
 

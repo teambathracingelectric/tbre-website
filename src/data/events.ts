@@ -3,6 +3,7 @@ type Event = {
   date: Date;
   endDate?: Date;
   type?: string;
+  link?: string;
 };
 
 export const eventsData: Event[] = [
@@ -11,5 +12,6 @@ export const eventsData: Event[] = [
     date: new Date("2025-07-16"),
     endDate: new Date("2025-07-16"),
     type: "Competition",
+    link: "https://imeche.org/events/formula-student",
   },
 ];
