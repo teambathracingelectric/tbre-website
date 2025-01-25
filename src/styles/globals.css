@@ -1,20 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer components {
-  .background-image-car {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
-      url("/car.jpg");
-    /* background-image: url("/car.jpg"); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+@theme {
+  --color-tbre-blue: #105bab;
+  --color-tbre-yellow: #ffc423;
+  --color-tbre-blue-cool: #1f2b46;
+  --color-tbre-yellow-cool: #f0b323;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@utility background-image-car {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("/car.jpg");
+  /* background-image: url("/car.jpg"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }

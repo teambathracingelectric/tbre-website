@@ -6,11 +6,18 @@ export default function TeamSection({ team }: { team: Team }) {
     <section className="py-8 space-y-8">
       {team.map((s, i) => (
         <div key={`${i}-${s.category}`}>
-          <h2 className="text-center font-semibold text-2xl underline decoration-tbre-yellow">{s.category}</h2>
+          <h2 className="text-center font-semibold text-2xl underline decoration-tbre-yellow">
+            {s.category}
+          </h2>
           <br />
-          <div className={`grid gap-y-8 grid-cols-1 gap-x-8 ${s.members.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3 '}`}>
+          <div
+            className={`grid gap-y-8 grid-cols-1 gap-x-8 ${s.members.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3 "}`}
+          >
             {s.members.map((m) => (
-              <div key={m.name} className="flex flex-col items-center w-[240px]">
+              <div
+                key={m.name}
+                className="flex flex-col items-center w-[240px]"
+              >
                 <Image
                   src={m.image ?? "/team/placeholder.png"}
                   alt={`Photo of ${m.name}`}
