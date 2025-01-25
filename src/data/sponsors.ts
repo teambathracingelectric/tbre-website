@@ -10,11 +10,15 @@ export type Sponsor = {
   invert?: boolean;
 };
 
-// TODO: refactor this to have typed sponsor levels
-export const sponsorsData: {
+type SponsorLevel = {
   level: string;
   sponsors: Sponsor[];
-}[] = [
+};
+
+export type Sponsors = SponsorLevel[];
+
+// TODO: refactor this to have typed sponsor levels
+export const sponsorsData: Sponsors = [
   {
     level: "Title Sponsor",
     sponsors: [
@@ -316,7 +320,8 @@ export const sponsorsData: {
         logo: "/sponsors/textreme.png",
         logoHeight: 50,
         logoWidth: 100,
-        // TODO: add description
+        description: `
+        Oxeon is a research-based material company that develops, produces, and sells extremely thin carbon fiber materials. Founded in 2003, the company is now a leading player in the field of spread tow thin ply reinforcements, and the material is marketed under the brand name TeXtreme®. In applications where TeXtreme® is used, customers achieve higher mechanical performance and significantly reduced weight. Today, our fabrics are used in many areas, such as aviation, industrial, and sports applications.`,
         image: "/sponsors/tbre-image.jpg",
       },
       {
@@ -326,7 +331,8 @@ export const sponsorsData: {
         logo: "/sponsors/rapid_harness.png",
         logoHeight: 50,
         logoWidth: 100,
-        // TODO: add description
+        description: `
+        RapidHarness is a full lifecycle CAD solution built for designing production-ready wire harness schematics. Whether you're working on quick test articles or aerospace grade drawings, RapidHarness will revolutionize the way you work.`,
         image: "/sponsors/tbre-image.jpg",
       },
       {

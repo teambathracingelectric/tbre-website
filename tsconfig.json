@@ -5,6 +5,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    "verbatimModuleSyntax": true,
     "esModuleInterop": true,
     "target": "esnext",
     "module": "esnext",
@@ -20,8 +21,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "verbatimModuleSyntax": true
+    }
   },
   "include": [
     "next-env.d.ts",

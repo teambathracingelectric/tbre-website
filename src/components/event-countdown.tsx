@@ -1,13 +1,37 @@
 "use client";
 
 import { eventsData } from "@/data/events";
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
+import { TimerIcon } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-dayjs.extend(duration);
+type TimeLeft = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 
-export default function EventCountdown() {
+function calculateTimeLeft(targetDate: Date): TimeLeft {
+  const difference = +targetDate - +new Date();
+
+  if (difference > 0) {
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
+
+  return {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
+}
+
+export function EventCountdown() {
   const nextEvent = useMemo(
     () =>
       eventsData
@@ -16,16 +40,7 @@ export default function EventCountdown() {
     [],
   );
 
-  const [remainingTime, setRemainingTime] = useState<{
-    years: number;
-    months: number;
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-  }>({
-    years: 0,
-    months: 0,
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
@@ -33,65 +48,64 @@ export default function EventCountdown() {
   });
 
   useEffect(() => {
-    if (!nextEvent) {
-      return;
-    }
+    const timer = setInterval(
+      () => setTimeLeft(calculateTimeLeft(nextEvent.date)),
+      1000,
+    );
 
-    const interval = setInterval(() => {
-      const currentTime = dayjs();
-      const targetTime = dayjs(nextEvent.date);
-
-      const duration = dayjs.duration(targetTime.diff(currentTime));
-
-      const years = duration.years();
-      const months = duration.months();
-      const days = duration.days();
-      const hours = duration.hours();
-      const minutes = duration.minutes();
-      const seconds = duration.seconds();
-
-      setRemainingTime({
-        years,
-        months,
-        days,
-        hours,
-        minutes,
-        seconds,
-      });
-    }, 1_000);
-
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, [nextEvent]);
 
-  if (!nextEvent) {
-    return null;
-  }
-
   if (
-    remainingTime.years === 0 &&
-    remainingTime.months === 0 &&
-    remainingTime.days === 0 &&
-    remainingTime.hours === 0 &&
-    remainingTime.minutes === 0 &&
-    remainingTime.seconds === 0
+    !nextEvent ||
+    (timeLeft.days === 0 &&
+      timeLeft.hours === 0 &&
+      timeLeft.minutes === 0 &&
+      timeLeft.seconds === 0)
   ) {
     return null;
   }
 
   return (
-    <div className="text-white p-2 w-full flex justify-center items-center bg-tbre-yellow hover:underline">
-      <a
-        className="md:text-lg text-center"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://imeche.org/events/formula-student"
-      >
-        <span className="font-bold">Next {nextEvent?.type ?? "Event"}:</span>{" "}
-        <br className="block md:hidden" />
-        {nextEvent.name} in {remainingTime.months} months, {remainingTime.days}{" "}
-        days, {remainingTime.hours}h, {remainingTime.minutes}m,{" "}
-        {remainingTime.seconds}s
-      </a>
+    <div className="bg-tbre-blue py-4 text-white w-full">
+      <div className="mx-auto container flex flex-col items-center justify-between gap-4 sm:flex-row px-4">
+        <div className="flex items-center gap-2">
+          <TimerIcon className="h-5 w-5 text-tbre-yellow" />
+          <span className="font-medium text-center">
+            <span className="hidden sm:inline">
+              Next {nextEvent.type ?? "Event"}:{" "}
+            </span>
+            {nextEvent.name}
+          </span>
+        </div>
+
+        <div className="flex gap-4 text-sm">
+          <div className="text-center">
+            <span className="block text-xl font-bold text-tbre-yellow">
+              {timeLeft.days}
+            </span>
+            <span className="text-white/80">Days</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-xl font-bold text-tbre-yellow">
+              {timeLeft.hours}
+            </span>
+            <span className="text-white/80">Hours</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-xl font-bold text-tbre-yellow">
+              {timeLeft.minutes}
+            </span>
+            <span className="text-white/80">Minutes</span>
+          </div>
+          <div className="text-center">
+            <span className="block text-xl font-bold text-tbre-yellow">
+              {timeLeft.seconds}
+            </span>
+            <span className="text-white/80">Seconds</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

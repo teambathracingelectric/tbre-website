@@ -1,37 +1,27 @@
-// import { navigationLinks } from "@/data/navLinks";
 import { socialLinks } from "@/data/socialLinks";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer className="border-t-8 border-tbre-yellow bg-black text-white p-8 w-full flex flex-col md:flex-row justify-evenly items-center gap-y-4">
-      <ul className="md:w-1/3 space-x-4 flex justify-center">
+    <footer className="border-t-8 border-tbre-yellow bg-tbre-blue text-white p-8 w-full flex flex-col md:flex-row justify-evenly items-center gap-y-4">
+      <div className="md:w-1/3 space-x-4 flex justify-center">
         <p className="uppercase text-sm font-semibold">
           Team Bath Racing Electric &copy; {new Date().getFullYear()}
         </p>
-        {/* {navLinks.map((link) => (
-          <li key={link.name}>
-            <Link
-              href={link.href}
-              className="uppercase text-sm font-semibold hover:text-tbre-yellow transition-all"
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))} */}
-      </ul>
+      </div>
+
       <div className="md:w-1/3 flex justify-center">
         <Link href="/">
           <Image
-            src="/tbre_logo_colour.png"
+            src="/tbre_logo_white.png"
             alt="tbre logo"
             width={200}
             height={200}
-            className="filter grayscale hover:filter-none transition-all"
           />
         </Link>
       </div>
+
       <ul className="md:w-1/3 space-x-4 flex justify-center">
         {socialLinks.map((link) => (
           <li key={link.name}>

@@ -1,7 +1,7 @@
 // import { carsData } from "@/data/cars";
 import type { MetadataRoute } from "next";
 
-const domain = "https://eambathracingelectric.com";
+const domain = "https://teambathracingelectric.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -45,5 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     },
+    // {
+    //   url: `${domain}/blog`,
+    //   lastModified: new Date(),
+    //   priority: 0.8,
+    // },
   ];
 }

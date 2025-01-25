@@ -1,7 +1,7 @@
 import type { Results } from "@/data/cars";
 import Image from "next/image";
 
-export default function ResultsSection({ results }: { results: Results }) {
+export function ResultsSection({ results }: { results: Results }) {
   return (
     <section className="py-8 space-y-8 w-full md:w-1/2">
       <h2 className="font-semibold text-2xl">Results</h2>

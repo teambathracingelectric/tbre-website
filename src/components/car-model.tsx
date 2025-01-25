@@ -23,7 +23,7 @@ import Image from "next/image";
 //   sx?: any;
 // }
 
-export default function CarModel({ src }: { src: string }) {
+export function CarModel({ src }: { src: string }) {
   return (
     // @ts-expect-error model-viewer
     <model-viewer

@@ -1,6 +1,6 @@
 import { statsData } from "@/data/stats";
 
-export default function StatsSection() {
+export function StatsSection() {
   return (
     <section className="w-1/2 mx-auto">
       <h2 className="text-4xl text-center font-extrabold">Stats</h2>

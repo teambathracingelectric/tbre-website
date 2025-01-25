@@ -50,4 +50,4 @@ export const socialLinks: { name: string; href: string; icon: IconType }[] = [
     href: "https://share-eu1.hsforms.com/1ukabeofkRfmlDApsM4k01A2dfx7i",
     icon: FaNewspaper,
   },
-];
+] as const;

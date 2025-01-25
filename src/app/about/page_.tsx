@@ -1,4 +1,4 @@
-import StatsSection from "@/components/stats-section";
+import { StatsSection } from "@/components/stats-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
