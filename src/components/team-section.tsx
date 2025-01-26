@@ -22,8 +22,15 @@ export function TeamSection() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {category.members
-              .sort((a) => (a.lead ? -1 : 1))
-              .sort((a) => (a.image ? -1 : 1))
+              .sort((a, b) => {
+                if (a.lead && !b.lead) return -1;
+                if (!a.lead && b.lead) return 1;
+                if (a.important && !b.important) return -1;
+                if (!a.important && b.important) return 1;
+                if (a.image && !b.image) return -1;
+                if (!a.image && b.image) return 1;
+                return 0;
+              })
               .map((member, memberIndex) => (
                 <div
                   key={member.name}
@@ -44,6 +51,11 @@ export function TeamSection() {
                           {member.lead && (
                             <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-blue hover:bg-tbre-blue/90">
                               Lead
+                            </Badge>
+                          )}
+                          {member.important && (
+                            <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-yellow hover:bg-tbre-yellow/90">
+                              Important
                             </Badge>
                           )}
                           <Image

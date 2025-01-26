@@ -23,6 +23,7 @@ export type Team = {
     image?: string;
     link?: string;
     lead?: boolean;
+    important?: boolean;
   }[];
 }[];
 
