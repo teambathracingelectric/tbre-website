@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { sponsorsData } from "@/data/sponsors";
+import { sponsors } from "@/data/sponsors";
 import { ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Sponsors",
 };
 
-const titleSponsor = sponsorsData[0].sponsors[0];
+const titleSponsor = sponsors[0].sponsors[0];
 
 export default function Page() {
   return (
@@ -34,7 +34,11 @@ export default function Page() {
             size="lg"
             className="bg-tbre-yellow text-white hover:bg-tbre-yellow/90"
           >
-            <Link href="/2024-25_TBRe_Sponsorship_brochure.pdf" download>
+            <Link
+              href="/2024-25_TBRe_Sponsorship_brochure.pdf"
+              download
+              target="_blank"
+            >
               Download our Sponsorship Prospectus
             </Link>
           </Button>
@@ -80,7 +84,7 @@ export default function Page() {
       {/* Other Sponsors */}
       <section className="py-20">
         <div className="container px-4 mx-auto">
-          {sponsorsData
+          {sponsors
             .slice(1)
             .filter((level) => level.sponsors.length)
             .map((level) => (
@@ -91,7 +95,7 @@ export default function Page() {
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {level.sponsors.map((sponsor) => (
                     <Card key={sponsor.id} className="bg-white">
-                      <CardContent className="p-6">
+                      <CardContent className="p-6 space-y-2">
                         <Link
                           href={sponsor.link}
                           className="mb-6 block"
@@ -101,16 +105,25 @@ export default function Page() {
                           <Image
                             src={sponsor.logo}
                             alt={sponsor.name}
-                            width={sponsor.logoWidth}
-                            height={sponsor.logoHeight}
+                            width={150}
+                            height={50}
                           />
                         </Link>
-                        <h3 className="mb-2 text-xl font-bold text-zinc-900">
+                        <h3 className="text-xl font-bold text-zinc-900">
                           {sponsor.name}
                         </h3>
                         {sponsor.description && (
                           <p className="text-zinc-600">{sponsor.description}</p>
                         )}
+                        <a
+                          href={sponsor.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                        >
+                          Visit {sponsor.name}{" "}
+                          <ArrowRightIcon className="ml-2 h-5 w-5" />
+                        </a>
                       </CardContent>
                     </Card>
                   ))}

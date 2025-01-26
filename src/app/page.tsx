@@ -38,7 +38,7 @@ export default function Page() {
               height={200}
               className="mx-auto w-1/2"
             /> */}
-            <p className="mx-auto mb-8 max-w-2xl text-xl text-white">
+            <p className="mx-auto mb-8 max-w-2xl text-xl text-white text-pretty">
               Formula Student electric racing team based at the University of
               Bath
             </p>
@@ -137,40 +137,44 @@ export default function Page() {
       </section>
 
       {/* About Us */}
-      {/* <section className="bg-tbre-yellow p-16 text-white">
-        <h2 className="text-4xl font-semibold text-center">About Us</h2>
-        <br />
-        <div className="md:flex gap-16 md:w-2/3 mx-auto">
-          <p className="flex-1">
-            Team Bath Racing Electric (TBRe) was founded in 2015. We are an
-            exciting and innovative student motorsport team based at the
-            University of Bath. Our team of undergraduates from across the
-            university design, build and race a formula-style car for the
-            Formula Student competition against teams from all around the world.
-            <br />
-            <br />
-            We compete at Silverstone each year for the UK event and travel
-            around the world to compete in international Formula student events.
-            We were the first UK electric team to compete abroad, competing in
-            Zhuhai, China in 2018.
-          </p>
-          <p className="flex-1">
-            In 2022 we competed in Italy and Spain which helped maintain our
-            spot as #1 UK Electric Formula Student Team.
-            <br />
-            <br />
-            Unlike many competitors, TBRe utilises a fully electric powertrain
-            with an Emrax 228 motor rear-wheel drive and a custom in-house
-            designed and built battery pack.
-            <br />
-            <br />
-            TBRe is widely recognized as a leading Formula Student team in the
-            United Kingdom, particularly distinguished for its mastery of
-            electric powertrains, a distinction consistently upheld since the
-            2017 competition.
-          </p>
+      <section className="bg-tbre-yellow py-20">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-12 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">
+            About Us
+          </h2>
+          <div className="grid gap-8 text-white lg:grid-cols-2">
+            <p className="flex-1 text-lg leading-relaxed">
+              Team Bath Racing Electric (TBRe) was founded in 2015. We are an
+              exciting and innovative student motorsport team based at the
+              University of Bath. Our team of undergraduates from across the
+              university design, build and race a formula-style car for the
+              Formula Student competition against teams from all around the
+              world.
+              <br />
+              <br />
+              We compete at Silverstone each year for the UK event and travel
+              around the world to compete in international Formula student
+              events. We were the first UK electric team to compete abroad,
+              competing in Zhuhai, China in 2018.
+            </p>
+            <p className="flex-1 text-lg leading-relaxed">
+              In 2022 we competed in Italy and Spain which helped maintain our
+              spot as #1 UK Electric Formula Student Team.
+              <br />
+              <br />
+              Unlike many competitors, TBRe utilises a fully electric powertrain
+              with an Emrax 228 motor rear-wheel drive and a custom in-house
+              designed and built battery pack.
+              <br />
+              <br />
+              TBRe is widely recognized as a leading Formula Student team in the
+              United Kingdom, particularly distinguished for its mastery of
+              electric powertrains, a distinction consistently upheld since the
+              2017 competition.
+            </p>
+          </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Stats Panel */}
       <section className="bg-tbre-blue py-20 text-white">
@@ -236,7 +240,7 @@ export default function Page() {
                 Our Members
               </h2>
               <p className="text-lg text-zinc-600">
-                We comprise over 50 professional, motivated and committed
+                We comprise over 50 professional, motivated, and committed
                 students from across our Electrical and Mechanical Engineering
                 departments as well as Management and Computer Science, making
                 our team truly cross-disciplinary and allowing students from any
@@ -307,7 +311,7 @@ export default function Page() {
                 className="group overflow-hidden rounded-lg bg-white shadow-md"
               >
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/car.jpg"
                   alt="News thumbnail"
                   width={600}
                   height={400}

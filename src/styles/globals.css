@@ -89,6 +89,11 @@
   text-wrap: balance;
 }
 
+@utility white-to-yellow {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(6984%)
+    hue-rotate(336deg) brightness(104%) contrast(104%);
+}
+
 @layer utilities {
   body {
     font-family: Arial, Helvetica, sans-serif;
@@ -171,6 +176,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

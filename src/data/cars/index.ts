@@ -37,7 +37,7 @@ export type Car = {
   model?: string;
 };
 
-export const carsData: Car[] = [
+export const cars: Car[] = [
   car2025,
   car2024,
   car2023,

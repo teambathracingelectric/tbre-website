@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { blogPosts } from "@/data/blog";
+import { blogs } from "@/data/blogs";
 import { ArrowRightIcon, CalendarIcon, ClockIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -7,9 +7,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog",
+  description:
+    "Stay up to date with our latest achievements, innovations, and team updates",
 };
 
-const featuredBlogPost = blogPosts[0];
+const featuredBlog = blogs[0];
 
 export default function Page() {
   return (
@@ -43,24 +45,24 @@ export default function Page() {
           <CardContent className="grid gap-8 p-0 md:grid-cols-2">
             <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
               <Image
-                src={featuredBlogPost.image}
-                alt={featuredBlogPost.title}
+                src={featuredBlog.image}
+                alt={featuredBlog.title}
                 fill
                 className="object-cover"
               />
             </div>
             <div className="flex flex-col justify-center p-6 md:p-8">
               <div className="mb-4 inline-block w-fit rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue">
-                {featuredBlogPost.category}
+                {featuredBlog.category}
               </div>
               <h2 className="mb-4 text-2xl font-bold text-zinc-900 sm:text-3xl">
-                {featuredBlogPost.title}
+                {featuredBlog.title}
               </h2>
-              <p className="mb-6 text-zinc-600">{featuredBlogPost.excerpt}</p>
+              <p className="mb-6 text-zinc-600">{featuredBlog.excerpt}</p>
               <div className="mb-6 flex items-center gap-4 text-sm text-zinc-500">
                 <div className="flex items-center gap-1">
                   <CalendarIcon className="h-4 w-4" />
-                  {new Date(featuredBlogPost.date).toLocaleDateString("en-US", {
+                  {new Date(featuredBlog.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
                     year: "numeric",
@@ -68,11 +70,11 @@ export default function Page() {
                 </div>
                 <div className="flex items-center gap-1">
                   <ClockIcon className="h-4 w-4" />
-                  {featuredBlogPost.readTime}
+                  {featuredBlog.readTime}
                 </div>
               </div>
               <Link
-                href={`/blog/${featuredBlogPost.slug}`}
+                href={`/blog/${featuredBlog.slug}`}
                 className="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
               >
                 Read More <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -87,7 +89,7 @@ export default function Page() {
         <div className="container px-4 mx-auto">
           <h2 className="mb-8 text-2xl font-bold text-zinc-900">All Posts</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
+            {blogs.map((post) => (
               <Card
                 key={post.id}
                 className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg"

@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { EventCountdown } from "@/components/event-countdown";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { domain } from "@/data/domain";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -14,9 +15,9 @@ const font = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://teambathracingelectric.com"),
+  metadataBase: new URL(domain),
   title: {
-    template: "%s ~ Team Bath Racing Electric",
+    template: "%s | Team Bath Racing Electric",
     default: "Team Bath Racing Electric",
   },
   description:
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
     type: "website",
-    url: "https://teambathracingelectric.com",
+    url: domain,
     images: {
       url: "/tbre_logo_colour.png",
       alt: "Team Bath Racing Electric",
@@ -47,7 +48,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <EventCountdown />
         <Navbar />
         {children}
-        {/* <SponsorsSection /> */}
         <Footer />
         <Analytics />
       </body>

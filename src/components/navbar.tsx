@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navigationLinks } from "@/data/navigationLinks";
+import { navigation } from "@/data/navigation";
 import { cn } from "@/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
@@ -35,13 +35,15 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden gap-6 md:flex">
-          {navigationLinks.map((link) => (
+          {navigation.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               className={cn(
-                "text-zinc-900 uppercase text-sm font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
-                pathname === link.href && "text-tbre-yellow",
+                "text-zinc-900 text-sm font-semibold transition-all hover:text-tbre-yellow",
+                link.href === "/"
+                  ? pathname === link.href && "text-tbre-yellow"
+                  : pathname.startsWith(link.href) && "text-tbre-yellow",
               )}
             >
               {link.name}
@@ -60,13 +62,15 @@ export function Navbar() {
               <SheetTitle>TBRe</SheetTitle>
             </SheetHeader>
             <nav className="mt-8 flex flex-col gap-4">
-              {navigationLinks.map((link) => (
+              {navigation.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-zinc-900 uppercase text-lg font-semibold transition-all hover:text-tbre-yellow px-4 py-2 rounded-md",
-                    pathname === link.href && "text-tbre-yellow",
+                    "text-zinc-900 text-lg font-semibold transition-all hover:text-tbre-yellow",
+                    link.href === "/"
+                      ? pathname === link.href && "text-tbre-yellow"
+                      : pathname.startsWith(link.href) && "text-tbre-yellow",
                   )}
                 >
                   {link.name}

@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaNewspaper, FaXTwitter } from "react-icons/fa6";
 
-export const socialLinks: { name: string; href: string; icon: IconType }[] = [
+export const socials: { name: string; href: string; icon: IconType }[] = [
   {
     name: "LinkedIn",
     href: "https://linkedin.com/company/team-bath-racing-electric",

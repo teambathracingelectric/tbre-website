@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { carsData } from "@/data/cars";
+import { cars } from "@/data/cars";
 // import { ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -46,7 +46,7 @@ export default function Page() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {carsData
+          {cars
             .filter((c) => c.year !== 2025)
             .map((car) => (
               <Card

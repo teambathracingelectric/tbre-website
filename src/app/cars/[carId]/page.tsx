@@ -1,9 +1,8 @@
-// "use client";
-
 import { CarGallery } from "@/components/car-gallery";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { carsData } from "@/data/cars";
+import { cars } from "@/data/cars";
+import { domain } from "@/data/domain";
 import { getAdjacentYears } from "@/utils";
 import { ArrowLeftIcon, ArrowRightIcon, ChevronLeftIcon } from "lucide-react";
 import type { Metadata } from "next";
@@ -12,7 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  return carsData.map((car) => ({
+  return cars.map((car) => ({
     carId: car.year.toString(),
   }));
 }
@@ -25,17 +24,23 @@ export async function generateMetadata(props: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const params = await props.params;
+
+  const carYear = Number(params.carId);
+  const car = cars.find((c) => c.year === carYear);
+
+  if (!car) {
+    return {
+      title: "Car",
+    };
+  }
+
   return {
     title: `${params.carId} Car`,
     description: `The ${params.carId} car.`,
     openGraph: {
       images: [
         {
-          url: new URL(
-            `https://teambathracingelectric.com/cars/${params.carId}/car.jpg`,
-            // `/cars/${params.carId}/car.jpg`,
-            // process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
-          ),
+          url: `${domain}/cars/${params.carId}/car.jpg`,
         },
       ],
     },
@@ -60,18 +65,47 @@ const carGalleryImages: {
   },
 ] as const;
 
-const availableYears = carsData.map((car) => car.year);
+const raceResults: {
+  competition: string;
+  position: string;
+  category: string;
+  points: number;
+  highlights: string[];
+}[] = [
+  {
+    competition: "Formula Student Germany 2023",
+    position: "1st",
+    category: "Electric Vehicle Class",
+    points: 920,
+    highlights: ["1st in Engineering Design", "2nd in Acceleration"],
+  },
+  {
+    competition: "Formula Student Netherlands 2023",
+    position: "2nd",
+    category: "Electric Vehicle Class",
+    points: 885,
+    highlights: ["1st in Endurance", "1st in Cost Analysis"],
+  },
+  {
+    competition: "Formula Student UK 2023",
+    position: "3rd",
+    category: "Electric Vehicle Class",
+    points: 856,
+    highlights: ["1st in Business Plan", "2nd in Skidpad"],
+  },
+] as const;
 
 export default async function Page(props: { params: Promise<Params> }) {
   const params = await props.params;
 
   const carYear = Number(params.carId);
-  const carData = carsData.find((c) => c.year === carYear);
-  const adjacentYears = getAdjacentYears(carYear, availableYears);
+  const car = cars.find((c) => c.year === carYear);
 
-  if (!carData) {
+  if (!car) {
     notFound();
   }
+
+  const adjacentYears = getAdjacentYears(carYear);
 
   return (
     <div className="min-h-screen bg-white">
@@ -109,8 +143,8 @@ export default async function Page(props: { params: Promise<Params> }) {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] w-full">
         <Image
-          src={carData.image}
-          alt={carData.name}
+          src={car.image}
+          alt={car.name}
           className="object-cover"
           fill
           priority
@@ -130,9 +164,9 @@ export default async function Page(props: { params: Promise<Params> }) {
             </motion.div> */}
             <div>
               <h1 className="mb-2 text-5xl font-bold tracking-tighter text-white sm:text-6xl underline decoration-tbre-yellow">
-                {carData.name}
+                {car.name}
               </h1>
-              <p className="text-xl text-tbre-blue">{carData.year}</p>
+              <p className="text-xl text-tbre-blue">{car.year}</p>
             </div>
           </div>
         </div>
@@ -147,7 +181,7 @@ export default async function Page(props: { params: Promise<Params> }) {
             <p
               className="text-lg text-zinc-600"
               dangerouslySetInnerHTML={{
-                __html: carData.text ?? "",
+                __html: car.text ?? "",
               }}
             />
             {/* <div className="grid gap-4 sm:grid-cols-2">
@@ -162,7 +196,7 @@ export default async function Page(props: { params: Promise<Params> }) {
             </div> */}
           </div>
           <Image
-            src={carData.image}
+            src={car.image}
             alt="Car detail"
             width={600}
             height={400}
@@ -212,6 +246,50 @@ export default async function Page(props: { params: Promise<Params> }) {
           </div>
         </section> */}
       </main>
+
+      {/* Race Results Section */}
+      <section className="border-y bg-zinc-50 py-20">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-12 text-center text-3xl font-bold text-zinc-900">
+            Race Results
+          </h2>
+          <div className="space-y-6">
+            {raceResults.map((result) => (
+              <div
+                key={result.competition}
+                className="rounded-lg bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-semibold text-zinc-900">
+                      {result.competition}
+                    </h3>
+                    <p className="text-sm text-zinc-600">{result.category}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-tbre-blue">
+                      {result.position}
+                    </div>
+                    <div className="text-sm text-zinc-600">
+                      {result.points} points
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {result.highlights.map((highlight) => (
+                    <span
+                      key={highlight}
+                      className="rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue"
+                    >
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

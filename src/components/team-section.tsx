@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { teamData } from "@/data/team";
+import { team } from "@/data/team";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import Link from "next/link";
 export function TeamSection() {
   return (
     <section className="container space-y-20 px-4 py-16 mx-auto">
-      {teamData.map((category) => (
+      {team.map((category) => (
         <div key={category.category} className="space-y-8">
           <div className="flex items-center gap-4">
             <h2 className="text-2xl font-bold text-zinc-900">

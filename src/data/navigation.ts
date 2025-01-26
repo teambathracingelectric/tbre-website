@@ -1,4 +1,4 @@
-export const navigationLinks: { name: string; href: string }[] = [
+export const navigation: { name: string; href: string }[] = [
   { name: "Home", href: "/" },
   // { name: "About", href: "/about" },
   { name: "Team", href: "/team" },

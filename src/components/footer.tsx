@@ -1,4 +1,4 @@
-import { socialLinks } from "@/data/socialLinks";
+import { socials } from "@/data/socials";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t-8 border-tbre-yellow bg-tbre-blue text-white p-8 w-full flex flex-col md:flex-row justify-evenly items-center gap-y-4">
       <div className="md:w-1/3 space-x-4 flex justify-center">
-        <p className="uppercase text-sm font-semibold">
+        <p className="text-sm font-semibold">
           Team Bath Racing Electric &copy; {new Date().getFullYear()}
         </p>
       </div>
@@ -18,12 +18,13 @@ export function Footer() {
             alt="tbre logo"
             width={200}
             height={200}
+            className="hover:white-to-yellow"
           />
         </Link>
       </div>
 
       <ul className="md:w-1/3 space-x-4 flex justify-center">
-        {socialLinks.map((link) => (
+        {socials.map((link) => (
           <li key={link.name}>
             <a
               href={link.href}

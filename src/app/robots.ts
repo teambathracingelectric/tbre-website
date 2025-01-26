@@ -1,3 +1,4 @@
+import { domain } from "@/data/domain";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://teambathracingelectric.com/sitemap.xml",
+    sitemap: `${domain}/sitemap.xml`,
   };
 }

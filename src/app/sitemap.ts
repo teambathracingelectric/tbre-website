@@ -1,7 +1,5 @@
-// import { carsData } from "@/data/cars";
+import { domain } from "@/data/domain";
 import type { MetadataRoute } from "next";
-
-const domain = "https://teambathracingelectric.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,8 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 1.0,
     },
+    // {
+    //   url: `${domain}/about`,
+    //   lastModified: new Date(),
+    //   priority: 0.8,
+    // },
     {
-      url: `${domain}/about`,
+      url: `${domain}/teams`,
       lastModified: new Date(),
       priority: 0.8,
     },
@@ -23,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ...carsData.map((car) => ({
     //   url: `${domain}/cars/${car.year}`,
     //   lastModified: new Date(),
-    //   priority: 0.8,
+    //   priority: 0.6,
     // })),
     // {
     //   url: `${domain}/contact`,
@@ -40,15 +43,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     },
-    {
-      url: `${domain}/teams`,
-      lastModified: new Date(),
-      priority: 0.8,
-    },
     // {
     //   url: `${domain}/blog`,
     //   lastModified: new Date(),
     //   priority: 0.8,
     // },
+    // ...blogPosts.map((post) => ({
+    //   url: `${domain}/blog/${post.slug}`,
+    //   lastModified: new Date(),
+    //   priority: 0.6,
+    // })),
   ];
 }
