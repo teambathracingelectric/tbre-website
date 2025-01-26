@@ -230,7 +230,7 @@ export const car2025: Car = {
         {
           name: "Nithi Muthu Saravanan",
           role: "Cost and Manufacturing Lead",
-          lead: true,
+          important: true,
         },
         {
           name: "Ben Fall",
@@ -308,6 +308,16 @@ export const car2025: Car = {
         {
           name: "Maddie Tregonning",
           role: "Marketing Team Member",
+          important: true,
+        },
+        {
+          name: "Torey Boss",
+          role: "Marketing Team Member",
+          important: true,
+        },
+        {
+          name: "Priya Nath",
+          role: "NewsLetter Admin",
           important: true,
         },
       ],

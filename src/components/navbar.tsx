@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white border-t-8 border-t-tbre-yellow">
-      <div className="container flex items-center justify-between px-4 mx-auto">
+      <div className="h-30 container flex items-center justify-between px-4 mx-auto">
         <Link href="/" className="flex items-center space-x-2">
           {/* <span className="text-2xl font-bold">
             <span className="text-tbre-blue">TBRe</span>{" "}
