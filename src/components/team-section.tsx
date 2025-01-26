@@ -59,7 +59,7 @@ export function TeamSection() {
                             </Badge>
                           )}
                           <Image
-                            src={member.image ?? "/team/placeholder.png"}
+                            src={member.image ?? "/placeholder.png"}
                             alt={member.name}
                             fill
                             className="object-cover transition-transform duration-300 hover:scale-105"

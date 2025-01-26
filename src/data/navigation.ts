@@ -4,7 +4,7 @@ export const navigation: { name: string; href: string }[] = [
   { name: "Team", href: "/team" },
   { name: "Cars", href: "/cars" },
   { name: "Sponsors", href: "/sponsors" },
-  // { name: "Gallery", href: "/gallery" },
+  { name: "Gallery", href: "/gallery" },
   // { name: "Contact", href: "/contact" },
   // { name: "Blog", href: "/blog" },
 ] as const;

@@ -39,7 +39,10 @@ export function CarGallery({
         open={selectedImage !== null}
         onOpenChange={() => setSelectedImage(null)}
       >
-        <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
+        <DialogContent
+          hideClose
+          className="max-w-4xl border-none bg-transparent p-0 shadow-none"
+        >
           <div className="relative aspect-[16/9]">
             {selectedImage !== null && (
               <Image
@@ -52,7 +55,7 @@ export function CarGallery({
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-2 text-white hover:bg-white/20"
+              className="absolute right-2 top-2 text-white hover:bg-white/20 cursor-pointer"
               onClick={() => setSelectedImage(null)}
             >
               <XIcon className="h-6 w-6" />
@@ -61,7 +64,7 @@ export function CarGallery({
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:bg-white/20"
+                className="text-white hover:bg-white/20 cursor-pointer"
                 onClick={() =>
                   setSelectedImage((prev) =>
                     prev !== null
@@ -77,7 +80,7 @@ export function CarGallery({
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:bg-white/20"
+                className="text-white hover:bg-white/20 cursor-pointer"
                 onClick={() =>
                   setSelectedImage((prev) =>
                     prev !== null ? (prev + 1) % images.length : null,

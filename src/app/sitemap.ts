@@ -33,13 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   lastModified: new Date(),
     //   priority: 0.8,
     // },
-    // {
-    //   url: `${domain}/gallery`,
-    //   lastModified: new Date(),
-    //   priority: 0.8,
-    // },
     {
       url: `${domain}/sponsors`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${domain}/gallery`,
       lastModified: new Date(),
       priority: 0.8,
     },
