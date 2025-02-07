@@ -320,6 +320,12 @@ export const car2025: Car = {
           role: "NewsLetter Admin",
           important: true,
         },
+        {
+          name: "Tom Heaton",
+          role: "Website Admin",
+          link: "https://linkedin.com/in/tomheaton7/",
+          important: true,
+        },
       ],
     },
   ],

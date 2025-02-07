@@ -15,16 +15,18 @@ export type Results = {
   image: string;
 }[];
 
+export type TeamMember = {
+  name: string;
+  role?: string;
+  image?: string;
+  link?: string;
+  lead?: boolean;
+  important?: boolean;
+};
+
 export type Team = {
   category: string;
-  members: {
-    name: string;
-    role?: string;
-    image?: string;
-    link?: string;
-    lead?: boolean;
-    important?: boolean;
-  }[];
+  members: TeamMember[];
 }[];
 
 export type Car = {

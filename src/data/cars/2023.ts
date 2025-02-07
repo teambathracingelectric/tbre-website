@@ -34,7 +34,7 @@ export const car2023: Car = {
         {
           name: "Aaron Lopez",
           role: "Composites Lead",
-          image: "/team/2023/aaron_lopez.jpeg",
+          image: "/team/2023/aaron_lopez.jpg",
         },
         {
           name: "Joseph Teckman",
