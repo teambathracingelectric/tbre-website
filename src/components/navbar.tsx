@@ -47,6 +47,7 @@ export function Navbar() {
               )}
             >
               {link.name}
+              {link.icon && <link.icon className="inline-block w-4 h-4 ml-1" />}
             </Link>
           ))}
         </nav>
@@ -74,6 +75,9 @@ export function Navbar() {
                   )}
                 >
                   {link.name}
+                  {link.icon && (
+                    <link.icon className="inline-block w-5 h-5 ml-1" />
+                  )}
                 </Link>
               ))}
             </nav>

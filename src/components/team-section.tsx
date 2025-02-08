@@ -31,7 +31,11 @@ export function TeamSection() {
                 return 0;
               })
               .map((member, memberIndex) => (
-                <TeamMemberCard key={member.name} member={member} memberIndex={memberIndex} />
+                <TeamMemberCard
+                  key={member.name}
+                  member={member}
+                  memberIndex={memberIndex}
+                />
               ))}
           </div>
         </div>
@@ -44,8 +48,8 @@ function TeamMemberCard({
   member,
   memberIndex,
 }: {
-  member: TeamMember,
-  memberIndex: number,
+  member: TeamMember;
+  memberIndex: number;
 }) {
   return (
     <div className="p-4 md:basis-1/2 lg:basis-1/3">
@@ -94,9 +98,7 @@ function TeamMemberCard({
                 )}
               </h3>
               {member.role && (
-                <p className="text-sm text-zinc-600">
-                  {member.role}
-                </p>
+                <p className="text-sm text-zinc-600">{member.role}</p>
               )}
               {/* {member.link && (
                 <Link
@@ -112,5 +114,5 @@ function TeamMemberCard({
         </Card>
       </motion.div>
     </div>
-  )
+  );
 }
