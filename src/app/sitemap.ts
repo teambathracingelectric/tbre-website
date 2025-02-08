@@ -53,5 +53,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   lastModified: new Date(),
     //   priority: 0.6,
     // })),
+    {
+      url: `${domain}/crowdfunding`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
   ];
 }

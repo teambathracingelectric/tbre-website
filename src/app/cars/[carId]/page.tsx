@@ -36,7 +36,7 @@ export async function generateMetadata(props: {
 
   return {
     title: `${params.carId} Car`,
-    description: `The ${params.carId} car.`,
+    description: `Our ${params.carId} car is a masterpiece of engineering and innovation.`,
     openGraph: {
       images: [
         {

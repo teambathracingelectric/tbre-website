@@ -8,6 +8,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Cars",
+  description: "A decade of engineering excellence and innovation",
 };
 
 export default function Page() {

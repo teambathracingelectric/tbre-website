@@ -8,6 +8,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sponsors",
+  description:
+    "Partner with us to support our team and benefit from a mutually beneficial relationship.",
 };
 
 const titleSponsor = sponsors[0].sponsors[0];

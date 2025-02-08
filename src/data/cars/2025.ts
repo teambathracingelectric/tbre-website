@@ -198,30 +198,30 @@ export const car2025: Car = {
           role: "Chassis Mechanical Designer",
           important: true,
         },
-        {
-          name: "Charles Dalgleish",
-          role: "Chassis Manufacturing Designer",
-        },
-        {
-          name: "Simeon Filipov",
-          role: "Chassis Integration Designer",
-        },
-        {
-          name: "Kate Kennedy",
-          role: "Chassis Engineer",
-        },
-        {
-          name: "Matt Gladwell",
-          role: "Chassis Engineer",
-        },
-        {
-          name: "Callum Donohue",
-          role: "Chassis Engineer",
-        },
-        {
-          name: "Alex Tryka",
-          role: "Chassis Engineer",
-        },
+        // {
+        //   name: "Charles Dalgleish",
+        //   role: "Chassis Manufacturing Designer",
+        // },
+        // {
+        //   name: "Simeon Filipov",
+        //   role: "Chassis Integration Designer",
+        // },
+        // {
+        //   name: "Kate Kennedy",
+        //   role: "Chassis Engineer",
+        // },
+        // {
+        //   name: "Matt Gladwell",
+        //   role: "Chassis Engineer",
+        // },
+        // {
+        //   name: "Callum Donohue",
+        //   role: "Chassis Engineer",
+        // },
+        // {
+        //   name: "Alex Tryka",
+        //   role: "Chassis Engineer",
+        // },
       ],
     },
     {
@@ -324,6 +324,58 @@ export const car2025: Car = {
           name: "Tom Heaton",
           role: "Website Admin",
           link: "https://linkedin.com/in/tomheaton7/",
+          important: true,
+        },
+      ],
+    },
+    {
+      category: "Aero",
+      members: [
+        {
+          name: "Alexander Crisan",
+          role: "Aero Lead",
+          image: "/team/2025/alexander_crisan.png",
+          lead: true,
+        },
+        {
+          name: "Emanuel Bakcsi",
+          role: "Aerostructures and Composites Engineer",
+          important: true,
+        },
+        {
+          name: "Oliver (Olly) Zilli",
+          role: "Cooling systems engineer",
+          important: true,
+        },
+      ],
+    },
+    {
+      category: "Composites",
+      members: [
+        {
+          name: "Sam Snudden",
+          role: "Composites Lead",
+          image: "/team/2025/sam_snudden.png",
+          lead: true,
+        },
+        {
+          name: "Daniel Price",
+          role: "Composite Engineer",
+          important: true,
+        },
+        {
+          name: "Het Shah",
+          role: "Composite Engineer",
+          important: true,
+        },
+        {
+          name: "James de Lisle",
+          role: "Composite Engineer",
+          important: true,
+        },
+        {
+          name: "Jason Tan",
+          role: "Composite Engineer",
           important: true,
         },
       ],

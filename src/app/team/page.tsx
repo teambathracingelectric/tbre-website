@@ -4,6 +4,8 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Team",
+  description:
+    "Meet the dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence.",
 };
 
 export default function Page() {

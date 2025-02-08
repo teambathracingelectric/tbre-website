@@ -1,9 +1,16 @@
 import { CrowdfundingVideo } from "@/app/crowdfunding/crowdfunding-video";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 
-export default function CrowdfundingPage() {
+export const metadata: Metadata = {
+  title: "Crowdfunding",
+  description:
+    "Support TBRe25 to maintain our position as the #1 Electric Formula Student team in the UK.",
+};
+
+export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative h-[40vh] min-h-[300px] w-full">
