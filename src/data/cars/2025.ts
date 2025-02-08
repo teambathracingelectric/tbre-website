@@ -65,7 +65,7 @@ export const car2025: Car = {
       ],
     },
     {
-      category: "Power Train",
+      category: "Powertrain",
       members: [
         {
           name: "Sam Mutton",
