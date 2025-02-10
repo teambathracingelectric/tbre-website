@@ -73,6 +73,10 @@ export const car2025: Car = {
           image: "/team/2025/sam_mutton.png",
           lead: true,
         },
+        {
+          name: "Pavel Yasko",
+          role: "Powertrain Engineer",
+        },
       ],
     },
     {
