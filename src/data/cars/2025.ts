@@ -247,16 +247,26 @@ export const car2025: Car = {
       category: "Business Operations",
       members: [
         {
+          name: "Emma Dickson",
+          role: "Co-Business Operations Lead",
+          image: "/team/2025/emma_dickson.png",
+          lead: true,
+        },
+        {
           name: "Audrey Raguin",
           role: "Co-Business Operations Lead",
           image: "/team/2025/audrey_raguin.png",
           lead: true,
         },
         {
-          name: "Emma Dickson",
-          role: "Co-Business Operations Lead",
-          image: "/team/2025/emma_dickson.png",
-          lead: true,
+          name: "Madison Tregonning",
+          role: "Business Operations Team Member",
+          important: true,
+        },
+        {
+          name: "Mary Weir",
+          role: "Business Operations Team Member",
+          important: true,
         },
         {
           name: "Leo Sagal",
@@ -264,15 +274,25 @@ export const car2025: Car = {
           important: true,
         },
         {
-          name: "Harriet Lamb",
+          name: "Arhyam Jain",
           role: "Business Operations Team Member",
           important: true,
         },
         {
-          name: "Adi Balchandani",
+          name: "Lucas Coelho",
           role: "Business Operations Team Member",
           important: true,
         },
+        // {
+        //   name: "Harriet Lamb",
+        //   role: "Business Operations Team Member",
+        //   important: true,
+        // },
+        // {
+        //   name: "Adi Balchandani",
+        //   role: "Business Operations Team Member",
+        //   important: true,
+        // },
       ],
     },
     {
@@ -284,11 +304,11 @@ export const car2025: Car = {
           image: "/team/2025/chiara_marquet.png",
           lead: true,
         },
-        {
-          name: "Mary Weir",
-          role: "Marketing Team Member",
-          important: true,
-        },
+        // {
+        //   name: "Mary Weir",
+        //   role: "Marketing Team Member",
+        //   important: true,
+        // },
         {
           name: "Michelle Stejskalova",
           role: "Co TikTok Admin",
@@ -309,11 +329,11 @@ export const car2025: Car = {
           role: "Website Admin",
           important: true,
         },
-        {
-          name: "Maddie Tregonning",
-          role: "Marketing Team Member",
-          important: true,
-        },
+        // {
+        //   name: "Maddie Tregonning",
+        //   role: "Marketing Team Member",
+        //   important: true,
+        // },
         {
           name: "Torey Boss",
           role: "Marketing Team Member",
