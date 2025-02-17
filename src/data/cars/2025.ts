@@ -202,14 +202,14 @@ export const car2025: Car = {
           role: "Chassis Mechanical Designer",
           important: true,
         },
-        // {
-        //   name: "Charles Dalgleish",
-        //   role: "Chassis Manufacturing Designer",
-        // },
-        // {
-        //   name: "Simeon Filipov",
-        //   role: "Chassis Integration Designer",
-        // },
+        {
+          name: "Charles Dalgleish",
+          role: "Chassis Manufacturing Designer",
+        },
+        {
+          name: "Simeon Filipov",
+          role: "Chassis Integration Designer",
+        },
         // {
         //   name: "Kate Kennedy",
         //   role: "Chassis Engineer",
@@ -218,14 +218,14 @@ export const car2025: Car = {
         //   name: "Matt Gladwell",
         //   role: "Chassis Engineer",
         // },
-        // {
-        //   name: "Callum Donohue",
-        //   role: "Chassis Engineer",
-        // },
-        // {
-        //   name: "Alex Tryka",
-        //   role: "Chassis Engineer",
-        // },
+        {
+          name: "Callum Donohue",
+          role: "Chassis Engineer",
+        },
+        {
+          name: "Alex Tryka",
+          role: "Chassis Engineer",
+        },
       ],
     },
     {
@@ -347,7 +347,7 @@ export const car2025: Car = {
         {
           name: "Tom Heaton",
           role: "Website Admin",
-          link: "https://linkedin.com/in/tomheaton7/",
+          // link: "https://linkedin.com/in/tomheaton7/",
           important: true,
         },
       ],
