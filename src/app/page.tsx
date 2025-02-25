@@ -39,7 +39,7 @@ export default function Page() {
               className="mx-auto w-1/2"
             /> */}
             <p className="mx-auto mb-8 max-w-2xl text-xl text-white text-pretty">
-              Formula Student electric racing team based at the University of
+              Formula Student Electric Racing Team based at the University of
               Bath
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -113,15 +113,16 @@ export default function Page() {
                 B
               </h2> */}
               <p className="text-lg text-zinc-600">
-                We take pride in our consistent position as one of the foremost
+                We take pride in our consistent position as the number
+                <span className="text-tbre-yellow"> #1 </span>
                 Electric Formula Student teams in the UK, a testament to our
-                commitment and excellence since 2017.
+                commitment and excellence since 2015.
                 <br />
                 <br />
                 There is an emphasis within the team to produce bespoke,
-                in-house designs to ensure that the car is optimised for racing
+                in-house designs to ensure the car is optimised for racing
                 conditions. This philosophy provides a platform for both
-                learning and innovation and allows the team and its members to
+                learning and innovation, and allows the team and its members to
                 develop year on year.
               </p>
             </div>
@@ -182,7 +183,7 @@ export default function Page() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: ClockIcon, value: "10+", label: "Years of Racing" },
-              { icon: UsersIcon, value: "50+", label: "Team Members" },
+              { icon: UsersIcon, value: "100+", label: "Team Members" },
               { icon: AwardIcon, value: "15+", label: "Awards Won" },
               { icon: ZapIcon, value: "100%", label: "Electric Power" },
             ].map((stat) => (
@@ -240,11 +241,11 @@ export default function Page() {
                 Our Members
               </h2>
               <p className="text-lg text-zinc-600">
-                We comprise over 50 professional, motivated, and committed
-                students from across our Electrical and Mechanical Engineering
-                departments as well as Management and Computer Science, making
-                our team truly cross-disciplinary and allowing students from any
-                discipline to share and gain knowledge.
+                We are comprised of over 100 professional, motivated, and
+                committed students from across our Engineering faculty as well
+                as Management and Computer Science, making our team truly
+                cross-disciplinary and allowing students from any discipline to
+                share and gain knowledge.
               </p>
               <Button
                 asChild

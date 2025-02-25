@@ -32,7 +32,7 @@ export const car2025: Car = {
       members: [
         {
           name: "Alex Cucchiara",
-          role: "HVAC",
+          role: "Head of Electrical Systems",
           image: "/team/2025/alex_cucchiara.png",
           lead: true,
         },
@@ -114,8 +114,8 @@ export const car2025: Car = {
           important: true,
         },
         {
-          name: "Huw Edwards",
-          role: "Vehicle Dynamicist (special)",
+          name: "Huw Williams",
+          role: "Vehicle Dynamicist",
           important: true,
         },
         {
@@ -123,11 +123,7 @@ export const car2025: Car = {
           role: "Mechanical Design Engineer",
         },
         {
-          name: "Angus Tam",
-          role: "Mechanical Design Engineer",
-        },
-        {
-          name: "Paval Yasko",
+          name: "Pavel Yasko",
           role: "Mechanical Design Engineer",
         },
         {
@@ -210,14 +206,6 @@ export const car2025: Car = {
           name: "Simeon Filipov",
           role: "Chassis Integration Designer",
         },
-        // {
-        //   name: "Kate Kennedy",
-        //   role: "Chassis Engineer",
-        // },
-        // {
-        //   name: "Matt Gladwell",
-        //   role: "Chassis Engineer",
-        // },
         {
           name: "Callum Donohue",
           role: "Chassis Engineer",
@@ -238,7 +226,7 @@ export const car2025: Car = {
         },
         {
           name: "Ben Fall",
-          role: "Static Events Team Member (BPP and Cost)",
+          role: "Static Events Team Member",
           important: true,
         },
       ],
@@ -283,16 +271,6 @@ export const car2025: Car = {
           role: "Business Operations Team Member",
           important: true,
         },
-        // {
-        //   name: "Harriet Lamb",
-        //   role: "Business Operations Team Member",
-        //   important: true,
-        // },
-        // {
-        //   name: "Adi Balchandani",
-        //   role: "Business Operations Team Member",
-        //   important: true,
-        // },
       ],
     },
     {
@@ -304,11 +282,6 @@ export const car2025: Car = {
           image: "/team/2025/chiara_marquet.png",
           lead: true,
         },
-        // {
-        //   name: "Mary Weir",
-        //   role: "Marketing Team Member",
-        //   important: true,
-        // },
         {
           name: "Michelle Stejskalova",
           role: "Co TikTok Admin",
@@ -329,11 +302,6 @@ export const car2025: Car = {
           role: "Website Admin",
           important: true,
         },
-        // {
-        //   name: "Maddie Tregonning",
-        //   role: "Marketing Team Member",
-        //   important: true,
-        // },
         {
           name: "Torey Boss",
           role: "Marketing Team Member",
@@ -347,7 +315,6 @@ export const car2025: Car = {
         {
           name: "Tom Heaton",
           role: "Website Admin",
-          // link: "https://linkedin.com/in/tomheaton7/",
           important: true,
         },
       ],

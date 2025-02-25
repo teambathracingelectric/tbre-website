@@ -6,8 +6,8 @@ export const statsData: {
   years: number;
   prototypes: number;
 } = {
-  members: 50,
+  members: 150,
   departments: 5,
-  years: 15,
+  years: 10,
   prototypes: 10,
 };
