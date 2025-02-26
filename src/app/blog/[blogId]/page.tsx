@@ -96,6 +96,7 @@ export default async function Page(props: { params: Promise<Params> }) {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
       </div>
 
@@ -132,6 +133,7 @@ export default async function Page(props: { params: Promise<Params> }) {
                   width={40}
                   height={40}
                   className="rounded-full"
+                  unoptimized
                 />
                 <div>
                   <div className="font-medium text-zinc-900">
@@ -168,6 +170,7 @@ export default async function Page(props: { params: Promise<Params> }) {
                         alt={relatedBlog.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        unoptimized
                       />
                     </div>
                     <h3 className="mt-4 text-lg font-semibold text-zinc-900 group-hover:text-tbre-blue">

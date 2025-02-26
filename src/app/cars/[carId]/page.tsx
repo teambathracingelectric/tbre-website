@@ -201,6 +201,7 @@ export default async function Page(props: { params: Promise<Params> }) {
             width={600}
             height={400}
             className="rounded-lg object-cover mt-16"
+            unoptimized
           />
         </section>
 

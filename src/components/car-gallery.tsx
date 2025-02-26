@@ -30,6 +30,7 @@ export function CarGallery({
               alt={image.alt}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
+              unoptimized
             />
           </div>
         ))}
@@ -50,6 +51,7 @@ export function CarGallery({
                 alt={images[selectedImage].alt}
                 fill
                 className="rounded-lg object-contain"
+                unoptimized
               />
             )}
             <Button

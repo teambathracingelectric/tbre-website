@@ -24,6 +24,7 @@ export default function Page() {
           className="object-cover"
           fill
           priority
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-white" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -49,6 +50,7 @@ export default function Page() {
                 alt={featuredBlog.title}
                 fill
                 className="object-cover"
+                unoptimized
               />
             </div>
             <div className="flex flex-col justify-center p-6 md:p-8">
@@ -101,6 +103,7 @@ export default function Page() {
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      unoptimized
                     />
                   </div>
                   <div className="p-6">

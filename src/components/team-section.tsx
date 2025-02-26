@@ -24,8 +24,6 @@ export function TeamSection() {
               .sort((a, b) => {
                 if (a.lead && !b.lead) return -1;
                 if (!a.lead && b.lead) return 1;
-                if (a.important && !b.important) return -1;
-                if (!a.important && b.important) return 1;
                 if (a.image && !b.image) return -1;
                 if (!a.image && b.image) return 1;
                 return 0;
@@ -70,16 +68,12 @@ function TeamMemberCard({
                   Lead
                 </Badge>
               )}
-              {/* {member.important && (
-                            <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-yellow hover:bg-tbre-yellow/90">
-                              Important
-                            </Badge>
-                          )} */}
               <Image
                 src={member.image ?? "/placeholder.png"}
                 alt={member.name}
                 fill
                 className="object-cover transition-transform duration-300 hover:scale-105"
+                unoptimized
               />
             </div>
             <div className="space-y-1.5 p-4">

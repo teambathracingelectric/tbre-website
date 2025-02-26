@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 export default {
+  // images: {
+  //   unoptimized: true,
+  // },
   redirects: async () => {
     return [
       // social media redirects

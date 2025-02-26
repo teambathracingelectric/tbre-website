@@ -65,6 +65,7 @@ export function CarModel({ src }: { src: string }) {
           className="pre-prompt"
           src="/prompt.svg"
           alt="Tap to view in AR"
+          unoptimized
         />
       </div>
       {/* @ts-expect-error model-viewer */}
@@ -94,6 +95,7 @@ export function CarModel({ src }: { src: string }) {
           <Image
             src="https://modelviewer.dev/shared-assets/icons/hand.png"
             alt="Hand icon"
+            unoptimized
           />
         </div>
         {/* @ts-expect-error model-viewer */}

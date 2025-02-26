@@ -19,6 +19,7 @@ export function Footer() {
             width={200}
             height={200}
             className="hover:white-to-yellow"
+            unoptimized
           />
         </Link>
       </div>

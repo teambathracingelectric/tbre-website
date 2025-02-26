@@ -13,7 +13,13 @@ export default function NotFound() {
         The page you are looking for does not exist.
       </p>
       <br />
-      <Image src="/placeholder.png" alt="404 Image" width={200} height={200} />
+      <Image
+        src="/placeholder.png"
+        alt="404 Image"
+        width={200}
+        height={200}
+        unoptimized
+      />
       <br />
       <Button
         asChild

@@ -31,6 +31,7 @@ export function Navbar() {
             alt="Team Bath Racing Electric (TBRe) logo"
             width={200}
             height={200}
+            unoptimized
           />
         </Link>
 

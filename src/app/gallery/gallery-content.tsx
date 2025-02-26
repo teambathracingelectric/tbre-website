@@ -137,6 +137,7 @@ export function GalleryContent() {
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
               </div>
@@ -167,6 +168,7 @@ export function GalleryContent() {
                 }
                 fill
                 className="rounded-lg object-contain"
+                unoptimized
               />
               <Button
                 variant="ghost"

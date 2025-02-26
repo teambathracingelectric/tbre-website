@@ -21,7 +21,6 @@ export type TeamMember = {
   image?: string;
   link?: string;
   lead?: boolean;
-  important?: boolean;
 };
 
 export type Team = {

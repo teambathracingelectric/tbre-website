@@ -60,6 +60,7 @@ export default function Page() {
                 alt={titleSponsor.name}
                 fill
                 // className="object-cover"
+                unoptimized
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -109,6 +110,7 @@ export default function Page() {
                             alt={sponsor.name}
                             width={150}
                             height={50}
+                            unoptimized
                           />
                         </Link>
                         <h3 className="text-xl font-bold text-zinc-900">

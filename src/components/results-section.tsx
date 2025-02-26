@@ -16,6 +16,7 @@ export function ResultsSection({ results }: { results: Results }) {
             width={400}
             height={200}
             className="rounded-lg"
+            unoptimized
           />
           <div>
             <h3 className="font-semibold text-xl mb-2">{r.title}</h3>
