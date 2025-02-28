@@ -114,10 +114,6 @@ export const car2025: Car = {
           role: "Mechanical Design Engineer",
         },
         {
-          name: "Pavel Yasko",
-          role: "Mechanical Design Engineer",
-        },
-        {
           name: "Alex Fong",
           role: "Mechanical Design Engineer",
         },
