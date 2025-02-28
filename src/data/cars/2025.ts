@@ -27,6 +27,129 @@ export const car2025: Car = {
       ],
     },
     {
+      category: "Aero",
+      members: [
+        {
+          name: "Alexander Crisan",
+          role: "Aero Lead",
+          image: "/team/2025/alexander_crisan.png",
+          lead: true,
+        },
+        {
+          name: "Emanuel Bakcsi",
+          role: "Aerostructures and Composites Engineer",
+        },
+        {
+          name: "Oliver (Olly) Zilli",
+          role: "Cooling systems engineer",
+        },
+      ],
+    },
+    {
+      category: "Artificial Intelligence",
+      members: [
+        {
+          name: "Seb Hall",
+          role: "TBReAI Lead - Control Systems & Integration Lead",
+          image: "/team/2025/seb_hall.png",
+          lead: true,
+        },
+        {
+          name: "Nikhil Anisetti",
+          role: "Object Detection Lead",
+        },
+        {
+          name: "Mia (Xiaotong) Tan",
+          role: "LIDAR Lead",
+        },
+        {
+          name: "Ronald Piku",
+          role: "Path Planning Lead",
+        },
+        {
+          name: "Roberta Griffiths",
+          role: "SLAM Lead",
+        },
+      ],
+    },
+    {
+      category: "Chassis",
+      members: [
+        {
+          name: "Federica La Scala",
+          role: "Chassis Lead",
+          image: "/team/2025/federica_la_scala.png",
+          lead: true,
+        },
+        {
+          name: "Callum Hallworth",
+          role: "Chassis Structures Designer",
+        },
+        {
+          name: "Ben Bowles",
+          role: "Chassis Mechanical Designer",
+        },
+        {
+          name: "Charles Dalgleish",
+          role: "Chassis Manufacturing Designer",
+        },
+        {
+          name: "Simeon Filipov",
+          role: "Chassis Integration Designer",
+        },
+        {
+          name: "Callum Donohue",
+          role: "Chassis Engineer",
+        },
+        {
+          name: "Alex Tryka",
+          role: "Chassis Engineer",
+        },
+      ],
+    },
+    {
+      category: "Composites",
+      members: [
+        {
+          name: "Sam Snudden",
+          role: "Composites Lead",
+          image: "/team/2025/sam_snudden.png",
+          lead: true,
+        },
+        {
+          name: "Daniel Price",
+          role: "Composite Engineer",
+        },
+        {
+          name: "Het Shah",
+          role: "Composite Engineer",
+        },
+        {
+          name: "James de Lisle",
+          role: "Composite Engineer",
+        },
+        {
+          name: "Jason Tan",
+          role: "Composite Engineer",
+        },
+      ],
+    },
+    {
+      category: "Driver Environment",
+      members: [
+        {
+          name: "Karolis Banys",
+          role: "Lead",
+          image: "/team/2025/karolis_banys.png",
+          lead: true,
+        },
+        {
+          name: "Miles Dawson",
+          role: "Design & Build Engineer",
+        },
+      ],
+    },
+    {
       category: "Electronics",
       members: [
         {
@@ -120,83 +243,6 @@ export const car2025: Car = {
       ],
     },
     {
-      category: "Driver Environment",
-      members: [
-        {
-          name: "Karolis Banys",
-          role: "Lead",
-          image: "/team/2025/karolis_banys.png",
-          lead: true,
-        },
-        {
-          name: "Miles Dawson",
-          role: "Design & Build Engineer",
-        },
-      ],
-    },
-    {
-      category: "Artificial Intelligence",
-      members: [
-        {
-          name: "Seb Hall",
-          role: "TBReAI Lead - Control Systems & Integration Lead",
-          image: "/team/2025/seb_hall.png",
-          lead: true,
-        },
-        {
-          name: "Nikhil Anisetti",
-          role: "Object Detection Lead",
-        },
-        {
-          name: "Mia (Xiaotong) Tan",
-          role: "LIDAR Lead",
-        },
-        {
-          name: "Ronald Piku",
-          role: "Path Planning Lead",
-        },
-        {
-          name: "Roberta Griffiths",
-          role: "SLAM Lead",
-        },
-      ],
-    },
-    {
-      category: "Chassis",
-      members: [
-        {
-          name: "Federica La Scala",
-          role: "Chassis Lead",
-          image: "/team/2025/federica_la_scala.png",
-          lead: true,
-        },
-        {
-          name: "Callum Hallworth",
-          role: "Chassis Structures Designer",
-        },
-        {
-          name: "Ben Bowles",
-          role: "Chassis Mechanical Designer",
-        },
-        {
-          name: "Charles Dalgleish",
-          role: "Chassis Manufacturing Designer",
-        },
-        {
-          name: "Simeon Filipov",
-          role: "Chassis Integration Designer",
-        },
-        {
-          name: "Callum Donohue",
-          role: "Chassis Engineer",
-        },
-        {
-          name: "Alex Tryka",
-          role: "Chassis Engineer",
-        },
-      ],
-    },
-    {
       category: "Statics",
       members: [
         {
@@ -286,52 +332,6 @@ export const car2025: Car = {
         {
           name: "Tom Heaton",
           role: "Website Admin",
-        },
-      ],
-    },
-    {
-      category: "Aero",
-      members: [
-        {
-          name: "Alexander Crisan",
-          role: "Aero Lead",
-          image: "/team/2025/alexander_crisan.png",
-          lead: true,
-        },
-        {
-          name: "Emanuel Bakcsi",
-          role: "Aerostructures and Composites Engineer",
-        },
-        {
-          name: "Oliver (Olly) Zilli",
-          role: "Cooling systems engineer",
-        },
-      ],
-    },
-    {
-      category: "Composites",
-      members: [
-        {
-          name: "Sam Snudden",
-          role: "Composites Lead",
-          image: "/team/2025/sam_snudden.png",
-          lead: true,
-        },
-        {
-          name: "Daniel Price",
-          role: "Composite Engineer",
-        },
-        {
-          name: "Het Shah",
-          role: "Composite Engineer",
-        },
-        {
-          name: "James de Lisle",
-          role: "Composite Engineer",
-        },
-        {
-          name: "Jason Tan",
-          role: "Composite Engineer",
         },
       ],
     },
