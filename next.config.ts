@@ -51,12 +51,14 @@ export default {
       // old website redirects
       {
         source: "/about-us",
-        destination: "/about",
+        // destination: "/about",
+        destination: "/",
         permanent: true,
       },
       {
         source: "/contact-us",
-        destination: "/contact",
+        // destination: "/contact",
+        destination: "/",
         permanent: true,
       },
       {
@@ -66,7 +68,8 @@ export default {
       },
       {
         source: "/:year-car",
-        destination: "/cars/:year",
+        // destination: "/cars/:year",
+        destination: "/cars",
         permanent: true,
       },
       {
