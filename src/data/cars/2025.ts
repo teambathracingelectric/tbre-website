@@ -40,7 +40,7 @@ export const car2025: Car = {
           role: "Aerostructures and Composites Engineer",
         },
         {
-          name: "Oliver (Olly) Zilli",
+          name: "Oliver Zilli",
           role: "Cooling systems engineer",
         },
       ],
