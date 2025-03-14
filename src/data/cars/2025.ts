@@ -23,6 +23,7 @@ export const car2025: Car = {
         {
           name: "Stephanie Hobeika",
           role: "Programme Manager",
+          image: "/team/2025/stephanie_hobeika.jpg",
         },
       ],
     },
@@ -38,10 +39,12 @@ export const car2025: Car = {
         {
           name: "Emanuel Bakcsi",
           role: "Aerostructures and Composites Engineer",
+          // image: "/team/2025/emanuel_bakcsi.jpg",
         },
         {
           name: "Oliver Zilli",
           role: "Cooling systems engineer",
+          image: "/team/2025/oliver_zilli.jpg",
         },
       ],
     },
@@ -57,18 +60,22 @@ export const car2025: Car = {
         {
           name: "Nikhil Anisetti",
           role: "Object Detection Lead",
+          image: "/team/2025/nikhil_anisetti.jpg",
         },
         {
           name: "Mia (Xiaotong) Tan",
           role: "LIDAR Lead",
+          image: "/team/2025/mia_(xiaotong)_tan.jpg",
         },
         {
           name: "Ronald Piku",
           role: "Path Planning Lead",
+          image: "/team/2025/ronald_piku.jpg",
         },
         {
           name: "Roberta Griffiths",
           role: "SLAM Lead",
+          image: "/team/2025/roberta_griffiths.jpg",
         },
       ],
     },
@@ -84,26 +91,32 @@ export const car2025: Car = {
         {
           name: "Callum Hallworth",
           role: "Chassis Structures Designer",
+          image: "/team/2025/callum_hallworth.jpg",
         },
         {
           name: "Ben Bowles",
           role: "Chassis Mechanical Designer",
+          image: "/team/2025/ben_bowles.jpg",
         },
         {
           name: "Charles Dalgleish",
           role: "Chassis Manufacturing Designer",
+          // image: "/team/2025/charles_dalgleish.jpg",
         },
         {
           name: "Simeon Filipov",
           role: "Chassis Integration Designer",
+          image: "/team/2025/simeon_filipov.jpg",
         },
         {
           name: "Callum Donohue",
           role: "Chassis Engineer",
+          // image: "/team/2025/callum_donohue.jpg",
         },
         {
           name: "Alex Tryka",
           role: "Chassis Engineer",
+          image: "/team/2025/alex_tryka.jpg",
         },
       ],
     },
@@ -119,18 +132,22 @@ export const car2025: Car = {
         {
           name: "Daniel Price",
           role: "Composite Engineer",
+          image: "/team/2025/daniel_price.jpg",
         },
         {
           name: "Het Shah",
           role: "Composite Engineer",
+          // image: "/team/2025/het_shah.jpg",
         },
         {
           name: "James de Lisle",
           role: "Composite Engineer",
+          // image: "/team/2025/james_de_lisle.jpg",
         },
         {
           name: "Jason Tan",
           role: "Composite Engineer",
+          // image: "/team/2025/jason_tan.jpg",
         },
       ],
     },
@@ -146,6 +163,7 @@ export const car2025: Car = {
         {
           name: "Miles Dawson",
           role: "Design & Build Engineer",
+          image: "/team/2025/miles_dawson.jpg",
         },
       ],
     },
@@ -161,26 +179,32 @@ export const car2025: Car = {
         {
           name: "Brendan Ind",
           role: "Telemetry Lead",
+          image: "/team/2025/brendan_ind.jpg",
         },
         {
           name: "Ellie Harrington",
           role: "Integration Engineer",
+          image: "/team/2025/ellie_harrington.jpg",
         },
         {
           name: "Amy Freedman Kinshuck",
           role: "Vehicle Systems Engineer",
+          // image: "/team/2025/amy_freedman_kinshuck.jpg",
         },
         {
           name: "Haydar Kaya",
           role: "Electrical Engineer",
+          // image: "/team/2025/haydar_kaya.jpg",
         },
         {
           name: "Rio Hyska",
           role: "Electrical Engineer",
+          // image: "/team/2025/rio_hyska.jpg",
         },
         {
           name: "James Cicigoi",
           role: "Electrical Engineer",
+          // image: "/team/2025/james_cicigoi.jpg",
         },
       ],
     },
@@ -196,6 +220,7 @@ export const car2025: Car = {
         {
           name: "Pavel Yasko",
           role: "Powertrain Engineer",
+          image: "/team/2025/pavel_yasko.jpg",
         },
       ],
     },
@@ -211,34 +236,42 @@ export const car2025: Car = {
         {
           name: "Oli Johnson",
           role: "Kinematics Lead",
+          image: "/team/2025/oli_johnson.jpg",
         },
         {
           name: "Dorian Sfeir",
           role: "Vehicle Simulations Lead",
+          image: "/team/2025/dorian_sfeir.jpg",
         },
         {
           name: "Yevgeny Kogan",
           role: "Brakes Lead",
+          image: "/team/2025/yevgeny_kogan.jpg",
         },
         {
           name: "Simon Fox",
           role: "Outboard Lead",
+          image: "/team/2025/simon_fox.jpg",
         },
         {
           name: "Axel Slijepcevic",
           role: "Tyre Performance Lead",
+          image: "/team/2025/axel_slijepcevic.jpg",
         },
         {
           name: "Huw Williams",
           role: "Vehicle Dynamicist",
+          image: "/team/2025/huw_williams.jpg",
         },
         {
           name: "Kyle Carpenter",
           role: "Mechanical Design Engineer",
+          image: "/team/2025/kyle_carpenter.jpg",
         },
         {
           name: "Alex Fong",
           role: "Mechanical Design Engineer",
+          // image: "/team/2025/alex_fong.jpg",
         },
       ],
     },
@@ -248,18 +281,22 @@ export const car2025: Car = {
         {
           name: "Nithi Muthu Saravanan",
           role: "Cost and Manufacturing Lead",
+          // image: "/team/2025/nithi_muthu_saravanan.jpg",
         },
         {
           name: "Ben Fall",
           role: "Static Events Team Member",
+          // image: "/team/2025/ben_fall.jpg",
         },
         {
           name: "Arhyam Jain",
           role: "Static Events Team Member",
+          // image: "/team/2025/arhyam_jain.jpg",
         },
         {
           name: "Leea Frangopol",
           role: "Static Events Team Member",
+          image: "/team/2025/leea_frangopol.jpg",
         },
       ],
     },
@@ -281,18 +318,22 @@ export const car2025: Car = {
         {
           name: "Madison Tregonning",
           role: "Business Operations Team Member",
+          image: "/team/2025/madison_tregonning.jpg",
         },
         {
           name: "Mary Weir",
           role: "Business Operations Team Member",
+          image: "/team/2025/mary_weir.jpg",
         },
         {
           name: "Leo Sagal",
           role: "Business Operations Team Member",
+          image: "/team/2025/leo_sagal.jpg",
         },
         {
           name: "Lucas Coelho",
           role: "Business Operations Team Member",
+          // image: "/team/2025/lucas_coelho.jpg",
         },
       ],
     },
@@ -308,30 +349,37 @@ export const car2025: Car = {
         {
           name: "Michelle Stejskalova",
           role: "Co TikTok Admin",
+          image: "/team/2025/michelle_stejskalova.jpg",
         },
         {
           name: "Sasha Key",
           role: "Co TikTok Admin",
+          image: "/team/2025/sasha_key.jpg",
         },
         {
           name: "Millie Watson",
           role: "Instagram Admin",
+          image: "/team/2025/millie_watson.jpg",
         },
         {
           name: "Ishika Goel",
           role: "Website Admin",
+          // image: "/team/2025/ishika_goel.jpg",
         },
         {
           name: "Torey Boss",
           role: "Marketing Team Member",
+          image: "/team/2025/torey_boss.jpg",
         },
         {
           name: "Priya Nath",
           role: "NewsLetter Admin",
+          image: "/team/2025/priya_nath.jpg",
         },
         {
           name: "Tom Heaton",
           role: "Website Admin",
+          // image: "/team/2025/tom_heaton.jpg",
         },
       ],
     },
