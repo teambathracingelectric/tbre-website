@@ -32,7 +32,7 @@ export const socials: { name: string; href: string; icon: IconType }[] = [
   },
   {
     name: "Email",
-    href: "mailto:teambathracingelectric@gmail.com",
+    href: "mailto:tbre@bath.ac.uk",
     icon: FaEnvelope,
   },
   {
