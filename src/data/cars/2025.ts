@@ -91,7 +91,7 @@ export const car2025: Car = {
         {
           name: "Callum Hallworth",
           role: "Chassis Structures Designer",
-          image: "/team/2025/callum_hallworth.jpg",
+          image: "/team/2025/callum_hallworth.png",
         },
         {
           name: "Ben Bowles",
@@ -101,7 +101,7 @@ export const car2025: Car = {
         {
           name: "Charles Dalgleish",
           role: "Chassis Manufacturing Designer",
-          // image: "/team/2025/charles_dalgleish.jpg",
+          image: "/team/2025/charles_dalgleish.jpg",
         },
         {
           name: "Simeon Filipov",
@@ -272,6 +272,7 @@ export const car2025: Car = {
           name: "Alex Fong",
           role: "Mechanical Design Engineer",
           // image: "/team/2025/alex_fong.jpg",
+          // image: "/team/2025/leo_fong.jpg",
         },
       ],
     },
@@ -282,16 +283,17 @@ export const car2025: Car = {
           name: "Nithi Muthu Saravanan",
           role: "Cost and Manufacturing Lead",
           // image: "/team/2025/nithi_muthu_saravanan.jpg",
+          image: "/team/2025/srinithi_muthusaravanan.jpg",
         },
         {
-          name: "Ben Fall",
+          name: "Benjamin Fall",
           role: "Static Events Team Member",
-          // image: "/team/2025/ben_fall.jpg",
+          image: "/team/2025/benjamin_fall.jpg",
         },
         {
           name: "Arhyam Jain",
           role: "Static Events Team Member",
-          // image: "/team/2025/arhyam_jain.jpg",
+          image: "/team/2025/arhyam_jain.jpg",
         },
         {
           name: "Leea Frangopol",
