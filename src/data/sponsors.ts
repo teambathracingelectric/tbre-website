@@ -30,9 +30,10 @@ export const sponsors: Sponsors = [
         link: "https://rotork.com/en",
         logo: "/sponsors/rotork.svg",
         description: `
-        Rotork is a market-leading global provider of mission-critical flow control and instrumentation solutions for the industrial actuation and flow control markets, with a purpose of "Keeping the World Flowing for Future Generations".
-        As our title sponsor, Rotork is providing us with a financial donation along with technical and marketing support, all contributing to the overall production of our car and TBRe's success!
-        We look forward to this partnership in the 2024 season!
+        Rotork is a global leader in mission-critical flow control and actuation solutions, supporting key industries such as energy, water, and infrastructure. With a purpose of "Keeping the World Flowing for Future Generations," their engineering expertise and sustainability focus drive industrial innovation worldwide.
+As our Title Sponsor, Rotork provides us with vital financial backing and technical support towards our powertrain development. We’re also excited to be hosting our 2025 car launch event with them once again!
+Rotork’s support is crucial in helping us push the boundaries of electric racing—and we can’t wait to show what we’ll achieve together this season!
+
         `,
       },
     ],
@@ -75,14 +76,15 @@ export const sponsors: Sponsors = [
         `,
       },
       {
-        id: "vector",
-        name: "Vector",
-        link: "https://vector.com",
-        logo: "/sponsors/vector.png",
+        id: "handling-concepts",
+        name: "Handling Concepts",
+        link: "https://handlingconcepts.com",
+        logo: "/sponsors/handling-concepts.png",
         description: `
-        Vector is the leading manufacturer of software tools and embedded components for the development of electronic systems and their networking with many different systems from CAN to Automotive Ethernet.
-        Vector's mission is to simplify the development of automotive electronics with solutions made for engineers, by engineers.
-        As a Platinum sponsor Vector generously offer us software, hardware and training which all contributes to the overall production of our car!
+        Handling Concepts specialises in advanced materials handling equipment, delivering bespoke lifting and movement solutions across a wide range of industries. With a strong foundation in precision engineering, they drive innovation through robust and reliable manufacturing expertise.
+
+As a Platinum Sponsor, Handling Concepts provides us with critical manufacturing services, including the fabrication of essential welded assemblies for our 2025 car.
+
         `,
       },
     ],
@@ -90,6 +92,28 @@ export const sponsors: Sponsors = [
   {
     level: "Gold Sponsors",
     sponsors: [
+       {
+        id: "vector",
+        name: "Vector",
+        link: "https://vector.com",
+        logo: "/sponsors/vector.png",
+        description: `
+        Vector Informatik is a globally recognised leader in software tools and embedded components for the development of electronic systems, specialising in networks like CAN and Automotive Ethernet. Their mission is to simplify the development of automotive electronics with solutions made for engineers, by engineers.
+
+As a Gold Sponsor, Vector provides us with key car components and specialist training, giving our team the knowledge and tools needed to optimise our vehicle’s electronic systems.
+        `,
+      },
+      {
+        id: "cross",
+        name: "Cross Manufacturing",
+        link: "https://crossmanufacturing.com/",
+        logo: "/sponsors/cross.png",
+        description: `
+        Cross Manufacturing is a world-leading producer of bespoke, high-temperature, corrosion-resistant metallic sealing solutions. Their precision engineering expertise is trusted globally across some of the most demanding industrial applications.
+As a Gold Sponsor, Cross Manufacturing supports us with crucial Design for Manufacturing expertise and steel machining services for our suspension wishbones—directly contributing to the performance and reliability of our 2025 car.
+
+        `,
+      },
       {
         id: "babcock",
         name: "Babcock",
@@ -134,8 +158,8 @@ export const sponsors: Sponsors = [
         link: "https://newburyelectronics.co.uk/",
         logo: "/sponsors/newbury-electronics.svg",
         description: `
-        Newbury Electrics (PCB Train) are a leading PCB manufacturer with over 60 years of experience designing and assembling PCBs.
-        As a silver sponsor, Newbury Electronics offer us website credit to be able to spend of PCB technology for our car!
+        Newbury Electronics (PCB Train) are a leading PCB manufacturer with over 60 years of experience designing and assembling PCBs.
+As a Silver Sponsor, Newbury Electronics supports our team with custom PCB boards, providing the high-quality electronic components essential for the development of our 2025 car.
         `,
       },
       {
@@ -144,8 +168,9 @@ export const sponsors: Sponsors = [
         link: "https://altium.com",
         logo: "/sponsors/altium.png",
         description: `
-        Altium are the #1 choice for PCB designers worldwide and have years experience creating software tools to empower designers and manufacturers to create products more efficiently.
-        As a silver sponsor, Altium offer is a software license, allowing us to design the best possible PCBs for our car!
+        Altium are the #1 choice for PCB designers worldwide and have years of experience creating software tools to empower designers and manufacturers to create products more efficiently.
+As a Silver Sponsor, Altium provides us with comprehensive access to their industry-leading software, equipping our team with the tools needed to design and develop high-performance PCBs for our 2025 car.
+
         `,
       },
       {
@@ -154,8 +179,8 @@ export const sponsors: Sponsors = [
         link: "https://ansys.com",
         logo: "/sponsors/ansys.svg",
         description: `
-        Ansys are innovators in the simulation software engineering space, with over 50 years experience pushing the boundaries of the predictive power of simulation.
-        As a silver sponsor, Ansys offer us a software license, allowing us to design simulations assisting with the designing of our car!
+        Ansys are industry leaders in the simulation software engineering space, with over 50 years of experience pushing the boundaries of the predictive power of simulation.
+As a Silver Sponsor, Ansys provides us with software licenses and technical support, enabling our team to design and simulate critical systems for our 2025 car—including the development of our new Autonomous system.
         `,
       },
       // {
@@ -174,19 +199,20 @@ export const sponsors: Sponsors = [
         link: "https://frewer-engineering.com/",
         logo: "/sponsors/frewer.png",
         description: `
-        Frewer Engineering is an SME formed in 2003 to provide world-class design and analysis consultancy services to customers requiring innovative and creative solutions across a number of challenging industry sectors.
-        As a silver sponsor Frewer Engineering provides us with aero consultancy contributing to the overall production of our car!`,
+        Frewer Engineering provides world-class design and analysis consultancy services to customers requiring innovative and creative solutions across a number of challenging industry sectors. Their mission is to deliver creative and practical engineering solutions that help teams like ours push the boundaries of performance.
+As a Silver Sponsor, Frewer Engineering continues to provide exceptional technical support, playing a key role in the development of our CFD and Thermal models - vital to the aerodynamic and cooling systems of our 2025 car.
+`
       },
       {
-        id: "cross",
-        name: "Cross Manufacturing",
-        link: "https://crossmanufacturing.com/",
-        logo: "/sponsors/cross.png",
+        id: "airbourne",
+        name: "Airbourne",
+        link: "https://airbourne.co.uk/",
+        logo: "/sponsors/airbourne.png",
         description: `
-        Cross Manufacturing Company is a world leading manufacturer of precision, bespoke engineered, high temperature & corrosion resistant metallic precision sealing solutions.
-        As a bronze sponsor Cross Manufacturing offer us support on the overall production of our car!
-        `,
-      },
+        Airborne is a leader in advanced composite manufacturing, dedicated to accelerating industry innovation through automation, high-precision manufacturing, and cutting-edge digital solutions.
+As a Silver Sponsor, Airborne supports us with high-quality ply-cutting services, ensuring we have precision-cut carbon fibre plys for our carbon monocoque and aerodynamic package of our 2025 car.
+`
+      }
     ],
   },
   {
