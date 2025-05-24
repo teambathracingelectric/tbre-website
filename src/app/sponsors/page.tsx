@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { sponsors } from "@/data/sponsors";
+import { cn } from "@/utils";
 import { ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -67,9 +68,14 @@ export default function Page() {
               <h3 className="mb-6 text-3xl font-bold text-zinc-900">
                 {titleSponsor.name}
               </h3>
-              <p className="mb-8 text-lg leading-relaxed text-zinc-600">
-                {titleSponsor.description}
-              </p>
+              <p
+                className="mb-8 text-lg leading-relaxed text-zinc-600"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    titleSponsor.description ??
+                    "Come back soon to find out more!",
+                }}
+              />
               <a
                 href={titleSponsor.link}
                 target="_blank"
@@ -96,41 +102,59 @@ export default function Page() {
                   {level.level}
                 </h2>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  {level.sponsors.map((sponsor) => (
-                    <Card key={sponsor.id} className="bg-white">
-                      <CardContent className="p-6 space-y-2">
-                        <Link
-                          href={sponsor.link}
-                          className="mb-6 block"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Image
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            width={150}
-                            height={50}
-                            unoptimized
+                  {level.sponsors
+                    // sort sponsors with descriptions first
+                    .sort((a, b) => {
+                      const aHasDesc = !!a.description;
+
+                      const bHasDesc = !!b.description;
+                      if (aHasDesc && !bHasDesc) return -1;
+                      if (!aHasDesc && bHasDesc) return 1;
+                      return 0;
+                    })
+                    .map((sponsor) => (
+                      <Card key={sponsor.id} className="bg-white">
+                        <CardContent className="p-6 space-y-2">
+                          <Link
+                            href={sponsor.link}
+                            className="mb-6 block"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src={sponsor.logo}
+                              alt={sponsor.name}
+                              className={cn("h-12 w-auto", {
+                                invert: sponsor.logoInverted,
+                              })}
+                              width={150}
+                              height={50}
+                              unoptimized
+                            />
+                          </Link>
+                          <h3 className="text-xl font-bold text-zinc-900">
+                            {sponsor.name}
+                          </h3>
+                          <p
+                            className="text-zinc-600"
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                sponsor.description ??
+                                "Come back soon to find out more!",
+                            }}
                           />
-                        </Link>
-                        <h3 className="text-xl font-bold text-zinc-900">
-                          {sponsor.name}
-                        </h3>
-                        {sponsor.description && (
-                          <p className="text-zinc-600">{sponsor.description}</p>
-                        )}
-                        <a
-                          href={sponsor.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
-                        >
-                          Visit {sponsor.name}{" "}
-                          <ArrowRightIcon className="ml-2 h-5 w-5" />
-                        </a>
-                      </CardContent>
-                    </Card>
-                  ))}
+                          <a
+                            href={sponsor.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                          >
+                            Visit {sponsor.name}{" "}
+                            <ArrowRightIcon className="ml-2 h-5 w-5" />
+                          </a>
+                        </CardContent>
+                      </Card>
+                    ))}
                 </div>
               </div>
             ))}
