@@ -73,17 +73,19 @@ export default function Page() {
                       </h2>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <p className="mb-4 text-zinc-600">
-                      {car.text?.slice(0, 64)}...
-                    </p>
-                    {/* <Link
+                  {/* <div className="p-6"> */}
+                  {/* {car.text && (
+                      <p className="mb-4 text-zinc-600">
+                        {car.text?.slice(0, 128)}...
+                      </p>
+                    )} */}
+                  {/* <Link
                     href={`/cars/${car.year}`}
                     className="inline-flex items-center text-tbre-blue transition-colors hover:text-tbre-blue/80"
                   >
                     View Car <ArrowRightIcon className="ml-2 h-4 w-4" />
                   </Link> */}
-                  </div>
+                  {/* </div> */}
                 </CardContent>
               </Card>
             ))}
