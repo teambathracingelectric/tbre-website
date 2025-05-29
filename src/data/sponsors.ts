@@ -82,7 +82,7 @@ As a Platinum Sponsor, Mewburn Ellis offer us a generous financial backing that 
       {
         id: "handling-concepts",
         name: "Handling Concepts",
-        link: "https://handlingconcepts.com",
+        link: "https://handlingconcepts.co.uk",
         logo: "/sponsors/handling-concepts.png",
         description: `
         Handling Concepts specialises in advanced materials handling equipment, delivering bespoke lifting and movement solutions across a wide range of industries. With a strong foundation in precision engineering, they drive innovation through robust and reliable manufacturing expertise.
