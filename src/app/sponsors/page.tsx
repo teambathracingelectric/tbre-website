@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { sponsors } from "@/data/sponsors";
 import { cn } from "@/utils";
 import { ArrowRightIcon } from "lucide-react";
@@ -114,10 +119,9 @@ export default function Page() {
                     })
                     .map((sponsor) => (
                       <Card key={sponsor.id} className="bg-white">
-                        <CardContent className="p-6 space-y-2">
+                        <CardHeader className="space-y-6">
                           <Link
                             href={sponsor.link}
-                            className="mb-6 block"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -135,6 +139,8 @@ export default function Page() {
                           <h3 className="text-xl font-bold text-zinc-900">
                             {sponsor.name}
                           </h3>
+                        </CardHeader>
+                        <CardContent>
                           <p
                             className="text-zinc-600"
                             dangerouslySetInnerHTML={{
@@ -143,6 +149,8 @@ export default function Page() {
                                 "Come back soon to find out more!",
                             }}
                           />
+                        </CardContent>
+                        <CardFooter>
                           <a
                             href={sponsor.link}
                             target="_blank"
@@ -152,7 +160,7 @@ export default function Page() {
                             Visit {sponsor.name}{" "}
                             <ArrowRightIcon className="ml-2 h-5 w-5" />
                           </a>
-                        </CardContent>
+                        </CardFooter>
                       </Card>
                     ))}
                 </div>
