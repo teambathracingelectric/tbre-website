@@ -14,7 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   priority: 0.8,
     // },
     {
-      url: `${domain}/teams`,
+      url: `${domain}/team`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${domain}/recruitment`,
       lastModified: new Date(),
       priority: 0.8,
     },
