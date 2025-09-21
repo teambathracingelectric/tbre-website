@@ -48,6 +48,10 @@ export function EventCountdown() {
   });
 
   useEffect(() => {
+    if (!nextEvent) {
+      return;
+    }
+
     const timer = setInterval(
       () => setTimeLeft(calculateTimeLeft(nextEvent.date)),
       1000,

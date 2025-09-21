@@ -29,7 +29,7 @@ export function ShowMoreText({ text, maxLength }: ShowMoreTextProps) {
             {" "}
             <button
               onClick={toggleExpanded}
-              className="text-tbre-yellow hover:underline inline"
+              className="text-tbre-yellow hover:underline inline hover:cursor-pointer"
             >
               {isExpanded ? "Show Less" : "Show More"}
             </button>

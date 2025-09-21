@@ -1,16 +1,32 @@
 import { ShowMoreText } from "@/components/show-more-text";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const teams = [
+const teams: {
+  name: string;
+  description: string;
+  contact: string;
+  members: string;
+  roles: {
+    title: string;
+    description: string;
+    degree: string;
+    year: string;
+    count: string | number;
+  }[];
+}[] = [
   {
     name: "Aerodynamics",
     description:
       "The Aerodynamics team pushes the boundaries of vehicle performance through advanced simulation, design, and testing. Roles include CFD, composite design, and thermal management.",
+    contact: "Alexander Crisan",
+    members: "11",
     roles: [
       {
         title: "Aerodynamic Performance Engineer",
         description:
           "Work alongside the vehicle performance and vehicle dynamics group to develop a top-level development methodology. Conduct aerodynamic performance analysis of previous competition data. Provide recommendations for aerodynamic targets and development direction. Build tools to quantify aerodynamic gains in lap time/points. Support CFD validation programs.",
-        degree: "Aerospace/Automotive/Mechanical/Integrated Engineering",
+        degree: "Aerospace / Automotive / Mechanical / Integrated Engineering",
         year: "3rd/4th",
         count: 2,
       },
@@ -18,7 +34,7 @@ const teams = [
         title: "Aerodynamicist",
         description:
           "Develop aerodynamic solutions that deliver performance, under the direction of the Aerodynamic Lead. Ensure that ideas and designs are legal. Manage your own projects effectively through the design, CFD, part preparation and wind tunnel test process. Create CAD geometry (Solid Modelling/Surfacing) under the direction of the Aerodynamic Lead. Submit CFD cases, deliver CFD analysis and input for your area of the car.",
-        degree: "Aerospace/Automotive Engineering",
+        degree: "Aerospace / Automotive Engineering",
         year: "3rd/4th",
         count: 3,
       },
@@ -26,7 +42,7 @@ const teams = [
         title: "Aerodynamic Composite Designers",
         description:
           "Build analytical tools for structural analysis. Develop and build Finite Element (FE) models for composite structural analysis. Design and execute experiments/physical testing to validate tools. Complete composite laminate and internal structure design for all aerodynamic devices. Support and lead manufacturing effort.",
-        degree: "Aerospace/Automotive/Mechanical/Integrated Engineering",
+        degree: "Aerospace / Automotive / Mechanical / Integrated Engineering",
         year: "3rd/4th",
         count: 3,
       },
@@ -34,7 +50,7 @@ const teams = [
         title: "Thermal Engineers",
         description:
           "Responsible for the development of innovative and effective thermal solutions for powertrain and accumulator (high voltage battery) cooling systems. Use 1D / 3D simulations, to investigate concepts and complete design validation against targets. Work closely with our Aerodynamic, Powertrain and vehicle performance group to implement thermal solutions. Contribute to the calibration and correlation of computational and physical modelling toolsets use for thermal predictions. Investigate and validate concepts with test benches and track testing.",
-        degree: "Aerospace/Automotive/Mechanical/Integrated Engineering",
+        degree: "Aerospace / Automotive / Mechanical / Integrated Engineering",
         year: "3rd/4th",
         count: 2,
       },
@@ -52,11 +68,13 @@ const teams = [
     name: "Vehicle Dynamics",
     description:
       "The Vehicle Dynamics team focuses on composite and metallic structure design, FEA, and manufacturing support for the car's chassis and suspension systems.",
+    contact: "Oliver Johnson",
+    members: "8",
     roles: [
       {
         title: "Composite Design Engineer - Laminate",
         description:
-          "Role: Monocoque laminate optimisation\nExperience: Composite structural analysis and manufacture. Previous TBRe involvement and experience with SES ideal.\nDescription: Responsible for developing the laminate for the monocoque via FEA modelling and calculations. Collaborate with other team members to manufacture test panels and record results in the SES.",
+          "Monocoque laminate optimisation\nExperience: Composite structural analysis and manufacture. Previous TBRe involvement and experience with SES ideal.\nResponsible for developing the laminate for the monocoque via FEA modelling and calculations. Collaborate with other team members to manufacture test panels and record results in the SES.",
         degree: "Mechanical or Aerospace Engineering",
         year: "3rd/4th Year",
         count: 2,
@@ -64,7 +82,7 @@ const teams = [
       {
         title: "Composite Design Engineer - Inserts and Attachments",
         description:
-          "Role: Insert design and FEA modelling\nExperience: Composite structural analysis and manufacture. Understanding of insert design and FEA experience. Previous TBRe involvement and experience with SES ideal.\nDescription: Responsible for FEA modelling of inserts and mass optimisation of inserts throughout the car. Log design and manufacture progress of components. Collaborate with other team members to manufacture test panels and record results in the SES.",
+          "Insert design and FEA modelling\nExperience: Composite structural analysis and manufacture. Understanding of insert design and FEA experience. Previous TBRe involvement and experience with SES ideal.\nResponsible for FEA modelling of inserts and mass optimisation of inserts throughout the car. Log design and manufacture progress of components. Collaborate with other team members to manufacture test panels and record results in the SES.",
         degree: "Mechanical or Aerospace Engineering",
         year: "3rd/4th Year",
         count: 1,
@@ -72,7 +90,7 @@ const teams = [
       {
         title: "Mechanical Design Engineer - Metallic Structures",
         description:
-          "Role: Roll hoop design and optimisation\nExperience: Strong CAD skills and metallic FEA skills. Previous TBRe involvement and experience with SES ideal but not required.\nDescription: Responsible for CAD modelling, technical drawings and procurement of roll hoops. Responsible for mass optimisation of the metallic structures and sub-assemblies as well as producing FEA reports and contributing to SES documentation.",
+          "Roll hoop design and optimisation\nExperience: Strong CAD skills and metallic FEA skills. Previous TBRe involvement and experience with SES ideal but not required.\nResponsible for CAD modelling, technical drawings and procurement of roll hoops. Responsible for mass optimisation of the metallic structures and sub-assemblies as well as producing FEA reports and contributing to SES documentation.",
         degree: "Mechanical or Aerospace Engineering",
         year: "3rd/4th Year",
         count: 2,
@@ -80,7 +98,7 @@ const teams = [
       {
         title: "Manufacture Support - (Hire ad hoc from open teams)",
         description:
-          "Role: Assisting with composites manufacture\nExperience: None required. Interest in Formula Student and composite materials\nDescription: Hands-on role assisting with manufacture of composite test panels and structures during busy periods. Log progress of manufactured parts.",
+          "Assisting with composites manufacture\nExperience: None required. Interest in Formula Student and composite materials\nHands-on role assisting with manufacture of composite test panels and structures during busy periods. Log progress of manufactured parts.",
         degree: "Mechanical Engineering",
         year: "Any",
         count: 6,
@@ -91,12 +109,14 @@ const teams = [
     name: "Mechanical Design",
     description:
       "The Mechanical Design team is responsible for suspension, wishbone, steering, FEA, R&D, sensor integration, procurement, and manufacturing engineering for the car's mechanical systems.",
+    contact: "Huw Williams",
+    members: "10-16",
     roles: [
       {
         title: "Suspension & Wishbone Design Engineers",
         description:
           "Responsible for the detailed design of wishbones based on hardpoints defined by the Performance team. Develop parallel designs for both carbon and steel wishbone sets, considering manufacturability, stiffness, and weight. Collaborate with Procurement and FEA Specialists for material choice and validation, and collaborate with the chassis/composites team on carbon wishbone testing.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: 1,
       },
@@ -104,7 +124,7 @@ const teams = [
         title: "Dynamics Design Engineers",
         description:
           "Responsible for the design of push- or pull-rod systems, rocker assemblies, and integration with damper units. Conduct studies to balance performance, compliance, mass and manufacturability. Not doing kinematic aspects.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: 1,
       },
@@ -112,7 +132,7 @@ const teams = [
         title: "Steering and Pedal Box System Design Engineers",
         description:
           "Responsible for the design and integration of the steering column, rack, pedal box and linkages. Work closely with the Performance team to optimise rack placement and with the Chassis team to ensure compatibility with SES chassis openings. Complete verification studies on loading.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: 2,
       },
@@ -120,7 +140,7 @@ const teams = [
         title: "Mechanical Analysis & FEA Specialists",
         description:
           "Develop and maintain FEA models to validate mechanical component performance across the car. Improve fidelity of simulations (mesh refinement, boundary condition accuracy, correlation with physical data). Support subsystem designers (wishbones, dynamics, steering) by providing simulation insights and verification for competition documentation.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: 2,
       },
@@ -128,7 +148,7 @@ const teams = [
         title: "R&D Engineers",
         description:
           "Investigate novel mechanical concepts to improve performance or packaging. Current focuses may include damper cage designs, rod-ends alternatives, and manufacturing capability studies and component rig testing. Responsible for feasibility studies, prototyping, and early-stage validation before integration into the main car design cycle.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: "2 (Supplementary)",
       },
@@ -136,7 +156,7 @@ const teams = [
         title: "Sensor Integration Engineers",
         description:
           "Responsible for the mechanical integration of sensors across the car. Develop brackets, mounts, and housings for strain gauges, potentiometers, accelerometers, and other data acquisition devices. Collaborate with Electrical and Telemetry teams to ensure adequate integration.",
-        degree: "Mechanical/Mechatronics/Automotive Engineering",
+        degree: "Mechanical / Mechatronics / Automotive Engineering",
         year: "",
         count: "1 (Supplementary)",
       },
@@ -152,7 +172,7 @@ const teams = [
         title: "Manufacturing Engineers",
         description:
           "Responsible for the hands-on manufacturing of small mechanical components in the student workshop. Receive training in machining and assembly processes. Assist during build season to ensure parts are produced on time and to specification. Note - One member of this group will take on the role of Co-Manufacturing Lead, responsible for managing and logging the progress of manufactured parts. They act as the primary link between designers, technicians, and student workshop users to ensure smooth communication and efficient delivery of components.",
-        degree: "Mechanical/Automotive Engineering",
+        degree: "Mechanical / Automotive Engineering",
         year: "",
         count: "6 (Supplementary)",
       },
@@ -162,6 +182,8 @@ const teams = [
     name: "Electrical",
     description:
       "The Electrical team designs, builds, and tests all electronic, software, and integration systems for the car, including PCBs, wiring, embedded software, and battery management.",
+    contact: "Brendan Ind",
+    members: "10",
     roles: [
       {
         title: "Electronics Engineer",
@@ -183,7 +205,7 @@ const teams = [
         title: "PCB & Wiring Specialist (Manufacture & Test)",
         description:
           "The TBRe race car relies on a network of custom PCBs and wiring harnesses, carrying signals across the car to ensure safety, reliability, and performance. These systems are essential, and we're looking for people who can learn to assemble and test both PCBs and wiring looms.\nYou'll need a sharp eye for detail and the ability to consistently produce high-quality, reliable work—both in manufacturing and testing hardware, as well as documenting your processes clearly. We'll provide the specific training, but you should be:\n• Eager to grow your skills in a practical, hands-on environment\n• A self-starter who can work independently and solve problems\n• Confident in your hands-on abilities, ideally with wiring or PCB projects\n• Someone who takes pride in precision and getting things right\nWhat the role involves:\n• Committing at least 8 hours per week across both semesters (especially in second semester, when we build and test systems)\n• Attending team and technical meetings, reporting progress, and asking for support when needed\n• Focusing on the build/test stage of loom and PCB design, including creating and carrying out test plans to validate our engineers' designs\n• The chance to support your systems in action on track at Silverstone and at international competitions over the summer.\nThis role is open to students from any discipline, including computer science, maths, physics, and engineering.\nIf you're interested, please contact Brendan to arrange an informal chat about your experience and how you could contribute to the team.",
-        degree: "Electrical/IMEE",
+        degree: "Electrical / IMEE",
         year: "Any",
         count: 2,
       },
@@ -191,7 +213,7 @@ const teams = [
         title: "Integration (Battery/Vehicle Systems) Engineers",
         description:
           "The electrical team still needs mechanically minded members! Although we are mostly known for pushing electrons in the right direction, we are also looking for people to specifically integrate electrical components into the car.\nKey responsibilities include:\n- Managing car assemblies in Inventor - the CAD program the team uses.\n- Designing parts and assemblies for packaging bought in and custom components.\n- Designing with Additive Manufacturing in mind (3D printing), as well as traditional metal sheet bending, turning, etc…\nFor this role, we are looking for someone who:\n- Ideally has some experience in CAD design before, regardless of software package that was used. But if you are keen to learn, do not hesitate to apply.\n- Has strong attention to detail and can interpret and design parts to meet the Formula Student UK and Germany regulations.\n- Can commit at least 8 hours per week - building a race car takes time, and as an Integration Engineer you'll work across multiple system areas.\n- Works independently and takes initiative, but isn't afraid to ask for help when needed. You'll be expected to design parts using both the rules and your own engineering creativity - there's no single “right answer.”\n- Communicates ideas clearly and has excellent spatial reasoning skills. The ability to mentally visualise assemblies and understand how components fit together is highly valuable in this role.\nIf you're interested, please contact Brendan to arrange an informal chat about your experience and how you could contribute to the team.",
-        degree: "Electrical/Mechanical/ Aero/Automotive",
+        degree: "Electrical / Mechanical / Aero/Automotive",
         year: "Any",
         count: 2,
       },
@@ -200,7 +222,7 @@ const teams = [
         description:
           "TBRe runs an electric powertrain. Energy stored in the “Accumulator” (our battery) is delivered to two rear-wheel motors. These motors are powered by “inverters,” which convert the Accumulator's DC voltage into a three-phase AC wave.\nThe inverters are controlled by a central ECU, which translates driver inputs into a “torque request.” Your role will be to work with the inverters and control algorithms to extract maximum performance from the powertrain.\nWe are looking for someone who:\n• Has some experience in data processing (e.g. Python and Pandas) to analyse past car performance and extract insights.\n• Is interested in optimising race car control strategies.\n• Is willing to learn or has experience with MATLAB/Simulink.\n• Has a solid theoretical background and can apply physics and maths concepts in practice.\nDon't worry if this sounds complex — the role can range from analysing past data to implementing advanced control strategies, depending on your experience.\nWe welcome applicants from electrical engineering, computer science, and mathematics backgrounds. If you're interested, please contact Brendan to arrange an informal chat about your experience and how you could contribute to the team.",
         degree:
-          "Electrical/IMEE/Computer Science (data)/ Mech of any type (if you're interested in control theory)",
+          "Electrical / IMEE / Computer Science (data) / Mech of any type (if you're interested in control theory)",
         year: "Any",
         count: 1,
       },
@@ -219,38 +241,61 @@ const teams = [
 
 export function RecruitmentSection() {
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container px-4 py-16 mx-auto">
       {teams.map((team) => (
-        <div key={team.name}>
-          <h2 className="mb-2 text-3xl font-bold text-center">
-            {team.name} Team Roles
-          </h2>
-          <p className="mb-8 text-lg text-gray-700 md:max-w-2/3 text-center mx-auto">
-            {team.description}
-          </p>
+        <div key={team.name} className="mb-12">
+          <div className="mb-12">
+            <h2 className="text-center text-2xl font-bold text-zinc-900">
+              {team.name} Team Roles
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
+              {team.description}
+            </p>
+            <div className="flex flex-col items-center mt-2 mb-2">
+              <span className="text-sm text-zinc-500">
+                <strong>Contact:</strong> {team.contact} &nbsp;|&nbsp;{" "}
+                <strong>Members:</strong> {team.members}
+              </span>
+            </div>
+            <div className="flex justify-center mt-6">
+              <Button
+                asChild
+                size="lg"
+                className="bg-tbre-yellow hover:bg-tbre-yellow/90 text-white"
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://forms.office.com/Pages/ResponsePage.aspx?id=Ij1-N6FOLUKwrY_MiUBrnuaHFEKzAxRImIds5xrI0glUOEhZSVQ4OUhQUFJYMFdESVgyQzY2TDNWSC4u"
+                >
+                  Apply to Join
+                </a>
+              </Button>
+            </div>
+          </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {team.roles.map((role) => (
-              <div
-                key={role.title}
-                className="rounded-lg border bg-white p-6 shadow hover:shadow-lg transition"
-              >
-                <h3 className="mb-2 text-xl font-semibold">{role.title}</h3>
-                <ShowMoreText text={role.description} maxLength={550} />
-                <ul className="mb-2 text-gray-600">
-                  <li>
-                    <strong>Preferred Degree:</strong> {role.degree}
-                  </li>
-                  <li>
-                    <strong>Preferred Year:</strong> {role.year}
-                  </li>
-                  <li>
-                    <strong>Number of roles:</strong> {role.count}
-                  </li>
-                </ul>
-              </div>
+              <Card key={role.title} className="hover:shadow-lg transition">
+                <CardHeader>
+                  <CardTitle className="mb-2 text-xl">{role.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ShowMoreText text={role.description} maxLength={550} />
+                  <ul className="mb-2 text-gray-600">
+                    <li>
+                      <strong>Preferred Degree:</strong> {role.degree}
+                    </li>
+                    <li>
+                      <strong>Preferred Year:</strong> {role.year}
+                    </li>
+                    <li>
+                      <strong>Number of roles:</strong> {role.count}
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
           </div>
-          <div className="my-12 border-t" />
         </div>
       ))}
     </section>
