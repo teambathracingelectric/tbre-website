@@ -65,11 +65,11 @@ const teams: {
     ],
   },
   {
-    name: "Vehicle Dynamics",
+    name: "Chassis",
     description:
-      "The Vehicle Dynamics team focuses on composite and metallic structure design, FEA, and manufacturing support for the car's chassis and suspension systems.",
-    contact: "Oliver Johnson",
-    members: "8",
+      "The Chassis team is responsible for the design, analysis, and manufacture of the car's structural components, including the monocoque, roll hoop, and other metallic and composite structures.",
+    contact: "Sam Utley",
+    members: "6-11",
     roles: [
       {
         title: "Composite Design Engineer - Laminate",
