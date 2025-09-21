@@ -96,7 +96,7 @@ const teams: {
         count: 2,
       },
       {
-        title: "Manufacture Support - (Hire ad hoc from open teams)",
+        title: "Manufacture Support",
         description:
           "Assisting with composites manufacture\nExperience: None required. Interest in Formula Student and composite materials\nHands-on role assisting with manufacture of composite test panels and structures during busy periods. Log progress of manufactured parts.",
         degree: "Mechanical Engineering",
