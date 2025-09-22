@@ -179,6 +179,13 @@ const teams: {
     ],
   },
   {
+    name: "Vehicle Dynamics",
+    description: "The Vehicle Dynamics team focuses on the car's performance through suspension design, tyre modelling, data analysis, and driver feedback to optimise handling and lap times.",
+    "contact": "Oliver Johnson",
+    members: "8",
+    roles: [],
+  },
+  {
     name: "Electrical",
     description:
       "The Electrical team designs, builds, and tests all electronic, software, and integration systems for the car, including PCBs, wiring, embedded software, and battery management.",
