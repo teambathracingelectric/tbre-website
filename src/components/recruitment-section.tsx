@@ -6,13 +6,14 @@ const teams: {
   name: string;
   description: string;
   contact: string;
+  additionalText?: string;
   members: string;
   roles: {
     title: string;
     description: string;
-    degree: string;
-    year: string;
-    count: string | number;
+    degree?: string;
+    year?: string;
+    count?: string | number;
   }[];
 }[] = [
   {
@@ -117,7 +118,7 @@ const teams: {
         description:
           "Responsible for the detailed design of wishbones based on hardpoints defined by the Performance team. Develop parallel designs for both carbon and steel wishbone sets, considering manufacturability, stiffness, and weight. Collaborate with Procurement and FEA Specialists for material choice and validation, and collaborate with the chassis/composites team on carbon wishbone testing.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: 1,
       },
       {
@@ -125,7 +126,7 @@ const teams: {
         description:
           "Responsible for the design of push- or pull-rod systems, rocker assemblies, and integration with damper units. Conduct studies to balance performance, compliance, mass and manufacturability. Not doing kinematic aspects.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: 1,
       },
       {
@@ -133,7 +134,7 @@ const teams: {
         description:
           "Responsible for the design and integration of the steering column, rack, pedal box and linkages. Work closely with the Performance team to optimise rack placement and with the Chassis team to ensure compatibility with SES chassis openings. Complete verification studies on loading.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: 2,
       },
       {
@@ -141,7 +142,7 @@ const teams: {
         description:
           "Develop and maintain FEA models to validate mechanical component performance across the car. Improve fidelity of simulations (mesh refinement, boundary condition accuracy, correlation with physical data). Support subsystem designers (wishbones, dynamics, steering) by providing simulation insights and verification for competition documentation.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: 2,
       },
       {
@@ -149,7 +150,7 @@ const teams: {
         description:
           "Investigate novel mechanical concepts to improve performance or packaging. Current focuses may include damper cage designs, rod-ends alternatives, and manufacturing capability studies and component rig testing. Responsible for feasibility studies, prototyping, and early-stage validation before integration into the main car design cycle.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: "2 (Supplementary)",
       },
       {
@@ -157,7 +158,7 @@ const teams: {
         description:
           "Responsible for the mechanical integration of sensors across the car. Develop brackets, mounts, and housings for strain gauges, potentiometers, accelerometers, and other data acquisition devices. Collaborate with Electrical and Telemetry teams to ensure adequate integration.",
         degree: "Mechanical / Mechatronics / Automotive Engineering",
-        year: "",
+
         count: "1 (Supplementary)",
       },
       {
@@ -165,7 +166,7 @@ const teams: {
         description:
           "Responsible for sourcing and acquiring mechanical components and materials. Liaise with suppliers and sponsors to secure parts, raise purchase orders, and manage lead times. Ensure budgetary compliance while supporting the design team with manufacturable solutions.",
         degree: "Any",
-        year: "",
+
         count: 1,
       },
       {
@@ -173,17 +174,230 @@ const teams: {
         description:
           "Responsible for the hands-on manufacturing of small mechanical components in the student workshop. Receive training in machining and assembly processes. Assist during build season to ensure parts are produced on time and to specification. Note - One member of this group will take on the role of Co-Manufacturing Lead, responsible for managing and logging the progress of manufactured parts. They act as the primary link between designers, technicians, and student workshop users to ensure smooth communication and efficient delivery of components.",
         degree: "Mechanical / Automotive Engineering",
-        year: "",
+
         count: "6 (Supplementary)",
       },
     ],
   },
   {
     name: "Vehicle Dynamics",
-    description: "The Vehicle Dynamics team focuses on the car's performance through suspension design, tyre modelling, data analysis, and driver feedback to optimise handling and lap times.",
-    "contact": "Oliver Johnson",
+    description:
+      "The Vehicle Dynamics team focuses on the car's performance through suspension design, tyre modelling, data analysis, and driver feedback to optimise handling and lap times.",
+    contact: "Oliver Johnson",
+    additionalText: `If interested please contact Oli to arrange an informal chat. between now and then please read: "Race Car Vehicle Dynamics by Milliken & Milliken, and Tire and vehicle dynamics by pacejka" and watch the OptimumG youtube videos on Tyres, Suspension design, and performance engineering. OptimumG also have a resources page which suggest other good reading. OptimumG also have a course https://optimumg-s-school.thinkific.com/courses/vehicle-dynamics-lecture which is free to sign up to.`,
     members: "8",
-    roles: [],
+    roles: [
+      {
+        title: "Brakes",
+        description: `The TBRe Formula Student car must, by regulation, run two independent hydraulic brake systems. Historically, we have used twin 2-pot calipers on the front axle and a single 2-pot caliper on the rear axle, running DOT 4 performance fluid. Brakes have been one of the team's most challenging areas in recent years, with issues such as boiling fluid, excessive float, caliper failures, leaking lines, and weeping nipples affecting reliability.
+
+For 2026, we are aiming for a step-change in brake system performance and reliability. This includes thermal simulations building on our current pipeline, brake pad and fluid sourcing/testing, a master cylinder redesign, improved packaging of calipers and discs with the chassis team, and a full review of bleed nipples and service procedures.
+
+We're seeking engineers excited to tackle one of the most safety-critical systems on the car, working closely across mechanical and chassis teams to deliver a robust solution.
+
+Are you:
+
+Keen to get hands-on with a safety-critical system in a live motorsport environment?
+
+Someone who enjoys both simulation and experimental testing to prove a design?
+
+Looking to gain experience in hydraulic systems, thermal modelling, and component testing?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Collaborating closely with mechanical and chassis teams on packaging master cylinders, reservoirs, calipers, and brake lines
+
+Developing and running thermal simulations, then validating them through testing
+
+Sourcing and testing brake fluids, pads, and components to improve performance and reliability
+
+Supporting the full lifecycle: design, analysis, testing, documentation, and on-track running at Silverstone and international competitions`,
+        count: 1,
+        degree: "Mech eng related (including IMEE)",
+        year: "3+",
+      },
+      {
+        title: "Tyres",
+        description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
+
+For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
+
+We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
+
+Are you:
+
+Excited to work with real-world tyre data and apply it to motorsport performance?
+
+Interested in modelling, simulation, and data-driven decision making?
+
+Looking to gain experience in documentation, TTC data scaling, and setup development?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Analysing tyre data, supporting simulation work, and providing practical setup recommendations
+
+Investigating rim width effects, sourcing supporting documentation, and guiding team choices
+
+Scaling and adapting existing TTC data to model our chosen tyres accurately
+
+Setting car pressures across different dynamic events and validating these choices on track
+
+Supporting the team's performance at Silverstone and international competitions`,
+        count: 1,
+        degree: "Mech eng related (including IMEE)",
+        year: "3+",
+      },
+      {
+        title: "Kinematics and Dynamics",
+        description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
+
+This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
+
+We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
+
+Are you:
+
+Excited to tackle real-world problems like tyre wear and powertrain integration?
+
+Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
+
+Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
+
+Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters.
+
+Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
+
+Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
+
+Working with the aero team to ensure suspension design supports aerodynamic consistency.
+
+Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
+
+Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
+
+Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
+
+Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
+        count: 2,
+        degree: "Mech eng related (including IMEE)",
+        year: "3+",
+      },
+      {
+        title: "Simulations",
+        description: `Vehicle Simulation Engineer
+The TBRe team uses IPG CarMaker, a full-car simulation tool, to develop sensitivities and define design targets. For 2026, we are looking for an engineer to provide IPG support, maintaining and expanding our simulation models. This requires a strong understanding of vehicle dynamics, computer systems, and data processing skills to manage, manipulate, and extract insights from simulation datasets.
+
+Are you:
+
+Comfortable with vehicle dynamics and translating theory into practical simulations?
+
+Experienced in handling large simulation datasets and pre/post-processing results?
+
+Keen to ensure the team's simulation pipeline is robust and ready for design decisions?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Maintaining and expanding our IPG simulation models
+
+Supporting the team by processing simulation results and generating reports
+
+Collaborating with all vehicle dynamics engineers to integrate updated models
+
+Supporting on-track and offline vehicle development through accurate simulation data
+
+Required knowledge: Familiarity with vehicle dynamics (Milliken & Milliken or equivalent) and experience in data handling or programming for simulations.
+
+Vehicle Simulation Engineer - OptimumG (OptimumD)
+
+TBRe works closely with OptimumG, a consulting company providing free courses and a suite of software tools: OptimumKinematics, OptimumDynamics, and OptimumTyre. While Kinematics & Dynamics Engineers will focus on OptimumK and Tyres Engineers on OptimumTyre, we need an OptimumD engineer to integrate and simulate the full vehicle, coordinating across all subsystems.
+
+Are you:
+
+Interested in full-vehicle dynamics simulation, linking suspension, tyre, and powertrain models?
+
+Comfortable learning and applying professional vehicle dynamics software?
+
+Excited to collaborate with all members of the team to quantify design changes in terms of lap-time impact?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Building and validating full-car models in OptimumDynamics
+
+Coordinating with Kinematics, Dynamics, and Tyres engineers to integrate subsystem models
+
+Producing sensitivity analyses and design target reports
+
+Supporting simulation-led decision making to guide hardware design
+
+Required knowledge: Strong understanding of vehicle dynamics, experience with simulation software (MATLAB/Simulink, IPG, or similar), and good data handling skills.
+
+Vehicle Simulation Engineer - General Mathematical Modeling
+
+Some design questions require a “good enough” first approximation before a full simulation. This engineer will create simplified mathematical models to quickly assess parameters like chassis stiffness, suspension compliance, or ride frequencies, feeding results to the OptimumD engineer for lap-time analysis.
+
+Are you:
+
+Comfortable building and analysing simplified models to guide design choices?
+
+Interested in bridging the gap between conceptual design and detailed simulation?
+
+Keen to see your calculations directly influence car setup and hardware decisions?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Modelling vehicle and chassis behaviour using simplified mathematical approaches
+
+Providing initial sensitivity analyses to inform full OptimumDynamics models
+
+Collaborating closely with other simulation engineers to translate results into performance predictions
+
+Required knowledge: Strong mathematical modelling ability, experience with MATLAB/Python, and a solid understanding of vehicle dynamics.
+
+Vehicle Simulation Engineer - Model Validation / Data
+
+Once simulation and real-world data are collected, they must be processed, validated, and presented for use across the team. This engineer will manage data pipelines from electronic sensors to team reports, ensuring accuracy and usability. Strong data analysis and modeling skills are required to turn raw datasets into actionable insights.
+
+Are you:
+
+Experienced in data processing, analysis, and validation?
+
+Comfortable working with large datasets from multiple sources (electronics, telemetry, simulations)?
+
+Keen to ensure that simulation and track data are fully leveraged for vehicle performance improvements?
+
+This role will involve:
+
+Commitment of at least 8 hours per week throughout both semesters
+
+Developing and maintaining the workflow from raw data to run reports
+
+Validating model predictions against track and test data
+
+Supporting engineers by producing actionable insights from simulation and measurement data
+
+Maintaining high standards of data quality and traceability
+
+Required knowledge: Proficiency in data analysis and modeling, experience with MATLAB/Python or equivalent, and familiarity with vehicle dynamics.`,
+        count: 4,
+        degree:
+          "Mech eng related, Elec related, IMEE, Comp Sci, Physics, Maths",
+        year: "1+",
+      },
+    ],
   },
   {
     name: "Electrical",
@@ -258,6 +472,11 @@ export function RecruitmentSection() {
             <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
               {team.description}
             </p>
+            {team.additionalText && (
+              <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600 whitespace-pre-line">
+                {team.additionalText}
+              </p>
+            )}
             <div className="flex flex-col items-center mt-2 mb-2">
               <span className="text-sm text-zinc-500">
                 <strong>Contact:</strong> {team.contact} &nbsp;|&nbsp;{" "}
@@ -288,17 +507,25 @@ export function RecruitmentSection() {
                 </CardHeader>
                 <CardContent>
                   <ShowMoreText text={role.description} maxLength={550} />
-                  <ul className="mb-2 text-gray-600">
-                    <li>
-                      <strong>Preferred Degree:</strong> {role.degree}
-                    </li>
-                    <li>
-                      <strong>Preferred Year:</strong> {role.year}
-                    </li>
-                    <li>
-                      <strong>Number of roles:</strong> {role.count}
-                    </li>
-                  </ul>
+                  {(role.degree || role.year || role.count) && (
+                    <ul className="mb-2 text-gray-600">
+                      {role.degree && (
+                        <li>
+                          <strong>Preferred Degree:</strong> {role.degree}
+                        </li>
+                      )}
+                      {role.year && (
+                        <li>
+                          <strong>Preferred Year:</strong> {role.year}
+                        </li>
+                      )}
+                      {role.count && (
+                        <li>
+                          <strong>Number of roles:</strong> {role.count}
+                        </li>
+                      )}
+                    </ul>
+                  )}
                 </CardContent>
               </Card>
             ))}
