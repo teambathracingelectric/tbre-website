@@ -1,6 +1,7 @@
+import { RecruitmentSection } from "@/components/recruitment-section";
+import { recruitment } from "@/data/recruitment";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { RecruitmentSection } from "../../components/recruitment-section";
 
 export const metadata: Metadata = {
   title: "Recruitment",
@@ -9,6 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const categories = recruitment.map((team) => ({
+    name: team.name,
+    href: `#${team.name.toLowerCase().replace(/\s+/g, "-")}`,
+  }));
+
   return (
     <div className="min-h-screen bg-white">
       <section className="relative h-[50vh] min-h-[400px] w-full">
@@ -30,6 +36,20 @@ export default function Page() {
               excellence.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="container px-4 pt-16 mx-auto">
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+          {categories.map((category) => (
+            <a
+              key={category.href}
+              href={category.href}
+              className="cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors bg-zinc-100 text-zinc-900 hover:bg-zinc-200"
+            >
+              {category.name}
+            </a>
+          ))}
         </div>
       </section>
 
