@@ -162,7 +162,6 @@ export const recruitment: {
         description:
           "Responsible for sourcing and acquiring mechanical components and materials. Liaise with suppliers and sponsors to secure parts, raise purchase orders, and manage lead times. Ensure budgetary compliance while supporting the design team with manufacturable solutions.",
         degree: "Any",
-
         count: 1,
       },
       {
@@ -170,7 +169,6 @@ export const recruitment: {
         description:
           "Responsible for the hands-on manufacturing of small mechanical components in the student workshop. Receive training in machining and assembly processes. Assist during build season to ensure parts are produced on time and to specification. Note - One member of this group will take on the role of Co-Manufacturing Lead, responsible for managing and logging the progress of manufactured parts. They act as the primary link between designers, technicians, and student workshop users to ensure smooth communication and efficient delivery of components.",
         degree: "Mechanical / Automotive Engineering",
-
         count: "6 (Supplementary)",
       },
     ],
@@ -522,6 +520,30 @@ What we're looking for...
 - Bonus if you have used tools such as Photoshop or Lightroom
 
 This is a great role if you are creative and want to build up a design portfolio while working as part of a hands-on team. You'll have plenty of freedom to try new ideas, improve your skills and make TBRe stand out online. You must be willing to commit to weekly meetings that are scheduled around team members timetable hours.`,
+      },
+    ],
+  },
+  {
+    name: "Business Operations",
+    description:
+      "The Business team focuses on the commercial aspects of the team, including sponsorship acquisition, financial management, and business strategy to ensure the team's sustainability and growth.",
+    // TODO: add contact details here when known
+    contact: "",
+    members: "5-6",
+    roles: [
+      {
+        title: "Cost and Manufacturing Lead",
+        description: `As a Cost & Manufacturing Engineer, you will play a key role in the Formula Student project by managing the cost and manufacturing documentation for the competition. This involves preparing a detailed Bill of Materials (BOM), Costed Bill of Materials (CBOM), and supporting evidence that demonstrate the team's understanding of manufacturing processes, supply chain, and financial management. You will ensure compliance with Formula Student rules, optimise cost efficiency, and highlight the teams costing design decisions.`,
+        degree: "Any degree with interest in Excel",
+        year: "Any",
+        count: 2,
+      },
+      {
+        title: "Business Operations Team Member",
+        description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
+        degree: "Any degree",
+        year: "Any",
+        count: "3-4",
       },
     ],
   },
