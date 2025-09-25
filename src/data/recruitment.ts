@@ -526,10 +526,24 @@ This is a great role if you are creative and want to build up a design portfolio
   {
     name: "Business Operations",
     description:
-      "The Business team focuses on the commercial aspects of the team, including sponsorship acquisition, financial management, and business strategy to ensure the team's sustainability and growth.",
-    // TODO: add contact details here when known
-    contact: "",
-    members: "5-6",
+      "The Business Operations team handles the business aspects of the team, including sponsorship acquisition, financial planning, and stakeholder communications to ensure the team's sustainability and growth.",
+    contact: "Nithi Muthu Saravanan",
+    members: "3-4",
+    roles: [
+      {
+        title: "Business Operations Team Member",
+        description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
+        degree: "Any degree",
+        year: "Any",
+        count: "3-4",
+      },
+    ],
+  },
+  {
+    name: "Costing",
+    description: `The Costing team is responsible for managing the financial aspects of the project, including budgeting, cost analysis, and ensuring compliance with competition regulations related to cost and manufacturing.`,
+    contact: "Nithi Muthu Saravanan",
+    members: "2",
     roles: [
       {
         title: "Cost and Manufacturing Lead",
@@ -538,12 +552,87 @@ This is a great role if you are creative and want to build up a design portfolio
         year: "Any",
         count: 2,
       },
+    ],
+  },
+  {
+    name: "AI",
+    description:
+      "The AI team focuses on developing and implementing autonomous driving systems, including perception, planning, and control algorithms to enable the car to navigate tracks without human intervention.",
+    contact: "Wenzel Kinsky",
+    members: "7",
+    roles: [
       {
-        title: "Business Operations Team Member",
-        description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
-        degree: "Any degree",
-        year: "Any",
-        count: "3-4",
+        title: "Junior Engineer",
+        description: `Working with TBReAl to improve and maintain the autonomous driving system, you will develop skills in C/C++ programming and gain experience in autonomous vehicle technologies. This is a hands-on opportunity to develop a real-world
+system which will compete across the UK and Europe. You will develop skills in dealing with an established codebase, working in a custom framework, and using version control to work reliably in a team. This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK
+autonomous dynamics competition.
+Overall, it is a great chance to experience software development, where you can directly see the results of your system in action on a real vehicle.
+Responsibilities
+As a Junior Developer, you will be working in C/C++ with more senior students to
+improve the current codebase.
+This year, the primary goals for the team will be:
+. Implementing a better logging, inspection and testing system using the MCAP format.
+. Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
+. Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
+. Building a new Simultaneous Localisation and Mapping (SLAM) system.
+. Improving LiDAR processing with a new sensor and using custom CUDA kernels.
+Requirements
+Essential
+. First or second year student, preferably here for 2026-2027 academic year.
+. Some computational/programming experience with an ability to figure out standard development tasks and workflows independently.
+. General organisational skills and the ability to work in a team.
+Desirable
+. Experience with C/c++ programming.
+. Familiarity with CMake and Git.`,
+        degree: "ME / EE / CS / IMEE / Maths / Physics",
+        year: "1st/2nd Year",
+        count: 3,
+      },
+      {
+        title: "Senior Engineer",
+        description: `'Working with TBReAl to improve and maintain the autonomous driving system, using C/C++ to gain experience in autonomous vehicle technologies and methods. This is a hands-on opportunity to develop a real-world system which will compete across the UK and Europe.
+You will work with more junior students to help deliver the project goals and build leadership skills, gaining experience in reviewing code and maintaining a codebase collaboratively.
+This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK autonomous dynamics competition.
+Responsibilities
+As a Senior Developer, you will be working with and mentoring more junior students to improve the current codebase.
+This year the primary goals for the team will be:
+. Implementing a better logging, inspection and testing system using the MCAP format.
+. Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
+. Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
+. Building a new Simultaneous Localization and Mapping (SLAM) system.
+. Improving LiDAR processing with a new sensor and using custom CUDA kernels.
+
+Requirements
+Essential
+. Penultimate or final year student, preferably here for 2026-2027 academic year.
+· Experience in C/C++ development.
+· Experience with Git or another version control system.
+. General organisational skills and ability to work in a team.
+Desirable
+· Experience with C/C++ programming.
+. Familiarity with CMake.
+· Some leadership or mentoring experience.`,
+        degree: "ME / EE / CS / IMEE / Maths / Physics",
+        year: "3rd/4th Year",
+        count: 3,
+      },
+      {
+        title: "Integration Engineer",
+        description: `Responsible for design and integration of steering and braking systems for autonomous control. You will not only work closely with the software Al team to enable accurate control, but with Electrical, Vehicle Dynamics, and Mechanical Design teams as well. The role is critical to the full integration of the autonomous driving system into the main car.
+Responsibilities:
+In order to integrate the autonomous systems into the car, you will need to implement an accurate steering control system to work in tandem with manual control by fitting a steering angle sensor and shaft shaft-mounted motor. Additionally, you will design and implement a braking system to allow for autonomous braking as well as an emergency stop system.
+Requirements:
+Essential
+. Penultimate or final year student, preferably here for 2026-2027 academic year.
+. Experience with CAD software.
+. Experience with basic electrical systems and wiring.
+. General organisational skills and ability to work in a team.
+Desirable
+. Experience with vehicle dynamics and control systems.
+. Experience with microcontrollers and embedded systems.`,
+        degree: "Mech Eng Related / IMEE",
+        year: "3rd/4th Year",
+        count: 1,
       },
     ],
   },
