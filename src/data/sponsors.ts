@@ -110,7 +110,7 @@ As a Platinum Sponsor, Syensqo supports us with dry and pre-preg composite mater
         description: `
         About:Energy combine world-leading expertise and digital software to develop advanced battery modelling tools that can be utilised across a range of sectors. Their models accelerate battery commercialisation and allow partners a path to superior performance, improved sustainability, and lower cost.
 <br/><br/>
-As a Platinum sponsor, About:Energy provides us with state-of-the-art battery cell models of our accumulator cells, allowing us to develop predictive battery performance models. They have aided in the further development of our system understanding and our push for our most accumulator system to date!
+As a Platinum sponsor, About:Energy provides us with state-of-the-art battery cell models of our accumulator cells, allowing us to develop predictive battery performance models. They have aided in the further development of our system understanding and our push for our most advanced accumulator system to date!
 `,
       },
     ],

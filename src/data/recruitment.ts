@@ -103,6 +103,88 @@ export const recruitment: {
     ],
   },
   {
+    name: "AI",
+    description:
+      "The AI team focuses on developing and implementing autonomous driving systems, including perception, planning, and control algorithms to enable the car to navigate tracks without human intervention.",
+    contact: "Wenzel Kinsky",
+    members: "7",
+    roles: [
+      {
+        title: "Junior Engineer",
+        description: `Working with TBReAl to improve and maintain the autonomous driving system, you will develop skills in C/C++ programming and gain experience in autonomous vehicle technologies. This is a hands-on opportunity to develop a real-world
+system which will compete across the UK and Europe. You will develop skills in dealing with an established codebase, working in a custom framework, and using version control to work reliably in a team. This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK
+autonomous dynamics competition.
+Overall, it is a great chance to experience software development, where you can directly see the results of your system in action on a real vehicle.
+Responsibilities
+As a Junior Developer, you will be working in C/C++ with more senior students to
+improve the current codebase.
+This year, the primary goals for the team will be:
+- Implementing a better logging, inspection and testing system using the MCAP format.
+- Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
+- Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
+- Building a new Simultaneous Localisation and Mapping (SLAM) system.
+- Improving LiDAR processing with a new sensor and using custom CUDA kernels.
+Requirements
+Essential
+- First or second year student, preferably here for 2026-2027 academic year.
+- Some computational/programming experience with an ability to figure out standard development tasks and workflows independently.
+- General organisational skills and the ability to work in a team.
+Desirable
+- Experience with C/c++ programming.
+- Familiarity with CMake and Git.`,
+        degree: "ME / EE / CS / IMEE / Maths / Physics",
+        year: "1st/2nd Year",
+        count: 3,
+      },
+      {
+        title: "Senior Engineer",
+        description: `'Working with TBReAl to improve and maintain the autonomous driving system, using C/C++ to gain experience in autonomous vehicle technologies and methods. This is a hands-on opportunity to develop a real-world system which will compete across the UK and Europe.
+You will work with more junior students to help deliver the project goals and build leadership skills, gaining experience in reviewing code and maintaining a codebase collaboratively.
+This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK autonomous dynamics competition.
+Responsibilities
+As a Senior Developer, you will be working with and mentoring more junior students to improve the current codebase.
+This year the primary goals for the team will be:
+- Implementing a better logging, inspection and testing system using the MCAP format.
+- Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
+- Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
+- Building a new Simultaneous Localization and Mapping (SLAM) system.
+- Improving LiDAR processing with a new sensor and using custom CUDA kernels.
+
+Requirements
+Essential
+- Penultimate or final year student, preferably here for 2026-2027 academic year.
+- Experience in C/C++ development.
+- Experience with Git or another version control system.
+- General organisational skills and ability to work in a team.
+Desirable
+- Experience with C/C++ programming.
+- Familiarity with CMake.
+- Some leadership or mentoring experience.`,
+        degree: "ME / EE / CS / IMEE / Maths / Physics",
+        year: "3rd/4th Year",
+        count: 3,
+      },
+      {
+        title: "Integration Engineer",
+        description: `Responsible for design and integration of steering and braking systems for autonomous control. You will not only work closely with the software Al team to enable accurate control, but with Electrical, Vehicle Dynamics, and Mechanical Design teams as well. The role is critical to the full integration of the autonomous driving system into the main car.
+Responsibilities:
+In order to integrate the autonomous systems into the car, you will need to implement an accurate steering control system to work in tandem with manual control by fitting a steering angle sensor and shaft shaft-mounted motor. Additionally, you will design and implement a braking system to allow for autonomous braking as well as an emergency stop system.
+Requirements:
+Essential
+- Penultimate or final year student, preferably here for 2026-2027 academic year.
+- Experience with CAD software.
+- Experience with basic electrical systems and wiring.
+- General organisational skills and ability to work in a team.
+Desirable
+- Experience with vehicle dynamics and control systems.
+- Experience with microcontrollers and embedded systems.`,
+        degree: "Mech Eng Related / IMEE",
+        year: "3rd/4th Year",
+        count: 1,
+      },
+    ],
+  },
+  {
     name: "Mechanical Design",
     description:
       "The Mechanical Design team is responsible for suspension, wishbone, steering, FEA, R&D, sensor integration, procurement, and manufacturing engineering for the car's mechanical systems.",
@@ -453,6 +535,74 @@ Required knowledge: Proficiency in data analysis and modeling, experience with M
     ],
   },
   {
+    name: "Management",
+    description: ``,
+    contact: "",
+    members: "12",
+    roles: [
+      {
+        title: "Sponsorship Coordinator",
+        description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
+
+Responsibilities:
+- Researching and identifying potential sponsors across relevant industries.
+- Drafting and sending sponsorship proposals and tailored communications.
+- Maintaining regular contact with existing sponsors and ensuring deliverables are met.
+- Coordinating the delivery of sponsor benefits (logos, social media content)
+- Working closely with the Marketing team to align messaging and branding.
+- Keeping accurate records of sponsor interactions and agreements.`,
+        year: "2nd Year +",
+        degree: "Any",
+        count: "3",
+      },
+      {
+        title: "Costing Lead",
+        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
+        year: "2nd Year +",
+        degree: "Any",
+        count: "1",
+      },
+      {
+        title: "Costing Support",
+        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
+        year: "Any",
+        degree: "Any",
+        count: "3",
+      },
+      {
+        title: "Merchandise Designer",
+        description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
+
+Responsibilities:
+- Design and develop merchandise concepts that reflect the team's brand.
+- Gather input from team members on kit and merchandise needs.
+- Communicate with suppliers to source, cost, and deliver merchandise on time.
+- Ensure quality, durability, and practicality of items for competition and events.
+- Manage stock, orders, and distribution within the team and to supporters.
+- Work with the Marketing team to align merchandise with sponsor branding.`,
+        year: "Any",
+        degree: "Any degree with interest in design, branding, or business",
+        count: "2",
+      },
+      {
+        // title: "Outreach Events",
+        title: "Events & Logistics Coordinator",
+        description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
+
+Responsibilities:
+- Act as the primary point of contact between the team and event organisers.
+- Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
+- Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
+- Manage budgets and expenses related to travel and events.
+- Ensure the team's presence at outreach events is well-prepared and professionally represented.
+- Handle any last-minute logistical issues that arise during competitions or events.`,
+        year: "Any",
+        degree: "Engineering, Business, Management",
+        count: "3",
+      },
+    ],
+  },
+  {
     name: "Marketing",
     description:
       "The Marketing team is responsible for promoting the team, securing sponsorship, managing social media, and handling public relations to enhance the team's visibility and engagement.",
@@ -551,156 +701,6 @@ This is a great role if you are creative and want to build up a design portfolio
         degree: "Any degree with interest in Excel",
         year: "Any",
         count: 2,
-      },
-    ],
-  },
-  {
-    name: "AI",
-    description:
-      "The AI team focuses on developing and implementing autonomous driving systems, including perception, planning, and control algorithms to enable the car to navigate tracks without human intervention.",
-    contact: "Wenzel Kinsky",
-    members: "7",
-    roles: [
-      {
-        title: "Junior Engineer",
-        description: `Working with TBReAl to improve and maintain the autonomous driving system, you will develop skills in C/C++ programming and gain experience in autonomous vehicle technologies. This is a hands-on opportunity to develop a real-world
-system which will compete across the UK and Europe. You will develop skills in dealing with an established codebase, working in a custom framework, and using version control to work reliably in a team. This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK
-autonomous dynamics competition.
-Overall, it is a great chance to experience software development, where you can directly see the results of your system in action on a real vehicle.
-Responsibilities
-As a Junior Developer, you will be working in C/C++ with more senior students to
-improve the current codebase.
-This year, the primary goals for the team will be:
-- Implementing a better logging, inspection and testing system using the MCAP format.
-- Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
-- Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
-- Building a new Simultaneous Localisation and Mapping (SLAM) system.
-- Improving LiDAR processing with a new sensor and using custom CUDA kernels.
-Requirements
-Essential
-- First or second year student, preferably here for 2026-2027 academic year.
-- Some computational/programming experience with an ability to figure out standard development tasks and workflows independently.
-- General organisational skills and the ability to work in a team.
-Desirable
-- Experience with C/c++ programming.
-- Familiarity with CMake and Git.`,
-        degree: "ME / EE / CS / IMEE / Maths / Physics",
-        year: "1st/2nd Year",
-        count: 3,
-      },
-      {
-        title: "Senior Engineer",
-        description: `'Working with TBReAl to improve and maintain the autonomous driving system, using C/C++ to gain experience in autonomous vehicle technologies and methods. This is a hands-on opportunity to develop a real-world system which will compete across the UK and Europe.
-You will work with more junior students to help deliver the project goals and build leadership skills, gaining experience in reviewing code and maintaining a codebase collaboratively.
-This is a great opportunity to develop your skills in working with autonomous systems and robotics with a codebase that achieved 3rd place in the 2025 Formula Student UK autonomous dynamics competition.
-Responsibilities
-As a Senior Developer, you will be working with and mentoring more junior students to improve the current codebase.
-This year the primary goals for the team will be:
-- Implementing a better logging, inspection and testing system using the MCAP format.
-- Improving the current simulator to remove dependency on Unity and allow for custom physics to be implemented reliably.
-- Implementing Model Predictive Control (MPC) for the vehicle's path planning and control.
-- Building a new Simultaneous Localization and Mapping (SLAM) system.
-- Improving LiDAR processing with a new sensor and using custom CUDA kernels.
-
-Requirements
-Essential
-- Penultimate or final year student, preferably here for 2026-2027 academic year.
-- Experience in C/C++ development.
-- Experience with Git or another version control system.
-- General organisational skills and ability to work in a team.
-Desirable
-- Experience with C/C++ programming.
-- Familiarity with CMake.
-- Some leadership or mentoring experience.`,
-        degree: "ME / EE / CS / IMEE / Maths / Physics",
-        year: "3rd/4th Year",
-        count: 3,
-      },
-      {
-        title: "Integration Engineer",
-        description: `Responsible for design and integration of steering and braking systems for autonomous control. You will not only work closely with the software Al team to enable accurate control, but with Electrical, Vehicle Dynamics, and Mechanical Design teams as well. The role is critical to the full integration of the autonomous driving system into the main car.
-Responsibilities:
-In order to integrate the autonomous systems into the car, you will need to implement an accurate steering control system to work in tandem with manual control by fitting a steering angle sensor and shaft shaft-mounted motor. Additionally, you will design and implement a braking system to allow for autonomous braking as well as an emergency stop system.
-Requirements:
-Essential
-- Penultimate or final year student, preferably here for 2026-2027 academic year.
-- Experience with CAD software.
-- Experience with basic electrical systems and wiring.
-- General organisational skills and ability to work in a team.
-Desirable
-- Experience with vehicle dynamics and control systems.
-- Experience with microcontrollers and embedded systems.`,
-        degree: "Mech Eng Related / IMEE",
-        year: "3rd/4th Year",
-        count: 1,
-      },
-    ],
-  },
-  {
-    name: "Management",
-    description: ``,
-    contact: "",
-    members: "12",
-    roles: [
-      {
-        title: "Sponsorship Coordinator",
-        description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
-
-Responsibilities:
-- Researching and identifying potential sponsors across relevant industries.
-- Drafting and sending sponsorship proposals and tailored communications.
-- Maintaining regular contact with existing sponsors and ensuring deliverables are met.
-- Coordinating the delivery of sponsor benefits (logos, social media content)
-- Working closely with the Marketing team to align messaging and branding.
-- Keeping accurate records of sponsor interactions and agreements.`,
-        year: "2nd Year +",
-        degree: "Any",
-        count: "3",
-      },
-      {
-        title: "Costing Lead",
-        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
-        year: "2nd Year +",
-        degree: "Any",
-        count: "1",
-      },
-      {
-        title: "Costing Support",
-        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
-        year: "Any",
-        degree: "Any",
-        count: "3",
-      },
-      {
-        title: "Merchandise Designer",
-        description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
-
-Responsibilities:
-- Design and develop merchandise concepts that reflect the team's brand.
-- Gather input from team members on kit and merchandise needs.
-- Communicate with suppliers to source, cost, and deliver merchandise on time.
-- Ensure quality, durability, and practicality of items for competition and events.
-- Manage stock, orders, and distribution within the team and to supporters.
-- Work with the Marketing team to align merchandise with sponsor branding.`,
-        year: "Any",
-        degree: "Any degree with interest in design, branding, or business",
-        count: "2",
-      },
-      {
-        // title: "Outreach Events",
-        title: "Events & Logistics Coordinator",
-        description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
-
-Responsibilities:
-- Act as the primary point of contact between the team and event organisers.
-- Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
-- Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
-- Manage budgets and expenses related to travel and events.
-- Ensure the team's presence at outreach events is well-prepared and professionally represented.
-- Handle any last-minute logistical issues that arise during competitions or events.`,
-        year: "Any",
-        degree: "Engineering, Business, Management",
-        count: "3",
       },
     ],
   },
