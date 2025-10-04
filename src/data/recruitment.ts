@@ -13,6 +13,74 @@ export const recruitment: {
   }[];
 }[] = [
   {
+    name: "Management",
+    description: ``,
+    contact: "",
+    members: "12",
+    roles: [
+      {
+        title: "Sponsorship Coordinator",
+        description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
+
+Responsibilities:
+- Researching and identifying potential sponsors across relevant industries.
+- Drafting and sending sponsorship proposals and tailored communications.
+- Maintaining regular contact with existing sponsors and ensuring deliverables are met.
+- Coordinating the delivery of sponsor benefits (logos, social media content)
+- Working closely with the Marketing team to align messaging and branding.
+- Keeping accurate records of sponsor interactions and agreements.`,
+        year: "2nd Year +",
+        degree: "Any",
+        count: "3",
+      },
+      {
+        title: "Costing Lead",
+        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
+        year: "2nd Year +",
+        degree: "Any",
+        count: "1",
+      },
+      {
+        title: "Costing Support",
+        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
+        year: "Any",
+        degree: "Any",
+        count: "3",
+      },
+      {
+        title: "Merchandise Designer",
+        description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
+
+Responsibilities:
+- Design and develop merchandise concepts that reflect the team's brand.
+- Gather input from team members on kit and merchandise needs.
+- Communicate with suppliers to source, cost, and deliver merchandise on time.
+- Ensure quality, durability, and practicality of items for competition and events.
+- Manage stock, orders, and distribution within the team and to supporters.
+- Work with the Marketing team to align merchandise with sponsor branding.`,
+        year: "Any",
+        degree: "Any degree with interest in design, branding, or business",
+        count: "2",
+      },
+      {
+        // title: "Outreach Events",
+        title: "Events & Logistics Coordinator",
+        description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
+
+Responsibilities:
+- Act as the primary point of contact between the team and event organisers.
+- Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
+- Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
+- Manage budgets and expenses related to travel and events.
+- Ensure the team's presence at outreach events is well-prepared and professionally represented.
+- Handle any last-minute logistical issues that arise during competitions or events.`,
+        year: "Any",
+        degree: "Engineering, Business, Management",
+        count: "3",
+      },
+    ],
+  },
+  {
     name: "Aerodynamics",
     description:
       "The Aerodynamics team pushes the boundaries of vehicle performance through advanced simulation, design, and testing. Roles include CFD, composite design, and thermal management.",
@@ -534,145 +602,77 @@ Required knowledge: Proficiency in data analysis and modeling, experience with M
       },
     ],
   },
-  {
-    name: "Management",
-    description: ``,
-    contact: "",
-    members: "12",
-    roles: [
-      {
-        title: "Sponsorship Coordinator",
-        description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
+//   {
+//     name: "Marketing",
+//     description:
+//       "The Marketing team is responsible for promoting the team, securing sponsorship, managing social media, and handling public relations to enhance the team's visibility and engagement.",
+//     contact: "Torey Boss",
+//     members: "8-9",
+//     roles: [
+//       {
+//         title: "Marketing Team Member",
+//         count: "4",
+//         year: "Any",
+//         degree: "Any Business and Management style degrees",
+//         description: `Do you have a passion for F1 or Marketing? Are you looking for a role that fits in with your degree? Do you want to stand out when applying for placements?
 
-Responsibilities:
-- Researching and identifying potential sponsors across relevant industries.
-- Drafting and sending sponsorship proposals and tailored communications.
-- Maintaining regular contact with existing sponsors and ensuring deliverables are met.
-- Coordinating the delivery of sponsor benefits (logos, social media content)
-- Working closely with the Marketing team to align messaging and branding.
-- Keeping accurate records of sponsor interactions and agreements.`,
-        year: "2nd Year +",
-        degree: "Any",
-        count: "3",
-      },
-      {
-        title: "Costing Lead",
-        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
-        year: "2nd Year +",
-        degree: "Any",
-        count: "1",
-      },
-      {
-        title: "Costing Support",
-        description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
-        year: "Any",
-        degree: "Any",
-        count: "3",
-      },
-      {
-        title: "Merchandise Designer",
-        description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
+// As a marketing team member, you'll be helping us promote the team to members of the university, alumni, current and potential sponsors and the public. It's a hands-on role where you'll get stuck into a bit of everything: creating social media content, writing captions, helping with posting schedules and supporting the team at events throughout the year.
 
-Responsibilities:
-- Design and develop merchandise concepts that reflect the team's brand.
-- Gather input from team members on kit and merchandise needs.
-- Communicate with suppliers to source, cost, and deliver merchandise on time.
-- Ensure quality, durability, and practicality of items for competition and events.
-- Manage stock, orders, and distribution within the team and to supporters.
-- Work with the Marketing team to align merchandise with sponsor branding.`,
-        year: "Any",
-        degree: "Any degree with interest in design, branding, or business",
-        count: "2",
-      },
-      {
-        // title: "Outreach Events",
-        title: "Events & Logistics Coordinator",
-        description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
+// We're looking for someone who's enthusiastic, hard-working and willing to take on a variety of tasks. Your workload will change dependent on the time of the year, but you must be able to commit to weekly meetings that will be fitted around all team members timetables. You'll be a part of a friendly and cooperative team where there's always something going on. It's a great chance to get involved, learn some new skills and maybe even find a new interest!`,
+//       },
+//       {
+//         title: "TikTok Lead",
+//         count: "2",
+//         year: "Any",
+//         degree: "Any Business and Management style degrees",
+//         description: `We're looking for someone to take the lead on growing TBRe's presence on TikTok and showing off what goes on behind the scenes of building a Formula Student car.
 
-Responsibilities:
-- Act as the primary point of contact between the team and event organisers.
-- Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
-- Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
-- Manage budgets and expenses related to travel and events.
-- Ensure the team's presence at outreach events is well-prepared and professionally represented.
-- Handle any last-minute logistical issues that arise during competitions or events.`,
-        year: "Any",
-        degree: "Engineering, Business, Management",
-        count: "3",
-      },
-    ],
-  },
-  {
-    name: "Marketing",
-    description:
-      "The Marketing team is responsible for promoting the team, securing sponsorship, managing social media, and handling public relations to enhance the team's visibility and engagement.",
-    contact: "Torey Boss",
-    members: "8-9",
-    roles: [
-      {
-        title: "Marketing Team Member",
-        count: "4",
-        year: "Any",
-        degree: "Any Business and Management style degrees",
-        description: `Do you have a passion for F1 or Marketing? Are you looking for a role that fits in with your degree? Do you want to stand out when applying for placements?
+// As a TikTok lead, you'll be the go-to person for creating fun, engaging and creative content that shows who TBRe are and what we're made up of. The sorts of tasks you will be doing include...
 
-As a marketing team member, you'll be helping us promote the team to members of the university, alumni, current and potential sponsors and the public. It's a hands-on role where you'll get stuck into a bit of everything: creating social media content, writing captions, helping with posting schedules and supporting the team at events throughout the year.
+// - Planning, filming and editing TikToks (with support from the marketing team)
+// - Jumping on trends and adapting them to fit TBRe
+// - Coming up with original concepts to showcase the team's work and personality
+// - Working closely with other social media leads to ensure consistency
+// - Helping us grow our audience and have fun with it along the way!
 
-We're looking for someone who's enthusiastic, hard-working and willing to take on a variety of tasks. Your workload will change dependent on the time of the year, but you must be able to commit to weekly meetings that will be fitted around all team members timetables. You'll be a part of a friendly and cooperative team where there's always something going on. It's a great chance to get involved, learn some new skills and maybe even find a new interest!`,
-      },
-      {
-        title: "TikTok Lead",
-        count: "2",
-        year: "Any",
-        degree: "Any Business and Management style degrees",
-        description: `We're looking for someone to take the lead on growing TBRe's presence on TikTok and showing off what goes on behind the scenes of building a Formula Student car.
+// What we're looking for...
 
-As a TikTok lead, you'll be the go-to person for creating fun, engaging and creative content that shows who TBRe are and what we're made up of. The sorts of tasks you will be doing include...
+// - Someone who is confident filming content and being around the team
+// - Some basic editing skills (CapCut, Premiere Pro or just in-app)
+// - A creative, self-motivated individual who is up for trying new ideas
+// - Someone who keeps up to date with current trends on the app
 
-- Planning, filming and editing TikToks (with support from the marketing team)
-- Jumping on trends and adapting them to fit TBRe
-- Coming up with original concepts to showcase the team's work and personality
-- Working closely with other social media leads to ensure consistency
-- Helping us grow our audience and have fun with it along the way!
+// This is a fun and flexible role, perfect if you want to get involved with a team, build your content skills and have a talking point when applying for placements. You must be able to commit to weekly meetings scheduled around timetable hours and ideally 2 TikToks are to be made every week (this may vary depending on the time of the year).`,
+//       },
+//       {
+//         title: "Content and Design Leads",
+//         count: "2-3",
+//         year: "Any",
+//         degree: "Any Business and Management style degrees",
+//         description: `We're looking for someone to take charge of designing content for our social media and website, to ensure TBRe looks as good online as we do on the track!
 
-What we're looking for...
+// As our Content and Design Lead, you'll be creating posts in Canva (this is preferred, but if you are more comfortable using other tools please state) to help us keep our social media looking polish and consistent. You'll also be editing team headshots, working on event graphics and jumping on anything visual that needs doing.
 
-- Someone who is confident filming content and being around the team
-- Some basic editing skills (CapCut, Premiere Pro or just in-app)
-- A creative, self-motivated individual who is up for trying new ideas
-- Someone who keeps up to date with current trends on the app
+// Your tasks may include...
 
-This is a fun and flexible role, perfect if you want to get involved with a team, build your content skills and have a talking point when applying for placements. You must be able to commit to weekly meetings scheduled around timetable hours and ideally 2 TikToks are to be made every week (this may vary depending on the time of the year).`,
-      },
-      {
-        title: "Content and Design Leads",
-        count: "2-3",
-        year: "Any",
-        degree: "Any Business and Management style degrees",
-        description: `We're looking for someone to take charge of designing content for our social media and website, to ensure TBRe looks as good online as we do on the track!
+// - Designing posts and stories for Instagram and LinkedIn
+// - Creating graphics for events and team updates
+// - Editing and formatting team headshots and other photos
+// - Keeping our visual style consistent across platforms
+// - Working closely with the rest of the marketing team to plan content
 
-As our Content and Design Lead, you'll be creating posts in Canva (this is preferred, but if you are more comfortable using other tools please state) to help us keep our social media looking polish and consistent. You'll also be editing team headshots, working on event graphics and jumping on anything visual that needs doing.
+// What we're looking for...
 
-Your tasks may include...
+// - Confident using Canva (or similar design tools)
+// - A good eye for layout, fonts and colour
+// - Ability to edit photos and videos
+// - Organised and happy working to a loose content plan
+// - Bonus if you have used tools such as Photoshop or Lightroom
 
-- Designing posts and stories for Instagram and LinkedIn
-- Creating graphics for events and team updates
-- Editing and formatting team headshots and other photos
-- Keeping our visual style consistent across platforms
-- Working closely with the rest of the marketing team to plan content
-
-What we're looking for...
-
-- Confident using Canva (or similar design tools)
-- A good eye for layout, fonts and colour
-- Ability to edit photos and videos
-- Organised and happy working to a loose content plan
-- Bonus if you have used tools such as Photoshop or Lightroom
-
-This is a great role if you are creative and want to build up a design portfolio while working as part of a hands-on team. You'll have plenty of freedom to try new ideas, improve your skills and make TBRe stand out online. You must be willing to commit to weekly meetings that are scheduled around team members timetable hours.`,
-      },
-    ],
-  },
+// This is a great role if you are creative and want to build up a design portfolio while working as part of a hands-on team. You'll have plenty of freedom to try new ideas, improve your skills and make TBRe stand out online. You must be willing to commit to weekly meetings that are scheduled around team members timetable hours.`,
+//       },
+//     ],
+//   },
   {
     name: "Business Operations",
     description:
