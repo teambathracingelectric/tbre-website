@@ -362,78 +362,78 @@ Supporting the full lifecycle: design, analysis, testing, documentation, and on-
         degree: "Mech eng related (including IMEE)",
         year: "3+",
       },
-      {
-        title: "Tyres",
-        description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
+//       {
+//         title: "Tyres",
+//         description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
 
-For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
+// For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
 
-We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
+// We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
 
-Are you:
+// Are you:
 
-Excited to work with real-world tyre data and apply it to motorsport performance?
+// Excited to work with real-world tyre data and apply it to motorsport performance?
 
-Interested in modelling, simulation, and data-driven decision making?
+// Interested in modelling, simulation, and data-driven decision making?
 
-Looking to gain experience in documentation, TTC data scaling, and setup development?
+// Looking to gain experience in documentation, TTC data scaling, and setup development?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Analysing tyre data, supporting simulation work, and providing practical setup recommendations
+// Analysing tyre data, supporting simulation work, and providing practical setup recommendations
 
-Investigating rim width effects, sourcing supporting documentation, and guiding team choices
+// Investigating rim width effects, sourcing supporting documentation, and guiding team choices
 
-Scaling and adapting existing TTC data to model our chosen tyres accurately
+// Scaling and adapting existing TTC data to model our chosen tyres accurately
 
-Setting car pressures across different dynamic events and validating these choices on track
+// Setting car pressures across different dynamic events and validating these choices on track
 
-Supporting the team's performance at Silverstone and international competitions`,
-        count: 1,
-        degree: "Mech eng related (including IMEE)",
-        year: "3+",
-      },
-      {
-        title: "Kinematics and Dynamics",
-        description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
+// Supporting the team's performance at Silverstone and international competitions`,
+//         count: 1,
+//         degree: "Mech eng related (including IMEE)",
+//         year: "3+",
+//       },
+//       {
+//         title: "Kinematics and Dynamics",
+//         description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
 
-This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
+// This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
 
-We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
+// We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
 
-Are you:
+// Are you:
 
-Excited to tackle real-world problems like tyre wear and powertrain integration?
+// Excited to tackle real-world problems like tyre wear and powertrain integration?
 
-Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
+// Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
 
-Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
+// Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
 
-Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
+// Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters.
+// Commitment of at least 8 hours per week throughout both semesters.
 
-Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
+// Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
 
-Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
+// Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
 
-Working with the aero team to ensure suspension design supports aerodynamic consistency.
+// Working with the aero team to ensure suspension design supports aerodynamic consistency.
 
-Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
+// Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
 
-Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
+// Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
 
-Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
+// Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
 
-Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
-        count: 2,
-        degree: "Mech eng related (including IMEE)",
-        year: "3+",
-      },
+// Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
+//         count: 2,
+//         degree: "Mech eng related (including IMEE)",
+//         year: "3+",
+//       },
       {
         title: "Simulations",
         description: `Vehicle Simulation Engineer
