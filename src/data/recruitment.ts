@@ -689,19 +689,19 @@ Required knowledge: Proficiency in data analysis and modeling, experience with M
       },
     ],
   },
-  {
-    name: "Costing",
-    description: `The Costing team is responsible for managing the financial aspects of the project, including budgeting, cost analysis, and ensuring compliance with competition regulations related to cost and manufacturing.`,
-    contact: "Nithi Muthu Saravanan",
-    members: "2",
-    roles: [
-      {
-        title: "Cost and Manufacturing Lead",
-        description: `As a Cost & Manufacturing Engineer, you will play a key role in the Formula Student project by managing the cost and manufacturing documentation for the competition. This involves preparing a detailed Bill of Materials (BOM), Costed Bill of Materials (CBOM), and supporting evidence that demonstrate the team's understanding of manufacturing processes, supply chain, and financial management. You will ensure compliance with Formula Student rules, optimise cost efficiency, and highlight the teams costing design decisions.`,
-        degree: "Any degree with interest in Excel",
-        year: "Any",
-        count: 2,
-      },
-    ],
-  },
+  // {
+  //   name: "Costing",
+  //   description: `The Costing team is responsible for managing the financial aspects of the project, including budgeting, cost analysis, and ensuring compliance with competition regulations related to cost and manufacturing.`,
+  //   contact: "Nithi Muthu Saravanan",
+  //   members: "2",
+  //   roles: [
+  //     {
+  //       title: "Cost and Manufacturing Lead",
+  //       description: `As a Cost & Manufacturing Engineer, you will play a key role in the Formula Student project by managing the cost and manufacturing documentation for the competition. This involves preparing a detailed Bill of Materials (BOM), Costed Bill of Materials (CBOM), and supporting evidence that demonstrate the team's understanding of manufacturing processes, supply chain, and financial management. You will ensure compliance with Formula Student rules, optimise cost efficiency, and highlight the teams costing design decisions.`,
+  //       degree: "Any degree with interest in Excel",
+  //       year: "Any",
+  //       count: 2,
+  //     },
+  //   ],
+  // },
 ] as const;
