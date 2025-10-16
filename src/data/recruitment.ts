@@ -362,78 +362,78 @@ Supporting the full lifecycle: design, analysis, testing, documentation, and on-
         degree: "Mech eng related (including IMEE)",
         year: "3+",
       },
-//       {
-//         title: "Tyres",
-//         description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
+      //       {
+      //         title: "Tyres",
+      //         description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
 
-// For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
+      // For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
 
-// We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
+      // We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
 
-// Are you:
+      // Are you:
 
-// Excited to work with real-world tyre data and apply it to motorsport performance?
+      // Excited to work with real-world tyre data and apply it to motorsport performance?
 
-// Interested in modelling, simulation, and data-driven decision making?
+      // Interested in modelling, simulation, and data-driven decision making?
 
-// Looking to gain experience in documentation, TTC data scaling, and setup development?
+      // Looking to gain experience in documentation, TTC data scaling, and setup development?
 
-// This role will involve:
+      // This role will involve:
 
-// Commitment of at least 8 hours per week throughout both semesters
+      // Commitment of at least 8 hours per week throughout both semesters
 
-// Analysing tyre data, supporting simulation work, and providing practical setup recommendations
+      // Analysing tyre data, supporting simulation work, and providing practical setup recommendations
 
-// Investigating rim width effects, sourcing supporting documentation, and guiding team choices
+      // Investigating rim width effects, sourcing supporting documentation, and guiding team choices
 
-// Scaling and adapting existing TTC data to model our chosen tyres accurately
+      // Scaling and adapting existing TTC data to model our chosen tyres accurately
 
-// Setting car pressures across different dynamic events and validating these choices on track
+      // Setting car pressures across different dynamic events and validating these choices on track
 
-// Supporting the team's performance at Silverstone and international competitions`,
-//         count: 1,
-//         degree: "Mech eng related (including IMEE)",
-//         year: "3+",
-//       },
-//       {
-//         title: "Kinematics and Dynamics",
-//         description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
+      // Supporting the team's performance at Silverstone and international competitions`,
+      //         count: 1,
+      //         degree: "Mech eng related (including IMEE)",
+      //         year: "3+",
+      //       },
+      //       {
+      //         title: "Kinematics and Dynamics",
+      //         description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
 
-// This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
+      // This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
 
-// We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
+      // We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
 
-// Are you:
+      // Are you:
 
-// Excited to tackle real-world problems like tyre wear and powertrain integration?
+      // Excited to tackle real-world problems like tyre wear and powertrain integration?
 
-// Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
+      // Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
 
-// Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
+      // Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
 
-// Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
+      // Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
 
-// This role will involve:
+      // This role will involve:
 
-// Commitment of at least 8 hours per week throughout both semesters.
+      // Commitment of at least 8 hours per week throughout both semesters.
 
-// Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
+      // Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
 
-// Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
+      // Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
 
-// Working with the aero team to ensure suspension design supports aerodynamic consistency.
+      // Working with the aero team to ensure suspension design supports aerodynamic consistency.
 
-// Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
+      // Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
 
-// Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
+      // Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
 
-// Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
+      // Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
 
-// Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
-//         count: 2,
-//         degree: "Mech eng related (including IMEE)",
-//         year: "3+",
-//       },
+      // Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
+      //         count: 2,
+      //         degree: "Mech eng related (including IMEE)",
+      //         year: "3+",
+      //       },
       {
         title: "Simulations",
         description: `Vehicle Simulation Engineer
@@ -602,77 +602,77 @@ Required knowledge: Proficiency in data analysis and modeling, experience with M
   //     },
   //   ],
   // },
-//   {
-//     name: "Marketing",
-//     description:
-//       "The Marketing team is responsible for promoting the team, securing sponsorship, managing social media, and handling public relations to enhance the team's visibility and engagement.",
-//     contact: "Torey Boss",
-//     members: "8-9",
-//     roles: [
-//       {
-//         title: "Marketing Team Member",
-//         count: "4",
-//         year: "Any",
-//         degree: "Any Business and Management style degrees",
-//         description: `Do you have a passion for F1 or Marketing? Are you looking for a role that fits in with your degree? Do you want to stand out when applying for placements?
+  //   {
+  //     name: "Marketing",
+  //     description:
+  //       "The Marketing team is responsible for promoting the team, securing sponsorship, managing social media, and handling public relations to enhance the team's visibility and engagement.",
+  //     contact: "Torey Boss",
+  //     members: "8-9",
+  //     roles: [
+  //       {
+  //         title: "Marketing Team Member",
+  //         count: "4",
+  //         year: "Any",
+  //         degree: "Any Business and Management style degrees",
+  //         description: `Do you have a passion for F1 or Marketing? Are you looking for a role that fits in with your degree? Do you want to stand out when applying for placements?
 
-// As a marketing team member, you'll be helping us promote the team to members of the university, alumni, current and potential sponsors and the public. It's a hands-on role where you'll get stuck into a bit of everything: creating social media content, writing captions, helping with posting schedules and supporting the team at events throughout the year.
+  // As a marketing team member, you'll be helping us promote the team to members of the university, alumni, current and potential sponsors and the public. It's a hands-on role where you'll get stuck into a bit of everything: creating social media content, writing captions, helping with posting schedules and supporting the team at events throughout the year.
 
-// We're looking for someone who's enthusiastic, hard-working and willing to take on a variety of tasks. Your workload will change dependent on the time of the year, but you must be able to commit to weekly meetings that will be fitted around all team members timetables. You'll be a part of a friendly and cooperative team where there's always something going on. It's a great chance to get involved, learn some new skills and maybe even find a new interest!`,
-//       },
-//       {
-//         title: "TikTok Lead",
-//         count: "2",
-//         year: "Any",
-//         degree: "Any Business and Management style degrees",
-//         description: `We're looking for someone to take the lead on growing TBRe's presence on TikTok and showing off what goes on behind the scenes of building a Formula Student car.
+  // We're looking for someone who's enthusiastic, hard-working and willing to take on a variety of tasks. Your workload will change dependent on the time of the year, but you must be able to commit to weekly meetings that will be fitted around all team members timetables. You'll be a part of a friendly and cooperative team where there's always something going on. It's a great chance to get involved, learn some new skills and maybe even find a new interest!`,
+  //       },
+  //       {
+  //         title: "TikTok Lead",
+  //         count: "2",
+  //         year: "Any",
+  //         degree: "Any Business and Management style degrees",
+  //         description: `We're looking for someone to take the lead on growing TBRe's presence on TikTok and showing off what goes on behind the scenes of building a Formula Student car.
 
-// As a TikTok lead, you'll be the go-to person for creating fun, engaging and creative content that shows who TBRe are and what we're made up of. The sorts of tasks you will be doing include...
+  // As a TikTok lead, you'll be the go-to person for creating fun, engaging and creative content that shows who TBRe are and what we're made up of. The sorts of tasks you will be doing include...
 
-// - Planning, filming and editing TikToks (with support from the marketing team)
-// - Jumping on trends and adapting them to fit TBRe
-// - Coming up with original concepts to showcase the team's work and personality
-// - Working closely with other social media leads to ensure consistency
-// - Helping us grow our audience and have fun with it along the way!
+  // - Planning, filming and editing TikToks (with support from the marketing team)
+  // - Jumping on trends and adapting them to fit TBRe
+  // - Coming up with original concepts to showcase the team's work and personality
+  // - Working closely with other social media leads to ensure consistency
+  // - Helping us grow our audience and have fun with it along the way!
 
-// What we're looking for...
+  // What we're looking for...
 
-// - Someone who is confident filming content and being around the team
-// - Some basic editing skills (CapCut, Premiere Pro or just in-app)
-// - A creative, self-motivated individual who is up for trying new ideas
-// - Someone who keeps up to date with current trends on the app
+  // - Someone who is confident filming content and being around the team
+  // - Some basic editing skills (CapCut, Premiere Pro or just in-app)
+  // - A creative, self-motivated individual who is up for trying new ideas
+  // - Someone who keeps up to date with current trends on the app
 
-// This is a fun and flexible role, perfect if you want to get involved with a team, build your content skills and have a talking point when applying for placements. You must be able to commit to weekly meetings scheduled around timetable hours and ideally 2 TikToks are to be made every week (this may vary depending on the time of the year).`,
-//       },
-//       {
-//         title: "Content and Design Leads",
-//         count: "2-3",
-//         year: "Any",
-//         degree: "Any Business and Management style degrees",
-//         description: `We're looking for someone to take charge of designing content for our social media and website, to ensure TBRe looks as good online as we do on the track!
+  // This is a fun and flexible role, perfect if you want to get involved with a team, build your content skills and have a talking point when applying for placements. You must be able to commit to weekly meetings scheduled around timetable hours and ideally 2 TikToks are to be made every week (this may vary depending on the time of the year).`,
+  //       },
+  //       {
+  //         title: "Content and Design Leads",
+  //         count: "2-3",
+  //         year: "Any",
+  //         degree: "Any Business and Management style degrees",
+  //         description: `We're looking for someone to take charge of designing content for our social media and website, to ensure TBRe looks as good online as we do on the track!
 
-// As our Content and Design Lead, you'll be creating posts in Canva (this is preferred, but if you are more comfortable using other tools please state) to help us keep our social media looking polish and consistent. You'll also be editing team headshots, working on event graphics and jumping on anything visual that needs doing.
+  // As our Content and Design Lead, you'll be creating posts in Canva (this is preferred, but if you are more comfortable using other tools please state) to help us keep our social media looking polish and consistent. You'll also be editing team headshots, working on event graphics and jumping on anything visual that needs doing.
 
-// Your tasks may include...
+  // Your tasks may include...
 
-// - Designing posts and stories for Instagram and LinkedIn
-// - Creating graphics for events and team updates
-// - Editing and formatting team headshots and other photos
-// - Keeping our visual style consistent across platforms
-// - Working closely with the rest of the marketing team to plan content
+  // - Designing posts and stories for Instagram and LinkedIn
+  // - Creating graphics for events and team updates
+  // - Editing and formatting team headshots and other photos
+  // - Keeping our visual style consistent across platforms
+  // - Working closely with the rest of the marketing team to plan content
 
-// What we're looking for...
+  // What we're looking for...
 
-// - Confident using Canva (or similar design tools)
-// - A good eye for layout, fonts and colour
-// - Ability to edit photos and videos
-// - Organised and happy working to a loose content plan
-// - Bonus if you have used tools such as Photoshop or Lightroom
+  // - Confident using Canva (or similar design tools)
+  // - A good eye for layout, fonts and colour
+  // - Ability to edit photos and videos
+  // - Organised and happy working to a loose content plan
+  // - Bonus if you have used tools such as Photoshop or Lightroom
 
-// This is a great role if you are creative and want to build up a design portfolio while working as part of a hands-on team. You'll have plenty of freedom to try new ideas, improve your skills and make TBRe stand out online. You must be willing to commit to weekly meetings that are scheduled around team members timetable hours.`,
-//       },
-//     ],
-//   },
+  // This is a great role if you are creative and want to build up a design portfolio while working as part of a hands-on team. You'll have plenty of freedom to try new ideas, improve your skills and make TBRe stand out online. You must be willing to commit to weekly meetings that are scheduled around team members timetable hours.`,
+  //       },
+  //     ],
+  //   },
   {
     name: "Business Operations",
     description:
