@@ -12,74 +12,74 @@ export const recruitment: {
     count?: string | number;
   }[];
 }[] = [
-  {
-    name: "Management",
-    description: ``,
-    contact: "",
-    members: "12",
-    roles: [
-      {
-        title: "Sponsorship Coordinator",
-        description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
+//   {
+//     name: "Management",
+//     description: ``,
+//     contact: "",
+//     members: "12",
+//     roles: [
+//       {
+//         title: "Sponsorship Coordinator",
+//         description: `As Sponsorship Coordinator, you will be responsible for building and maintaining relationships with both existing and potential sponsors. You'll play a key role in securing the funding and resources that allow TBRe to compete at the highest level in Formula Student. This role will give you valuable experience in professional communication and negotiation, as well as the opportunity to represent the team to external companies and industry professionals.
 
-Responsibilities:
-- Researching and identifying potential sponsors across relevant industries.
-- Drafting and sending sponsorship proposals and tailored communications.
-- Maintaining regular contact with existing sponsors and ensuring deliverables are met.
-- Coordinating the delivery of sponsor benefits (logos, social media content)
-- Working closely with the Marketing team to align messaging and branding.
-- Keeping accurate records of sponsor interactions and agreements.`,
-        year: "2nd Year +",
-        degree: "Any",
-        count: "3",
-      },
-      // {
-      //   title: "Costing Lead",
-      //   description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
-      //   year: "2nd Year +",
-      //   degree: "Any",
-      //   count: "1",
-      // },
-      // {
-      //   title: "Costing Support",
-      //   description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
-      //   year: "Any",
-      //   degree: "Any",
-      //   count: "3",
-      // },
-      {
-        title: "Merchandise Designer",
-        description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
+// Responsibilities:
+// - Researching and identifying potential sponsors across relevant industries.
+// - Drafting and sending sponsorship proposals and tailored communications.
+// - Maintaining regular contact with existing sponsors and ensuring deliverables are met.
+// - Coordinating the delivery of sponsor benefits (logos, social media content)
+// - Working closely with the Marketing team to align messaging and branding.
+// - Keeping accurate records of sponsor interactions and agreements.`,
+//         year: "2nd Year +",
+//         degree: "Any",
+//         count: "3",
+//       },
+//       // {
+//       //   title: "Costing Lead",
+//       //   description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student `,
+//       //   year: "2nd Year +",
+//       //   degree: "Any",
+//       //   count: "1",
+//       // },
+//       // {
+//       //   title: "Costing Support",
+//       //   description: `As a Cost & Manufacturing Support, you will assist the Lead in gathering, checking, and recording cost data from across all subsystems. You will help prepare the BOM, CBOM, and cost explanation files, ensuring accuracy and compliance with Formula Student rules. This role is an opportunity to develop organisational and analytical skills while contributing directly to the team's success in the Cost & Manufacturing Event, with the potential to assist at competition.`,
+//       //   year: "Any",
+//       //   degree: "Any",
+//       //   count: "3",
+//       // },
+//       {
+//         title: "Merchandise Designer",
+//         description: `As a Merchandise Designer, you will design and manage Team Bath Racing Electric's merchandise for both competition and wider promotional purposes. This includes creating on-brand items such as team kit, supporter gear, and promotional products.
 
-Responsibilities:
-- Design and develop merchandise concepts that reflect the team's brand.
-- Gather input from team members on kit and merchandise needs.
-- Communicate with suppliers to source, cost, and deliver merchandise on time.
-- Ensure quality, durability, and practicality of items for competition and events.
-- Manage stock, orders, and distribution within the team and to supporters.
-- Work with the Marketing team to align merchandise with sponsor branding.`,
-        year: "Any",
-        degree: "Any degree with interest in design, branding, or business",
-        count: "2",
-      },
-      {
-        // title: "Outreach Events",
-        title: "Events & Logistics Coordinator",
-        description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
+// Responsibilities:
+// - Design and develop merchandise concepts that reflect the team's brand.
+// - Gather input from team members on kit and merchandise needs.
+// - Communicate with suppliers to source, cost, and deliver merchandise on time.
+// - Ensure quality, durability, and practicality of items for competition and events.
+// - Manage stock, orders, and distribution within the team and to supporters.
+// - Work with the Marketing team to align merchandise with sponsor branding.`,
+//         year: "Any",
+//         degree: "Any degree with interest in design, branding, or business",
+//         count: "2",
+//       },
+//       {
+//         // title: "Outreach Events",
+//         title: "Events & Logistics Coordinator",
+//         description: `As Events & Logistics Coordinator, you will be responsible for managing all communication between TBRe and event organisers, as well as planning the team's logistics for outreach events and competitions. This includes coordinating travel, accommodation, and essential resources. This role offers valuable experience in event management, professional communication, and logistical planning, directly contributing to the smooth running of the team throughout the season.
 
-Responsibilities:
-- Act as the primary point of contact between the team and event organisers.
-- Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
-- Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
-- Manage budgets and expenses related to travel and events.
-- Ensure the team's presence at outreach events is well-prepared and professionally represented.
-- Handle any last-minute logistical issues that arise during competitions or events.`,
-        year: "Any",
-        degree: "Engineering, Business, Management",
-        count: "3",
-      },
-    ],
-  },
+// Responsibilities:
+// - Act as the primary point of contact between the team and event organisers.
+// - Coordinate logistics for competitions and outreach events, including travel, accommodation, and schedules.
+// - Organise transport and ensure all essential equipment, documents, and supplies are accounted for.
+// - Manage budgets and expenses related to travel and events.
+// - Ensure the team's presence at outreach events is well-prepared and professionally represented.
+// - Handle any last-minute logistical issues that arise during competitions or events.`,
+//         year: "Any",
+//         degree: "Engineering, Business, Management",
+//         count: "3",
+//       },
+//     ],
+//   },
   // {
   //   name: "Aerodynamics",
   //   description:
@@ -323,226 +323,226 @@ Desirable
       // },
     ],
   },
-  {
-    name: "Vehicle Dynamics",
-    description:
-      "The Vehicle Dynamics team focuses on the car's performance through suspension design, tyre modelling, data analysis, and driver feedback to optimise handling and lap times.",
-    contact: "Oliver Johnson",
-    additionalText: `If interested please contact Oli to arrange an informal chat. between now and then please read: "Race Car Vehicle Dynamics by Milliken & Milliken, and Tire and vehicle dynamics by pacejka" and watch the OptimumG youtube videos on Tyres, Suspension design, and performance engineering. OptimumG also have a resources page which suggest other good reading. OptimumG also have a course https://optimumg-s-school.thinkific.com/courses/vehicle-dynamics-lecture which is free to sign up to.`,
-    members: "8",
-    roles: [
-      {
-        title: "Brakes",
-        description: `The TBRe Formula Student car must, by regulation, run two independent hydraulic brake systems. Historically, we have used twin 2-pot calipers on the front axle and a single 2-pot caliper on the rear axle, running DOT 4 performance fluid. Brakes have been one of the team's most challenging areas in recent years, with issues such as boiling fluid, excessive float, caliper failures, leaking lines, and weeping nipples affecting reliability.
+//   {
+//     name: "Vehicle Dynamics",
+//     description:
+//       "The Vehicle Dynamics team focuses on the car's performance through suspension design, tyre modelling, data analysis, and driver feedback to optimise handling and lap times.",
+//     contact: "Oliver Johnson",
+//     additionalText: `If interested please contact Oli to arrange an informal chat. between now and then please read: "Race Car Vehicle Dynamics by Milliken & Milliken, and Tire and vehicle dynamics by pacejka" and watch the OptimumG youtube videos on Tyres, Suspension design, and performance engineering. OptimumG also have a resources page which suggest other good reading. OptimumG also have a course https://optimumg-s-school.thinkific.com/courses/vehicle-dynamics-lecture which is free to sign up to.`,
+//     members: "8",
+//     roles: [
+//       {
+//         title: "Brakes",
+//         description: `The TBRe Formula Student car must, by regulation, run two independent hydraulic brake systems. Historically, we have used twin 2-pot calipers on the front axle and a single 2-pot caliper on the rear axle, running DOT 4 performance fluid. Brakes have been one of the team's most challenging areas in recent years, with issues such as boiling fluid, excessive float, caliper failures, leaking lines, and weeping nipples affecting reliability.
 
-For 2026, we are aiming for a step-change in brake system performance and reliability. This includes thermal simulations building on our current pipeline, brake pad and fluid sourcing/testing, a master cylinder redesign, improved packaging of calipers and discs with the chassis team, and a full review of bleed nipples and service procedures.
+// For 2026, we are aiming for a step-change in brake system performance and reliability. This includes thermal simulations building on our current pipeline, brake pad and fluid sourcing/testing, a master cylinder redesign, improved packaging of calipers and discs with the chassis team, and a full review of bleed nipples and service procedures.
 
-We're seeking engineers excited to tackle one of the most safety-critical systems on the car, working closely across mechanical and chassis teams to deliver a robust solution.
+// We're seeking engineers excited to tackle one of the most safety-critical systems on the car, working closely across mechanical and chassis teams to deliver a robust solution.
 
-Are you:
+// Are you:
 
-Keen to get hands-on with a safety-critical system in a live motorsport environment?
+// Keen to get hands-on with a safety-critical system in a live motorsport environment?
 
-Someone who enjoys both simulation and experimental testing to prove a design?
+// Someone who enjoys both simulation and experimental testing to prove a design?
 
-Looking to gain experience in hydraulic systems, thermal modelling, and component testing?
+// Looking to gain experience in hydraulic systems, thermal modelling, and component testing?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Collaborating closely with mechanical and chassis teams on packaging master cylinders, reservoirs, calipers, and brake lines
+// Collaborating closely with mechanical and chassis teams on packaging master cylinders, reservoirs, calipers, and brake lines
 
-Developing and running thermal simulations, then validating them through testing
+// Developing and running thermal simulations, then validating them through testing
 
-Sourcing and testing brake fluids, pads, and components to improve performance and reliability
+// Sourcing and testing brake fluids, pads, and components to improve performance and reliability
 
-Supporting the full lifecycle: design, analysis, testing, documentation, and on-track running at Silverstone and international competitions`,
-        count: 1,
-        degree: "Mech eng related (including IMEE)",
-        year: "3+",
-      },
-      //       {
-      //         title: "Tyres",
-      //         description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
+// Supporting the full lifecycle: design, analysis, testing, documentation, and on-track running at Silverstone and international competitions`,
+//         count: 1,
+//         degree: "Mech eng related (including IMEE)",
+//         year: "3+",
+//       },
+//       //       {
+//       //         title: "Tyres",
+//       //         description: `Tyres are the only contact patch between the TBRe race car and the track surface, making them one of the most performance-defining systems. By regulation, the car must run four tyres with both wet and dry sets available. Currently, TBRe run 16x7.5-10 R20 Hoosiers on all four corners for drys and 16x60-10 W3 Hoosier for the wets.
 
-      // For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
+//       // For 2026, this role will focus on building a deeper understanding of tyre performance and making informed design choices. This includes evaluating alternative tyre options, writing the supporting design documentation, and developing a tyre model using TTC (Tyre Test Consortium) data. Since the available longitudinal and combined datasets are for 18” and 20” tyres, part of this challenge will be correctly determining how to scale and then scale the longitudinal and combined data to create representative models for our 16” R20 tyres. The role will also involve setting running pressures for different events, and investigating rim widths—both what is feasible with our current setup and what the team would ideally like to move towards.
 
-      // We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
+//       // We're seeking engineers with an analytical mindset and a curiosity for how tyre behaviour underpins vehicle performance.
 
-      // Are you:
+//       // Are you:
 
-      // Excited to work with real-world tyre data and apply it to motorsport performance?
+//       // Excited to work with real-world tyre data and apply it to motorsport performance?
 
-      // Interested in modelling, simulation, and data-driven decision making?
+//       // Interested in modelling, simulation, and data-driven decision making?
 
-      // Looking to gain experience in documentation, TTC data scaling, and setup development?
+//       // Looking to gain experience in documentation, TTC data scaling, and setup development?
 
-      // This role will involve:
+//       // This role will involve:
 
-      // Commitment of at least 8 hours per week throughout both semesters
+//       // Commitment of at least 8 hours per week throughout both semesters
 
-      // Analysing tyre data, supporting simulation work, and providing practical setup recommendations
+//       // Analysing tyre data, supporting simulation work, and providing practical setup recommendations
 
-      // Investigating rim width effects, sourcing supporting documentation, and guiding team choices
+//       // Investigating rim width effects, sourcing supporting documentation, and guiding team choices
 
-      // Scaling and adapting existing TTC data to model our chosen tyres accurately
+//       // Scaling and adapting existing TTC data to model our chosen tyres accurately
 
-      // Setting car pressures across different dynamic events and validating these choices on track
+//       // Setting car pressures across different dynamic events and validating these choices on track
 
-      // Supporting the team's performance at Silverstone and international competitions`,
-      //         count: 1,
-      //         degree: "Mech eng related (including IMEE)",
-      //         year: "3+",
-      //       },
-      //       {
-      //         title: "Kinematics and Dynamics",
-      //         description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
+//       // Supporting the team's performance at Silverstone and international competitions`,
+//       //         count: 1,
+//       //         degree: "Mech eng related (including IMEE)",
+//       //         year: "3+",
+//       //       },
+//       //       {
+//       //         title: "Kinematics and Dynamics",
+//       //         description: `The TBRe Formula Student car's handling is defined by its suspension geometry and how that geometry changes under load. For 2026, we are redesigning the suspension to address two critical challenges: severe inside shoulder wear on the front axle tyres and the integration of a new rear powertrain package. These changes demand a fresh look at suspension kinematics and dynamics to deliver a more consistent, controllable platform.
 
-      // This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
+//       // This role will design the suspension geometry, simulate the impact of geometry changes, and work closely with mechanical and chassis teams to ensure designs are manufacturable and serviceable. Key technical challenges include optimising roll-centre height, pitch centre position, camber gain, anti-dive/anti-squat, and compliance effects, while also managing platform control to support aerodynamic performance. Because aero load is highly sensitive to ride height and pitch, you will collaborate directly with the aero team to ensure stability and consistency across conditions.
 
-      // We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
+//       // We're seeking engineers who want to bridge theory and practice, turning suspension models into tangible on-track gains.
 
-      // Are you:
+//       // Are you:
 
-      // Excited to tackle real-world problems like tyre wear and powertrain integration?
+//       // Excited to tackle real-world problems like tyre wear and powertrain integration?
 
-      // Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
+//       // Keen to optimise suspension geometry for both mechanical grip and aerodynamic platform control?
 
-      // Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
+//       // Comfortable with kinematic and multibody dynamics simulation and validating models with test data?
 
-      // Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
+//       // Looking to gain hands-on experience in CAD, hardpoint definition, and close mechanical integration?
 
-      // This role will involve:
+//       // This role will involve:
 
-      // Commitment of at least 8 hours per week throughout both semesters.
+//       // Commitment of at least 8 hours per week throughout both semesters.
 
-      // Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
+//       // Designing suspension geometry, hardpoints, and linkages, and documenting design choices.
 
-      // Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
+//       // Running kinematic and multibody simulations to quantify the impact of geometry changes on tyre wear, powertrain packaging, and platform stability.
 
-      // Working with the aero team to ensure suspension design supports aerodynamic consistency.
+//       // Working with the aero team to ensure suspension design supports aerodynamic consistency.
 
-      // Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
+//       // Collaborating with mechanical and chassis teams on manufacturable detail, including steering geometry, shimming, and inserts.
 
-      // Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
+//       // Correlating simulation predictions with rig and track data, iterating designs for maximum performance.
 
-      // Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
+//       // Supporting the full project lifecycle: requirements capture, detailed design, manufacture, test, documentation, and on-track validation at Silverstone and international events.
 
-      // Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
-      //         count: 2,
-      //         degree: "Mech eng related (including IMEE)",
-      //         year: "3+",
-      //       },
-      {
-        title: "Simulations",
-        description: `Vehicle Simulation Engineer
-The TBRe team uses IPG CarMaker, a full-car simulation tool, to develop sensitivities and define design targets. For 2026, we are looking for an engineer to provide IPG support, maintaining and expanding our simulation models. This requires a strong understanding of vehicle dynamics, computer systems, and data processing skills to manage, manipulate, and extract insights from simulation datasets.
+//       // Required knowledge: Familiarity with Race Car Vehicle Dynamics by Milliken & Milliken, or an equivalent understanding of vehicle dynamics principles.`,
+//       //         count: 2,
+//       //         degree: "Mech eng related (including IMEE)",
+//       //         year: "3+",
+//       //       },
+//       {
+//         title: "Simulations",
+//         description: `Vehicle Simulation Engineer
+// The TBRe team uses IPG CarMaker, a full-car simulation tool, to develop sensitivities and define design targets. For 2026, we are looking for an engineer to provide IPG support, maintaining and expanding our simulation models. This requires a strong understanding of vehicle dynamics, computer systems, and data processing skills to manage, manipulate, and extract insights from simulation datasets.
 
-Are you:
+// Are you:
 
-Comfortable with vehicle dynamics and translating theory into practical simulations?
+// Comfortable with vehicle dynamics and translating theory into practical simulations?
 
-Experienced in handling large simulation datasets and pre/post-processing results?
+// Experienced in handling large simulation datasets and pre/post-processing results?
 
-Keen to ensure the team's simulation pipeline is robust and ready for design decisions?
+// Keen to ensure the team's simulation pipeline is robust and ready for design decisions?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Maintaining and expanding our IPG simulation models
+// Maintaining and expanding our IPG simulation models
 
-Supporting the team by processing simulation results and generating reports
+// Supporting the team by processing simulation results and generating reports
 
-Collaborating with all vehicle dynamics engineers to integrate updated models
+// Collaborating with all vehicle dynamics engineers to integrate updated models
 
-Supporting on-track and offline vehicle development through accurate simulation data
+// Supporting on-track and offline vehicle development through accurate simulation data
 
-Required knowledge: Familiarity with vehicle dynamics (Milliken & Milliken or equivalent) and experience in data handling or programming for simulations.
+// Required knowledge: Familiarity with vehicle dynamics (Milliken & Milliken or equivalent) and experience in data handling or programming for simulations.
 
-Vehicle Simulation Engineer - OptimumG (OptimumD)
+// Vehicle Simulation Engineer - OptimumG (OptimumD)
 
-TBRe works closely with OptimumG, a consulting company providing free courses and a suite of software tools: OptimumKinematics, OptimumDynamics, and OptimumTyre. While Kinematics & Dynamics Engineers will focus on OptimumK and Tyres Engineers on OptimumTyre, we need an OptimumD engineer to integrate and simulate the full vehicle, coordinating across all subsystems.
+// TBRe works closely with OptimumG, a consulting company providing free courses and a suite of software tools: OptimumKinematics, OptimumDynamics, and OptimumTyre. While Kinematics & Dynamics Engineers will focus on OptimumK and Tyres Engineers on OptimumTyre, we need an OptimumD engineer to integrate and simulate the full vehicle, coordinating across all subsystems.
 
-Are you:
+// Are you:
 
-Interested in full-vehicle dynamics simulation, linking suspension, tyre, and powertrain models?
+// Interested in full-vehicle dynamics simulation, linking suspension, tyre, and powertrain models?
 
-Comfortable learning and applying professional vehicle dynamics software?
+// Comfortable learning and applying professional vehicle dynamics software?
 
-Excited to collaborate with all members of the team to quantify design changes in terms of lap-time impact?
+// Excited to collaborate with all members of the team to quantify design changes in terms of lap-time impact?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Building and validating full-car models in OptimumDynamics
+// Building and validating full-car models in OptimumDynamics
 
-Coordinating with Kinematics, Dynamics, and Tyres engineers to integrate subsystem models
+// Coordinating with Kinematics, Dynamics, and Tyres engineers to integrate subsystem models
 
-Producing sensitivity analyses and design target reports
+// Producing sensitivity analyses and design target reports
 
-Supporting simulation-led decision making to guide hardware design
+// Supporting simulation-led decision making to guide hardware design
 
-Required knowledge: Strong understanding of vehicle dynamics, experience with simulation software (MATLAB/Simulink, IPG, or similar), and good data handling skills.
+// Required knowledge: Strong understanding of vehicle dynamics, experience with simulation software (MATLAB/Simulink, IPG, or similar), and good data handling skills.
 
-Vehicle Simulation Engineer - General Mathematical Modeling
+// Vehicle Simulation Engineer - General Mathematical Modeling
 
-Some design questions require a “good enough” first approximation before a full simulation. This engineer will create simplified mathematical models to quickly assess parameters like chassis stiffness, suspension compliance, or ride frequencies, feeding results to the OptimumD engineer for lap-time analysis.
+// Some design questions require a “good enough” first approximation before a full simulation. This engineer will create simplified mathematical models to quickly assess parameters like chassis stiffness, suspension compliance, or ride frequencies, feeding results to the OptimumD engineer for lap-time analysis.
 
-Are you:
+// Are you:
 
-Comfortable building and analysing simplified models to guide design choices?
+// Comfortable building and analysing simplified models to guide design choices?
 
-Interested in bridging the gap between conceptual design and detailed simulation?
+// Interested in bridging the gap between conceptual design and detailed simulation?
 
-Keen to see your calculations directly influence car setup and hardware decisions?
+// Keen to see your calculations directly influence car setup and hardware decisions?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Modelling vehicle and chassis behaviour using simplified mathematical approaches
+// Modelling vehicle and chassis behaviour using simplified mathematical approaches
 
-Providing initial sensitivity analyses to inform full OptimumDynamics models
+// Providing initial sensitivity analyses to inform full OptimumDynamics models
 
-Collaborating closely with other simulation engineers to translate results into performance predictions
+// Collaborating closely with other simulation engineers to translate results into performance predictions
 
-Required knowledge: Strong mathematical modelling ability, experience with MATLAB/Python, and a solid understanding of vehicle dynamics.
+// Required knowledge: Strong mathematical modelling ability, experience with MATLAB/Python, and a solid understanding of vehicle dynamics.
 
-Vehicle Simulation Engineer - Model Validation / Data
+// Vehicle Simulation Engineer - Model Validation / Data
 
-Once simulation and real-world data are collected, they must be processed, validated, and presented for use across the team. This engineer will manage data pipelines from electronic sensors to team reports, ensuring accuracy and usability. Strong data analysis and modeling skills are required to turn raw datasets into actionable insights.
+// Once simulation and real-world data are collected, they must be processed, validated, and presented for use across the team. This engineer will manage data pipelines from electronic sensors to team reports, ensuring accuracy and usability. Strong data analysis and modeling skills are required to turn raw datasets into actionable insights.
 
-Are you:
+// Are you:
 
-Experienced in data processing, analysis, and validation?
+// Experienced in data processing, analysis, and validation?
 
-Comfortable working with large datasets from multiple sources (electronics, telemetry, simulations)?
+// Comfortable working with large datasets from multiple sources (electronics, telemetry, simulations)?
 
-Keen to ensure that simulation and track data are fully leveraged for vehicle performance improvements?
+// Keen to ensure that simulation and track data are fully leveraged for vehicle performance improvements?
 
-This role will involve:
+// This role will involve:
 
-Commitment of at least 8 hours per week throughout both semesters
+// Commitment of at least 8 hours per week throughout both semesters
 
-Developing and maintaining the workflow from raw data to run reports
+// Developing and maintaining the workflow from raw data to run reports
 
-Validating model predictions against track and test data
+// Validating model predictions against track and test data
 
-Supporting engineers by producing actionable insights from simulation and measurement data
+// Supporting engineers by producing actionable insights from simulation and measurement data
 
-Maintaining high standards of data quality and traceability
+// Maintaining high standards of data quality and traceability
 
-Required knowledge: Proficiency in data analysis and modeling, experience with MATLAB/Python or equivalent, and familiarity with vehicle dynamics.`,
-        count: 4,
-        degree:
-          "Mech eng related, Elec related, IMEE, Comp Sci, Physics, Maths",
-        year: "1+",
-      },
-    ],
-  },
+// Required knowledge: Proficiency in data analysis and modeling, experience with MATLAB/Python or equivalent, and familiarity with vehicle dynamics.`,
+//         count: 4,
+//         degree:
+//           "Mech eng related, Elec related, IMEE, Comp Sci, Physics, Maths",
+//         year: "1+",
+//       },
+//     ],
+//   },
   // {
   //   name: "Electrical",
   //   description:
@@ -673,22 +673,22 @@ Required knowledge: Proficiency in data analysis and modeling, experience with M
   //       },
   //     ],
   //   },
-  {
-    name: "Business Operations",
-    description:
-      "The Business Operations team handles the business aspects of the team, including sponsorship acquisition, financial planning, and stakeholder communications to ensure the team's sustainability and growth.",
-    contact: "Nithi Muthu Saravanan",
-    members: "3-4",
-    roles: [
-      {
-        title: "Business Operations Team Member",
-        description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
-        degree: "Any degree",
-        year: "Any",
-        count: "3-4",
-      },
-    ],
-  },
+  // {
+  //   name: "Business Operations",
+  //   description:
+  //     "The Business Operations team handles the business aspects of the team, including sponsorship acquisition, financial planning, and stakeholder communications to ensure the team's sustainability and growth.",
+  //   contact: "Nithi Muthu Saravanan",
+  //   members: "3-4",
+  //   roles: [
+  //     {
+  //       title: "Business Operations Team Member",
+  //       description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
+  //       degree: "Any degree",
+  //       year: "Any",
+  //       count: "3-4",
+  //     },
+  //   ],
+  // },
   // {
   //   name: "Costing",
   //   description: `The Costing team is responsible for managing the financial aspects of the project, including budgeting, cost analysis, and ensuring compliance with competition regulations related to cost and manufacturing.`,
