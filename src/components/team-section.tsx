@@ -3,14 +3,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { TeamMember } from "@/data/cars";
-import { team } from "@/data/team";
+import { car } from "@/data/team";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function TeamSection() {
   return (
     <section className="container space-y-20 px-4 py-16 mx-auto">
-      {team.map((category) => (
+      {car.team?.map((category) => (
         <div key={category.category} className="space-y-8">
           <div className="flex items-center gap-4">
             <h2 className="text-2xl font-bold text-zinc-900">
@@ -30,6 +30,7 @@ export function TeamSection() {
               })
               .map((member, memberIndex) => (
                 <TeamMemberCard
+                  teamYear={car.year}
                   key={member.name}
                   member={member}
                   memberIndex={memberIndex}
@@ -43,9 +44,11 @@ export function TeamSection() {
 }
 
 function TeamMemberCard({
+  teamYear,
   member,
   memberIndex,
 }: {
+  teamYear: number;
   member: TeamMember;
   memberIndex: number;
 }) {
@@ -69,7 +72,11 @@ function TeamMemberCard({
                 </Badge>
               )}
               <Image
-                src={member.image ?? "/placeholder.png"}
+                src={
+                  member.image
+                    ? `/team/${teamYear}/${member.image}`
+                    : "/placeholder.png"
+                }
                 alt={member.name}
                 fill
                 className="object-cover transition-transform duration-300 hover:scale-105"
