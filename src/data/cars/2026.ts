@@ -435,9 +435,9 @@ export const car2026: Car = {
           // image: "meghan_khasnis.jpg",
         },
         {
-          name: "Melissa Ghapansyan",
+          name: "Melissa Ghapantsyan",
           role: "Sponsorship Coordinator",
-          // image: "melissa_ghapansyan.jpg",
+          image: "melissa_ghapantsyan.jpg",
         },
         {
           name: "Oliver Pearce",

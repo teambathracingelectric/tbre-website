@@ -24,15 +24,6 @@ export default [
       "next-env.d.ts",
     ],
   },
-  {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
   includeIgnoreFile(gitignorePath),
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
