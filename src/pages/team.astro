@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { TeamSection } from "@/components/team-section";
+import { getCollection } from "astro:content";
+
+const cars = await getCollection("cars");
+// Get the latest car (assuming 2026 is the latest or sort by year)
+const latestCar = cars.sort((a, b) => b.data.year - a.data.year)[0];
+const team = latestCar.data.team;
+const year = latestCar.data.year;
+---
+
+<Layout
+  title="Team | Team Bath Racing Electric"
+  description="Meet the dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
+>
+  <div class="min-h-screen bg-white">
+    <section class="relative h-[50vh] min-h-[400px] w-full">
+      <img
+        src="/car.jpg"
+        alt="Team"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-white">
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative z-10 container px-4 text-center">
+          <h1
+            class="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
+          >
+            Meet Our Team
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg text-white/90">
+            The dedicated individuals behind our Formula Student success,
+            pushing the boundaries of engineering excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <TeamSection team={team || []} year={year} client:load />
+  </div>
+</Layout>

@@ -1,7 +1,6 @@
 "use client";
 
 import "@google/model-viewer/lib/model-viewer";
-import Image from "next/image";
 
 // interface ModelViewerJSX {
 //   src: string;
@@ -61,12 +60,7 @@ export function CarModel({ src }: { src: string }) {
       </button>
 
       <div className="poster" slot="poster">
-        <Image
-          className="pre-prompt"
-          src="/prompt.svg"
-          alt="Tap to view in AR"
-          unoptimized
-        />
+        <img className="pre-prompt" src="/prompt.svg" alt="Tap to view in AR" />
       </div>
       {/* @ts-expect-error model-viewer */}
     </model-viewer>
@@ -92,10 +86,9 @@ export function CarModel({ src }: { src: string }) {
           View in your space
         </button>
         <div id="ar-prompt">
-          <Image
+          <img
             src="https://modelviewer.dev/shared-assets/icons/hand.png"
             alt="Hand icon"
-            unoptimized
           />
         </div>
         {/* @ts-expect-error model-viewer */}

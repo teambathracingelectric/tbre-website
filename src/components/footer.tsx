@@ -1,6 +1,4 @@
 import { socials } from "@/data/socials";
-import Image from "next/image";
-import Link from "next/link";
 
 export function Footer() {
   return (
@@ -12,16 +10,15 @@ export function Footer() {
       </div>
 
       <div className="md:w-1/3 flex justify-center">
-        <Link href="/">
-          <Image
+        <a href="/">
+          <img
             src="/tbre_logo_white.png"
             alt="tbre logo"
             width={200}
             height={200}
             className="hover:white-to-yellow"
-            unoptimized
           />
-        </Link>
+        </a>
       </div>
 
       <ul className="md:w-1/3 space-x-4 flex justify-center">

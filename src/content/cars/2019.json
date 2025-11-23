@@ -1,0 +1,77 @@
+{
+  "year": 2019,
+  "name": "TBRe19",
+  "image": "/cars/2019/car.jpg",
+  "team": [
+    {
+      "category": "Management",
+      "members": [
+        {
+          "name": "Kieran Eke",
+          "role": "Project Manager",
+          "link": "https://linkedin.com/in/kieran-eke-b528a4131/"
+        },
+        {
+          "name": "Marcus Bailey",
+          "role": "Technical Lead",
+          "link": "https://linkedin.com/in/marcus-bailey-7708a5131/"
+        },
+        {
+          "name": "Ben Metcalfe",
+          "role": "Academic Lead",
+          "link": "https://linkedin.com/in/benjamin-metcalfe-021a3554/"
+        }
+      ]
+    },
+    {
+      "category": "Mechanical",
+      "members": [
+        {
+          "name": "Joe Capper",
+          "role": "Mechanical Lead",
+          "link": "https://linkedin.com/in/joe-capper-01037318b/"
+        },
+        {
+          "name": "William Taylor",
+          "role": "Suspension Lead",
+          "link": "https://linkedin.com/in/william-taylor-a533101b7/"
+        },
+        {
+          "name": "George Bridgewater",
+          "role": "Chassis Lead",
+          "link": "https://linkedin.com/in/george-bridgewater-56530a224/"
+        },
+        {
+          "name": "Thomas Coxon",
+          "role": "Aerodynamics Lead",
+          "link": "https://linkedin.com/in/thomas-coxon-9b78a6131/"
+        }
+      ]
+    },
+    {
+      "category": "Electrical",
+      "members": [
+        {
+          "name": "Glen Chadburn",
+          "role": "Electrical Lead",
+          "link": "https://linkedin.com/in/glen-chadburn/"
+        },
+        {
+          "name": "Luke Crutchley",
+          "role": "Powertrain Lead",
+          "link": "https://linkedin.com/in/luke-crutchley/"
+        },
+        {
+          "name": "David Cleland",
+          "role": "Software Lead",
+          "link": "https://linkedin.com/in/david-cleland-aa5187244/"
+        },
+        {
+          "name": "Harley Mak",
+          "role": "Electronics Lead",
+          "link": "https://linkedin.com/in/hau-lai-harley-mak-5b9b681b2/"
+        }
+      ]
+    }
+  ]
+}

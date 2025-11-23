@@ -1,0 +1,365 @@
+{
+  "year": 2025,
+  "name": "TBRe25",
+  "image": "/cars/2025/car.jpeg",
+  "team": [
+    {
+      "category": "Management",
+      "members": [
+        {
+          "name": "Luke Crutchley",
+          "role": "Team Leader",
+          "image": "/team/2025/luke_crutchley.jpg",
+          "lead": true
+        },
+        {
+          "name": "James White",
+          "role": "Technical Director",
+          "image": "/team/2025/james_white.jpg",
+          "lead": true
+        },
+        {
+          "name": "Stephanie Hobeika",
+          "role": "Project Manager",
+          "image": "/team/2025/stephanie_hobeika.jpg",
+          "lead": true
+        }
+      ]
+    },
+    {
+      "category": "Equality, Diversity and Inclusion",
+      "members": [
+        {
+          "name": "Erin Grosvenor",
+          "role": "EDI Champion",
+          "image": "/team/2025/erin_grosvenor.jpg"
+        },
+        {
+          "name": "Preston Whiteman",
+          "role": "AI EDI Champion",
+          "image": "/team/2025/preston_whiteman.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Aerodynamics",
+      "members": [
+        {
+          "name": "Alexander Crisan",
+          "role": "Aerodynamics Lead",
+          "image": "/team/2025/alexander_crisan.jpg",
+          "lead": true
+        },
+        {
+          "name": "Jude Thorne",
+          "role": "Aerodynamics Team Member",
+          "image": "/team/2025/jude_thorne.jpg"
+        },
+        {
+          "name": "Daniel Price",
+          "role": "Aerodynamics Team Member",
+          "image": "/team/2025/daniel_price.jpg"
+        },
+        {
+          "name": "Callum Hallworth",
+          "role": "Aerodynamics Team Member",
+          "image": "/team/2025/callum_hallworth.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Artificial Intelligence",
+      "members": [
+        {
+          "name": "Preston Whiteman",
+          "role": "AI Lead",
+          "image": "/team/2025/preston_whiteman.jpg",
+          "lead": true
+        },
+        {
+          "name": "Wenzel Kinsky",
+          "role": "AI Team Member",
+          "image": "/team/2025/wenzel_kinsky.jpg"
+        },
+        {
+          "name": "Harry Crane",
+          "role": "AI Team Member",
+          "image": "/team/2025/harry_crane.jpg"
+        },
+        {
+          "name": "Ben Rall",
+          "role": "AI Team Member",
+          "image": "/team/2025/ben_rall.jpg"
+        },
+        {
+          "name": "Tom Muirhead",
+          "role": "AI Team Member",
+          "image": "/team/2025/tom_muirhead.jpg"
+        },
+        {
+          "name": "Silvio Xu",
+          "role": "AI Team Member",
+          "image": "/team/2025/silvio_xu.jpg"
+        },
+        {
+          "name": "Roberta Griffiths",
+          "role": "AI Team Member",
+          "image": "/team/2025/roberta_griffiths.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Chassis",
+      "members": [
+        {
+          "name": "Sam Utley",
+          "role": "Chassis Lead",
+          "image": "/team/2025/sam_utley.jpg",
+          "lead": true
+        },
+        {
+          "name": "Colin Peden",
+          "role": "Chassis Team Member",
+          "image": "/team/2025/colin_peden.jpg"
+        },
+        {
+          "name": "Khayaam Waris",
+          "role": "Chassis Team Member",
+          "image": "/team/2025/khayaam_waris.jpg"
+        },
+        {
+          "name": "Jason Fernando",
+          "role": "Chassis Team Member",
+          "image": "/team/2025/jason_fernando.jpg"
+        },
+        {
+          "name": "Phebe Arthurs",
+          "role": "Chassis Team Member",
+          "image": "/team/2025/phebe_arthurs.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Electrical Systems",
+      "members": [
+        {
+          "name": "Brendan Ind",
+          "role": "Electrical Systems Lead",
+          "image": "/team/2025/brendan_ind.jpg",
+          "lead": true
+        },
+        {
+          "name": "Ibraheem Rodrigues",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/ibraheem_rodrigues.jpg"
+        },
+        {
+          "name": "Owen Harms",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/owen_harms.jpg"
+        },
+        {
+          "name": "Seb Hall",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/seb_hall.jpg"
+        },
+        {
+          "name": "Ben Broadbent",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/ben_broadbent.jpg"
+        },
+        {
+          "name": "Jake Stuart",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/jake_stuart.jpg"
+        },
+        {
+          "name": "Euan Bell",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/euan_bell.jpg"
+        },
+        {
+          "name": "Eugine Levinson",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/eugine_levinson.jpg"
+        },
+        {
+          "name": "Julianne Permo",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/julianne_permo.jpg"
+        },
+        {
+          "name": "Kaan-Luka Atacan",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/kaan-luka_atacan.jpg"
+        },
+        {
+          "name": "Michael Pagliuca",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/michael_pagliuca.jpg"
+        },
+        {
+          "name": "Sarp Balaban",
+          "role": "Electrical Systems Team Member",
+          "image": "/team/2025/sarp_balaban.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Mechanical Design",
+      "members": [
+        {
+          "name": "Huw Williams",
+          "role": "Mechanical Design Lead",
+          "image": "/team/2025/huw_williams.jpg",
+          "lead": true
+        },
+        {
+          "name": "Alex Peacock",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/alex_peacock.jpg"
+        },
+        {
+          "name": "Hedi Fakhfakh",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/hedi_fakhfakh.jpg"
+        },
+        {
+          "name": "Dafydd Stephens",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/dafydd_stephens.jpg"
+        },
+        {
+          "name": "Hayden Hill",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/hayden_hill.jpg"
+        },
+        {
+          "name": "Ellie Finnegan",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/ellie_finnegan.jpg"
+        },
+        {
+          "name": "Ola Werring",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/ola_werring.jpg"
+        },
+        {
+          "name": "Michael Palmer",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/michael_palmer.jpg"
+        },
+        {
+          "name": "Liam O'Hare",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/liam_ohare.jpg"
+        },
+        {
+          "name": "Xin Lin",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/xin_lin.jpg"
+        },
+        {
+          "name": "Cieran Gifford",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/cieran_gifford.jpg"
+        },
+        {
+          "name": "Jesse Doorgeest",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/jesse_doorgeest.jpg"
+        },
+        {
+          "name": "Josh Mobsby",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/josh_mobsby.jpg"
+        },
+        {
+          "name": "Leea Frangopol",
+          "role": "Mechanical Design Team Member",
+          "image": "/team/2025/leea_frangopol.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Business Operations",
+      "members": [
+        {
+          "name": "Emma Dickson",
+          "role": "Co-Business Operations Lead",
+          "image": "/team/2025/emma_dickson.png",
+          "lead": true
+        },
+        {
+          "name": "Audrey Raguin",
+          "role": "Co-Business Operations Lead",
+          "image": "/team/2025/audrey_raguin.png",
+          "lead": true
+        },
+        {
+          "name": "Madison Tregonning",
+          "role": "Business Operations Team Member",
+          "image": "/team/2025/madison_tregonning.jpg"
+        },
+        {
+          "name": "Mary Weir",
+          "role": "Business Operations Team Member",
+          "image": "/team/2025/mary_weir.jpg"
+        },
+        {
+          "name": "Leo Sagal",
+          "role": "Business Operations Team Member",
+          "image": "/team/2025/leo_sagal.jpg"
+        },
+        {
+          "name": "Lucas Coelho",
+          "role": "Business Operations Team Member"
+        }
+      ]
+    },
+    {
+      "category": "Marketing",
+      "members": [
+        {
+          "name": "Chiara Marquet",
+          "role": "Marketing Lead",
+          "image": "/team/2025/chiara_marquet.png",
+          "lead": true
+        },
+        {
+          "name": "Michelle Stejskalova",
+          "role": "Co TikTok Admin",
+          "image": "/team/2025/michelle_stejskalova.jpg"
+        },
+        {
+          "name": "Sasha Key",
+          "role": "Co TikTok Admin",
+          "image": "/team/2025/sasha_key.jpg"
+        },
+        {
+          "name": "Millie Watson",
+          "role": "Instagram Admin",
+          "image": "/team/2025/millie_watson.jpg"
+        },
+        {
+          "name": "Ishika Goel",
+          "role": "Website Admin"
+        },
+        {
+          "name": "Torey Boss",
+          "role": "Marketing Team Member",
+          "image": "/team/2025/torey_boss.jpg"
+        },
+        {
+          "name": "Priya Nath",
+          "role": "NewsLetter Admin",
+          "image": "/team/2025/priya_nath.jpg"
+        },
+        {
+          "name": "Tom Heaton",
+          "role": "Website Admin"
+        }
+      ]
+    }
+  ]
+}

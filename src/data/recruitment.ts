@@ -681,8 +681,9 @@ Desirable
   //   members: "3-4",
   //   roles: [
   //     {
+  //     {
   //       title: "Business Operations Team Member",
-  //       description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
+  //       description: `In this role, you'll help develop a real-world business case for the Business Plan Presentation (BPP), create and rehearse a professional pitch to industry judges, and support sponsor relationships while exploring new partnerships. You'll contribute to business operations, financial planning, and stakeholder communications, while also collaborating with the technical and media teams to showcase TBRe26's innovation to sponsors, alumni, and the public. The role also includes merchandise design and sales, helping build our brand presence and engage with supporters. This is a fantastic opportunity to gain hands-on experience and make a real impact on TBRe26's success both on and off the track.`,
   //       degree: "Any degree",
   //       year: "Any",
   //       count: "3-4",

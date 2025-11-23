@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { GalleryContent } from "@/components/gallery-content";
+---
+
+<Layout
+  title="Gallery | Team Bath Racing Electric"
+  description="Capturing our journey through the years."
+>
+  <div class="min-h-screen bg-white">
+    <section class="relative h-[40vh] min-h-[300px] w-full">
+      <img
+        src="/car.jpg"
+        alt="Gallery hero"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-white">
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative z-10 container px-4 text-center">
+          <h1
+            class="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
+          >
+            Gallery
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg text-white/90">
+            Capturing our journey through the years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <GalleryContent client:load />
+  </div>
+</Layout>

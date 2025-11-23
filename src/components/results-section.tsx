@@ -1,5 +1,4 @@
 import type { Results } from "@/data/cars";
-import Image from "next/image";
 
 export function ResultsSection({ results }: { results: Results }) {
   return (
@@ -10,13 +9,12 @@ export function ResultsSection({ results }: { results: Results }) {
           key={r.title}
           className="flex space-x-8 flex-wrap md:flex-nowrap border-transparent border-2 hover:border-tbre-yellow p-4 rounded-lg transition-all"
         >
-          <Image
+          <img
             src={r.image}
             alt="result photo"
             width={400}
             height={200}
             className="rounded-lg"
-            unoptimized
           />
           <div>
             <h3 className="font-semibold text-xl mb-2">{r.title}</h3>

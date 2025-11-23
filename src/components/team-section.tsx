@@ -3,14 +3,18 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { TeamMember } from "@/data/cars";
-import { car } from "@/data/team";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-export function TeamSection() {
+export function TeamSection({
+  team,
+  year,
+}: {
+  team: { category: string; members: TeamMember[] }[];
+  year: number;
+}) {
   return (
     <section className="container space-y-20 px-4 py-16 mx-auto">
-      {car.team?.map((category) => (
+      {team?.map((category) => (
         <div key={category.category} className="space-y-8">
           <div className="flex items-center gap-4">
             <h2 className="text-2xl font-bold text-zinc-900">
@@ -21,16 +25,16 @@ export function TeamSection() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {category.members
-              .sort((a, b) => {
+              .sort((a: TeamMember, b: TeamMember) => {
                 if (a.lead && !b.lead) return -1;
                 if (!a.lead && b.lead) return 1;
                 if (a.image && !b.image) return -1;
                 if (!a.image && b.image) return 1;
                 return 0;
               })
-              .map((member, memberIndex) => (
+              .map((member: TeamMember, memberIndex: number) => (
                 <TeamMemberCard
-                  teamYear={car.year}
+                  teamYear={year}
                   key={member.name}
                   member={member}
                   memberIndex={memberIndex}
@@ -71,16 +75,16 @@ function TeamMemberCard({
                   Lead
                 </Badge>
               )}
-              <Image
+              <img
                 src={
                   member.image
-                    ? `/team/${teamYear}/${member.image}`
+                    ? member.image.startsWith("/")
+                      ? member.image
+                      : `/team/${teamYear}/${member.image}`
                     : "/placeholder.png"
                 }
                 alt={member.name}
-                fill
-                className="object-cover transition-transform duration-300 hover:scale-105"
-                unoptimized
+                className="object-cover transition-transform duration-300 hover:scale-105 w-full h-full"
               />
             </div>
             <div className="space-y-1.5 p-4">

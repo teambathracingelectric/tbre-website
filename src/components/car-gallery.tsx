@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 
 export function CarGallery({
@@ -25,12 +24,10 @@ export function CarGallery({
             className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg"
             onClick={() => setSelectedImage(index)}
           >
-            <Image
+            <img
               src={image.url}
               alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              unoptimized
+              className="object-cover transition-transform duration-300 group-hover:scale-105 w-full h-full"
             />
           </div>
         ))}
@@ -46,12 +43,10 @@ export function CarGallery({
         >
           <div className="relative aspect-[16/9]">
             {selectedImage !== null && (
-              <Image
+              <img
                 src={images[selectedImage].url}
                 alt={images[selectedImage].alt}
-                fill
-                className="rounded-lg object-contain"
-                unoptimized
+                className="rounded-lg object-contain w-full h-full"
               />
             )}
             <Button

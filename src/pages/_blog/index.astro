@@ -1,0 +1,140 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Card, CardContent } from "@/components/ui/card";
+import { blogs } from "@/data/blogs";
+import { ArrowRightIcon, CalendarIcon, ClockIcon } from "lucide-react";
+
+const featuredBlog = blogs[0];
+---
+
+<Layout
+  title="Blog | Team Bath Racing Electric"
+  description="Stay up to date with our latest achievements, innovations, and team updates"
+>
+  <div class="min-h-screen bg-white">
+    {/* Hero Section */}
+    <section class="relative h-[40vh] min-h-[300px] w-full">
+      <img
+        src="/car.jpg"
+        alt="Blog"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-white">
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative z-10 container px-4 text-center">
+          <h1
+            class="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
+          >
+            Latest News
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg text-white/90">
+            Stay up to date with our latest achievements, innovations, and team
+            updates
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Featured Post */}
+    <section class="container mx-auto px-4 py-16">
+      <Card className="overflow-hidden border-zinc-200">
+        <CardContent className="grid gap-8 p-0 md:grid-cols-2">
+          <div class="relative aspect-[4/3] overflow-hidden md:aspect-auto">
+            <img
+              src={featuredBlog.image}
+              alt={featuredBlog.title}
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col justify-center p-6 md:p-8">
+            <div
+              class="mb-4 inline-block w-fit rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue"
+            >
+              {featuredBlog.category}
+            </div>
+            <h2 class="mb-4 text-2xl font-bold text-zinc-900 sm:text-3xl">
+              {featuredBlog.title}
+            </h2>
+            <p class="mb-6 text-zinc-600">{featuredBlog.excerpt}</p>
+            <div class="mb-6 flex items-center gap-4 text-sm text-zinc-500">
+              <div class="flex items-center gap-1">
+                <CalendarIcon className="h-4 w-4" />
+                {
+                  new Date(featuredBlog.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })
+                }
+              </div>
+              <div class="flex items-center gap-1">
+                <ClockIcon className="h-4 w-4" />
+                {featuredBlog.readTime}
+              </div>
+            </div>
+            <a
+              href={`/blog/${featuredBlog.slug}`}
+              class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+            >
+              Read More <ArrowRightIcon className="ml-2 h-4 w-4" />
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+    </section>
+
+    {/* All Posts */}
+    <section class="border-t bg-zinc-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="mb-8 text-2xl font-bold text-zinc-900">All Posts</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            blogs.map((post) => (
+              <Card className="group overflow-hidden border-zinc-200 bg-white transition-all hover:shadow-lg">
+                <CardContent className="p-0">
+                  <div class="relative aspect-[3/2] overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <div class="mb-3 inline-block rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue">
+                      {post.category}
+                    </div>
+                    <h3 class="mb-3 text-xl font-bold text-zinc-900">
+                      {post.title}
+                    </h3>
+                    <p class="mb-4 text-zinc-600">{post.excerpt}</p>
+                    <div class="mb-4 flex items-center gap-4 text-sm text-zinc-500">
+                      <div class="flex items-center gap-1">
+                        <CalendarIcon className="h-4 w-4" />
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          month: "long",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <ClockIcon className="h-4 w-4" />
+                        {post.readTime}
+                      </div>
+                    </div>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+                    >
+                      Read More <ArrowRightIcon className="ml-2 h-4 w-4" />
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

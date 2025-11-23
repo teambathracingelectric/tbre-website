@@ -1,0 +1,167 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ButtonLink from "@/components/button-link.astro";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { sponsors } from "@/data/sponsors";
+import { cn } from "@/utils";
+import { ArrowRightIcon } from "lucide-react";
+
+const titleSponsor = sponsors[0].sponsors[0];
+---
+
+<Layout
+  title="Sponsors | Team Bath Racing Electric"
+  description="Partner with us to support our team and benefit from a mutually beneficial relationship."
+>
+  <div class="min-h-screen bg-white">
+    <section
+      class="relative flex min-h-[50vh] w-full items-center justify-center bg-tbre-blue py-8"
+    >
+      <div class="container px-4 text-center">
+        <h1
+          class="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
+        >
+          Partner with Excellence
+        </h1>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-white/80">
+          We work closely with each of our sponsors to ensure a mutually
+          beneficial relationship, with many of our team alumni choosing our
+          sponsors as graduate employers.
+          <br />
+          <br />
+          Get in touch to find out more about supporting our team. More information
+          about the team is provided in our new prospectus.
+        </p>
+        <ButtonLink
+          href="/2024-25_TBRe_Sponsorship_brochure.pdf"
+          download
+          target="_blank"
+          size="lg"
+          className="bg-tbre-yellow text-white hover:bg-tbre-yellow/90"
+        >
+          Download our Sponsorship Prospectus
+        </ButtonLink>
+      </div>
+    </section>
+
+    {/* Title Sponsor Section */}
+    <section class="overflow-hidden border-y bg-zinc-50 py-20">
+      <div class="container mx-auto px-4">
+        <h2
+          class="mb-16 text-center text-4xl font-bold tracking-tight text-zinc-900"
+        >
+          Title Sponsor
+        </h2>
+        <div class="grid gap-12 lg:grid-cols-2">
+          <div
+            class="relative aspect-[4/3] overflow-hidden rounded-lg lg:aspect-auto lg:h-full"
+          >
+            <img
+              src={titleSponsor.logo}
+              alt={titleSponsor.name}
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col justify-center">
+            <h3 class="mb-6 text-3xl font-bold text-zinc-900">
+              {titleSponsor.name}
+            </h3>
+            <p
+              class="mb-8 text-lg leading-relaxed text-zinc-600"
+              set:html={titleSponsor.description ??
+                "Come back soon to find out more!"}
+            />
+            <a
+              href={titleSponsor.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-lg font-semibold text-tbre-blue hover:text-tbre-blue/90"
+            >
+              Visit {titleSponsor.name}{" "}
+              <ArrowRightIcon className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Other Sponsors */}
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        {
+          sponsors
+            .slice(1)
+            .filter((level) => level.sponsors.length)
+            .map((level) => (
+              <div class="mb-16 last:mb-0">
+                <h2 class="mb-8 text-2xl font-bold text-zinc-900">
+                  {level.level}
+                </h2>
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {level.sponsors
+                    // sort sponsors with descriptions first
+                    .sort((a, b) => {
+                      const aHasDesc = !!a.description;
+
+                      const bHasDesc = !!b.description;
+                      if (aHasDesc && !bHasDesc) return -1;
+                      if (!aHasDesc && bHasDesc) return 1;
+                      return 0;
+                    })
+                    .map((sponsor) => (
+                      <Card className="bg-white">
+                        <CardHeader className="space-y-6">
+                          <a
+                            href={sponsor.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src={sponsor.logo}
+                              alt={sponsor.name}
+                              class={cn("h-12 w-auto", {
+                                invert: sponsor.logoInverted,
+                              })}
+                              width={150}
+                              height={50}
+                            />
+                          </a>
+                          <h3 class="text-xl font-bold text-zinc-900">
+                            {sponsor.name}
+                          </h3>
+                        </CardHeader>
+                        <CardContent>
+                          <p
+                            class="text-zinc-600"
+                            set:html={
+                              sponsor.description ??
+                              "Come back soon to find out more!"
+                            }
+                          />
+                        </CardContent>
+                        <CardFooter>
+                          <a
+                            href={sponsor.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                          >
+                            Visit {sponsor.name}{" "}
+                            <ArrowRightIcon className="ml-2 h-5 w-5" />
+                          </a>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                </div>
+              </div>
+            ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,164 @@
+{
+  "year": 2022,
+  "name": "TBRe22",
+  "image": "/cars/2022/car.jpg",
+  "team": [
+    {
+      "category": "Management",
+      "members": [
+        {
+          "name": "Luke Crutchley",
+          "role": "Team Leader"
+        },
+        {
+          "name": "Glen Chadburn",
+          "role": "Technical Director"
+        },
+        {
+          "name": "Harley Mak",
+          "role": "Head of Operations"
+        }
+      ]
+    },
+    {
+      "category": "Mechanical",
+      "members": [
+        {
+          "name": "Sam Gray",
+          "role": "Head of Mechanical Systems"
+        },
+        {
+          "name": "Kieron Holt",
+          "role": "Head of Mechanical Powertrain Development"
+        },
+        {
+          "name": "Joe Capper"
+        },
+        {
+          "name": "William Taylor"
+        },
+        {
+          "name": "George Bridgewater"
+        },
+        {
+          "name": "Thomas Coxon"
+        }
+      ]
+    },
+    {
+      "category": "Electrical",
+      "members": [
+        {
+          "name": "Glen Chadburn",
+          "role": "Head of Electrical Systems"
+        },
+        {
+          "name": "Luke Crutchley",
+          "role": "Head of Electrical Powertrain Development"
+        },
+        {
+          "name": "David Cleland"
+        },
+        {
+          "name": "Harley Mak"
+        },
+        {
+          "name": "Natalie Kyprianou",
+          "role": "Battery Lead"
+        },
+        {
+          "name": "Sam Gray",
+          "role": "Vehicle Dynamics Lead"
+        },
+        {
+          "name": "Oliver Hopkinson",
+          "role": "Aerodynamics Lead"
+        },
+        {
+          "name": "Kieron Holt",
+          "role": "Safety Lead"
+        },
+        {
+          "name": "William Taylor",
+          "role": "Vehicle Dynamics"
+        },
+        {
+          "name": "George Bridgewater",
+          "role": "Spaceframe"
+        },
+        {
+          "name": "Thomas Coxon",
+          "role": "Nose Cone, Mechanical"
+        },
+        {
+          "name": "Joe Capper",
+          "role": "Integration Engineer"
+        }
+      ]
+    },
+    {
+      "category": "Electrical and Electronics",
+      "members": [
+        {
+          "name": "Oliver Wilkins",
+          "role": "Electrical Lead"
+        },
+        {
+          "name": "Pete Walker",
+          "role": "Powertrain Lead"
+        },
+        {
+          "name": "Charlotte Deleay",
+          "role": "Sensors and Telemetry"
+        },
+        {
+          "name": "Uvindu Wijesinghe",
+          "role": "Driverless Technical Manager, Electronics, Dashboard"
+        },
+        {
+          "name": "Glen Chadburn",
+          "role": "Electronics"
+        },
+        {
+          "name": "Alex Dyer",
+          "role": "Electronics"
+        }
+      ]
+    },
+    {
+      "category": "Artificial Intelligence",
+      "members": [
+        {
+          "name": "Eduard Gascon",
+          "role": "Autonomous Systems Project Manager",
+          "link": "https://linkedin.com/in/eduardgascon/"
+        }
+      ]
+    },
+    {
+      "category": "Commercial",
+      "members": [
+        {
+          "name": "Sofya Morozova",
+          "role": "Sponsorships",
+          "link": "https://linkedin.com/in/sofya-morozova-114758150/"
+        },
+        {
+          "name": "Samuel Akinwumi",
+          "role": "Photography/Videography",
+          "link": "https://linkedin.com/in/samuel-akinwumi-abb22a88/"
+        },
+        {
+          "name": "Bassel Ghazali",
+          "role": "Photography",
+          "link": "https://linkedin.com/in/basselghazali/"
+        },
+        {
+          "name": "Fred Millman",
+          "role": "Web Development/Design",
+          "link": "https://linkedin.com/in/fjmillman/"
+        }
+      ]
+    }
+  ]
+}

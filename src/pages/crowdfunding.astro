@@ -1,0 +1,75 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { CrowdfundingVideo } from "@/components/crowdfunding-video";
+import ButtonLink from "@/components/button-link.astro";
+import { ArrowRightIcon } from "lucide-react";
+---
+
+<Layout
+  title="Crowdfunding | Team Bath Racing Electric"
+  description="Support TBRe25 to maintain our position as the #1 Electric Formula Student team in the UK."
+>
+  <div class="min-h-screen bg-white">
+    <section class="relative h-[40vh] min-h-[300px] w-full">
+      <img
+        src="/car.jpg"
+        alt="Crowdfunding campaign"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-white">
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative z-10 container px-4 text-center">
+          <div>
+            <h1
+              class="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
+            >
+              Support TBRe25
+            </h1>
+            <p class="mx-auto max-w-2xl text-lg text-white/90">
+              Help us maintain our position as the #1 Electric Formula Student
+              team in the UK
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="mx-auto max-w-6xl space-y-8">
+        <div
+          class="relative aspect-video w-full overflow-hidden rounded-lg bg-zinc-100"
+        >
+          <CrowdfundingVideo client:load />
+        </div>
+        <div class="prose prose-zinc max-w-none space-y-2">
+          <p class="text-lg">
+            The TBRe25 Crowdfunder has officially begun and is now live! As the
+            current #1 Electric Formula Student team in the UK, we believe this
+            is the year we can win, and this is your opportunity to help us
+            achieve that.
+          </p>
+          <p class="text-lg">
+            Please watch our video and visit our Crowdfunder page to discover
+            more about Formula Student TBRe and how you can contribute. We are
+            immensely grateful for any and all donations we receive and
+            sincerely appreciate all the support.
+          </p>
+          <p class="text-lg font-medium">
+            Include your name with your donation, and it will be featured on the
+            car!
+          </p>
+        </div>
+        <ButtonLink
+          href="https://www.crowdfunder.co.uk/p/team-bath-racing-electric-crowdfunder"
+          target="_blank"
+          rel="noopener noreferrer"
+          size="lg"
+          className="w-full bg-[#105bab] text-white hover:bg-[#105bab]/90"
+        >
+          Support Our Campaign <ArrowRightIcon className="ml-2 h-4 w-4" />
+        </ButtonLink>
+      </div>
+    </section>
+  </div>
+</Layout>

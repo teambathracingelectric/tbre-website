@@ -1,0 +1,141 @@
+{
+  "year": 2023,
+  "name": "TBRe23",
+  "image": "/cars/2023/car.jpg",
+  "team": [
+    {
+      "category": "Management",
+      "members": [
+        {
+          "name": "Luke Crutchley",
+          "role": "Project Manager",
+          "link": "https://linkedin.com/in/luke-crutchley/"
+        },
+        {
+          "name": "Glen Chadburn",
+          "role": "Technical Director",
+          "link": "https://linkedin.com/in/glen-chadburn/"
+        },
+        {
+          "name": "Harley Mak",
+          "role": "Head of Operations",
+          "link": "https://linkedin.com/in/hau-lai-harley-mak-5b9b681b2/"
+        }
+      ]
+    },
+    {
+      "category": "Mechanical",
+      "members": [
+        {
+          "name": "Sam Gray",
+          "role": "Head of Mechanical Systems",
+          "link": "https://linkedin.com/in/sam-gray-1823a31b2/"
+        },
+        {
+          "name": "Kieron Holt",
+          "role": "Head of Mechanical Powertrain Development",
+          "link": "https://linkedin.com/in/kieron-holt-9a79991b2/"
+        },
+        {
+          "name": "Joe Capper",
+          "link": "https://linkedin.com/in/joe-capper-01037318b/"
+        },
+        {
+          "name": "William Taylor",
+          "link": "https://linkedin.com/in/william-taylor-a533101b7/"
+        },
+        {
+          "name": "George Bridgewater",
+          "link": "https://linkedin.com/in/george-bridgewater-56530a224/"
+        }
+      ]
+    },
+    {
+      "category": "Electrical",
+      "members": [
+        {
+          "name": "Glen Chadburn",
+          "role": "Head of Electrical Systems",
+          "link": "https://linkedin.com/in/glen-chadburn/"
+        },
+        {
+          "name": "Luke Crutchley",
+          "role": "Head of Electrical Powertrain Development",
+          "link": "https://linkedin.com/in/luke-crutchley/"
+        },
+        {
+          "name": "David Cleland",
+          "link": "https://linkedin.com/in/david-cleland-aa5187244/"
+        },
+        {
+          "name": "Harley Mak",
+          "link": "https://linkedin.com/in/hau-lai-harley-mak-5b9b681b2/"
+        }
+      ]
+    },
+    {
+      "category": "Aerodynamics",
+      "members": [
+        {
+          "name": "Jacob Collinson",
+          "link": "https://linkedin.com/in/jacob-collinson-4877171b7/"
+        },
+        {
+          "name": "James Wilson",
+          "link": "https://linkedin.com/in/james-wilson-677abb209/"
+        },
+        {
+          "name": "Callum Hallworth",
+          "link": "https://linkedin.com/in/callumhallworth/"
+        }
+      ]
+    },
+    {
+      "category": "Driverless",
+      "members": [
+        {
+          "name": "Onish Sutradhar",
+          "role": "Head of AI Pipeline Development",
+          "link": "https://linkedin.com/in/onish-sutradhar-8197b6167/"
+        },
+        {
+          "name": "Ricardo Pradi Barbosa",
+          "link": "https://linkedin.com/in/ricardopradibarbosa/"
+        },
+        {
+          "name": "James Macrae",
+          "link": "https://linkedin.com/in/j-macrae/"
+        }
+      ]
+    },
+    {
+      "category": "Faculty Advisors",
+      "members": [
+        {
+          "name": "Dr. Benjamin Metcalfe",
+          "link": "https://linkedin.com/in/benjamin-metcalfe-021a3554/"
+        },
+        {
+          "name": "Dr. Joseph Flynn",
+          "link": "https://linkedin.com/in/joseph-flynn-70744a15/"
+        },
+        {
+          "name": "Prof. Peter Wilson",
+          "link": "https://linkedin.com/in/peter-wilson-b119111/"
+        },
+        {
+          "name": "Dr. Jonathan Graham-Harper-Cater",
+          "link": "https://linkedin.com/in/jonathan-graham-harper-cater/"
+        },
+        {
+          "name": "Dr. Christopher Vagg",
+          "link": "https://linkedin.com/in/chrisvagg/"
+        },
+        {
+          "name": "Dr. Yunjie Gu",
+          "link": "https://linkedin.com/in/yunjie-gu-698172131/"
+        }
+      ]
+    }
+  ]
+}
