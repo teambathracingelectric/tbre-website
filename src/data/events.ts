@@ -14,4 +14,10 @@ export const eventsData: Event[] = [
     type: "Competition",
     link: "https://imeche.org/events/formula-student",
   },
+  {
+    name: "Crowdfunding Campaign 2026",
+    date: new Date("2026-03-23"),
+    type: "Fundraising",
+    link: "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1",
+  },
 ];

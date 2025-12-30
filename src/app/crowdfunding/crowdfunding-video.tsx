@@ -13,7 +13,7 @@ export function CrowdfundingVideo() {
         </div>
       )}
       <iframe
-        src="https://www.youtube.com/embed/_wlfFe3Drww"
+        src="https://drive.google.com/file/d/1kja9R4gTfWO5jLdq0nAdJ6SU7-4vnUfJ/preview"
         title="TBRe25 Crowdfunding Campaign"
         className="absolute inset-0 h-full w-full"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

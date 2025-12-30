@@ -26,7 +26,7 @@ export default function Page() {
           <div className="container px-4 text-center">
             <div>
               <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
-                Support TBRe25
+                Support TBRe26
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-white/90">
                 Help us maintain our position as the #1 Electric Formula Student
@@ -44,7 +44,7 @@ export default function Page() {
           </div>
           <div className="prose prose-zinc max-w-none space-y-2">
             <p className="text-lg">
-              The TBRe25 Crowdfunder has officially begun and is now live! As
+              The TBRe26 Crowdfunder has officially begun and is now live! As
               the current #1 Electric Formula Student team in the UK, we believe
               this is the year we can win, and this is your opportunity to help
               us achieve that.
@@ -66,7 +66,7 @@ export default function Page() {
             className="w-full bg-[#105bab] text-white hover:bg-[#105bab]/90"
           >
             <a
-              href="https://www.crowdfunder.co.uk/p/team-bath-racing-electric-crowdfunder"
+              href="https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1"
               target="_blank"
               rel="noopener noreferrer"
             >
