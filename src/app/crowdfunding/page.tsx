@@ -29,8 +29,10 @@ export default function Page() {
                 Support TBRe26
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-white/90">
-                Help us maintain our position as the #1 Electric Formula Student
-                team in the UK
+                {/* Help us maintain our position as the #1 Electric Formula Student team in the UK */}
+                Join us on our journey to craft the UK's fastest, most reliable
+                electric Formula Student car, showcasing months of hard work on
+                the competition stage.
               </p>
             </div>
           </div>
@@ -44,20 +46,24 @@ export default function Page() {
           </div>
           <div className="prose prose-zinc max-w-none space-y-2">
             <p className="text-lg">
-              The TBRe26 Crowdfunder has officially begun and is now live! As
-              the current #1 Electric Formula Student team in the UK, we believe
-              this is the year we can win, and this is your opportunity to help
-              us achieve that.
+              The launch of our Crowdfunder is now live!
             </p>
             <p className="text-lg">
-              Please watch our video and visit our Crowdfunder page to discover
-              more about Formula Student TBRe and how you can contribute. We are
-              immensely grateful for any and all donations we receive and
-              sincerely appreciate all the support.
+              This year we are seeking success and can't wait to showcase our
+              hard work at competitions around the globe, but we couldn't do
+              this without your help.
             </p>
-            <p className="text-lg font-medium">
-              Include your name with your donation, and it will be featured on
-              the car!
+            <p className="text-lg">
+              Your donation goes towards a student led team full of passionate
+              students of all different degrees, ages and backgrounds. With over
+              200 members, we need you to join us on this journey to help meet
+              our goals for the 2026 season, including our target of £4,000 for
+              this Crowdfunder, the progression of TBReAI and the leap towards a
+              four-wheel drive car.
+            </p>
+            <p className="text-lg">
+              Led by students, designed by students, raced by students. Help us
+              make 2026 the best season yet!
             </p>
           </div>
           <Button
