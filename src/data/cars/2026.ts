@@ -319,9 +319,9 @@ export const car2026: Car = {
           // image: "josh_mobsby.jpg",
         },
         {
-          name: "Doian Sfeir",
+          name: "Dorian Sfeir",
           role: "Simulation Engineer",
-          // image: "doian_sfeir.jpg",
+          // image: "dorian_sfeir.jpg",
         },
         {
           name: "Raphael Gibberd",
