@@ -1,5 +1,6 @@
 "use client";
 
+import { NavbarLink } from "@/components/navbar-link";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,7 +10,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { navigation } from "@/data/navigation";
-import { cn } from "@/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,19 +37,12 @@ export function Navbar() {
 
         <nav className="hidden gap-6 md:flex">
           {navigation.map((link) => (
-            <Link
+            <NavbarLink
               key={link.name}
-              href={link.href}
-              className={cn(
-                "text-zinc-900 text-sm font-semibold transition-all hover:text-tbre-yellow",
-                link.href === "/"
-                  ? pathname === link.href && "text-tbre-yellow"
-                  : pathname.startsWith(link.href) && "text-tbre-yellow",
-              )}
-            >
-              {link.name}
-              {link.icon && <link.icon className="inline-block w-4 h-4 ml-1" />}
-            </Link>
+              link={link}
+              pathname={pathname}
+              variant="desktop"
+            />
           ))}
         </nav>
 
@@ -65,21 +58,12 @@ export function Navbar() {
             </SheetHeader>
             <nav className="mt-8 flex flex-col gap-4">
               {navigation.map((link) => (
-                <Link
+                <NavbarLink
                   key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "text-zinc-900 text-lg font-semibold transition-all hover:text-tbre-yellow",
-                    link.href === "/"
-                      ? pathname === link.href && "text-tbre-yellow"
-                      : pathname.startsWith(link.href) && "text-tbre-yellow",
-                  )}
-                >
-                  {link.name}
-                  {link.icon && (
-                    <link.icon className="inline-block w-5 h-5 ml-1" />
-                  )}
-                </Link>
+                  link={link}
+                  pathname={pathname}
+                  variant="mobile"
+                />
               ))}
             </nav>
           </SheetContent>

@@ -113,10 +113,9 @@ export default function Page() {
                 B
               </h2> */}
               <p className="text-lg text-zinc-600">
-                We take pride in our consistent position as the number
-                <span className="text-tbre-yellow"> #1 </span>
-                Electric Formula Student teams in the UK, a testament to our
-                commitment and excellence since 2015.
+                We take pride in our current position as one of the top Electric
+                Formula Student teams in the UK, a testament to our commitment
+                and excellence since 2015.
                 <br />
                 <br />
                 There is an emphasis within the team to produce bespoke,
