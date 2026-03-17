@@ -1,7 +1,7 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 import { blogs } from "@/data/blogs";
 import { cars } from "@/data/cars";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -26,7 +26,7 @@ export function getAdjacentBlogs(blogId: string) {
     .map((blog) => blog.slug)
     .sort()
     .reverse();
-  const currentIndex = sortedBlogs.findIndex((slug) => slug === blogId);
+  const currentIndex = sortedBlogs.indexOf(blogId);
 
   return {
     previousBlog:

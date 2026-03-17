@@ -1,13 +1,13 @@
 import "@/styles/globals.css";
 
-import { EventCountdown } from "@/components/event-countdown";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
-import { domain } from "@/data/domain";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import type { PropsWithChildren } from "react";
+import { EventCountdown } from "@/components/event-countdown";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { domain } from "@/data/domain";
 
 const font = Poppins({
   subsets: ["latin"],

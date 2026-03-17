@@ -54,9 +54,9 @@ export function CarModel({ src }: { src: string }) {
           // height: "400px",
         }
       }
-      className="w-full h-full"
+      className="h-full w-full"
     >
-      <button slot="ar-button" id="ar-button">
+      <button type="button" slot="ar-button" id="ar-button">
         View in your space
       </button>
 
@@ -72,34 +72,34 @@ export function CarModel({ src }: { src: string }) {
     </model-viewer>
   );
 
-  return (
-    <div>
-      {/* @ts-expect-error model-viewer */}
-      <model-viewer
-        src="/public/models/ferrari_f1_2019.glb"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        tone-mapping="commerce"
-        // poster="poster.webp"
-        poster="car.png"
-        shadow-intensity={1}
-      >
-        <div className="progress-bar hide" slot="progress-bar">
-          <div className="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <Image
-            src="https://modelviewer.dev/shared-assets/icons/hand.png"
-            alt="Hand icon"
-            unoptimized
-          />
-        </div>
-        {/* @ts-expect-error model-viewer */}
-      </model-viewer>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     {/* @ts-expect-error model-viewer */}
+  //     <model-viewer
+  //       src="/public/models/ferrari_f1_2019.glb"
+  //       ar
+  //       ar-modes="webxr scene-viewer quick-look"
+  //       camera-controls
+  //       tone-mapping="commerce"
+  //       // poster="poster.webp"
+  //       poster="car.png"
+  //       shadow-intensity={1}
+  //     >
+  //       <div className="progress-bar hide" slot="progress-bar">
+  //         <div className="update-bar"></div>
+  //       </div>
+  //       <button slot="ar-button" id="ar-button">
+  //         View in your space
+  //       </button>
+  //       <div id="ar-prompt">
+  //         <Image
+  //           src="https://modelviewer.dev/shared-assets/icons/hand.png"
+  //           alt="Hand icon"
+  //           unoptimized
+  //         />
+  //       </div>
+  //       {/* @ts-expect-error model-viewer */}
+  //     </model-viewer>
+  //   </div>
+  // );
 }

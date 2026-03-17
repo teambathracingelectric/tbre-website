@@ -1,9 +1,9 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { cars } from "@/data/cars";
 // import { ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { cars } from "@/data/cars";
 // import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-white" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container px-4 text-center">
-            <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
               Our Cars
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-white/90">
@@ -35,9 +35,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container px-4 py-16 mx-auto">
+      <section className="container mx-auto px-4 py-16">
         <div className="mb-12">
-          <h2 className="text-center text-2xl font-bold text-zinc-900">
+          <h2 className="text-center font-bold text-2xl text-zinc-900">
             Racing Through the Years
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
@@ -56,7 +56,7 @@ export default function Page() {
               >
                 <CardContent className="p-0">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-blue hover:bg-tbre-blue/90">
+                    <Badge className="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue hover:bg-tbre-blue/90">
                       {car.year}
                     </Badge>
                     <Image
@@ -68,7 +68,7 @@ export default function Page() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 p-6">
-                      <h2 className="text-2xl font-bold text-white">
+                      <h2 className="font-bold text-2xl text-white">
                         {car.name}
                       </h2>
                     </div>

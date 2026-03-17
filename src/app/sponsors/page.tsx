@@ -1,3 +1,7 @@
+import { ArrowRightIcon } from "lucide-react";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,10 +11,6 @@ import {
 } from "@/components/ui/card";
 import { sponsors } from "@/data/sponsors";
 import { cn } from "@/utils";
-import { ArrowRightIcon } from "lucide-react";
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sponsors",
@@ -23,9 +23,9 @@ const titleSponsor = sponsors[0].sponsors[0];
 export default function Page() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative w-full bg-tbre-blue py-8 min-h-[50vh] flex items-center justify-center">
+      <section className="relative flex min-h-[50vh] w-full items-center justify-center bg-tbre-blue py-8">
         <div className="container px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+          <h1 className="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
             Partner with Excellence
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/80">
@@ -55,8 +55,8 @@ export default function Page() {
 
       {/* Title Sponsor Section */}
       <section className="overflow-hidden border-y bg-zinc-50 py-20">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-16 text-center text-4xl font-bold tracking-tight text-zinc-900">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-16 text-center font-bold text-4xl text-zinc-900 tracking-tight">
             Title Sponsor
           </h2>
           <div className="grid gap-12 lg:grid-cols-2">
@@ -70,11 +70,12 @@ export default function Page() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <h3 className="mb-6 text-3xl font-bold text-zinc-900">
+              <h3 className="mb-6 font-bold text-3xl text-zinc-900">
                 {titleSponsor.name}
               </h3>
               <p
-                className="mb-8 text-lg leading-relaxed text-zinc-600"
+                className="mb-8 text-lg text-zinc-600 leading-relaxed"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: our data
                 dangerouslySetInnerHTML={{
                   __html:
                     titleSponsor.description ??
@@ -85,7 +86,7 @@ export default function Page() {
                 href={titleSponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-lg font-semibold text-tbre-blue hover:text-tbre-blue/90"
+                className="inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
               >
                 Visit {titleSponsor.name}{" "}
                 <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -97,13 +98,13 @@ export default function Page() {
 
       {/* Other Sponsors */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           {sponsors
             .slice(1)
             .filter((level) => level.sponsors.length)
             .map((level) => (
               <div key={level.level} className="mb-16 last:mb-0">
-                <h2 className="mb-8 text-2xl font-bold text-zinc-900">
+                <h2 className="mb-8 font-bold text-2xl text-zinc-900">
                   {level.level}
                 </h2>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -136,13 +137,14 @@ export default function Page() {
                               unoptimized
                             />
                           </Link>
-                          <h3 className="text-xl font-bold text-zinc-900">
+                          <h3 className="font-bold text-xl text-zinc-900">
                             {sponsor.name}
                           </h3>
                         </CardHeader>
                         <CardContent>
                           <p
                             className="text-zinc-600"
+                            // biome-ignore lint/security/noDangerouslySetInnerHtml: our data
                             dangerouslySetInnerHTML={{
                               __html:
                                 sponsor.description ??

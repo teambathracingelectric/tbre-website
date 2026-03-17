@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export function CarGallery({
   images,
@@ -57,7 +57,7 @@ export function CarGallery({
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-2 text-white hover:bg-white/20 cursor-pointer"
+              className="absolute top-2 right-2 cursor-pointer text-white hover:bg-white/20"
               onClick={() => setSelectedImage(null)}
             >
               <XIcon className="h-6 w-6" />
@@ -66,7 +66,7 @@ export function CarGallery({
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:bg-white/20 cursor-pointer"
+                className="cursor-pointer text-white hover:bg-white/20"
                 onClick={() =>
                   setSelectedImage((prev) =>
                     prev !== null
@@ -82,7 +82,7 @@ export function CarGallery({
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:bg-white/20 cursor-pointer"
+                className="cursor-pointer text-white hover:bg-white/20"
                 onClick={() =>
                   setSelectedImage((prev) =>
                     prev !== null ? (prev + 1) % images.length : null,

@@ -1,7 +1,7 @@
-import type { NavigationLink } from "@/data/navigation";
-import { cn } from "@/utils";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
+import type { NavigationLink } from "@/data/navigation";
+import { cn } from "@/utils";
 
 type NavbarLinkVariant = "desktop" | "mobile";
 

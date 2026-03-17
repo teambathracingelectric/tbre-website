@@ -1,5 +1,5 @@
-import { StatsSection } from "@/components/stats-section";
 import type { Metadata } from "next";
+import { StatsSection } from "@/components/stats-section";
 
 export const metadata: Metadata = {
   title: "About",
@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="pt-8 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold">About</h1>
+    <main className="flex min-h-screen flex-col items-center pt-8">
+      <h1 className="text-center font-extrabold text-4xl">About</h1>
       <br />
-      <p className="md:w-2/3 p-4">
+      <p className="p-4 md:w-2/3">
         Team Bath Racing Electric (TBRe) was founded in 2015. We are an exciting
         and innovative student motorsport team based at the University of Bath.
         Our team of undergraduates from across the university design, build and

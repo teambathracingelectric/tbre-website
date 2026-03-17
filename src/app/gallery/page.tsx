@@ -1,6 +1,6 @@
-import { GalleryContent } from "@/app/gallery/gallery-content";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { GalleryContent } from "@/app/gallery/gallery-content";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -21,7 +21,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-white" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container px-4 text-center">
-            <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
               Gallery
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-white/90">

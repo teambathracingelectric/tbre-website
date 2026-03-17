@@ -1,8 +1,8 @@
 "use client";
 
-import { eventsData } from "@/data/events";
 import { TimerIcon } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { eventsData } from "@/data/events";
 
 type TimeLeft = {
   days: number;
@@ -12,7 +12,7 @@ type TimeLeft = {
 };
 
 function calculateTimeLeft(targetDate: Date): TimeLeft {
-  const difference = +targetDate - +new Date();
+  const difference = +targetDate - Date.now();
 
   if (difference > 0) {
     return {
@@ -71,11 +71,11 @@ export function EventCountdown() {
   }
 
   return (
-    <div className="bg-tbre-blue py-4 text-white w-full">
-      <div className="mx-auto container flex flex-col items-center justify-between gap-4 sm:flex-row px-4">
+    <div className="w-full bg-tbre-blue py-4 text-white">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row">
         <div className="flex items-center gap-2">
           <TimerIcon className="h-5 w-5 text-tbre-yellow" />
-          <span className="font-medium text-center">
+          <span className="text-center font-medium">
             <span className="hidden sm:inline">
               Next {nextEvent.type ?? "Event"}:{" "}
             </span>
@@ -84,7 +84,7 @@ export function EventCountdown() {
                 href={nextEvent.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-tbre-yellow transition-colors"
+                className="transition-colors hover:text-tbre-yellow"
               >
                 {nextEvent.name}
               </a>
@@ -96,25 +96,25 @@ export function EventCountdown() {
 
         <div className="flex gap-4 text-sm">
           <div className="text-center">
-            <span className="block text-xl font-bold text-tbre-yellow">
+            <span className="block font-bold text-tbre-yellow text-xl">
               {timeLeft.days}
             </span>
             <span className="text-white/80">Days</span>
           </div>
           <div className="text-center">
-            <span className="block text-xl font-bold text-tbre-yellow">
+            <span className="block font-bold text-tbre-yellow text-xl">
               {timeLeft.hours}
             </span>
             <span className="text-white/80">Hours</span>
           </div>
           <div className="text-center">
-            <span className="block text-xl font-bold text-tbre-yellow">
+            <span className="block font-bold text-tbre-yellow text-xl">
               {timeLeft.minutes}
             </span>
             <span className="text-white/80">Minutes</span>
           </div>
           <div className="text-center">
-            <span className="block text-xl font-bold text-tbre-yellow">
+            <span className="block font-bold text-tbre-yellow text-xl">
               {timeLeft.seconds}
             </span>
             <span className="text-white/80">Seconds</span>

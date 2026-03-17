@@ -8,7 +8,7 @@ const FORM_LINK =
 
 export function RecruitmentSection() {
   return (
-    <section className="container px-4 py-16 mx-auto">
+    <section className="container mx-auto px-4 py-16">
       {recruitment.map((team) => (
         <div
           key={team.name}
@@ -17,28 +17,28 @@ export function RecruitmentSection() {
           style={{ scrollMarginTop: "144px" }}
         >
           <div className="mb-12">
-            <h2 className="text-center text-2xl font-bold text-zinc-900">
+            <h2 className="text-center font-bold text-2xl text-zinc-900">
               {team.name} Team Roles
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
               {team.description}
             </p>
             {team.additionalText && (
-              <p className="mx-auto mt-4 max-w-2xl text-center text-zinc-600 whitespace-pre-line">
+              <p className="mx-auto mt-4 max-w-2xl whitespace-pre-line text-center text-zinc-600">
                 {team.additionalText}
               </p>
             )}
-            <div className="flex flex-col items-center mt-2 mb-2">
+            <div className="mt-2 mb-2 flex flex-col items-center">
               <span className="text-sm text-zinc-500">
                 <strong>Contact:</strong> {team.contact} &nbsp;|&nbsp;{" "}
                 <strong>Members:</strong> {team.members}
               </span>
             </div>
-            <div className="flex justify-center mt-6">
+            <div className="mt-6 flex justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-tbre-yellow hover:bg-tbre-yellow/90 text-white"
+                className="bg-tbre-yellow text-white hover:bg-tbre-yellow/90"
               >
                 <a target="_blank" rel="noopener noreferrer" href={FORM_LINK}>
                   Apply to Join
@@ -48,7 +48,7 @@ export function RecruitmentSection() {
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {team.roles.map((role) => (
-              <Card key={role.title} className="hover:shadow-lg transition">
+              <Card key={role.title} className="transition hover:shadow-lg">
                 <CardHeader>
                   <CardTitle className="mb-2 text-xl">{role.title}</CardTitle>
                 </CardHeader>

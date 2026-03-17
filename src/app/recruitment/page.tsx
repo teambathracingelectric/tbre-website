@@ -1,7 +1,7 @@
-import { RecruitmentSection } from "@/components/recruitment-section";
-import { recruitment } from "@/data/recruitment";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { RecruitmentSection } from "@/components/recruitment-section";
+import { recruitment } from "@/data/recruitment";
 
 export const metadata: Metadata = {
   title: "Recruitment",
@@ -28,7 +28,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-white" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container px-4 text-center">
-            <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
               Join Our Team
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-white/90">
@@ -39,13 +39,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container px-4 pt-16 mx-auto">
+      <section className="container mx-auto px-4 pt-16">
         <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
           {categories.map((category) => (
             <a
               key={category.href}
               href={category.href}
-              className="cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors bg-zinc-100 text-zinc-900 hover:bg-zinc-200"
+              className="cursor-pointer rounded-full bg-zinc-100 px-4 py-2 font-medium text-sm text-zinc-900 transition-colors hover:bg-zinc-200"
             >
               {category.name}
             </a>

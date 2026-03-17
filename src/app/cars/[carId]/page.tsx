@@ -1,14 +1,14 @@
+import { ArrowLeftIcon, ArrowRightIcon, ChevronLeftIcon } from "lucide-react";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { CarGallery } from "@/components/car-gallery";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cars } from "@/data/cars";
 import { domain } from "@/data/domain";
 import { getAdjacentYears } from "@/utils";
-import { ArrowLeftIcon, ArrowRightIcon, ChevronLeftIcon } from "lucide-react";
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return cars.map((car) => ({
@@ -111,7 +111,7 @@ export default async function Page(props: { params: Promise<Params> }) {
     <div className="min-h-screen bg-white">
       {/* Navigation Section */}
       <section className="border-b bg-white">
-        <div className="container flex items-center justify-between px-4 py-4 mx-auto">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
           <Button asChild variant="ghost" className="gap-2">
             <Link href="/cars">
               <ChevronLeftIcon className="h-4 w-4" />
@@ -151,7 +151,7 @@ export default async function Page(props: { params: Promise<Params> }) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-white" />
         <div className="absolute inset-0 flex items-end justify-start p-8">
-          <div className="container px-4 mx-auto">
+          <div className="container mx-auto px-4">
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -163,23 +163,24 @@ export default async function Page(props: { params: Promise<Params> }) {
               <p className="text-xl text-tbre-blue">{carData.year}</p>
             </motion.div> */}
             <div>
-              <h1 className="mb-2 text-5xl font-bold tracking-tighter text-white sm:text-6xl underline decoration-tbre-yellow">
+              <h1 className="mb-2 font-bold text-5xl text-white tracking-tighter underline decoration-tbre-yellow sm:text-6xl">
                 {car.name}
               </h1>
-              <p className="text-xl text-tbre-blue">{car.year}</p>
+              <p className="text-tbre-blue text-xl">{car.year}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <main className="container space-y-20 px-4 py-16 mx-auto">
+      <main className="container mx-auto space-y-20 px-4 py-16">
         {/* Overview Section */}
         <section className="grid gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-zinc-900">About the Car</h2>
+            <h2 className="font-bold text-3xl text-zinc-900">About the Car</h2>
             {/* <p className="text-lg text-zinc-600">{carData.text}</p> */}
             <p
               className="text-lg text-zinc-600"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: our data
               dangerouslySetInnerHTML={{
                 __html: car.text ?? "",
               }}
@@ -200,14 +201,14 @@ export default async function Page(props: { params: Promise<Params> }) {
             alt="Car detail"
             width={600}
             height={400}
-            className="rounded-lg object-cover mt-16"
+            className="mt-16 rounded-lg object-cover"
             unoptimized
           />
         </section>
 
         {/* Specifications Section */}
         <section className="space-y-8">
-          <h2 className="text-3xl font-bold text-zinc-900">Specifications</h2>
+          <h2 className="font-bold text-3xl text-zinc-900">Specifications</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: "Weight", value: "230 kg" },
@@ -221,7 +222,7 @@ export default async function Page(props: { params: Promise<Params> }) {
             ].map((spec) => (
               <Card key={spec.label} className="bg-zinc-50">
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  <div className="text-2xl font-bold text-tbre-blue text-center">
+                  <div className="text-center font-bold text-2xl text-tbre-blue">
                     {spec.value}
                   </div>
                   <div className="text-sm text-zinc-600">{spec.label}</div>
@@ -233,7 +234,7 @@ export default async function Page(props: { params: Promise<Params> }) {
 
         {/* Gallery Section */}
         <section className="space-y-8">
-          <h2 className="text-3xl font-bold text-zinc-900">Gallery</h2>
+          <h2 className="font-bold text-3xl text-zinc-900">Gallery</h2>
           <CarGallery images={carGalleryImages} />
         </section>
 
@@ -250,8 +251,8 @@ export default async function Page(props: { params: Promise<Params> }) {
 
       {/* Race Results Section */}
       <section className="border-y bg-zinc-50 py-20">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-12 text-center text-3xl font-bold text-zinc-900">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-12 text-center font-bold text-3xl text-zinc-900">
             Race Results
           </h2>
           <div className="space-y-6">
@@ -262,13 +263,13 @@ export default async function Page(props: { params: Promise<Params> }) {
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="space-y-1">
-                    <h3 className="text-lg font-semibold text-zinc-900">
+                    <h3 className="font-semibold text-lg text-zinc-900">
                       {result.competition}
                     </h3>
                     <p className="text-sm text-zinc-600">{result.category}</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-tbre-blue">
+                    <div className="font-bold text-2xl text-tbre-blue">
                       {result.position}
                     </div>
                     <div className="text-sm text-zinc-600">
@@ -280,7 +281,7 @@ export default async function Page(props: { params: Promise<Params> }) {
                   {result.highlights.map((highlight) => (
                     <span
                       key={highlight}
-                      className="rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue"
+                      className="rounded-full bg-tbre-blue/10 px-3 py-1 font-medium text-sm text-tbre-blue"
                     >
                       {highlight}
                     </span>

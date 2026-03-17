@@ -1,19 +1,19 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { TeamMember } from "@/data/cars";
 import { car } from "@/data/team";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
 export function TeamSection() {
   return (
-    <section className="container space-y-20 px-4 py-16 mx-auto">
+    <section className="container mx-auto space-y-20 px-4 py-16">
       {car.team?.map((category) => (
         <div key={category.category} className="space-y-8">
           <div className="flex items-center gap-4">
-            <h2 className="text-2xl font-bold text-zinc-900">
+            <h2 className="font-bold text-2xl text-zinc-900">
               {category.category}
             </h2>
             <div className="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent" />
@@ -67,7 +67,7 @@ function TeamMemberCard({
           <CardContent className="p-0">
             <div className="relative aspect-square overflow-hidden">
               {member.lead && (
-                <Badge className="z-10 rounded-full absolute right-2 top-2 bg-tbre-blue hover:bg-tbre-blue/90">
+                <Badge className="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue hover:bg-tbre-blue/90">
                   Lead
                 </Badge>
               )}
@@ -84,13 +84,13 @@ function TeamMemberCard({
               />
             </div>
             <div className="space-y-1.5 p-4">
-              <h3 className="font-semibold leading-none text-zinc-900">
+              <h3 className="font-semibold text-zinc-900 leading-none">
                 {member.link ? (
                   <a
                     href={member.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-tbre-yellow transition-all underline decoration-tbre-yellow"
+                    className="underline decoration-tbre-yellow transition-all hover:text-tbre-yellow"
                   >
                     {member.name}
                   </a>

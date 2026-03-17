@@ -1,8 +1,8 @@
-import { CrowdfundingVideo } from "@/app/crowdfunding/crowdfunding-video";
-import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CrowdfundingVideo } from "@/app/crowdfunding/crowdfunding-video";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Crowdfunding",
@@ -25,7 +25,7 @@ export default function Page() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container px-4 text-center">
             <div>
-              <h1 className="mb-4 text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+              <h1 className="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
                 Support TBRe26
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-white/90">
@@ -39,7 +39,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container px-4 py-16 mx-auto">
+      <section className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-6xl space-y-8">
           <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-zinc-100">
             <CrowdfundingVideo />

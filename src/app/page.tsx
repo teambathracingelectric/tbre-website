@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   // ArrowRightIcon,
   AwardIcon,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   return (
@@ -26,7 +26,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container px-4 text-center">
-            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="mb-6 font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
               {/* <span className="text-tbre-blue">Team Bath Racing</span>{" "} */}
               <span className="text-white">Team Bath Racing</span>{" "}
               <span className="text-tbre-yellow">Electric</span>
@@ -38,7 +38,7 @@ export default function Page() {
               height={200}
               className="mx-auto w-1/2"
             /> */}
-            <p className="mx-auto mb-8 max-w-2xl text-xl text-white text-pretty">
+            <p className="mx-auto mb-8 max-w-2xl text-pretty text-white text-xl">
               Formula Student Electric Racing Team based at the University of
               Bath
             </p>
@@ -53,7 +53,7 @@ export default function Page() {
               <Button
                 asChild
                 size="lg"
-                className="bg-tbre-yellow hover:bg-tbre-yellow/90 text-white"
+                className="bg-tbre-yellow text-white hover:bg-tbre-yellow/90"
               >
                 <Link href="/sponsors">Become a Sponsor</Link>
               </Button>
@@ -64,7 +64,7 @@ export default function Page() {
 
       {/* A Section */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 lg:order-2">
               {/* <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 sm:text-4xl">
@@ -106,7 +106,7 @@ export default function Page() {
 
       {/* B Section */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6">
               {/* <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 sm:text-4xl">
@@ -138,8 +138,8 @@ export default function Page() {
 
       {/* About Us */}
       <section className="bg-tbre-yellow py-20">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-12 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-12 text-center font-bold text-3xl text-white tracking-tighter sm:text-4xl">
             About Us
           </h2>
           <div className="grid gap-8 text-white lg:grid-cols-2">
@@ -178,7 +178,7 @@ export default function Page() {
 
       {/* Stats Panel */}
       <section className="bg-tbre-blue py-20 text-white">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: ClockIcon, value: "10+", label: "Years of Racing" },
@@ -188,7 +188,7 @@ export default function Page() {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <stat.icon className="mx-auto mb-4 h-8 w-8 text-tbre-yellow" />
-                <div className="text-4xl font-bold text-tbre-yellow">
+                <div className="font-bold text-4xl text-tbre-yellow">
                   {stat.value}
                 </div>
                 <div className="mt-2 text-white/80">{stat.label}</div>
@@ -200,10 +200,10 @@ export default function Page() {
 
       {/* Our Achievements */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 lg:order-2">
-              <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 sm:text-4xl">
+              <h2 className="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
                 Our Achievements
               </h2>
               <p className="text-lg text-zinc-600">
@@ -233,10 +233,10 @@ export default function Page() {
 
       {/* Our Members */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 sm:text-4xl">
+              <h2 className="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
                 Our Members
               </h2>
               <p className="text-lg text-zinc-600">
@@ -266,10 +266,10 @@ export default function Page() {
 
       {/* Our Sponsors */}
       <section className="py-20">
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 lg:order-2">
-              <h2 className="text-3xl font-bold tracking-tighter text-zinc-900 sm:text-4xl">
+              <h2 className="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
                 Our Sponsors
               </h2>
               <p className="text-lg text-zinc-600">

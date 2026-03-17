@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { blogs } from "@/data/blogs";
-import { getAdjacentBlogs } from "@/utils";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -11,6 +8,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { blogs } from "@/data/blogs";
+import { getAdjacentBlogs } from "@/utils";
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
@@ -59,7 +59,7 @@ export default async function Page(props: { params: Promise<Params> }) {
     <div className="min-h-screen bg-white">
       {/* Navigation Bar */}
       <div className="border-b">
-        <div className="container flex items-center justify-between px-4 py-4 mx-auto">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
           <Button asChild variant="ghost" className="gap-2">
             <Link href="/blog">
               <ArrowLeftIcon className="h-4 w-4" />
@@ -106,10 +106,10 @@ export default async function Page(props: { params: Promise<Params> }) {
           <div className="mx-auto max-w-3xl">
             {/* Article Header */}
             <div className="mb-8 space-y-4">
-              <div className="inline-block rounded-full bg-tbre-blue/10 px-3 py-1 text-sm font-medium text-tbre-blue">
+              <div className="inline-block rounded-full bg-tbre-blue/10 px-3 py-1 font-medium text-sm text-tbre-blue">
                 {blog.category}
               </div>
-              <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+              <h1 className="font-bold text-4xl text-zinc-900 tracking-tight sm:text-5xl">
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-600">
@@ -149,12 +149,13 @@ export default async function Page(props: { params: Promise<Params> }) {
             {/* Article Body */}
             <div
               className="prose prose-zinc max-w-none"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: our data
               dangerouslySetInnerHTML={{ __html: blog.content }}
             />
 
             {/* Related Posts */}
             <div className="mt-16 border-t pt-16">
-              <h2 className="mb-8 text-2xl font-bold text-zinc-900">
+              <h2 className="mb-8 font-bold text-2xl text-zinc-900">
                 Related Articles
               </h2>
               <div className="grid gap-8 sm:grid-cols-2">
@@ -173,7 +174,7 @@ export default async function Page(props: { params: Promise<Params> }) {
                         unoptimized
                       />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-zinc-900 group-hover:text-tbre-blue">
+                    <h3 className="mt-4 font-semibold text-lg text-zinc-900 group-hover:text-tbre-blue">
                       {relatedBlog.title}
                     </h3>
                   </Link>

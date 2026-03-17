@@ -1,5 +1,9 @@
 "use client";
 
+import { MenuIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NavbarLink } from "@/components/navbar-link";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,17 +14,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { navigation } from "@/data/navigation";
-import { MenuIcon } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white border-t-8 border-t-tbre-yellow">
-      <div className="h-30 container flex items-center justify-between px-4 mx-auto">
+    <header className="sticky top-0 z-50 w-full border-t-8 border-t-tbre-yellow border-b bg-white">
+      <div className="container mx-auto flex h-30 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           {/* <span className="text-2xl font-bold">
             <span className="text-tbre-blue">TBRe</span>{" "}

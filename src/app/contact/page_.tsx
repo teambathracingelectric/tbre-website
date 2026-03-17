@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="pt-8 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold">Contact</h1>
+    <main className="flex min-h-screen flex-col items-center pt-8">
+      <h1 className="text-center font-extrabold text-4xl">Contact</h1>
       <br />
       <p>Some content about the contact</p>
     </main>

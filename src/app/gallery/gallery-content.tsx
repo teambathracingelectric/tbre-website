@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { cars } from "@/data/cars";
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { cars } from "@/data/cars";
 
 const categories = [
   "All",
@@ -98,14 +98,15 @@ export function GalleryContent() {
 
   return (
     <>
-      <section className="container px-4 py-16 mx-auto">
+      <section className="container mx-auto px-4 py-16">
         {/* Category Filter */}
         <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
           {categories.map((category) => (
             <button
               key={category}
+              type="button"
               onClick={() => setSelectedCategory(category)}
-              className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+              className={`cursor-pointer rounded-full px-4 py-2 font-medium text-sm transition-colors ${
                 selectedCategory === category
                   ? "bg-tbre-blue text-white"
                   : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200"
@@ -173,7 +174,7 @@ export function GalleryContent() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-2 top-2 text-white hover:bg-white/20 cursor-pointer"
+                className="absolute top-2 right-2 cursor-pointer text-white hover:bg-white/20"
                 onClick={() => setSelectedImage(null)}
               >
                 <XIcon className="h-6 w-6" />
@@ -182,7 +183,7 @@ export function GalleryContent() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/20 cursor-pointer"
+                  className="cursor-pointer text-white hover:bg-white/20"
                   onClick={() => {
                     const currentIndex = galleryImages.findIndex(
                       (img) => img.id === selectedImage,
@@ -200,7 +201,7 @@ export function GalleryContent() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/20 cursor-pointer"
+                  className="cursor-pointer text-white hover:bg-white/20"
                   onClick={() => {
                     const currentIndex = galleryImages.findIndex(
                       (img) => img.id === selectedImage,
