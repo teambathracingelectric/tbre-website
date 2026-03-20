@@ -404,46 +404,52 @@ export const car2026: Car = {
       category: "Sponsorship",
       members: [
         {
-          name: "Tom Morley",
+          name: "Oli Sargent",
           role: "Sponsorship Manager",
           lead: true,
-          image: "tom_morley.jpg",
+          // image: "oli_sargent.jpg",
         },
-        {
-          name: "Andrew Barion",
-          role: "Sponsorship Coordinator",
-          // image: "andrew_barion.jpg",
-        },
-        {
-          name: "Anya Cooper",
-          role: "Sponsorship Coordinator",
-          // image: "anya_cooper.jpg",
-        },
-        {
-          name: "Chirag Sharma",
-          role: "Sponsorship Coordinator",
-          // image: "chirag_sharma.jpg",
-        },
-        {
-          name: "Daryna Terokhina",
-          role: "Sponsorship Coordinator",
-          image: "daryna_terokhina.jpg",
-        },
-        {
-          name: "Meghan Khasnis",
-          role: "Sponsorship Coordinator",
-          // image: "meghan_khasnis.jpg",
-        },
-        {
-          name: "Melissa Ghapantsyan",
-          role: "Sponsorship Coordinator",
-          image: "melissa_ghapantsyan.jpg",
-        },
-        {
-          name: "Oliver Pearce",
-          role: "Sponsorship Coordinator",
-          // image: "oliver_pearce.jpg",
-        },
+        // {
+        //   name: "Tom Morley",
+        //   role: "Sponsorship Manager",
+        //   lead: true,
+        //   image: "tom_morley.jpg",
+        // },
+        // {
+        //   name: "Andrew Barion",
+        //   role: "Sponsorship Coordinator",
+        //   // image: "andrew_barion.jpg",
+        // },
+        // {
+        //   name: "Anya Cooper",
+        //   role: "Sponsorship Coordinator",
+        //   // image: "anya_cooper.jpg",
+        // },
+        // {
+        //   name: "Chirag Sharma",
+        //   role: "Sponsorship Coordinator",
+        //   // image: "chirag_sharma.jpg",
+        // },
+        // {
+        //   name: "Daryna Terokhina",
+        //   role: "Sponsorship Coordinator",
+        //   image: "daryna_terokhina.jpg",
+        // },
+        // {
+        //   name: "Meghan Khasnis",
+        //   role: "Sponsorship Coordinator",
+        //   // image: "meghan_khasnis.jpg",
+        // },
+        // {
+        //   name: "Melissa Ghapantsyan",
+        //   role: "Sponsorship Coordinator",
+        //   image: "melissa_ghapantsyan.jpg",
+        // },
+        // {
+        //   name: "Oliver Pearce",
+        //   role: "Sponsorship Coordinator",
+        //   // image: "oliver_pearce.jpg",
+        // },
       ],
     },
   ],
