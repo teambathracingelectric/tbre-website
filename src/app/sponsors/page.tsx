@@ -42,13 +42,13 @@ export default function Page() {
             size="lg"
             className="bg-tbre-yellow text-white hover:bg-tbre-yellow/90"
           >
-            <Link
-              href="/2024-25_TBRe_Sponsorship_brochure.pdf"
-              download
+            <a
+              href="https://drive.google.com/file/d/1oTeHoMViRoouj5Zl5DmZSOH-BuBCpAAd/view"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Download our Sponsorship Prospectus
-            </Link>
+            </a>
           </Button>
         </div>
       </section>
