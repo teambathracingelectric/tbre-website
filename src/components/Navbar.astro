@@ -1,0 +1,150 @@
+---
+import { ExternalLink, Menu, Sparkles, X } from "@lucide/astro";
+import { navigation } from "@/config/site";
+
+function normalizePath(path: string) {
+  const trimmedPath = path.replace(/\/+$/, "");
+  return trimmedPath === "" ? "/" : trimmedPath;
+}
+
+function isExternalHref(href: string) {
+  return href.startsWith("http");
+}
+
+const pathname = normalizePath(Astro.url.pathname);
+
+function isActive(href: string) {
+  if (isExternalHref(href)) {
+    return false;
+  }
+
+  const hrefPath = normalizePath(href);
+  return hrefPath === "/"
+    ? pathname === hrefPath
+    : pathname === hrefPath || pathname.startsWith(`${hrefPath}/`);
+}
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-t-8 border-t-tbre-yellow border-b bg-white"
+>
+  <div class="container mx-auto flex h-30 items-center justify-between px-4">
+    <a
+      href="/"
+      class="flex items-center space-x-2"
+      aria-label="Team Bath Racing Electric home"
+    >
+      <img
+        src="/tbre_logo_colour.png"
+        alt="Team Bath Racing Electric (TBRe) logo"
+        width="200"
+        height="200"
+        class="h-auto w-50"
+      />
+    </a>
+
+    <nav class="hidden gap-6 md:flex" aria-label="Primary navigation">
+      {
+        navigation.map((link) => {
+          const external = isExternalHref(link.href);
+          const active = isActive(link.href);
+
+          return (
+            <a
+              href={link.href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              aria-current={active ? "page" : undefined}
+              class:list={[
+                "inline-flex items-center gap-1 text-sm font-semibold text-zinc-900 transition-all hover:text-tbre-yellow",
+                active && "text-tbre-yellow",
+              ]}
+            >
+              <span>{link.name}</span>
+              {link.icon === "Sparkles" && <Sparkles class="h-4 w-4" />}
+              {external && <ExternalLink class="h-4 w-4" />}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <button
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-md text-zinc-900 transition hover:bg-zinc-100 md:hidden"
+      data-mobile-menu-open
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      <Menu class="h-6 w-6" />
+    </button>
+  </div>
+
+  <div
+    class="fixed inset-0 z-50 hidden bg-black/70 md:hidden"
+    data-mobile-menu-overlay
+  >
+    <div
+      class="ml-auto flex h-full w-3/4 max-w-sm flex-col gap-6 border-l bg-white p-6 shadow-xl"
+      data-mobile-menu-panel
+    >
+      <div class="flex items-center justify-between">
+        <span class="font-semibold text-lg text-zinc-900">TBRe</span>
+        <button
+          type="button"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-md transition hover:bg-zinc-100"
+          data-mobile-menu-close
+          aria-label="Close navigation menu"
+        >
+          <X class="h-5 w-5" />
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4" aria-label="Mobile navigation">
+        {
+          navigation.map((link) => {
+            const external = isExternalHref(link.href);
+            const active = isActive(link.href);
+
+            return (
+              <a
+                href={link.href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                aria-current={active ? "page" : undefined}
+                class:list={[
+                  "inline-flex items-center gap-2 text-lg font-semibold text-zinc-900 transition-all hover:text-tbre-yellow",
+                  active && "text-tbre-yellow",
+                ]}
+              >
+                <span>{link.name}</span>
+                {link.icon === "Sparkles" && <Sparkles class="h-5 w-5" />}
+                {external && <ExternalLink class="h-5 w-5" />}
+              </a>
+            );
+          })
+        }
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const openButton = document.querySelector("[data-mobile-menu-open]");
+  const closeButton = document.querySelector("[data-mobile-menu-close]");
+  const overlay = document.querySelector("[data-mobile-menu-overlay]");
+
+  function setMenuOpen(open: boolean) {
+    overlay?.classList.toggle("hidden", !open);
+    openButton?.setAttribute("aria-expanded", String(open));
+    document.documentElement.classList.toggle("overflow-hidden", open);
+  }
+
+  openButton?.addEventListener("click", () => setMenuOpen(true));
+  closeButton?.addEventListener("click", () => setMenuOpen(false));
+  overlay?.addEventListener("click", (event) => {
+    if (event.target === overlay) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+</script>

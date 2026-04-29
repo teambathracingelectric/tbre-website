@@ -1,0 +1,60 @@
+---
+import EventCountdown from "@/components/EventCountdown.astro";
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+import { SITE_URL } from "@/config/site";
+import "@/styles/globals.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+};
+
+const {
+  title,
+  description = "Team Bath Racing Electric (TBRe) is a student-led Formula Student team from the University of Bath.",
+  image = "/tbre_logo_colour.png",
+} = Astro.props;
+
+const pageTitle = title
+  ? `${title} | Team Bath Racing Electric`
+  : "Team Bath Racing Electric";
+const canonical = new URL(Astro.url.pathname, SITE_URL).toString();
+const imageUrl = new URL(image, SITE_URL).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Team Bath Racing Electric, TBRe, Formula Student, University of Bath"
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content="en_GB" />
+  </head>
+  <body>
+    <EventCountdown />
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>

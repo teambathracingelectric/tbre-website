@@ -5,40 +5,42 @@
   "description": "tbre-website",
   "author": "Tom Heaton <tom@tomheaton.dev> (https://tomheaton.dev)",
   "scripts": {
-    "build": "next build --turbopack",
-    "clean": "rm -rf node_modules .next",
-    "dev": "next dev --turbopack",
+    "build": "astro build",
+    "check": "astro check",
+    "clean": "rm -rf node_modules .astro dist",
+    "dev": "astro dev",
     "format": "biome format --write",
     "lint": "biome check",
     "lint:ci": "biome ci",
     "lint:fix": "biome check --fix --unsafe",
-    "start": "next start"
+    "preview": "astro preview",
+    "start": "astro preview",
+    "typecheck": "astro sync && tsgo -b",
+    "unused": "knip --cache",
+    "validate:content": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
-    "@google/model-viewer": "^4.2.0",
-    "@radix-ui/react-dialog": "^1.1.13",
-    "@radix-ui/react-slot": "^1.2.4",
-    "@vercel/analytics": "^2.0.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "dayjs": "^1.11.20",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "0.577.0",
-    "next": "16.1.7",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-icons": "^5.6.0",
-    "tailwind-merge": "^3.5.0",
-    "three": "0.183.2"
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/sitemap": "^3.7.2",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@lucide/astro": "^1.14.0",
+    "astro": "^6.1.10"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "^2.4.7",
-    "@tailwindcss/postcss": "^4.2.1",
-    "@types/node": "^24.12.0",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "postcss": "^8.5.8",
+    "@tailwindcss/vite": "^4.2.4",
+    "@types/node": "^24.12.2",
+    "@typescript/native-preview": "7.0.0-dev.20260421.2",
+    "knip": "^6.9.0",
     "tailwindcss": "^4.2.1",
-    "typescript": "^5.8.3"
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "yaml": "^2.8.3"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": "24.x",
+    "pnpm": "10.x"
   }
 }

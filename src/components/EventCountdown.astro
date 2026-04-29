@@ -1,0 +1,102 @@
+---
+import { Timer } from "@lucide/astro";
+import { getActiveEvents } from "@/lib/content";
+
+const events = await getActiveEvents();
+const serializedEvents = events.map((event) => ({
+  name: event.data.name,
+  date: event.data.date.toISOString(),
+  type: event.data.type,
+  link: event.data.link,
+}));
+---
+
+<div
+  class="hidden w-full bg-tbre-blue py-4 text-white"
+  data-event-countdown
+  data-events={JSON.stringify(serializedEvents)}
+>
+  <div class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row">
+    <div class="flex items-center gap-2">
+      <Timer class="h-5 w-5 text-tbre-yellow" />
+      <span class="text-center font-medium" data-event-title></span>
+    </div>
+
+    <div class="flex gap-4 text-sm" aria-label="Event countdown">
+      <div class="text-center">
+        <span class="block font-bold text-tbre-yellow text-xl" data-count-days>0</span>
+        <span class="text-white/80">Days</span>
+      </div>
+      <div class="text-center">
+        <span class="block font-bold text-tbre-yellow text-xl" data-count-hours>0</span>
+        <span class="text-white/80">Hours</span>
+      </div>
+      <div class="text-center">
+        <span class="block font-bold text-tbre-yellow text-xl" data-count-minutes>0</span>
+        <span class="text-white/80">Minutes</span>
+      </div>
+      <div class="text-center">
+        <span class="block font-bold text-tbre-yellow text-xl" data-count-seconds>0</span>
+        <span class="text-white/80">Seconds</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const countdown = document.querySelector<HTMLElement>("[data-event-countdown]");
+  const events = JSON.parse(countdown?.dataset.events ?? "[]") as {
+    name: string;
+    date: string;
+    type?: string;
+    link?: string;
+  }[];
+  const nextEvent = events
+    .filter((event) => new Date(event.date).getTime() > Date.now())
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
+
+  function setText(selector: string, value: string | number) {
+    const element = countdown?.querySelector(selector);
+    if (element) element.textContent = String(value);
+  }
+
+  function update() {
+    if (!countdown || !nextEvent) return;
+    const difference = new Date(nextEvent.date).getTime() - Date.now();
+    if (difference <= 0) {
+      countdown.classList.add("hidden");
+      return;
+    }
+
+    setText("[data-count-days]", Math.floor(difference / (1000 * 60 * 60 * 24)));
+    setText("[data-count-hours]", Math.floor((difference / (1000 * 60 * 60)) % 24));
+    setText("[data-count-minutes]", Math.floor((difference / 1000 / 60) % 60));
+    setText("[data-count-seconds]", Math.floor((difference / 1000) % 60));
+    countdown.classList.remove("hidden");
+  }
+
+  if (countdown && nextEvent) {
+    const label = `Next ${nextEvent.type ?? "Event"}: `;
+    const title = countdown.querySelector("[data-event-title]");
+    if (title) {
+      title.textContent = "";
+      const prefix = document.createElement("span");
+      prefix.className = "hidden sm:inline";
+      prefix.textContent = label;
+      title.append(prefix);
+      if (nextEvent.link) {
+        const link = document.createElement("a");
+        link.href = nextEvent.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.className = "transition-colors hover:text-tbre-yellow";
+        link.textContent = nextEvent.name;
+        title.append(link);
+      } else {
+        title.append(nextEvent.name);
+      }
+    }
+    update();
+    window.setInterval(update, 1000);
+  }
+</script>

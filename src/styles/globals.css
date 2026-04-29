@@ -96,7 +96,7 @@
 
 @layer utilities {
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
   }
 }
 
@@ -179,5 +179,52 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .rich-text {
+    @apply text-zinc-600;
+  }
+
+  .rich-text > * + * {
+    @apply mt-4;
+  }
+
+  .rich-text p {
+    @apply leading-relaxed;
+  }
+
+  .rich-text h2 {
+    @apply mt-8 mb-4 font-bold text-2xl text-zinc-900;
+  }
+
+  .rich-text h3 {
+    @apply mt-6 mb-3 font-semibold text-xl text-zinc-900;
+  }
+
+  .rich-text ul,
+  .rich-text ol {
+    @apply ml-6 space-y-2;
+  }
+
+  .rich-text ul {
+    @apply list-disc;
+  }
+
+  .rich-text ol {
+    @apply list-decimal;
+  }
+
+  .rich-text blockquote {
+    @apply border-l-4 border-tbre-blue pl-4 italic;
+  }
+
+  .rich-text img {
+    @apply rounded-lg;
+  }
+
+  .rich-text a {
+    @apply text-tbre-blue underline underline-offset-2 hover:text-tbre-blue/80;
   }
 }

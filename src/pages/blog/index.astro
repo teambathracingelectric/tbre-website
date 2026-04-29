@@ -1,0 +1,114 @@
+---
+import { ArrowRight, Calendar, Clock } from "@lucide/astro";
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getBlogPosts } from "@/lib/content";
+import { formatDate } from "@/utils";
+
+const posts = await getBlogPosts();
+const featuredPost = posts[0];
+---
+
+<BaseLayout
+  title="Blog"
+  description="Stay up to date with our latest achievements, innovations, and team updates"
+>
+  <div class="min-h-screen bg-white">
+    <PageHero
+      title="Latest News"
+      description="Stay up to date with our latest achievements, innovations, and team updates"
+    />
+
+    {
+      featuredPost && (
+        <section class="container mx-auto px-4 py-16">
+          <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow">
+            <div class="grid gap-8 md:grid-cols-2">
+              <div class="relative aspect-4/3 overflow-hidden md:aspect-auto">
+                <img
+                  src={featuredPost.data.image}
+                  alt={featuredPost.data.title}
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div class="flex flex-col justify-center p-6 md:p-8">
+                <div class="mb-4 inline-block w-fit rounded-full bg-tbre-blue/10 px-3 py-1 font-medium text-sm text-tbre-blue">
+                  {featuredPost.data.category}
+                </div>
+                <h2 class="mb-4 font-bold text-2xl text-zinc-900 sm:text-3xl">
+                  {featuredPost.data.title}
+                </h2>
+                <p class="mb-6 text-zinc-600">{featuredPost.data.excerpt}</p>
+                <div class="mb-6 flex items-center gap-4 text-sm text-zinc-500">
+                  <div class="flex items-center gap-1">
+                    <Calendar class="h-4 w-4" />
+                    {formatDate(featuredPost.data.date)}
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <Clock class="h-4 w-4" />
+                    {featuredPost.data.readTime}
+                  </div>
+                </div>
+                <a
+                  href={`/blog/${featuredPost.id}`}
+                  class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+                >
+                  Read More <ArrowRight class="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+      )
+    }
+
+    <section class="border-t bg-zinc-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="mb-8 font-bold text-2xl text-zinc-900">All Posts</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {
+            posts.map((post) => (
+              <article class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+                <a href={`/blog/${post.id}`}>
+                  <div class="relative aspect-3/2 overflow-hidden">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="p-6">
+                  <div class="mb-3 inline-block rounded-full bg-tbre-blue/10 px-3 py-1 font-medium text-sm text-tbre-blue">
+                    {post.data.category}
+                  </div>
+                  <h3 class="mb-3 font-bold text-xl text-zinc-900">
+                    {post.data.title}
+                  </h3>
+                  <p class="mb-4 text-zinc-600">{post.data.excerpt}</p>
+                  <div class="mb-4 flex items-center gap-4 text-sm text-zinc-500">
+                    <div class="flex items-center gap-1">
+                      <Calendar class="h-4 w-4" />
+                      {formatDate(post.data.date)}
+                    </div>
+                    <div class="flex items-center gap-1">
+                      <Clock class="h-4 w-4" />
+                      {post.data.readTime}
+                    </div>
+                  </div>
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+                  >
+                    Read More <ArrowRight class="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

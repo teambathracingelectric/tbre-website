@@ -1,0 +1,55 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCars } from "@/lib/content";
+
+const cars = await getCars();
+---
+
+<BaseLayout
+  title="Cars"
+  description="A decade of engineering excellence and innovation"
+>
+  <div class="min-h-screen bg-white">
+    <PageHero
+      title="Our Cars"
+      description="A decade of engineering excellence and innovation"
+    />
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="mb-12">
+        <h2 class="text-center font-bold text-2xl text-zinc-900">
+          Racing Through the Years
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
+          Each year, we push the boundaries of what&apos;s possible, creating
+          faster and more innovative electric racing cars.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          cars.map((car) => (
+            <article class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+              <div class="relative aspect-4/3 overflow-hidden">
+                <span class="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue px-2.5 py-0.5 font-semibold text-white text-xs">
+                  {car.data.year}
+                </span>
+                <img
+                  src={car.data.image}
+                  alt={car.data.name}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+                <div class="absolute bottom-0 left-0 p-6">
+                  <h2 class="font-bold text-2xl text-white">{car.data.name}</h2>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>

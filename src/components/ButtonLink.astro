@@ -1,0 +1,34 @@
+---
+type Props = {
+  href: string;
+  variant?: "blue" | "yellow" | "ghost";
+  external?: boolean;
+  class?: string;
+  [key: string]: unknown;
+};
+
+const {
+  href,
+  variant = "blue",
+  external = false,
+  class: className,
+  ...attrs
+} = Astro.props;
+const classes = [
+  "inline-flex h-10 items-center justify-center gap-2 rounded-md px-8 text-sm font-medium transition-colors",
+  variant === "blue" && "bg-tbre-blue text-white hover:bg-tbre-blue/90",
+  variant === "yellow" && "bg-tbre-yellow text-white hover:bg-tbre-yellow/90",
+  variant === "ghost" && "text-zinc-900 hover:bg-zinc-100",
+  className,
+];
+---
+
+<a
+  {...attrs}
+  href={href}
+  class:list={classes}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  <slot />
+</a>

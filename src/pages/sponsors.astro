@@ -1,0 +1,150 @@
+---
+import { render } from "astro:content";
+import { ArrowRight } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import { SPONSORSHIP_PROSPECTUS_URL } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getSponsors } from "@/lib/content";
+
+const sponsorEntries = await getSponsors();
+const renderedSponsors = await Promise.all(
+  sponsorEntries.map(async (sponsor) => ({
+    sponsor,
+    Content: (await render(sponsor)).Content,
+  })),
+);
+const titleSponsor = renderedSponsors.find(
+  ({ sponsor }) => sponsor.data.level === "Title Sponsor",
+);
+const otherLevels = Array.from(
+  renderedSponsors
+    .filter(({ sponsor }) => sponsor.data.level !== "Title Sponsor")
+    .reduce((levels, sponsor) => {
+      const list = levels.get(sponsor.sponsor.data.level) ?? [];
+      list.push(sponsor);
+      levels.set(sponsor.sponsor.data.level, list);
+      return levels;
+    }, new Map<string, typeof renderedSponsors>()),
+);
+---
+
+<BaseLayout
+  title="Sponsors"
+  description="Partner with us to support our team and benefit from a mutually beneficial relationship."
+>
+  <div class="min-h-screen bg-white">
+    <section class="relative flex min-h-[50vh] w-full items-center justify-center bg-tbre-blue py-8">
+      <div class="container px-4 text-center">
+        <h1 class="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
+          Partner with Excellence
+        </h1>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-white/80">
+          We work closely with each of our sponsors to ensure a mutually beneficial
+          relationship, with many of our team alumni choosing our sponsors as graduate
+          employers.
+          <br /><br />
+          Get in touch to find out more about supporting our team. More information
+          about the team is provided in our new prospectus.
+        </p>
+        <ButtonLink href={SPONSORSHIP_PROSPECTUS_URL} variant="yellow" external>
+          Download our Sponsorship Prospectus
+        </ButtonLink>
+      </div>
+    </section>
+
+    {
+      titleSponsor && (
+        <section class="overflow-hidden border-y bg-zinc-50 py-20">
+          <div class="container mx-auto px-4">
+            <h2 class="mb-16 text-center font-bold text-4xl text-zinc-900 tracking-tight">
+              Title Sponsor
+            </h2>
+            <div class="grid gap-12 lg:grid-cols-2">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-lg bg-white p-8 lg:aspect-auto lg:h-full">
+                <img
+                  src={titleSponsor.sponsor.data.logo}
+                  alt={titleSponsor.sponsor.data.name}
+                  class:list={[
+                    "max-h-full max-w-full object-contain",
+                    titleSponsor.sponsor.data.logoInverted && "invert",
+                  ]}
+                />
+              </div>
+              <div class="flex flex-col justify-center">
+                <h3 class="mb-6 font-bold text-3xl text-zinc-900">
+                  {titleSponsor.sponsor.data.name}
+                </h3>
+                <div class="rich-text mb-8 text-lg text-zinc-600 leading-relaxed">
+                  <titleSponsor.Content />
+                </div>
+                <a
+                  href={titleSponsor.sponsor.data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
+                >
+                  Visit {titleSponsor.sponsor.data.name}
+                  <ArrowRight class="ml-2 h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        {
+          otherLevels.map(([level, sponsors]) => (
+            sponsors.length > 0 && (
+              <div class="mb-16 last:mb-0">
+                <h2 class="mb-8 font-bold text-2xl text-zinc-900">{level}</h2>
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {sponsors.map(({ sponsor, Content }) => (
+                    <article class="rounded-lg border bg-white text-card-foreground shadow">
+                      <div class="space-y-6 p-6">
+                        <a
+                          href={sponsor.data.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={sponsor.data.logo}
+                            alt={sponsor.data.name}
+                            class:list={[
+                              "h-12 w-auto object-contain",
+                              sponsor.data.logoInverted && "invert",
+                            ]}
+                            loading="lazy"
+                          />
+                        </a>
+                        <h3 class="font-bold text-xl text-zinc-900">
+                          {sponsor.data.name}
+                        </h3>
+                      </div>
+                      <div class="rich-text px-6 pb-6 text-zinc-600">
+                        <Content />
+                      </div>
+                      <div class="p-6 pt-0">
+                        <a
+                          href={sponsor.data.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                        >
+                          Visit {sponsor.data.name}
+                          <ArrowRight class="ml-2 h-5 w-5" />
+                        </a>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>
