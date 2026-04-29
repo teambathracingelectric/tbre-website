@@ -1,0 +1,216 @@
+---
+type ImageItem = {
+  src: string;
+  alt: string;
+  category?: string;
+  featured?: boolean;
+};
+
+type Props = {
+  images: ImageItem[];
+  showFilters?: boolean;
+};
+
+const { images, showFilters = false } = Astro.props;
+const categories = [
+  "All",
+  ...Array.from(new Set(images.map((image) => image.category).filter(Boolean))),
+];
+const instanceId = `gallery-${Math.random().toString(36).slice(2)}`;
+---
+
+<div
+  id={instanceId}
+  data-gallery
+  data-images={JSON.stringify(images)}
+  class="contents"
+>
+  {
+    showFilters && (
+      <div class="mb-12 flex flex-wrap items-center justify-center gap-4">
+        {categories.map((category) => (
+          <button
+            type="button"
+            data-gallery-filter={category}
+            class:list={[
+              "cursor-pointer rounded-full px-4 py-2 font-medium text-sm transition-colors",
+              category === "All"
+                ? "bg-tbre-blue text-white"
+                : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200",
+            ]}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3" data-gallery-grid>
+    {
+      images.map((image, index) => (
+        <button
+          type="button"
+          data-gallery-item
+          data-gallery-index={index}
+          data-gallery-category={image.category}
+          class:list={[
+            "group cursor-pointer overflow-hidden rounded-lg text-left",
+            image.featured && "md:col-span-2 md:row-span-2",
+          ]}
+          aria-label={`Open image: ${image.alt}`}
+        >
+          <span class="relative block aspect-square overflow-hidden">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+            <span class="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20"></span>
+          </span>
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<div
+  class="fixed inset-0 z-80 hidden items-center justify-center bg-black/80 p-4"
+  data-gallery-modal={instanceId}
+  role="dialog"
+  aria-modal="true"
+>
+  <button
+    type="button"
+    class="absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-md text-white transition hover:bg-white/20"
+    data-gallery-close
+    aria-label="Close image"
+  >
+    &times;
+  </button>
+  <button
+    type="button"
+    class="absolute inset-y-0 left-4 my-auto inline-flex h-12 w-12 items-center justify-center rounded-md text-4xl text-white transition hover:bg-white/20"
+    data-gallery-prev
+    aria-label="Previous image"
+  >
+    &#8249;
+  </button>
+  <img
+    src=""
+    alt=""
+    class="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
+    data-gallery-modal-image
+  />
+  <button
+    type="button"
+    class="absolute inset-y-0 right-4 my-auto inline-flex h-12 w-12 items-center justify-center rounded-md text-4xl text-white transition hover:bg-white/20"
+    data-gallery-next
+    aria-label="Next image"
+  >
+    &#8250;
+  </button>
+</div>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>("[data-gallery]")) {
+    const images = JSON.parse(gallery.dataset.images ?? "[]") as {
+      src: string;
+      alt: string;
+      category?: string;
+    }[];
+    const modal = document.querySelector<HTMLElement>(
+      `[data-gallery-modal="${gallery.id}"]`,
+    );
+    const modalImage = modal?.querySelector<HTMLImageElement>(
+      "[data-gallery-modal-image]",
+    );
+    const itemButtons = Array.from(
+      gallery.querySelectorAll<HTMLElement>("[data-gallery-item]"),
+    );
+    let activeIndex = 0;
+    let activeCategory = "All";
+
+    function visibleIndexes() {
+      return itemButtons
+        .filter((button) => {
+          return (
+            activeCategory === "All" ||
+            button.dataset.galleryCategory === activeCategory
+          );
+        })
+        .map((button) => Number(button.dataset.galleryIndex));
+    }
+
+    function renderModal(index: number) {
+      const image = images[index];
+      if (!modal || !modalImage || !image) return;
+      activeIndex = index;
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.documentElement.classList.add("overflow-hidden");
+    }
+
+    function closeModal() {
+      modal?.classList.add("hidden");
+      modal?.classList.remove("flex");
+      document.documentElement.classList.remove("overflow-hidden");
+    }
+
+    function step(direction: number) {
+      const indexes = visibleIndexes();
+      const currentPosition = indexes.indexOf(activeIndex);
+      const nextPosition =
+        (currentPosition + direction + indexes.length) % indexes.length;
+      renderModal(indexes[nextPosition]);
+    }
+
+    itemButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        renderModal(Number(button.dataset.galleryIndex));
+      });
+    });
+
+    for (const filter of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
+      filter.addEventListener("click", () => {
+        activeCategory = filter.dataset.galleryFilter ?? "All";
+        for (const button of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
+          const active = button.dataset.galleryFilter === activeCategory;
+          button.classList.toggle("bg-tbre-blue", active);
+          button.classList.toggle("text-white", active);
+          button.classList.toggle("bg-zinc-100", !active);
+          button.classList.toggle("text-zinc-900", !active);
+        }
+        itemButtons.forEach((button) => {
+          const visible =
+            activeCategory === "All" ||
+            button.dataset.galleryCategory === activeCategory;
+          button.classList.toggle("hidden", !visible);
+        });
+      });
+    }
+
+    modal
+      ?.querySelector("[data-gallery-close]")
+      ?.addEventListener("click", closeModal);
+    modal
+      ?.querySelector("[data-gallery-prev]")
+      ?.addEventListener("click", () => step(-1));
+    modal
+      ?.querySelector("[data-gallery-next]")
+      ?.addEventListener("click", () => step(1));
+    modal?.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!modal?.classList.contains("hidden")) {
+        if (event.key === "Escape") closeModal();
+        if (event.key === "ArrowLeft") step(-1);
+        if (event.key === "ArrowRight") step(1);
+      }
+    });
+  }
+</script>

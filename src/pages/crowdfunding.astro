@@ -1,0 +1,87 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import { CROWDFUNDING_URL, CROWDFUNDING_VIDEO_URL } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Crowdfunding"
+  description="Support TBRe26 on our journey to craft the UK's fastest, most reliable electric Formula Student car."
+>
+  <div class="min-h-screen bg-white">
+    <section class="relative h-[40vh] min-h-75 w-full">
+      <img
+        src="/car.jpg"
+        alt="Crowdfunding campaign"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-linear-to-b from-black/50 to-white"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="container px-4 text-center">
+          <h1 class="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
+            Support TBRe26
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg text-white/90">
+            Join us on our journey to craft the UK&apos;s fastest, most reliable
+            electric Formula Student car, showcasing months of hard work on the
+            competition stage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="mx-auto max-w-6xl space-y-8">
+        <div class="relative aspect-video w-full overflow-hidden rounded-lg bg-zinc-100">
+          <div
+            class="absolute inset-0 flex items-center justify-center"
+            data-video-loader
+          >
+            <div class="h-8 w-8 animate-spin rounded-full border-4 border-tbre-blue border-t-transparent"></div>
+          </div>
+          <iframe
+            src={CROWDFUNDING_VIDEO_URL}
+            title="TBRe26 Crowdfunding Campaign"
+            class="absolute inset-0 h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            data-video-frame
+          ></iframe>
+        </div>
+        <div class="max-w-none space-y-2 text-zinc-900">
+          <p class="text-lg">The launch of our Crowdfunder is now live!</p>
+          <p class="text-lg">
+            This year we are seeking success and can&apos;t wait to showcase our hard
+            work at competitions around the globe, but we couldn&apos;t do this without
+            your help.
+          </p>
+          <p class="text-lg">
+            Your donation goes towards a student led team full of passionate students
+            of all different degrees, ages and backgrounds. With over 200 members, we
+            need you to join us on this journey to help meet our goals for the 2026
+            season, including our target of £4,000 for this Crowdfunder, the progression
+            of TBReAI and the leap towards a four-wheel drive car.
+          </p>
+          <p class="text-lg">
+            Led by students, designed by students, raced by students. Help us make 2026
+            the best season yet!
+          </p>
+        </div>
+        <a
+          href={CROWDFUNDING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-[#105bab] px-8 font-medium text-sm text-white transition-colors hover:bg-[#105bab]/90"
+        >
+          Support Our Campaign <ArrowRight class="h-4 w-4" />
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  document.querySelector("[data-video-frame]")?.addEventListener("load", () => {
+    document.querySelector("[data-video-loader]")?.classList.add("hidden");
+  });
+</script>

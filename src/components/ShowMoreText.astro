@@ -1,0 +1,44 @@
+---
+type Props = {
+  text: string;
+  maxLength?: number;
+};
+
+const { text, maxLength = 550 } = Astro.props;
+const needsToggle = text.length > maxLength;
+const shortText = needsToggle ? `${text.slice(0, maxLength)}...` : text;
+---
+
+<div class="mb-2" data-show-more data-full={text} data-short={shortText}>
+  <p class="mb-2 whitespace-pre-line text-gray-700" data-show-more-text>
+    {shortText}
+  </p>
+  {
+    needsToggle && (
+      <button
+        type="button"
+        class="inline text-tbre-yellow hover:cursor-pointer hover:underline"
+        data-show-more-toggle
+      >
+        Show More
+      </button>
+    )
+  }
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>("[data-show-more]")) {
+    const text = root.querySelector("[data-show-more-text]");
+    const toggle = root.querySelector("[data-show-more-toggle]");
+    let expanded = false;
+    toggle?.addEventListener("click", () => {
+      expanded = !expanded;
+      if (text) {
+        text.textContent = expanded
+          ? (root.dataset.full ?? "")
+          : (root.dataset.short ?? "");
+      }
+      toggle.textContent = expanded ? "Show Less" : "Show More";
+    });
+  }
+</script>

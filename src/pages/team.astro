@@ -1,0 +1,73 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import { ACTIVE_SEASON } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getTeamBySeason } from "@/lib/content";
+
+const categories = await getTeamBySeason(ACTIVE_SEASON);
+---
+
+<BaseLayout
+  title="Team"
+  description="Meet the dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
+>
+  <div class="min-h-screen bg-white">
+    <PageHero
+      title="Meet Our Team"
+      description="The dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
+      heightClass="h-[50vh] min-h-[400px]"
+    />
+
+    <section class="container mx-auto space-y-20 px-4 py-16">
+      {
+        categories.map((category) => (
+          <div class="space-y-8">
+            <div class="flex items-center gap-4">
+              <h2 class="font-bold text-2xl text-zinc-900">{category.category}</h2>
+              <div class="h-px flex-1 bg-linear-to-r from-tbre-blue to-transparent" />
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {category.members.map((member) => (
+                <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+                  <div class="relative aspect-square overflow-hidden">
+                    {member.data.lead && (
+                      <span class="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue px-2.5 py-0.5 font-semibold text-white text-xs">
+                        Lead
+                      </span>
+                    )}
+                    <img
+                      src={member.data.image ?? "/placeholder.png"}
+                      alt={member.data.name}
+                      class="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="space-y-1.5 p-4">
+                    <h3 class="font-semibold text-zinc-900 leading-none">
+                      {member.data.link ? (
+                        <a
+                          href={member.data.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="underline decoration-tbre-yellow transition-all hover:text-tbre-yellow"
+                        >
+                          {member.data.name}
+                        </a>
+                      ) : (
+                        member.data.name
+                      )}
+                    </h3>
+                    {member.data.role && (
+                      <p class="text-sm text-zinc-600">{member.data.role}</p>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+</BaseLayout>
