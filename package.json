@@ -2,7 +2,7 @@
   "name": "tbre-website",
   "version": "0.2.0",
   "private": true,
-  "description": "tbre-website",
+  "description": "Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.",
   "author": "Tom Heaton <tom@tomheaton.dev> (https://tomheaton.dev)",
   "scripts": {
     "build": "astro build",
@@ -31,7 +31,7 @@
     "@biomejs/biome": "^2.4.7",
     "@tailwindcss/vite": "^4.2.4",
     "@types/node": "^24.12.2",
-    "@typescript/native-preview": "7.0.0-dev.20260421.2",
+    "@typescript/native-preview": "7.0.0-dev.20260505.1",
     "knip": "^6.9.0",
     "tailwindcss": "^4.2.1",
     "tsx": "^4.21.0",

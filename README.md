@@ -1,6 +1,6 @@
-# tbre-website
+# Team Bath Racing Electric
 
-Team Bath Racing Electric website, built as a static Astro site.
+Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.
 
 ## Getting Started
 
