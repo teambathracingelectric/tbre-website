@@ -78,3 +78,9 @@ If you want a desktop editor for this content you can use [Astro Editor](https:/
 It is optional, but it can be a useful way to edit the Markdown content and frontmatter stored in `src/content`.
 
 Operational constants such as the active team season, application form, prospectus, and crowdfunding links live in `src/config/site.ts`.
+
+## License
+
+Source code and configuration files are licensed under the MIT License. See `LICENSE`.
+
+Non-code content and assets are not licensed under MIT and remain all rights reserved unless a separate notice says otherwise. This includes files under `public/`, `resources/`, and `src/content/`, plus logos, sponsor marks, photos, brochures, PDFs, 3D models, and written website content. See `NOTICE` for details.

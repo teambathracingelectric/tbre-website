@@ -1,0 +1,23 @@
+Team Bath Racing Electric Website
+
+The MIT License in LICENSE applies only to source code and configuration files
+in this repository, including Astro components, TypeScript, CSS, scripts,
+package manifests, GitHub workflow files, and deployment configuration.
+
+Unless a separate notice says otherwise, all non-code content and assets are
+excluded from the MIT License and remain all rights reserved. This includes,
+but is not limited to:
+
+- Files under public/
+- Files under resources/
+- Files under src/content/
+- Team Bath Racing Electric logos and brand assets
+- Sponsor and partner names, logos, and trademarks
+- Photographs, portraits, gallery images, and car images
+- PDFs, brochures, prospectuses, clothing artwork, and design files
+- 3D models, zip archives, and other binary assets
+- Written website copy, blog posts, member profiles, and sponsor descriptions
+
+Third-party trademarks and logos remain the property of their respective
+owners. Do not reuse non-code content or assets from this repository without
+permission from the relevant rights holder.
