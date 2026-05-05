@@ -33,7 +33,7 @@
     "@types/node": "^24.12.2",
     "@typescript/native-preview": "7.0.0-dev.20260421.2",
     "knip": "^6.9.0",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.4",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "yaml": "^2.8.3"
