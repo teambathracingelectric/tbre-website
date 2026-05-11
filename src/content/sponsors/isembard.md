@@ -5,7 +5,7 @@ level: Silver Sponsors
 logo: /sponsors/isembard.png
 link: https://isembard.com
 logoInverted: true
-active: true
+active: false
 order: 4007
 ---
 

@@ -5,7 +5,7 @@ level: Platinum Sponsors
 logo: /sponsors/syenqo.svg
 link: https://syensqo.com
 logoInverted: false
-active: true
+active: false
 order: 2002
 ---
 

@@ -5,7 +5,7 @@ level: Silver Sponsors
 logo: /sponsors/metis.png
 link: https://metisengineering.com
 logoInverted: false
-active: true
+active: false
 order: 4008
 ---
 

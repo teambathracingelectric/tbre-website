@@ -5,7 +5,7 @@ level: Silver Sponsors
 logo: /sponsors/ansys.svg
 link: https://ansys.com
 logoInverted: false
-active: true
+active: false
 order: 4002
 ---
 

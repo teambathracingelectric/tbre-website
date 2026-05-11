@@ -103,7 +103,9 @@ async function main() {
     }
 
     if (entry.collection === "sponsors") {
-      requiredImage(errors, entry, "logo", entry.data.logo);
+      if (entry.data.logo) {
+        requiredImage(errors, entry, "logo", entry.data.logo);
+      }
     }
 
     if (entry.collection === "blog") {

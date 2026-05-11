@@ -6,7 +6,7 @@ logo: /sponsors/bugatti-trust.png
 link: https://bugatti-trust.co.uk
 logoInverted: false
 active: true
-order: 6001
+order: 6000
 ---
 
 The Bugatti Trust is a UK-based independent charity dedicated to preserving and promoting the legacy of Ettore Bugatti and the Bugatti marque through education, heritage, and innovation. Their mission is to inspire future generations by connecting engineering, design, and automotive history through unique outreach initiatives.

@@ -5,7 +5,7 @@ level: Silver Sponsors
 logo: /sponsors/airbourne.svg
 link: https://airbourne.co.uk/
 logoInverted: false
-active: true
+active: false
 order: 4004
 ---
 

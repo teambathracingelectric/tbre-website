@@ -5,7 +5,7 @@ level: Silver Sponsors
 logo: /sponsors/newbury-electronics.svg
 link: https://newburyelectronics.co.uk/
 logoInverted: false
-active: true
+active: false
 order: 4000
 ---
 

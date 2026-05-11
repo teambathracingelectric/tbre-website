@@ -4,7 +4,7 @@ Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.
 
 ## Getting Started
 
-The local toolchain is pinned for consistency with Node 24 and pnpm 10.33.0.
+The local toolchain is pinned for consistency with Node 24 and pnpm 11.
 
 Using Node Version Manager (NVM) is recommended to manage Node versions.
 

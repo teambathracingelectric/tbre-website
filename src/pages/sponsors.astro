@@ -7,24 +7,35 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getSponsors } from "@/lib/content";
 
 const sponsorEntries = await getSponsors();
-const renderedSponsors = await Promise.all(
-  sponsorEntries.map(async (sponsor) => ({
-    sponsor,
-    Content: (await render(sponsor)).Content,
-  })),
+type RenderedSponsor = {
+  sponsor: (typeof sponsorEntries)[number];
+  hasContent: boolean;
+  Content: Awaited<ReturnType<typeof render>>["Content"];
+};
+
+const renderedSponsors: RenderedSponsor[] = await Promise.all(
+  sponsorEntries.map(async (sponsor) => {
+    const renderedSponsor = await render(sponsor);
+
+    return {
+      sponsor,
+      hasContent: (sponsor.body?.trim().length ?? 0) > 0,
+      Content: renderedSponsor.Content,
+    };
+  }),
 );
 const titleSponsor = renderedSponsors.find(
-  ({ sponsor }) => sponsor.data.level === "Title Sponsor",
+  (entry) => entry.sponsor.data.level === "Title Sponsor",
 );
 const otherLevels = Array.from(
   renderedSponsors
-    .filter(({ sponsor }) => sponsor.data.level !== "Title Sponsor")
-    .reduce((levels, sponsor) => {
-      const list = levels.get(sponsor.sponsor.data.level) ?? [];
-      list.push(sponsor);
-      levels.set(sponsor.sponsor.data.level, list);
+    .filter((entry) => entry.sponsor.data.level !== "Title Sponsor")
+    .reduce<Map<string, RenderedSponsor[]>>((levels, entry) => {
+      const list = levels.get(entry.sponsor.data.level) ?? [];
+      list.push(entry);
+      levels.set(entry.sponsor.data.level, list);
       return levels;
-    }, new Map<string, typeof renderedSponsors>()),
+    }, new Map()),
 );
 ---
 
@@ -33,15 +44,19 @@ const otherLevels = Array.from(
   description="Partner with us to support our team and benefit from a mutually beneficial relationship."
 >
   <div class="min-h-screen bg-white">
-    <section class="relative flex min-h-[50vh] w-full items-center justify-center bg-tbre-blue py-8">
+    <section
+      class="relative flex min-h-[50vh] w-full items-center justify-center bg-tbre-blue py-8"
+    >
       <div class="container px-4 text-center">
-        <h1 class="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
+        <h1
+          class="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl"
+        >
           Partner with Excellence
         </h1>
         <p class="mx-auto mb-8 max-w-2xl text-lg text-white/80">
-          We work closely with each of our sponsors to ensure a mutually beneficial
-          relationship, with many of our team alumni choosing our sponsors as graduate
-          employers.
+          We work closely with each of our sponsors to ensure a mutually
+          beneficial relationship, with many of our team alumni choosing our
+          sponsors as graduate employers.
           <br /><br />
           Get in touch to find out more about supporting our team. More information
           about the team is provided in our new prospectus.
@@ -61,31 +76,46 @@ const otherLevels = Array.from(
             </h2>
             <div class="grid gap-12 lg:grid-cols-2">
               <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-lg bg-white p-8 lg:aspect-auto lg:h-full">
-                <img
-                  src={titleSponsor.sponsor.data.logo}
-                  alt={titleSponsor.sponsor.data.name}
-                  class:list={[
-                    "max-h-full max-w-full object-contain",
-                    titleSponsor.sponsor.data.logoInverted && "invert",
-                  ]}
-                />
+                {titleSponsor.sponsor.data.logo ? (
+                  <img
+                    src={titleSponsor.sponsor.data.logo}
+                    alt={titleSponsor.sponsor.data.name}
+                    class:list={[
+                      "max-h-full max-w-full object-contain",
+                      titleSponsor.sponsor.data.logoInverted && "invert",
+                    ]}
+                  />
+                ) : (
+                  <div class="text-center">
+                    <p class="font-semibold text-sm text-zinc-500 tracking-[0.2em] uppercase">
+                      2026 Title Sponsor
+                    </p>
+                    <p class="mt-4 font-bold text-4xl text-zinc-900 tracking-tight sm:text-5xl">
+                      {titleSponsor.sponsor.data.name}
+                    </p>
+                  </div>
+                )}
               </div>
               <div class="flex flex-col justify-center">
                 <h3 class="mb-6 font-bold text-3xl text-zinc-900">
                   {titleSponsor.sponsor.data.name}
                 </h3>
-                <div class="rich-text mb-8 text-lg text-zinc-600 leading-relaxed">
-                  <titleSponsor.Content />
-                </div>
-                <a
-                  href={titleSponsor.sponsor.data.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
-                >
-                  Visit {titleSponsor.sponsor.data.name}
-                  <ArrowRight class="ml-2 h-5 w-5" />
-                </a>
+                {titleSponsor.hasContent && (
+                  <div class="rich-text mb-8 text-lg text-zinc-600 leading-relaxed">
+                    <titleSponsor.Content />
+                  </div>
+                )}
+                {titleSponsor.sponsor.data.link && (
+                  <a
+                    href={titleSponsor.sponsor.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
+                  >
+                    Visit {titleSponsor.sponsor.data.name}
+                    <ArrowRight class="ml-2 h-5 w-5" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -96,53 +126,71 @@ const otherLevels = Array.from(
     <section class="py-20">
       <div class="container mx-auto px-4">
         {
-          otherLevels.map(([level, sponsors]) => (
-            sponsors.length > 0 && (
-              <div class="mb-16 last:mb-0">
-                <h2 class="mb-8 font-bold text-2xl text-zinc-900">{level}</h2>
-                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  {sponsors.map(({ sponsor, Content }) => (
-                    <article class="rounded-lg border bg-white text-card-foreground shadow">
-                      <div class="space-y-6 p-6">
-                        <a
-                          href={sponsor.data.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <img
-                            src={sponsor.data.logo}
-                            alt={sponsor.data.name}
-                            class:list={[
-                              "h-12 w-auto object-contain",
-                              sponsor.data.logoInverted && "invert",
-                            ]}
-                            loading="lazy"
-                          />
-                        </a>
-                        <h3 class="font-bold text-xl text-zinc-900">
-                          {sponsor.data.name}
-                        </h3>
-                      </div>
-                      <div class="rich-text px-6 pb-6 text-zinc-600">
-                        <Content />
-                      </div>
-                      <div class="p-6 pt-0">
-                        <a
-                          href={sponsor.data.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
-                        >
-                          Visit {sponsor.data.name}
-                          <ArrowRight class="ml-2 h-5 w-5" />
-                        </a>
-                      </div>
-                    </article>
-                  ))}
+          otherLevels.map(
+            ([level, sponsors]) =>
+              sponsors.length > 0 && (
+                <div class="mb-16 last:mb-0">
+                  <h2 class="mb-8 font-bold text-2xl text-zinc-900">{level}</h2>
+                  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {sponsors.map(({ sponsor, Content, hasContent }) => (
+                      <article class="rounded-lg border bg-white text-card-foreground shadow">
+                        <div class="space-y-6 p-6">
+                          {sponsor.data.logo &&
+                            (sponsor.data.link ? (
+                              <a
+                                href={sponsor.data.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  src={sponsor.data.logo}
+                                  alt={sponsor.data.name}
+                                  class:list={[
+                                    "h-12 w-auto object-contain",
+                                    sponsor.data.logoInverted && "invert",
+                                  ]}
+                                  loading="lazy"
+                                />
+                              </a>
+                            ) : (
+                              <img
+                                src={sponsor.data.logo}
+                                alt={sponsor.data.name}
+                                class:list={[
+                                  "h-12 w-auto object-contain",
+                                  sponsor.data.logoInverted && "invert",
+                                ]}
+                                loading="lazy"
+                              />
+                            ))}
+                          <h3 class="font-bold text-xl text-zinc-900">
+                            {sponsor.data.name}
+                          </h3>
+                        </div>
+                        {hasContent && (
+                          <div class="rich-text px-6 pb-6 text-zinc-600">
+                            <Content />
+                          </div>
+                        )}
+                        {sponsor.data.link && (
+                          <div class="p-6 pt-0">
+                            <a
+                              href={sponsor.data.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                            >
+                              Visit {sponsor.data.name}
+                              <ArrowRight class="ml-2 h-5 w-5" />
+                            </a>
+                          </div>
+                        )}
+                      </article>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )
-          ))
+              ),
+          )
         }
       </div>
     </section>

@@ -5,7 +5,7 @@ level: Bronze Sponsors
 logo: /sponsors/renishaw.png
 link: https://renishaw.com
 logoInverted: false
-active: true
+active: false
 order: 5002
 ---
 

@@ -5,7 +5,7 @@ level: Bronze Sponsors
 logo: /sponsors/ax3d.avif
 link: https://ax3d.co.uk
 logoInverted: true
-active: true
+active: false
 order: 5005
 ---
 
