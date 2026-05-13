@@ -12,7 +12,7 @@ export const CROWDFUNDING_URL =
   "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
 
 export const CROWDFUNDING_VIDEO_URL =
-  "https://drive.google.com/file/d/1kja9R4gTfWO5jLdq0nAdJ6SU7-4vnUfJ/preview";
+  "https://drive.google.com/file/d/1sMVqW0zc0rLuVHism1pvRp4gWXs0-rpI/preview";
 
 export const SOCIAL_URLS = {
   email: "mailto:tbre@bath.ac.uk",
