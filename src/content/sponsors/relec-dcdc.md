@@ -2,6 +2,8 @@
 id: relec-dcdc
 name: Relec (DCDC)
 level: Bronze Sponsors
+logo: /sponsors/relec-dcdc.webp
+link: https://www.relec.co.uk/
 active: true
 order: 5021
 ---

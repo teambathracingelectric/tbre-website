@@ -2,6 +2,8 @@
 id: dontyne
 name: Dontyne
 level: Gold Sponsors
+logo: /sponsors/dontyne.png
+link: https://dontynesystems.com
 active: true
 order: 3004
 ---

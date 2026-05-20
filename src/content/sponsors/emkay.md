@@ -2,6 +2,8 @@
 id: emkay
 name: Emkay
 level: Gold Sponsors
+logo: /sponsors/emkay.svg
+link: https://www.emkayplastics.co.uk/
 active: true
 order: 3005
 ---

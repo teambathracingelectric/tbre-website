@@ -2,6 +2,8 @@
 id: bes-group-oil-sampling
 name: BES Group Oil Sampling
 level: Silver Sponsors
+logo: /sponsors/bes-group-oil-sampling.png
+link: https://assetreliability.britishengineeringservices.co.uk/services/oil-analysis/
 active: true
 order: 4004
 ---

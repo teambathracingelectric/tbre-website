@@ -17,9 +17,10 @@
   "linter": {
     "enabled": true,
     "domains": {
-      "test": "recommended",
+      "test": "all",
       "project": "recommended",
-      "react": "recommended"
+      "react": "recommended",
+      "types": "all"
     },
     "rules": {
       "recommended": true,

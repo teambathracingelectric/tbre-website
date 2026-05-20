@@ -75,7 +75,7 @@ const otherLevels = Array.from(
               Title Sponsor
             </h2>
             <div class="grid gap-12 lg:grid-cols-2">
-              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-lg bg-white p-8 lg:aspect-auto lg:h-full">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-lg bg-zinc-950 p-8 shadow-xl ring-1 ring-white/10 lg:aspect-auto lg:h-full">
                 {titleSponsor.sponsor.data.logo ? (
                   <img
                     src={titleSponsor.sponsor.data.logo}
@@ -87,10 +87,10 @@ const otherLevels = Array.from(
                   />
                 ) : (
                   <div class="text-center">
-                    <p class="font-semibold text-sm text-zinc-500 tracking-[0.2em] uppercase">
+                    <p class="font-semibold text-sm text-white/60 tracking-[0.2em] uppercase">
                       2026 Title Sponsor
                     </p>
-                    <p class="mt-4 font-bold text-4xl text-zinc-900 tracking-tight sm:text-5xl">
+                    <p class="mt-4 font-bold text-4xl text-white tracking-tight sm:text-5xl">
                       {titleSponsor.sponsor.data.name}
                     </p>
                   </div>
@@ -146,7 +146,7 @@ const otherLevels = Array.from(
                                   src={sponsor.data.logo}
                                   alt={sponsor.data.name}
                                   class:list={[
-                                    "h-12 w-auto object-contain",
+                                    "h-12 w-auto object-contain mb-6",
                                     sponsor.data.logoInverted && "invert",
                                   ]}
                                   loading="lazy"
@@ -157,7 +157,7 @@ const otherLevels = Array.from(
                                 src={sponsor.data.logo}
                                 alt={sponsor.data.name}
                                 class:list={[
-                                  "h-12 w-auto object-contain",
+                                  "h-12 w-auto object-contain mb-6",
                                   sponsor.data.logoInverted && "invert",
                                 ]}
                                 loading="lazy"

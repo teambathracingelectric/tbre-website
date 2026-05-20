@@ -2,6 +2,8 @@
 id: total-bathrooms
 name: Total Bathrooms
 level: Bronze Sponsors
+logo: /sponsors/total-bathrooms.jpg
+link: https://totalbathrooms.co.uk/
 active: true
 order: 5022
 ---

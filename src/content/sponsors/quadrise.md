@@ -2,6 +2,8 @@
 id: quadrise
 name: Quadrise
 level: Bronze Sponsors
+logo: /sponsors/quadrise.svg
+link: https://www.quadrise.com/
 active: true
 order: 5020
 ---

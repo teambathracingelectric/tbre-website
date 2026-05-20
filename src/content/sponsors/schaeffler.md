@@ -2,6 +2,8 @@
 id: schaeffler
 name: Schaeffler
 level: Gold Sponsors
+logo: /sponsors/schaeffler.png
+link: https://www.schaeffler.co.uk
 active: true
 order: 3008
 ---

@@ -2,6 +2,8 @@
 id: eurocircuits
 name: Eurocircuits
 level: Silver Sponsors
+logo: /sponsors/eurocircuits.png
+link: https://www.eurocircuits.com/
 active: true
 order: 4005
 ---

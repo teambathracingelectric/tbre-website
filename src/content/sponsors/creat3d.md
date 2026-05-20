@@ -3,6 +3,7 @@ id: creat3d
 name: creat3d
 level: Bronze Sponsors
 logo: /sponsors/creat3d.jpg
+link: https://www.creat3d.shop/
 active: true
 order: 5007
 ---

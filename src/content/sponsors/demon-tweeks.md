@@ -2,6 +2,9 @@
 id: demon-tweeks
 name: Demon Tweeks
 level: Bronze Sponsors
+logo: /sponsors/demon-tweeks.png
+logoInverted: true
+link: https://www.demon-tweeks.com/uk/
 active: true
 order: 5008
 ---

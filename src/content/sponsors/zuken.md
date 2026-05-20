@@ -3,6 +3,7 @@ id: zuken
 name: Zuken
 level: Platinum Sponsors
 logo: /sponsors/zuken.png
+link: https://www.zuken.com
 active: true
 order: 2004
 ---

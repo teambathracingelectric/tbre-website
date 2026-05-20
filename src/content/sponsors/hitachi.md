@@ -2,6 +2,8 @@
 id: hitachi
 name: Hitachi
 level: Bronze Sponsors
+logo: /sponsors/hitachi.png
+link: https://www.hitachi.com/
 active: true
 order: 5012
 ---

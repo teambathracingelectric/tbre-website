@@ -2,6 +2,8 @@
 id: anaglyph
 name: Anaglyph
 level: Silver Sponsors
+logo: /sponsors/anaglyph.jpg
+link: https://www.anaglyph.co.uk/
 active: true
 order: 4002
 ---

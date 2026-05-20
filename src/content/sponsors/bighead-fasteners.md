@@ -2,6 +2,8 @@
 id: bighead-fasteners
 name: bigHead Fasteners
 level: Bronze Sponsors
+logo: /sponsors/bighead-fasteners.svg
+link: https://bighead.co.uk/
 active: true
 order: 5005
 ---

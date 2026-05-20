@@ -2,6 +2,9 @@
 id: ncc
 name: NCC
 level: Bronze Sponsors
+logo: /sponsors/ncc.svg
+logoInverted: true
+link: https://www.nccuk.com/
 active: true
 order: 5018
 ---

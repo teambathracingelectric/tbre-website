@@ -2,6 +2,8 @@
 id: amkmotion
 name: AMKmotion
 level: Bronze Sponsors
+logo: /sponsors/amkmotion.svg
+link: https://www.amk-motion.com/en/
 active: true
 order: 5002
 ---

@@ -2,6 +2,8 @@
 id: wurth-elektronik
 name: Wurth Elektronik
 level: Silver Sponsors
+logo: /sponsors/wurth-elektronik.jpeg
+link: https://www.we-online.com/en
 active: true
 order: 4010
 ---

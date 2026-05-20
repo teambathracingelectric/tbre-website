@@ -13,6 +13,7 @@
     "lint": "biome check",
     "lint:ci": "biome ci",
     "lint:fix": "biome check --fix --unsafe",
+    "optimise:svg": "svgo -rf ./public -o ./public",
     "preview": "astro preview",
     "start": "astro preview",
     "typecheck": "astro sync && tsgo -b",
@@ -20,31 +21,26 @@
     "validate:content": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/mdx": "^5.0.6",
     "@astrojs/sitemap": "^3.7.2",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
-    "@lucide/astro": "^1.14.0",
-    "astro": "^6.3.1"
+    "@lucide/astro": "^1.16.0",
+    "astro": "^6.3.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@biomejs/biome": "^2.4.15",
     "@tailwindcss/vite": "^4.3.0",
     "@types/node": "^24.12.2",
-    "@typescript/native-preview": "7.0.0-dev.20260510.1",
-    "knip": "^6.12.2",
+    "@typescript/native-preview": "7.0.0-dev.20260519.1",
+    "knip": "^6.14.1",
+    "svgo": "^4.0.1",
     "tailwindcss": "^4.3.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3",
-    "yaml": "^2.8.3"
+    "yaml": "^2.9.0"
   },
-  "packageManager": "pnpm@11.0.9",
-  "pnpm": {
-    "overrides": {
-      "postcss": "^8.5.14",
-      "yaml-language-server>yaml": "2.8.3"
-    }
-  },
+  "packageManager": "pnpm@11.1.3",
   "engines": {
     "node": "24.x",
     "pnpm": "11.x"

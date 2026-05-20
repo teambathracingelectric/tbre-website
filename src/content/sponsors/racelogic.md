@@ -2,6 +2,8 @@
 id: racelogic
 name: Racelogic
 level: Gold Sponsors
+logo: /sponsors/racelogic.webp
+link: https://www.racelogic.co.uk
 active: true
 order: 3007
 ---

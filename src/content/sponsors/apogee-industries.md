@@ -2,6 +2,8 @@
 id: apogee-industries
 name: Apogee Industries
 level: Gold Sponsors
+logo: /sponsors/apogee-industries.png
+link: https://apogeei.co.uk
 active: true
 order: 3002
 ---

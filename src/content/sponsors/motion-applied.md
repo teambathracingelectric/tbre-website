@@ -2,6 +2,8 @@
 id: motion-applied
 name: Motion Applied
 level: Bronze Sponsors
+logo: /sponsors/motion-applied.svg
+link: https://www.motionapplied.com/
 active: true
 order: 5017
 ---

@@ -2,6 +2,8 @@
 id: code-a-weld
 name: Code A Weld
 level: Bronze Sponsors
+logo: /sponsors/code-a-weld.png
+link: https://www.codeaweld.com/
 active: true
 order: 5006
 ---

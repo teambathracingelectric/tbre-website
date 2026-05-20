@@ -2,6 +2,8 @@
 id: eds
 name: EDS
 level: Bronze Sponsors
+logo: /sponsors/eds.png
+link: https://www.edseng.co.uk/
 active: true
 order: 5010
 ---

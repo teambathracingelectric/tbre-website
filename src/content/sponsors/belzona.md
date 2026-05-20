@@ -2,6 +2,8 @@
 id: belzona
 name: Belzona
 level: Bronze Sponsors
+logo: /sponsors/belzona.png
+link: https://belzona.com/en
 active: true
 order: 5003
 ---

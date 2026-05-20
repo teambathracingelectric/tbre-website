@@ -2,6 +2,8 @@
 id: acre-accountancy
 name: Acre Accountancy
 level: Silver Sponsors
+logo: /sponsors/acre-accountancy.png
+link: https://www.acreaccountancy.co.uk/
 active: true
 order: 4001
 ---

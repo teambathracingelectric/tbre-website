@@ -2,6 +2,8 @@
 id: igus
 name: igus
 level: Bronze Sponsors
+logo: /sponsors/igus.svg
+link: https://www.igus.co.uk/
 active: true
 order: 5013
 ---

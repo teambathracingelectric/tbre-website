@@ -2,6 +2,8 @@
 id: procter-chester
 name: Procter & Chester
 level: Platinum Sponsors
+logo: /sponsors/procter-chester.svg
+link: https://www.pcm-uk.com/
 active: true
 order: 3006
 ---
