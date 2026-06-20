@@ -25,7 +25,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@lucide/astro": "^1.16.0",
-    "astro": "^6.3.5"
+    "astro": "^6.4.6"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
