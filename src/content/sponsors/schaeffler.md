@@ -8,4 +8,7 @@ active: true
 order: 3008
 ---
 
-We are grateful to Schaeffler for supporting Team Bath Racing Electric as a Gold Sponsor for the 2026 season.
+Schaeffler is a global leader in precision components and advanced motion technologies, driving innovation across automotive and industrial sectors.
+With decades of engineering excellence, they continue to shape the future of sustainable mobility.
+
+As a Gold Sponsor, Schaeffler supports Team Bath Racing Electric's 2026 e-car with high-performance bearings and technical expertise, helping improve efficiency, reliability, and overall vehicle performance.
