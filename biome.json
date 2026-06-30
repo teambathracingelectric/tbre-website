@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!resources", "!scripts"]
+    "includes": ["**", "!scripts"]
   },
   "formatter": {
     "enabled": true,
@@ -23,7 +23,7 @@
       "types": "all"
     },
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "a11y": {
         "useKeyWithClickEvents": "warn",
         "noLabelWithoutControl": "warn",
@@ -71,6 +71,16 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["public/**"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "noSvgWithoutTitle": "off"
+          }
+        }
+      }
+    },
     {
       "includes": ["**/*.astro"],
       "linter": {
