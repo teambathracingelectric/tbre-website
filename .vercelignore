@@ -1,9 +1,12 @@
 .astro
+.github
+.vscode
 dist
 node_modules
-tsconfig.tsbuildinfo
-.vscode
-resources
 scripts
 .editorconfig
+CONTRIBUTING.md
+LICENSE
+NOTICE
 README.md
+SECURITY.md
