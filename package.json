@@ -21,26 +21,26 @@
     "validate:content": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
-    "@astrojs/sitemap": "^3.7.2",
-    "@fortawesome/free-brands-svg-icons": "^7.2.0",
-    "@lucide/astro": "^1.16.0",
-    "astro": "^6.3.5"
+    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fortawesome/free-brands-svg-icons": "^7.3.0",
+    "@lucide/astro": "^1.22.0",
+    "astro": "^7.0.4"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
-    "@biomejs/biome": "^2.4.15",
-    "@tailwindcss/vite": "^4.3.0",
+    "@biomejs/biome": "^2.5.1",
+    "@tailwindcss/vite": "^4.3.2",
     "@types/node": "^24.12.2",
-    "@typescript/native-preview": "7.0.0-dev.20260519.1",
-    "knip": "^6.14.1",
+    "@typescript/native-preview": "7.0.0-dev.20260629.1",
+    "knip": "^6.23.0",
     "svgo": "^4.0.1",
-    "tailwindcss": "^4.3.0",
-    "tsx": "^4.22.3",
+    "tailwindcss": "^4.3.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "yaml": "^2.9.0"
   },
-  "packageManager": "pnpm@11.1.3",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": "24.x",
     "pnpm": "11.x"
