@@ -2,7 +2,7 @@
 id: llewellins-gears
 name: Llewellins Gears
 level: Title Sponsor
-logo: /sponsors/llewellins-gears.svg
+logo: /sponsors/llewellins-gears.png
 link: https://llewellinsgears.co.uk/
 active: true
 order: 0
