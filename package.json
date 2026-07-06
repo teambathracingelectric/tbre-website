@@ -21,7 +21,7 @@
     "validate:content": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/mdx": "^7.0.2",
     "@astrojs/sitemap": "^3.7.3",
     "@fortawesome/free-brands-svg-icons": "^7.3.0",
     "@lucide/astro": "^1.22.0",
