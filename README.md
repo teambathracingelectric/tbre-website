@@ -4,17 +4,17 @@ Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.
 
 ## Getting Started
 
-The local toolchain is pinned for consistency with Node 24 and pnpm 11.
+The local toolchain is pinned for consistency with Node 26 and pnpm 11.
 
 Using Node Version Manager (NVM) is recommended to manage Node versions.
 
 NVM can be installed from [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
 ```shell
-# Install Node 24
-nvm install 24
-# Use Node 24
-nvm use 24
+# Install Node 26
+nvm install 26
+# Use Node 26
+nvm use 26
 ```
 
 ## Development
@@ -32,6 +32,9 @@ pnpm build
 # Preview production build
 pnpm preview
 
+# Preview the Cloudflare Worker build locally
+pnpm cf:preview
+
 # Lint code
 pnpm lint
 
@@ -48,20 +51,30 @@ pnpm format
 pnpm clean
 ```
 
-## Vercel Deployment
+## Cloudflare Deployment
 
-This project is a static Astro site.
-Per [Astro's Vercel documentation](https://docs.astro.build/en/guides/integrations-guide/vercel/), static Astro sites do not need the `@astrojs/vercel` adapter unless adding on-demand rendering, middleware, sessions, or other Vercel runtime features.
+This project is deployed to Cloudflare using the Astro Cloudflare adapter and
+Wrangler.
 
-For this repository, deploy from the repository root with these settings:
+The deployment configuration lives in `wrangler.jsonc`:
 
-- Root Directory: `/`
-- Framework Preset: `Astro`
-- Install Command: `pnpm install --frozen-lockfile`
-- Build Command: `pnpm build`
-- Output Directory: `dist`
+- Worker name: `tbre-website`
+- Worker entrypoint: `@astrojs/cloudflare/entrypoints/server`
+- Static assets directory: `dist`
+- Static assets binding: `ASSETS`
 
-The `vercel.json` file is configured to match these settings.
+Useful commands:
+
+```shell
+# Generate Cloudflare environment types
+pnpm generate-types
+
+# Build and preview with Wrangler
+pnpm cf:preview
+
+# Build and deploy to Cloudflare
+pnpm cf:deploy
+```
 
 ## Editing Content
 

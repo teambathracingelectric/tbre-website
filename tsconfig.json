@@ -2,10 +2,11 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "resolveJsonModule": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "**/*", "./worker-configuration.d.ts"],
   "exclude": ["dist", "node_modules"]
 }

@@ -4,7 +4,7 @@ Thanks for helping improve the Team Bath Racing Electric website.
 
 ## Local Setup
 
-Use Node 24 and pnpm 10, then run:
+Use Node 26 and pnpm 11, then run:
 
 ```shell
 pnpm install
@@ -19,6 +19,15 @@ pnpm validate:content
 pnpm typecheck
 pnpm build
 ```
+
+## Cloudflare
+
+Deployments use Cloudflare, the Astro Cloudflare adapter, and Wrangler. The
+deployment configuration is in `wrangler.jsonc`.
+
+Use `pnpm cf:preview` to build and run the Cloudflare Worker locally with
+Wrangler. Use `pnpm cf:deploy` only when you intend to publish the site to
+Cloudflare and have the required account access.
 
 ## Content Changes
 

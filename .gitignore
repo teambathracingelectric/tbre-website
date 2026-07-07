@@ -16,8 +16,8 @@
 .env
 .env*.local
 
-# vercel
-.vercel
+# cloudflare
+.wrangler
 
 # typescript
 *.tsbuildinfo

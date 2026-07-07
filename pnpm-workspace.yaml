@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  workerd: true
 minimumReleaseAgeExclude:
   - '@astrojs/compiler-binding-darwin-arm64@0.3.0'
   - '@astrojs/compiler-binding-darwin-x64@0.3.0'

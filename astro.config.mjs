@@ -1,3 +1,4 @@
+import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -24,4 +25,5 @@ export default defineConfig({
     "/our-cars": "/cars",
     "/team-members": "/team",
   },
+  adapter: cloudflare(),
 });
