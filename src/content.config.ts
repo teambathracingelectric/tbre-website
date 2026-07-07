@@ -52,6 +52,21 @@ const team = defineCollection({
     link: z.string().optional(),
     lead: z.boolean().default(false),
     active: z.boolean().default(true),
+    // Preserved verbatim from the old Jekyll site's _data/team.yml (reference; not rendered yet)
+    original: z
+      .object({
+        name: z.string().optional(),
+        role: z.string().optional(),
+        course: z.string().optional(),
+        yearOfStudy: z.coerce.number().int().optional(),
+        experience: z.array(z.string()).default([]),
+        interests: z.string().optional(),
+        fact: z.string().optional(),
+        email: z.string().optional(),
+        linkedin: z.string().optional(),
+        noPic: z.boolean().optional(),
+      })
+      .optional(),
   }),
 });
 
