@@ -74,7 +74,7 @@ const otherLevels = Array.from(
             <h2 class="mb-16 text-center font-bold text-4xl text-zinc-900 tracking-tight">
               Title Sponsor
             </h2>
-            <div class="grid gap-12 lg:grid-cols-2">
+            <div class="grid gap-12 lg:grid-cols-2" data-reveal>
               <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-lg p-8 shadow-xl ring-1 ring-white/10 lg:aspect-auto lg:h-full">
                 {titleSponsor.sponsor.data.logo ? (
                   <img
@@ -110,10 +110,10 @@ const otherLevels = Array.from(
                     href={titleSponsor.sponsor.data.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
+                    class="group inline-flex items-center font-semibold text-lg text-tbre-blue hover:text-tbre-blue/90"
                   >
                     Visit {titleSponsor.sponsor.data.name}
-                    <ArrowRight class="ml-2 h-5 w-5" />
+                    <ArrowRight class="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 )}
               </div>
@@ -131,9 +131,15 @@ const otherLevels = Array.from(
               sponsors.length > 0 && (
                 <div class="mb-16 last:mb-0">
                   <h2 class="mb-8 font-bold text-2xl text-zinc-900">{level}</h2>
-                  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  <div
+                    class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+                    data-reveal-group
+                  >
                     {sponsors.map(({ sponsor, Content, hasContent }) => (
-                      <article class="rounded-lg border bg-white text-card-foreground shadow">
+                      <article
+                        class="rounded-lg border bg-white text-card-foreground shadow transition-all hover:-translate-y-1 hover:shadow-lg"
+                        data-reveal-item
+                      >
                         <div class="space-y-6 p-6">
                           {sponsor.data.logo &&
                             (sponsor.data.link ? (
@@ -178,10 +184,10 @@ const otherLevels = Array.from(
                               href={sponsor.data.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              class="inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
+                              class="group inline-flex items-center font-semibold text-tbre-blue hover:text-tbre-blue/80"
                             >
                               Visit {sponsor.data.name}
-                              <ArrowRight class="ml-2 h-5 w-5" />
+                              <ArrowRight class="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                             </a>
                           </div>
                         )}

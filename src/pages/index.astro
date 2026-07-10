@@ -14,17 +14,30 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       />
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="absolute inset-0 flex items-center justify-center">
-        <div class="container px-4 text-center">
+        <div
+          class="container px-4 text-center"
+          data-reveal-group
+          data-reveal-on="load"
+        >
           <h1
             class="mb-6 font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+            data-reveal-item
           >
             <span class="text-white">Team Bath Racing</span>{" "}
             <span class="text-tbre-yellow">Electric</span>
           </h1>
-          <p class="mx-auto mb-8 max-w-2xl text-pretty text-white text-xl">
-            Formula Student Electric Racing Team based at the University of Bath
+          <p
+            class="mx-auto mb-8 max-w-2xl text-pretty text-white text-xl"
+            data-reveal-item
+          >
+            Formula Student Electric Racing Team
+            <br />
+            based at the University of Bath
           </p>
-          <div class="flex flex-wrap items-center justify-center gap-4">
+          <div
+            class="flex flex-wrap items-center justify-center gap-4"
+            data-reveal-item
+          >
             <ButtonLink href="/cars">Our Cars</ButtonLink>
             <ButtonLink href="/sponsors" variant="yellow"
               >Become a Sponsor</ButtonLink
@@ -34,7 +47,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div class="space-y-6 lg:order-2">
@@ -66,7 +79,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div class="space-y-6">
@@ -93,7 +106,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="bg-tbre-yellow py-20">
+    <section class="bg-tbre-yellow py-20" data-reveal>
       <div class="container mx-auto px-4">
         <h2
           class="mb-12 text-center font-bold text-3xl text-white tracking-tighter sm:text-4xl"
@@ -129,20 +142,25 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="bg-tbre-blue py-20 text-white">
+    <section class="bg-tbre-blue py-20 text-white" data-reveal-group>
       <div class="container mx-auto px-4">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {
             [
-              { icon: Clock, value: "10+", label: "Years of Racing" },
-              { icon: Users, value: "150+", label: "Team Members" },
-              { icon: Award, value: "15+", label: "Awards Won" },
-              { icon: Zap, value: "100%", label: "Electric Power" },
+              { icon: Clock, value: 10, suffix: "+", label: "Years of Racing" },
+              { icon: Users, value: 150, suffix: "+", label: "Team Members" },
+              { icon: Award, value: 15, suffix: "+", label: "Awards Won" },
+              { icon: Zap, value: 100, suffix: "%", label: "Electric Power" },
             ].map((stat) => (
-              <div class="text-center">
+              <div class="text-center" data-reveal-item>
                 <stat.icon class="mx-auto mb-4 h-8 w-8 text-tbre-yellow" />
-                <div class="font-bold text-4xl text-tbre-yellow">
+                <div
+                  class="font-bold text-4xl text-tbre-yellow"
+                  data-count-up={stat.value}
+                  data-count-suffix={stat.suffix}
+                >
                   {stat.value}
+                  {stat.suffix}
                 </div>
                 <div class="mt-2 text-white/80">{stat.label}</div>
               </div>
@@ -152,7 +170,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div class="space-y-6 lg:order-2">
@@ -181,7 +199,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div class="space-y-6">
@@ -211,7 +229,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="py-20">
+    <section class="py-20" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div class="space-y-6 lg:order-2">

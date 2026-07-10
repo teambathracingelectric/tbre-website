@@ -22,7 +22,10 @@ const featuredPost = posts[0];
     {
       featuredPost && (
         <section class="container mx-auto px-4 py-16">
-          <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow">
+          <article
+            class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow"
+            data-reveal
+          >
             <div class="grid gap-8 md:grid-cols-2">
               <div class="relative aspect-4/3 overflow-hidden md:aspect-auto">
                 <img
@@ -51,9 +54,10 @@ const featuredPost = posts[0];
                 </div>
                 <a
                   href={`/blog/${featuredPost.id}`}
-                  class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+                  class="group inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
                 >
-                  Read More <ArrowRight class="ml-2 h-4 w-4" />
+                  Read More{" "}
+                  <ArrowRight class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
@@ -65,10 +69,13 @@ const featuredPost = posts[0];
     <section class="border-t bg-zinc-50 py-16">
       <div class="container mx-auto px-4">
         <h2 class="mb-8 font-bold text-2xl text-zinc-900">All Posts</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-reveal-group>
           {
             posts.map((post) => (
-              <article class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+              <article
+                class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:-translate-y-1 hover:shadow-lg"
+                data-reveal-item
+              >
                 <a href={`/blog/${post.id}`}>
                   <div class="relative aspect-3/2 overflow-hidden">
                     <img
@@ -99,9 +106,10 @@ const featuredPost = posts[0];
                   </div>
                   <a
                     href={`/blog/${post.id}`}
-                    class="inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
+                    class="group inline-flex items-center text-tbre-blue hover:text-tbre-blue/90"
                   >
-                    Read More <ArrowRight class="ml-2 h-4 w-4" />
+                    Read More{" "}
+                    <ArrowRight class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </article>

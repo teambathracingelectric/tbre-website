@@ -129,22 +129,67 @@ function isActive(href: string) {
 </header>
 
 <script>
-  const openButton = document.querySelector("[data-mobile-menu-open]");
-  const closeButton = document.querySelector("[data-mobile-menu-close]");
-  const overlay = document.querySelector("[data-mobile-menu-overlay]");
+  import { animate } from "motion";
+  import { prefersReducedMotion } from "@/lib/motion";
 
-  function setMenuOpen(open: boolean) {
-    overlay?.classList.toggle("hidden", !open);
+  let escBound = false;
+
+  async function setMenuOpen(open: boolean) {
+    const overlay = document.querySelector<HTMLElement>(
+      "[data-mobile-menu-overlay]",
+    );
+    const panel = document.querySelector<HTMLElement>(
+      "[data-mobile-menu-panel]",
+    );
+    const openButton = document.querySelector<HTMLElement>(
+      "[data-mobile-menu-open]",
+    );
+    if (!overlay || !panel) return;
+
     openButton?.setAttribute("aria-expanded", String(open));
     document.documentElement.classList.toggle("overflow-hidden", open);
+
+    if (open) {
+      overlay.classList.remove("hidden");
+      if (prefersReducedMotion()) return;
+      animate(overlay, { opacity: [0, 1] }, { duration: 0.2 });
+      animate(
+        panel,
+        { x: ["100%", "0%"] },
+        { type: "spring", stiffness: 260, damping: 30 },
+      );
+    } else {
+      if (prefersReducedMotion()) {
+        overlay.classList.add("hidden");
+        return;
+      }
+      animate(overlay, { opacity: [1, 0] }, { duration: 0.2 });
+      await animate(panel, { x: ["0%", "100%"] }, { duration: 0.25 }).finished;
+      overlay.classList.add("hidden");
+    }
   }
 
-  openButton?.addEventListener("click", () => setMenuOpen(true));
-  closeButton?.addEventListener("click", () => setMenuOpen(false));
-  overlay?.addEventListener("click", (event) => {
-    if (event.target === overlay) setMenuOpen(false);
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMenuOpen(false);
-  });
+  function initNavbar() {
+    const openButton = document.querySelector("[data-mobile-menu-open]");
+    const closeButton = document.querySelector("[data-mobile-menu-close]");
+    const overlay = document.querySelector<HTMLElement>(
+      "[data-mobile-menu-overlay]",
+    );
+
+    openButton?.addEventListener("click", () => setMenuOpen(true));
+    closeButton?.addEventListener("click", () => setMenuOpen(false));
+    overlay?.addEventListener("click", (event) => {
+      if (event.target === overlay) setMenuOpen(false);
+    });
+
+    // Document-level listener persists across ClientRouter navigations, so bind once.
+    if (!escBound) {
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+      });
+      escBound = true;
+    }
+  }
+
+  document.addEventListener("astro:page-load", initNavbar);
 </script>
