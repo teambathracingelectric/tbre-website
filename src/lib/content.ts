@@ -89,8 +89,11 @@ function sortTeamMembers(a: TeamEntry, b: TeamEntry) {
   return a.id.localeCompare(b.id, "en-GB");
 }
 
-export async function getSponsors() {
-  const entries = await getCollection("sponsors", ({ data }) => data.active);
+export async function getSponsorsBySeason(season = ACTIVE_SEASON) {
+  const entries = await getCollection(
+    "sponsors",
+    ({ data }) => data.active && data.season === season,
+  );
   return entries.sort((a, b) => a.data.order - b.data.order);
 }
 

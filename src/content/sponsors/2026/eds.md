@@ -1,0 +1,12 @@
+---
+id: eds
+season: 2026
+name: EDS
+level: Bronze Sponsors
+logo: /sponsors/2026/eds.png
+link: https://www.edseng.co.uk/
+active: true
+order: 5010
+---
+
+We are grateful to EDS for supporting Team Bath Racing Electric as a Bronze Sponsor for the 2026 season.

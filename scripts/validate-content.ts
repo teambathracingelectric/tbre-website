@@ -85,13 +85,19 @@ async function main() {
   }
 
   const sponsors = entries.filter((entry) => entry.collection === "sponsors");
+  // A sponsor may recur across seasons, so identity is (season, id) rather than id.
   const sponsorIds = new Set<string>();
   for (const sponsor of sponsors) {
     const id = String(sponsor.data.id ?? "");
-    if (sponsorIds.has(id)) {
-      errors.push(`sponsors/${sponsor.id}: duplicate sponsor id ${id}`);
+    const key = `${String(sponsor.data.season ?? "")}/${id}`;
+    if (sponsorIds.has(key)) {
+      errors.push(
+        `sponsors/${sponsor.id}: duplicate sponsor id ${id} for season ${String(
+          sponsor.data.season ?? "",
+        )}`,
+      );
     }
-    sponsorIds.add(id);
+    sponsorIds.add(key);
   }
 
   for (const entry of entries) {
@@ -144,7 +150,17 @@ async function main() {
     errors.push(`team: missing team entries for ACTIVE_SEASON ${ACTIVE_SEASON}`);
   }
 
-  const titleSponsors = sponsors.filter(
+  const activeSeasonSponsors = sponsors.filter(
+    (entry) => Number(entry.data.season) === ACTIVE_SEASON,
+  );
+  if (activeSeasonSponsors.length === 0) {
+    errors.push(
+      `sponsors: missing sponsor entries for ACTIVE_SEASON ${ACTIVE_SEASON}`,
+    );
+  }
+
+  // Scoped to ACTIVE_SEASON: an archived title sponsor must not satisfy this.
+  const titleSponsors = activeSeasonSponsors.filter(
     (entry) => entry.data.level === "Title Sponsor" && entry.data.active !== false,
   );
   if (titleSponsors.length === 0) {

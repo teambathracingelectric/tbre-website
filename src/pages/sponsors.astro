@@ -2,11 +2,11 @@
 import { render } from "astro:content";
 import { ArrowRight } from "@lucide/astro";
 import ButtonLink from "@/components/ButtonLink.astro";
-import { SPONSORSHIP_PROSPECTUS_URL } from "@/config/site";
+import { ACTIVE_SEASON, SPONSORSHIP_PROSPECTUS_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getSponsors } from "@/lib/content";
+import { getSponsorsBySeason } from "@/lib/content";
 
-const sponsorEntries = await getSponsors();
+const sponsorEntries = await getSponsorsBySeason();
 type RenderedSponsor = {
   sponsor: (typeof sponsorEntries)[number];
   hasContent: boolean;
@@ -88,7 +88,7 @@ const otherLevels = Array.from(
                 ) : (
                   <div class="text-center">
                     <p class="font-semibold text-sm text-white/60 tracking-[0.2em] uppercase">
-                      2026 Title Sponsor
+                      {ACTIVE_SEASON} Title Sponsor
                     </p>
                     <p class="mt-4 font-bold text-4xl text-white tracking-tight sm:text-5xl">
                       {titleSponsor.sponsor.data.name}

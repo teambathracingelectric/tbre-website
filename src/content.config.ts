@@ -74,6 +74,7 @@ const sponsors = defineCollection({
   loader: glob({ base: "./src/content/sponsors", pattern: "**/*.{md,mdx}" }),
   schema: z.object({
     id: z.string(),
+    season: z.coerce.number().int(),
     name: z.string(),
     level: z.string(),
     logo: publicImagePath.optional(),
