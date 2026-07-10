@@ -46,12 +46,17 @@ const instanceId = `gallery-${Math.random().toString(36).slice(2)}`;
     )
   }
 
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3" data-gallery-grid>
+  <div
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3"
+    data-gallery-grid
+    data-reveal-group
+  >
     {
       images.map((image, index) => (
         <button
           type="button"
           data-gallery-item
+          data-reveal-item
           data-gallery-index={index}
           data-gallery-category={image.category}
           class:list={[
@@ -114,103 +119,143 @@ const instanceId = `gallery-${Math.random().toString(36).slice(2)}`;
 </div>
 
 <script>
-  for (const gallery of document.querySelectorAll<HTMLElement>("[data-gallery]")) {
-    const images = JSON.parse(gallery.dataset.images ?? "[]") as {
-      src: string;
-      alt: string;
-      category?: string;
-    }[];
-    const modal = document.querySelector<HTMLElement>(
-      `[data-gallery-modal="${gallery.id}"]`,
-    );
-    const modalImage = modal?.querySelector<HTMLImageElement>(
-      "[data-gallery-modal-image]",
-    );
-    const itemButtons = Array.from(
-      gallery.querySelectorAll<HTMLElement>("[data-gallery-item]"),
-    );
-    let activeIndex = 0;
-    let activeCategory = "All";
+  import { animate } from "motion";
+  import { prefersReducedMotion } from "@/lib/motion";
 
-    function visibleIndexes() {
-      return itemButtons
-        .filter((button) => {
-          return (
-            activeCategory === "All" ||
-            button.dataset.galleryCategory === activeCategory
+  const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+  type Controller = { close: () => void; step: (direction: number) => void };
+
+  let activeGallery: Controller | null = null;
+  let keydownBound = false;
+
+  function initGalleries() {
+    activeGallery = null;
+
+    for (const gallery of document.querySelectorAll<HTMLElement>("[data-gallery]")) {
+      const images = JSON.parse(gallery.dataset.images ?? "[]") as {
+        src: string;
+        alt: string;
+        category?: string;
+      }[];
+      const modal = document.querySelector<HTMLElement>(
+        `[data-gallery-modal="${gallery.id}"]`,
+      );
+      const modalImage = modal?.querySelector<HTMLImageElement>(
+        "[data-gallery-modal-image]",
+      );
+      const itemButtons = Array.from(
+        gallery.querySelectorAll<HTMLElement>("[data-gallery-item]"),
+      );
+      let activeIndex = 0;
+      let activeCategory = "All";
+
+      function visibleIndexes() {
+        return itemButtons
+          .filter((button) => {
+            return (
+              activeCategory === "All" ||
+              button.dataset.galleryCategory === activeCategory
+            );
+          })
+          .map((button) => Number(button.dataset.galleryIndex));
+      }
+
+      function renderModal(index: number, direction = 0) {
+        const image = images[index];
+        if (!modal || !modalImage || !image) return;
+        activeIndex = index;
+        modalImage.src = image.src;
+        modalImage.alt = image.alt;
+        if (!prefersReducedMotion()) {
+          animate(
+            modalImage,
+            { opacity: [0, 1], x: [direction * 40, 0], scale: [0.98, 1] },
+            { duration: 0.25, ease: EASE },
           );
-        })
-        .map((button) => Number(button.dataset.galleryIndex));
-    }
-
-    function renderModal(index: number) {
-      const image = images[index];
-      if (!modal || !modalImage || !image) return;
-      activeIndex = index;
-      modalImage.src = image.src;
-      modalImage.alt = image.alt;
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.documentElement.classList.add("overflow-hidden");
-    }
-
-    function closeModal() {
-      modal?.classList.add("hidden");
-      modal?.classList.remove("flex");
-      document.documentElement.classList.remove("overflow-hidden");
-    }
-
-    function step(direction: number) {
-      const indexes = visibleIndexes();
-      const currentPosition = indexes.indexOf(activeIndex);
-      const nextPosition =
-        (currentPosition + direction + indexes.length) % indexes.length;
-      renderModal(indexes[nextPosition]);
-    }
-
-    itemButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        renderModal(Number(button.dataset.galleryIndex));
-      });
-    });
-
-    for (const filter of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
-      filter.addEventListener("click", () => {
-        activeCategory = filter.dataset.galleryFilter ?? "All";
-        for (const button of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
-          const active = button.dataset.galleryFilter === activeCategory;
-          button.classList.toggle("bg-tbre-blue", active);
-          button.classList.toggle("text-white", active);
-          button.classList.toggle("bg-zinc-100", !active);
-          button.classList.toggle("text-zinc-900", !active);
         }
-        itemButtons.forEach((button) => {
-          const visible =
-            activeCategory === "All" ||
-            button.dataset.galleryCategory === activeCategory;
-          button.classList.toggle("hidden", !visible);
+      }
+
+      function openModal(index: number) {
+        if (!modal) return;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.documentElement.classList.add("overflow-hidden");
+        activeGallery = { close: closeModal, step };
+        renderModal(index);
+        if (!prefersReducedMotion()) {
+          animate(modal, { opacity: [0, 1] }, { duration: 0.2 });
+        }
+      }
+
+      async function closeModal() {
+        activeGallery = null;
+        document.documentElement.classList.remove("overflow-hidden");
+        if (modal && !prefersReducedMotion()) {
+          await animate(modal, { opacity: [1, 0] }, { duration: 0.2 }).finished;
+        }
+        modal?.classList.add("hidden");
+        modal?.classList.remove("flex");
+      }
+
+      function step(direction: number) {
+        const indexes = visibleIndexes();
+        const currentPosition = indexes.indexOf(activeIndex);
+        const nextPosition =
+          (currentPosition + direction + indexes.length) % indexes.length;
+        renderModal(indexes[nextPosition], direction);
+      }
+
+      itemButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          openModal(Number(button.dataset.galleryIndex));
         });
       });
+
+      for (const filter of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
+        filter.addEventListener("click", () => {
+          activeCategory = filter.dataset.galleryFilter ?? "All";
+          for (const button of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
+            const active = button.dataset.galleryFilter === activeCategory;
+            button.classList.toggle("bg-tbre-blue", active);
+            button.classList.toggle("text-white", active);
+            button.classList.toggle("bg-zinc-100", !active);
+            button.classList.toggle("text-zinc-900", !active);
+          }
+          itemButtons.forEach((button) => {
+            const visible =
+              activeCategory === "All" ||
+              button.dataset.galleryCategory === activeCategory;
+            button.classList.toggle("hidden", !visible);
+          });
+        });
+      }
+
+      modal
+        ?.querySelector("[data-gallery-close]")
+        ?.addEventListener("click", closeModal);
+      modal
+        ?.querySelector("[data-gallery-prev]")
+        ?.addEventListener("click", () => step(-1));
+      modal
+        ?.querySelector("[data-gallery-next]")
+        ?.addEventListener("click", () => step(1));
+      modal?.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
     }
 
-    modal
-      ?.querySelector("[data-gallery-close]")
-      ?.addEventListener("click", closeModal);
-    modal
-      ?.querySelector("[data-gallery-prev]")
-      ?.addEventListener("click", () => step(-1));
-    modal
-      ?.querySelector("[data-gallery-next]")
-      ?.addEventListener("click", () => step(1));
-    modal?.addEventListener("click", (event) => {
-      if (event.target === modal) closeModal();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (!modal?.classList.contains("hidden")) {
-        if (event.key === "Escape") closeModal();
-        if (event.key === "ArrowLeft") step(-1);
-        if (event.key === "ArrowRight") step(1);
-      }
-    });
+    // Bind the keyboard handler once; it always targets the open gallery.
+    if (!keydownBound) {
+      document.addEventListener("keydown", (event) => {
+        if (!activeGallery) return;
+        if (event.key === "Escape") activeGallery.close();
+        if (event.key === "ArrowLeft") activeGallery.step(-1);
+        if (event.key === "ArrowRight") activeGallery.step(1);
+      });
+      keydownBound = true;
+    }
   }
+
+  document.addEventListener("astro:page-load", initGalleries);
 </script>

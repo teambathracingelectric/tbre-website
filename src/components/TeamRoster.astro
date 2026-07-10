@@ -17,9 +17,15 @@ const { categories } = Astro.props;
           <div class="h-px flex-1 bg-linear-to-r from-tbre-blue to-transparent" />
         </div>
 
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          data-reveal-group
+        >
           {category.members.map((member) => (
-            <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+            <article
+              class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:-translate-y-1 hover:shadow-lg"
+              data-reveal-item
+            >
               <div class="relative aspect-square overflow-hidden">
                 {member.data.lead && (
                   <span class="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue px-2.5 py-0.5 font-semibold text-white text-xs">

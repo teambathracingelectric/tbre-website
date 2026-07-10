@@ -20,61 +20,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Set up environment
-        uses: ./.github/actions/setup
-
-      - name: Run Biome in CI mode
-        run: pnpm lint:ci
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: pnpm lint:ci
 
   validate-content:
     name: Validate Content
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: pnpm validate:content
 
-      - name: Set up environment
-        uses: ./.github/actions/setup
-
-      - name: Validate content
-        run: pnpm validate:content
-
-  typecheck:
-    name: Type Check
+  check:
+    name: Check
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Set up environment
-        uses: ./.github/actions/setup
-
-      - name: Run TypeScript checks
-        run: pnpm typecheck
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: pnpm check
 
   preview:
     name: Preview
     runs-on: ubuntu-latest
-    needs: [lint, validate-content, typecheck]
+    needs: [lint, validate-content, check]
     if: github.event_name == 'pull_request'
     permissions:
       contents: read
       pull-requests: write
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Set up environment
-        uses: ./.github/actions/setup
-
-      - name: Build site
-        run: pnpm build
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: pnpm build
 
       - name: Upload preview version
         id: upload
@@ -103,7 +83,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: [lint, validate-content, typecheck]
+    needs: [lint, validate-content, check]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment: production
     concurrency:
@@ -111,14 +91,9 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Set up environment
-        uses: ./.github/actions/setup
-
-      - name: Build site
-        run: pnpm build
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - run: pnpm build
 
       - name: Deploy to Cloudflare
         run: pnpm exec wrangler deploy
