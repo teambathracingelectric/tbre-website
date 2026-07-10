@@ -19,7 +19,6 @@
     "domains": {
       "test": "all",
       "project": "recommended",
-      "react": "recommended",
       "types": "all"
     },
     "rules": {

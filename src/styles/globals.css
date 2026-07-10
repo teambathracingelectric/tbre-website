@@ -54,26 +54,6 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
 }
 
 @utility background-image-car {
@@ -226,5 +206,19 @@
 
   .rich-text a {
     @apply text-tbre-blue underline underline-offset-2 hover:text-tbre-blue/80;
+  }
+}
+
+/*
+ * Motion: initial hidden state for scroll/entrance reveals. Only applies when
+ * JS is available (the `.motion` class is added by an inline script in the head)
+ * and the visitor has not requested reduced motion, so content never gets
+ * trapped invisible. Distance matches REVEAL_DISTANCE in src/lib/motion.ts.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .motion [data-reveal],
+  .motion [data-reveal-item] {
+    opacity: 0;
+    transform: translateY(1rem);
   }
 }

@@ -27,18 +27,44 @@ const shortText = needsToggle ? `${text.slice(0, maxLength)}...` : text;
 </div>
 
 <script>
-  for (const root of document.querySelectorAll<HTMLElement>("[data-show-more]")) {
-    const text = root.querySelector("[data-show-more-text]");
-    const toggle = root.querySelector("[data-show-more-toggle]");
-    let expanded = false;
-    toggle?.addEventListener("click", () => {
-      expanded = !expanded;
-      if (text) {
-        text.textContent = expanded
+  import { animate } from "motion";
+  import { prefersReducedMotion } from "@/lib/motion";
+
+  function initShowMore() {
+    for (const root of document.querySelectorAll<HTMLElement>("[data-show-more]")) {
+      const text = root.querySelector<HTMLElement>("[data-show-more-text]");
+      const toggle = root.querySelector<HTMLElement>("[data-show-more-toggle]");
+      if (!text || !toggle) continue;
+      let expanded = false;
+
+      toggle.addEventListener("click", async () => {
+        expanded = !expanded;
+        const next = expanded
           ? (root.dataset.full ?? "")
           : (root.dataset.short ?? "");
-      }
-      toggle.textContent = expanded ? "Show Less" : "Show More";
-    });
+        toggle.textContent = expanded ? "Show Less" : "Show More";
+
+        if (prefersReducedMotion()) {
+          text.textContent = next;
+          return;
+        }
+
+        // Measure before/after so the height can tween between them.
+        const start = text.offsetHeight;
+        text.textContent = next;
+        const end = text.offsetHeight;
+        text.style.overflow = "hidden";
+        text.style.height = `${start}px`;
+        await animate(
+          text,
+          { height: `${end}px` },
+          { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+        ).finished;
+        text.style.height = "";
+        text.style.overflow = "";
+      });
+    }
   }
+
+  document.addEventListener("astro:page-load", initShowMore);
 </script>

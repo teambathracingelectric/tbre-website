@@ -27,10 +27,13 @@ const cars = await getCars();
         </p>
       </div>
 
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-reveal-group>
         {
           cars.map((car) => (
-            <article class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:shadow-lg">
+            <article
+              class="group overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:-translate-y-1 hover:shadow-lg"
+              data-reveal-item
+            >
               <div class="relative aspect-4/3 overflow-hidden">
                 <span class="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue px-2.5 py-0.5 font-semibold text-white text-xs">
                   {car.data.year}

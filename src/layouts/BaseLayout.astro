@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import EventCountdown from "@/components/EventCountdown.astro";
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
@@ -30,6 +31,11 @@ const imageUrl = new URL(image, SITE_URL).toString();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    {/* Enables the pre-hide reveal CSS only when JS runs, so no-JS visitors always see content. */}
+    <script is:inline>
+      document.documentElement.classList.add("motion");
+    </script>
+    <ClientRouter />
     <link rel="icon" href="/favicon.ico" />
     <link rel="canonical" href={canonical} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,5 +62,23 @@ const imageUrl = new URL(image, SITE_URL).toString();
     <Navbar />
     <slot />
     <Footer />
+
+    <script>
+      import { initCountUps, initHovers, initReveals } from "@/lib/motion";
+
+      let hoversReady = false;
+
+      function setup() {
+        initReveals();
+        initCountUps();
+        if (!hoversReady) {
+          initHovers();
+          hoversReady = true;
+        }
+      }
+
+      // Fires on first load and after every ClientRouter navigation.
+      document.addEventListener("astro:page-load", setup);
+    </script>
   </body>
 </html>
