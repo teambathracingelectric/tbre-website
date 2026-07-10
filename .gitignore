@@ -5,23 +5,12 @@
 /.astro/
 /dist/
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# local env files
-.env
-.env*.local
+# env
+.env*
+!.env.example
 
 # cloudflare
 .wrangler
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
 
 # macos
 .DS_Store
@@ -29,6 +18,3 @@ next-env.d.ts
 # ide
 .idea
 # .vscode
-
-# temp
-teambathracingelectric.github.io
