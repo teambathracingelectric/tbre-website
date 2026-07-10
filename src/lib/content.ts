@@ -55,6 +55,28 @@ export async function getTeamBySeason(season = ACTIVE_SEASON) {
     .sort((a, b) => a.category.localeCompare(b.category, "en-GB"));
 }
 
+export type TeamCategoryGroup = Awaited<
+  ReturnType<typeof getTeamBySeason>
+>[number];
+
+export async function getTeamSeasons() {
+  const members = await getCollection("team", ({ data }) => data.active);
+  return [...new Set(members.map((member) => member.data.season))].sort(
+    (a, b) => b - a,
+  );
+}
+
+export function getAdjacentSeasons(seasons: number[], currentSeason: number) {
+  const sorted = [...seasons].sort((a, b) => b - a);
+  const currentIndex = sorted.indexOf(currentSeason);
+
+  return {
+    previousSeason:
+      currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null,
+    nextSeason: currentIndex > 0 ? sorted[currentIndex - 1] : null,
+  };
+}
+
 function sortTeamMembers(a: TeamEntry, b: TeamEntry) {
   if (a.data.lead && !b.data.lead) return -1;
   if (!a.data.lead && b.data.lead) return 1;

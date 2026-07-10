@@ -1,0 +1,81 @@
+---
+import { ArrowLeft, ArrowRight, ChevronLeft } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import PageHero from "@/components/PageHero.astro";
+import TeamRoster from "@/components/TeamRoster.astro";
+import { ACTIVE_SEASON } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  getAdjacentSeasons,
+  getTeamBySeason,
+  getTeamSeasons,
+} from "@/lib/content";
+
+export async function getStaticPaths() {
+  const seasons = await getTeamSeasons();
+  return seasons
+    .filter((season) => season !== ACTIVE_SEASON)
+    .map((season) => ({
+      params: { season: String(season) },
+      props: { season },
+    }));
+}
+
+const { season } = Astro.props;
+const categories = await getTeamBySeason(season);
+const adjacent = getAdjacentSeasons(await getTeamSeasons(), season);
+
+const seasonHref = (value: number) =>
+  value === ACTIVE_SEASON ? "/team" : `/team/${value}`;
+---
+
+<BaseLayout
+  title={`${season} Team`}
+  description={`Meet the ${season} Team Bath Racing Electric team.`}
+>
+  <div class="min-h-screen bg-white">
+    <section class="border-b bg-white">
+      <div class="container mx-auto flex items-center justify-between px-4 py-4">
+        <ButtonLink href="/team" variant="ghost" class="px-3">
+          <ChevronLeft class="h-4 w-4" />
+          Back to current team
+        </ButtonLink>
+
+        <div class="flex gap-2">
+          {
+            adjacent.previousSeason && (
+              <ButtonLink
+                href={seasonHref(adjacent.previousSeason)}
+                variant="ghost"
+                class="px-3"
+              >
+                <ArrowLeft class="h-4 w-4" />
+                {adjacent.previousSeason}
+              </ButtonLink>
+            )
+          }
+          {
+            adjacent.nextSeason && (
+              <ButtonLink
+                href={seasonHref(adjacent.nextSeason)}
+                variant="ghost"
+                class="px-3"
+              >
+                {adjacent.nextSeason}
+                <ArrowRight class="h-4 w-4" />
+              </ButtonLink>
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    <PageHero
+      title={`${season} Team`}
+      description="A look back at the individuals behind our Formula Student journey."
+      heightClass="h-[50vh] min-h-[400px]"
+    />
+
+    <TeamRoster categories={categories} />
+  </div>
+</BaseLayout>

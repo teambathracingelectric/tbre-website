@@ -1,0 +1,50 @@
+---
+import { ArrowLeft } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import PageHero from "@/components/PageHero.astro";
+import TeamRoster from "@/components/TeamRoster.astro";
+import { ACTIVE_SEASON } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  getAdjacentSeasons,
+  getTeamBySeason,
+  getTeamSeasons,
+} from "@/lib/content";
+
+const categories = await getTeamBySeason(ACTIVE_SEASON);
+const { previousSeason } = getAdjacentSeasons(
+  await getTeamSeasons(),
+  ACTIVE_SEASON,
+);
+---
+
+<BaseLayout
+  title="Team"
+  description="Meet the dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
+>
+  <div class="min-h-screen bg-white">
+    {
+      previousSeason && (
+        <section class="border-b bg-white">
+          <div class="container mx-auto flex items-center justify-between px-4 py-4">
+            <span class="font-semibold text-sm text-zinc-500">
+              {ACTIVE_SEASON} Team
+            </span>
+            <ButtonLink href={`/team/${previousSeason}`} variant="ghost" class="px-3">
+              <ArrowLeft class="h-4 w-4" />
+              {previousSeason} Team
+            </ButtonLink>
+          </div>
+        </section>
+      )
+    }
+
+    <PageHero
+      title="Meet Our Team"
+      description="The dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
+      heightClass="h-[50vh] min-h-[400px]"
+    />
+
+    <TeamRoster categories={categories} />
+  </div>
+</BaseLayout>
