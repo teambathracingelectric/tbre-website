@@ -71,9 +71,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           href={CROWDFUNDING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-[#105bab] px-8 font-medium text-sm text-white transition-colors hover:bg-[#105bab]/90"
+          class="group inline-flex h-10 w-full items-center justify-center gap-2 rounded-md bg-[#105bab] px-8 font-medium text-sm text-white transition-colors hover:bg-[#105bab]/90"
         >
-          Support Our Campaign <ArrowRight class="h-4 w-4" />
+          Support Our Campaign{" "}
+          <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </a>
       </div>
     </section>
@@ -81,7 +82,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 </BaseLayout>
 
 <script>
-  document.querySelector("[data-video-frame]")?.addEventListener("load", () => {
-    document.querySelector("[data-video-loader]")?.classList.add("hidden");
-  });
+  function initCrowdfunding() {
+    const frame = document.querySelector("[data-video-frame]");
+    const loader = document.querySelector("[data-video-loader]");
+    if (!frame || !loader) return;
+    frame.addEventListener("load", () => loader.classList.add("hidden"));
+  }
+
+  document.addEventListener("astro:page-load", initCrowdfunding);
 </script>

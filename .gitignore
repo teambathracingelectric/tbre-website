@@ -1,20 +1,22 @@
 # dependencies
-/node_modules
+node_modules
 
-# astro
-/.astro/
-/dist/
+# environment variables
+.env
 
-# env
-.env*
-!.env.example
+# build output
+dist/
+.astro/
+
+# macOS
+.DS_Store
 
 # cloudflare
 .wrangler
 
-# macos
-.DS_Store
-
 # ide
 .idea
 # .vscode
+
+# agents
+.claude
