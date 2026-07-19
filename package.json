@@ -34,7 +34,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@biomejs/biome": "^2.5.3",
-    "@tailwindcss/vite": "^4.3.2",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "knip": "^6.26.0",
     "svgo": "^4.0.1",
