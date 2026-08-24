@@ -3,7 +3,7 @@ title: "Introducing TBRe-23: Our Most Advanced Car Yet"
 excerpt: A deep dive into the innovative features and technology behind our latest racing car...
 date: 2023-12-20
 readTime: 8 min read
-image: /gallery/our_members.jpeg
+image: /our_members.jpg
 category: Technology
 draft: false
 author:

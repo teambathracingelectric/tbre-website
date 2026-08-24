@@ -3,7 +3,7 @@ title: First Place at Formula Student Germany
 excerpt: Our team's journey to victory at one of Europe's most prestigious competitions...
 date: 2024-01-15
 readTime: 5 min read
-image: /gallery/our_achievements.jpg
+image: /our_achievements.jpg
 category: Competitions
 draft: false
 author:

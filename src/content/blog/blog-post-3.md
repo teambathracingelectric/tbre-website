@@ -3,7 +3,7 @@ title: The Future of Electric Racing
 excerpt: How our team is pushing the boundaries of electric vehicle technology in motorsport...
 date: 2023-12-10
 readTime: 6 min read
-image: /gallery/our_sponsors.jpeg
+image: /our_sponsors.jpg
 category: Innovation
 draft: false
 author:
