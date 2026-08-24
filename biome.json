@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!scripts"]
+    "includes": [
+      "**/*",
+      "!**/.astro",
+      "!**/.wrangler",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/scripts",
+      "!**/public"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -17,9 +25,11 @@
   "linter": {
     "enabled": true,
     "domains": {
-      "test": "all",
+      "test": "recommended",
       "project": "recommended",
-      "types": "all"
+      "types": "recommended",
+      "tailwind": "recommended",
+      "astro": "recommended"
     },
     "rules": {
       "preset": "recommended",
