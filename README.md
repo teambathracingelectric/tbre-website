@@ -1,5 +1,41 @@
 # Team Bath Racing Electric
 
+# Sorry for rough guide but 
+# Do this to test then to test/run locally
+## first time
+
+```shell
+git clone https://gitlab.bath.ac.uk/tbre-ai/tbre-website.git
+```
+then switch to development branch or you can make your own if you want (this is just a test repo not the one currently used for the actual website so don't worry about breaking anything)
+
+```shell
+git fetch origin
+git switch dev
+```
+
+NVM can be installed from [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
+
+```shell
+# Install Node 26
+nvm install 26
+# Use Node 26
+nvm use 26
+```
+
+```shell
+pnpm install
+pnpm dev
+```
+
+## every time you want to run it locally
+```shell
+pnpm cf:preview
+```
+
+# 
+
+
 Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.
 
 ## Getting Started
