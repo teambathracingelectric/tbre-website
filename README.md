@@ -4,6 +4,9 @@
 # Do this to test then to test/run locally
 ## first time
 
+You will have to set up a PAT (a guide to do this can be found [here](https://gitlab.bath.ac.uk/tbre-ai/team-knowledge/getting-setup/-/blob/main/Our%20Tools/GitLab/Personal%20Access%20Tokens.md?ref_type=heads)) 
+when running the command below when promted put your uni username in and your pat that you just created above
+
 ```shell
 git clone https://gitlab.bath.ac.uk/tbre-ai/tbre-website.git
 ```
