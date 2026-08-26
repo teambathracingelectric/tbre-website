@@ -1,0 +1,129 @@
+---
+import PageHero from "@/components/PageHero.astro";
+import ShowMoreText from "@/components/ShowMoreText.astro";
+import { APPLY_FORM_URL } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getRecruitmentRoles } from "@/lib/content";
+import { slugify } from "@/utils";
+
+const roles = await getRecruitmentRoles();
+const teams = Array.from(
+  roles.reduce((groups, role) => {
+    const list = groups.get(role.data.team) ?? [];
+    list.push(role);
+    groups.set(role.data.team, list);
+    return groups;
+  }, new Map<string, typeof roles>()),
+).map(([name, teamRoles]) => ({
+  name,
+  href: `#${slugify(name)}`,
+  description: teamRoles[0].data.teamDescription,
+  contact: teamRoles[0].data.contact,
+  members: teamRoles[0].data.members,
+  additionalText: teamRoles[0].data.additionalText,
+  roles: teamRoles,
+}));
+---
+
+<BaseLayout
+  title="Recruitment"
+  description="Join our team! Explore open roles and help us push the boundaries of engineering excellence."
+>
+  <div class="min-h-screen bg-white">
+    <PageHero
+      title="Join Our Team"
+      description="Explore open roles and help us push the boundaries of engineering excellence."
+      heightClass="h-[50vh] min-h-[400px]"
+    />
+
+    <section class="container mx-auto px-4 pt-16">
+      <div class="mb-12 flex flex-wrap items-center justify-center gap-4">
+        {
+          teams.map((team) => (
+            <a
+              href={team.href}
+              class="cursor-pointer rounded-full bg-zinc-100 px-4 py-2 font-medium text-sm text-zinc-900 transition-colors hover:bg-zinc-200"
+            >
+              {team.name}
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-16">
+      {
+        teams.map((team) => (
+          <div
+            class="mb-12"
+            id={slugify(team.name)}
+            style="scroll-margin-top: 144px"
+          >
+            <div class="mb-12">
+              <h2 class="text-center font-bold text-2xl text-zinc-900">
+                {team.name} Team Roles
+              </h2>
+              <p class="mx-auto mt-4 max-w-2xl text-center text-zinc-600">
+                {team.description}
+              </p>
+              {team.additionalText && (
+                <p class="mx-auto mt-4 max-w-2xl whitespace-pre-line text-center text-zinc-600">
+                  {team.additionalText}
+                </p>
+              )}
+              <div class="mt-2 mb-2 flex flex-col items-center">
+                <span class="text-sm text-zinc-500">
+                  <strong>Contact:</strong> {team.contact} &nbsp;|&nbsp;{" "}
+                  <strong>Members:</strong> {team.members}
+                </span>
+              </div>
+              <div class="mt-6 flex justify-center">
+                <a
+                  href={APPLY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 items-center justify-center rounded-md bg-tbre-yellow px-8 font-medium text-sm text-white transition-colors hover:bg-tbre-yellow/90"
+                >
+                  Apply to Join
+                </a>
+              </div>
+            </div>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {team.roles.map((role) => (
+                <article class="rounded-lg border bg-white shadow transition hover:shadow-lg">
+                  <div class="p-6">
+                    <h3 class="mb-2 font-semibold text-xl tracking-tight">
+                      {role.data.title}
+                    </h3>
+                  </div>
+                  <div class="p-6 pt-0">
+                    <ShowMoreText text={role.body ?? ""} />
+                    {(role.data.degree || role.data.year || role.data.count) && (
+                      <ul class="mb-2 text-gray-600">
+                        {role.data.degree && (
+                          <li>
+                            <strong>Preferred Degree:</strong> {role.data.degree}
+                          </li>
+                        )}
+                        {role.data.year && (
+                          <li>
+                            <strong>Preferred Year:</strong> {role.data.year}
+                          </li>
+                        )}
+                        {role.data.count && (
+                          <li>
+                            <strong>Number of roles:</strong> {role.data.count}
+                          </li>
+                        )}
+                      </ul>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,263 @@
+---
+import { Award, Clock, Users, Zap } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-white">
+    <section class="relative h-screen min-h-150 w-full">
+      <img
+        src="/car.jpg"
+        alt="Latest racing car"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="container px-4 text-center"
+          data-reveal-group
+          data-reveal-on="load"
+        >
+          <h1
+            class="mb-6 font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+            data-reveal-item
+          >
+            <span class="text-white">Team Bath Racing</span>{" "}
+            <span class="text-tbre-yellow">Electric</span>
+          </h1>
+          <p
+            class="mx-auto mb-8 max-w-2xl text-pretty text-white text-xl"
+            data-reveal-item
+          >
+            Formula Student Electric Racing Team
+            <br />
+            based at the University of Bath
+          </p>
+          <div
+            class="flex flex-wrap items-center justify-center gap-4"
+            data-reveal-item
+          >
+            <ButtonLink href="/cars">Our Cars</ButtonLink>
+            <ButtonLink href="/sponsors" variant="yellow"
+              >Become a Sponsor</ButtonLink
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6 lg:order-2">
+            <p class="text-lg text-zinc-600">
+              Team Bath Racing Electric is an electric Formula Student team
+              based out of the University of Bath&apos;s Faculty of Engineering
+              and Design.
+              <br /><br />
+              Formula Student is the world&apos;s largest student engineering competition,
+              with over 600 universities taking part in its numerous competitions
+              internationally.
+            </p>
+            <ButtonLink
+              href="https://imeche.org/events/formula-student"
+              external
+            >
+              Visit the Formula Student Website
+            </ButtonLink>
+          </div>
+          <img
+            src="/landing_car_1.jpg"
+            alt="TBRe car at Formula Student"
+            width="800"
+            height="600"
+            class="rounded-lg object-cover lg:order-1"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6">
+            <p class="text-lg text-zinc-600">
+              <!-- We take pride in our current position as one of the top Electric
+              Formula Student teams in the UK, a testament to our commitment and
+              excellence since 2015.
+              <br /><br /> -->
+              There is an emphasis within the team to produce bespoke, in-house designs
+              to ensure the car is optimised for racing conditions. This philosophy
+              provides a platform for both learning and innovation, and allows the
+              team and its members to develop year on year.
+            </p>
+          </div>
+          <img
+            src="/landing_car_2.jpg"
+            alt="TBRe racing car"
+            width="800"
+            height="600"
+            class="rounded-lg object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-tbre-yellow py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <h2
+          class="mb-12 text-center font-bold text-3xl text-white tracking-tighter sm:text-4xl"
+        >
+          About Us
+        </h2>
+        <div class="grid gap-8 text-white lg:grid-cols-2">
+          <p class="flex-1 text-lg leading-relaxed">
+            Team Bath Racing Electric (TBRe) was founded in 2015. We are an
+            exciting and innovative student motorsport team based at the
+            University of Bath. Our team of undergraduates from across the
+            university design, build and race a formula-style car for the
+            Formula Student competition against teams from all around the world.
+            <br /><br />
+            We compete at Silverstone each year for the UK event and travel around
+            the world to compete in international Formula student events. We were
+            the first UK electric team to compete abroad, competing in Zhuhai, China
+            in 2018.
+          </p>
+          <p class="flex-1 text-lg leading-relaxed">
+            In 2022 we competed in Italy and Spain which helped maintain our
+            spot as #1 UK Electric Formula Student Team.
+            <br /><br />
+            Unlike many competitors, TBRe utilises a fully electric powertrain with
+            an Emrax 228 motor rear-wheel drive and a custom in-house designed and
+            built battery pack.
+            <br /><br />
+            TBRe is widely recognized as a leading Formula Student team in the United
+            Kingdom, particularly distinguished for its mastery of electric powertrains,
+            a distinction consistently upheld since the 2017 competition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-tbre-blue py-20 text-white" data-reveal-group>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            [
+              { icon: Clock, value: 10, suffix: "+", label: "Years of Racing" },
+              { icon: Users, value: 150, suffix: "+", label: "Team Members" },
+              { icon: Award, value: 15, suffix: "+", label: "Awards Won" },
+              { icon: Zap, value: 100, suffix: "%", label: "Electric Power" },
+            ].map((stat) => (
+              <div class="text-center" data-reveal-item>
+                <stat.icon class="mx-auto mb-4 h-8 w-8 text-tbre-yellow" />
+                <div
+                  class="font-bold text-4xl text-tbre-yellow"
+                  data-count-up={stat.value}
+                  data-count-suffix={stat.suffix}
+                >
+                  {stat.value}
+                  {stat.suffix}
+                </div>
+                <div class="mt-2 text-white/80">{stat.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6 lg:order-2">
+            <h2
+              class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
+            >
+              Our Achievements
+            </h2>
+            <p class="text-lg text-zinc-600">
+              Since our formation in 2015, TBRe has grown and developed at an
+              astonishing rate. In 2018 a very reliable platform was designed,
+              allowing for the 2019 team to design a hybrid carbon fiber and
+              spaceframe chassis as well as a minimised battery pack, dropping
+              the weight of the car to under 200kg.
+            </p>
+          </div>
+          <img
+            src="/our_achievements.jpg"
+            alt="TBRe achievements"
+            width="800"
+            height="600"
+            class="rounded-lg object-cover lg:order-1"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6">
+            <h2
+              class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
+            >
+              Our Members
+            </h2>
+            <p class="text-lg text-zinc-600">
+              We are comprised of over 100 professional, motivated, and
+              committed students from across our Engineering faculty as well as
+              Management and Computer Science, making our team truly
+              cross-disciplinary and allowing students from any discipline to
+              share and gain knowledge.
+            </p>
+            <ButtonLink href="/team">Meet our Team</ButtonLink>
+          </div>
+          <img
+            src="/our_members.jpg"
+            alt="TBRe members"
+            width="800"
+            height="600"
+            class="rounded-lg object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6 lg:order-2">
+            <h2
+              class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
+            >
+              Our Sponsors
+            </h2>
+            <p class="text-lg text-zinc-600">
+              Our project would not be possible without the generous support of
+              our many sponsors. We work hard to provide a mutually beneficial
+              relationship with each of our supporting organisations. This can
+              range from a simple promotion in our team media to close technical
+              collaboration on some of the exciting and innovative aspects of
+              our car.
+            </p>
+            <ButtonLink href="/sponsors">Meet our Sponsors</ButtonLink>
+          </div>
+          <img
+            src="/our_sponsors.jpg"
+            alt="TBRe sponsors"
+            width="800"
+            height="600"
+            class="rounded-lg object-cover lg:order-1"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

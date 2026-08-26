@@ -1,0 +1,135 @@
+---
+import { render } from "astro:content";
+import { ArrowLeft, ArrowRight, Calendar, Clock } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getAdjacentBlogs, getBlogPosts } from "@/lib/content";
+import { formatDate } from "@/utils";
+
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const posts = await getBlogPosts();
+const adjacent = getAdjacentBlogs(posts, post.id);
+const relatedPosts = posts.filter((item) => item.id !== post.id).slice(0, 2);
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt} image={post.data.image}>
+  <div class="min-h-screen bg-white">
+    <div class="border-b">
+      <div class="container mx-auto flex items-center justify-between px-4 py-4">
+        <ButtonLink href="/blog" variant="ghost" class="px-3">
+          <ArrowLeft class="h-4 w-4" />
+          Back to Blog
+        </ButtonLink>
+
+        <div class="flex gap-2">
+          {
+            adjacent.previousBlog && (
+              <ButtonLink
+                href={`/blog/${adjacent.previousBlog.id}`}
+                variant="ghost"
+                class="px-3"
+                aria-label="Previous post"
+              >
+                <ArrowLeft class="h-4 w-4" />
+              </ButtonLink>
+            )
+          }
+          {
+            adjacent.nextBlog && (
+              <ButtonLink
+                href={`/blog/${adjacent.nextBlog.id}`}
+                variant="ghost"
+                class="px-3"
+                aria-label="Next post"
+              >
+                <ArrowRight class="h-4 w-4" />
+              </ButtonLink>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="relative aspect-2/1 w-full">
+      <img src={post.data.image} alt={post.data.title} class="h-full w-full object-cover" />
+    </div>
+
+    <article>
+      <div class="container px-4 py-12">
+        <div class="mx-auto max-w-3xl">
+          <div class="mb-8 space-y-4">
+            <div class="inline-block rounded-full bg-tbre-blue/10 px-3 py-1 font-medium text-sm text-tbre-blue">
+              {post.data.category}
+            </div>
+            <h1 class="font-bold text-4xl text-zinc-900 tracking-tight sm:text-5xl">
+              {post.data.title}
+            </h1>
+            <div class="flex flex-wrap items-center gap-6 text-sm text-zinc-600">
+              <div class="flex items-center gap-2">
+                <Calendar class="h-4 w-4" />
+                {formatDate(post.data.date)}
+              </div>
+              <div class="flex items-center gap-2">
+                <Clock class="h-4 w-4" />
+                {post.data.readTime}
+              </div>
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <img
+                src={post.data.author.image ?? "/placeholder.png"}
+                alt={post.data.author.name}
+                width="40"
+                height="40"
+                class="h-10 w-10 rounded-full object-cover"
+              />
+              <div>
+                <div class="font-medium text-zinc-900">{post.data.author.name}</div>
+                <div class="text-sm text-zinc-600">{post.data.author.role}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rich-text max-w-none">
+            <Content />
+          </div>
+
+          {
+            relatedPosts.length > 0 && (
+              <div class="mt-16 border-t pt-16">
+                <h2 class="mb-8 font-bold text-2xl text-zinc-900">
+                  Related Articles
+                </h2>
+                <div class="grid gap-8 sm:grid-cols-2">
+                  {relatedPosts.map((relatedPost) => (
+                    <a href={`/blog/${relatedPost.id}`} class="group">
+                      <div class="relative aspect-3/2 overflow-hidden rounded-lg">
+                        <img
+                          src={relatedPost.data.image}
+                          alt={relatedPost.data.title}
+                          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="mt-4 font-semibold text-lg text-zinc-900 group-hover:text-tbre-blue">
+                        {relatedPost.data.title}
+                      </h3>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

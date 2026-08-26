@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a problem with the website.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report security issues, leaked secrets, or private personal data here. Email tbre@bath.ac.uk instead.
+  - type: input
+    id: page
+    attributes:
+      label: Page or URL
+      description: Which page has the problem?
+      placeholder: https://teambathracingelectric.com/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is broken or unexpected?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: iPhone Safari, Chrome on macOS, etc.

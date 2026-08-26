@@ -1,0 +1,52 @@
+{
+  "name": "tbre-website",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Team Bath Racing Electric's official website, built with Astro and Tailwind CSS.",
+  "author": "Tom Heaton <tom@tomheaton.dev> (https://tomheaton.dev)",
+  "scripts": {
+    "build": "astro build",
+    "cf:deploy": "astro build && wrangler deploy",
+    "cf:preview": "astro build && wrangler dev",
+    "check": "astro check",
+    "clean": "rm -rf node_modules .astro dist",
+    "dev": "astro dev",
+    "format": "biome format --write",
+    "generate-types": "wrangler types",
+    "lint": "biome check",
+    "lint:ci": "biome ci --reporter=github",
+    "lint:fix": "biome check --fix",
+    "optimise:svg": "svgo -rf ./public -o ./public",
+    "preview": "astro preview",
+    "start": "astro preview",
+    "unused": "knip --cache",
+    "validate:content": "tsx scripts/validate-content.ts"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.2.3",
+    "@astrojs/mdx": "^7.0.7",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "@lucide/astro": "^1.33.0",
+    "astro": "^7.2.4",
+    "motion": "^13.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@biomejs/biome": "^2.5.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.2.0",
+    "knip": "^6.32.2",
+    "svgo": "^4.0.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
+    "typescript": "6.0.3",
+    "wrangler": "^4.125.0",
+    "yaml": "^2.9.0"
+  },
+  "packageManager": "pnpm@11.11.0",
+  "engines": {
+    "node": "26.x",
+    "pnpm": "11.x"
+  }
+}

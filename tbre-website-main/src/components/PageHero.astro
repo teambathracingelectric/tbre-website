@@ -1,0 +1,32 @@
+---
+type Props = {
+  title: string;
+  description?: string;
+  image?: string;
+  heightClass?: string;
+};
+
+const {
+  title,
+  description,
+  image = "/car.jpg",
+  heightClass = "h-[40vh] min-h-[300px]",
+} = Astro.props;
+---
+
+<section class={`relative ${heightClass} w-full`}>
+  <img src={image} alt={`${title} hero`} class="absolute inset-0 h-full w-full object-cover" />
+  <div class="absolute inset-0 bg-linear-to-b from-black/50 to-white"></div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="container px-4 text-center">
+      <h1 class="mb-4 font-bold text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl">
+        {title}
+      </h1>
+      {
+        description && (
+          <p class="mx-auto max-w-2xl text-lg text-white/90">{description}</p>
+        )
+      }
+    </div>
+  </div>
+</section>

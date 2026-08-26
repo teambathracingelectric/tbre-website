@@ -1,0 +1,12 @@
+---
+id: motion-applied
+season: 2026
+name: Motion Applied
+level: Bronze Sponsors
+logo: /sponsors/2026/motion-applied.svg
+link: https://www.motionapplied.com/
+active: true
+order: 5017
+---
+
+We are grateful to Motion Applied for supporting Team Bath Racing Electric as a Bronze Sponsor for the 2026 season.

@@ -1,0 +1,161 @@
+---
+import { render } from "astro:content";
+import { ArrowLeft, ArrowRight, ChevronLeft } from "@lucide/astro";
+import ButtonLink from "@/components/ButtonLink.astro";
+import GalleryLightbox from "@/components/GalleryLightbox.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getAdjacentCars, getCars } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const cars = await getCars({ includeUnlisted: true });
+  return cars.map((car) => ({
+    params: { year: String(car.data.year) },
+    props: { car },
+  }));
+}
+
+const { car } = Astro.props;
+const allCars = await getCars({ includeUnlisted: true });
+const adjacent = getAdjacentCars(allCars, car.data.year);
+const { Content } = await render(car);
+---
+
+<BaseLayout
+  title={`${car.data.year} Car`}
+  description={`Our ${car.data.year} car is a masterpiece of engineering and innovation.`}
+  image={car.data.image}
+>
+  <div class="min-h-screen bg-white">
+    <section class="border-b bg-white">
+      <div class="container mx-auto flex items-center justify-between px-4 py-4">
+        <ButtonLink href="/cars" variant="ghost" class="px-3">
+          <ChevronLeft class="h-4 w-4" />
+          Back to Cars
+        </ButtonLink>
+
+        <div class="flex gap-2">
+          {
+            adjacent.previousYear && (
+              <ButtonLink
+                href={`/cars/${adjacent.previousYear}`}
+                variant="ghost"
+                class="px-3"
+              >
+                <ArrowLeft class="h-4 w-4" />
+                {adjacent.previousYear}
+              </ButtonLink>
+            )
+          }
+          {
+            adjacent.nextYear && (
+              <ButtonLink
+                href={`/cars/${adjacent.nextYear}`}
+                variant="ghost"
+                class="px-3"
+              >
+                {adjacent.nextYear}
+                <ArrowRight class="h-4 w-4" />
+              </ButtonLink>
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="relative h-[60vh] min-h-125 w-full">
+      <img src={car.data.image} alt={car.data.name} class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-linear-to-b from-black/50 to-white" />
+      <div class="absolute inset-0 flex items-end justify-start p-8">
+        <div class="container mx-auto px-4">
+          <h1 class="mb-2 font-bold text-5xl text-white tracking-tighter underline decoration-tbre-yellow sm:text-6xl">
+            {car.data.name}
+          </h1>
+          <p class="text-tbre-blue text-xl">{car.data.year}</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="container mx-auto space-y-20 px-4 py-16">
+      <section class="grid gap-12 lg:grid-cols-2">
+        <div class="space-y-6">
+          <h2 class="font-bold text-3xl text-zinc-900">About the Car</h2>
+          <div class="rich-text text-lg text-zinc-600">
+            <Content />
+          </div>
+        </div>
+        <img
+          src={car.data.image}
+          alt={`${car.data.name} detail`}
+          width="600"
+          height="400"
+          class="mt-16 rounded-lg object-cover"
+          loading="lazy"
+        />
+      </section>
+
+      {
+        car.data.specs.length > 0 && (
+          <section class="space-y-8">
+            <h2 class="font-bold text-3xl text-zinc-900">Specifications</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {car.data.specs.map((spec) => (
+                <div class="flex flex-col items-center justify-center rounded-lg border bg-zinc-50 p-6 shadow">
+                  <div class="text-center font-bold text-2xl text-tbre-blue">
+                    {spec.value}
+                  </div>
+                  <div class="text-sm text-zinc-600">{spec.label}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        car.data.gallery.length > 0 && (
+          <section class="space-y-8">
+            <h2 class="font-bold text-3xl text-zinc-900">Gallery</h2>
+            <GalleryLightbox
+              images={car.data.gallery.map((image) => ({
+                src: image.url,
+                alt: image.alt,
+              }))}
+            />
+          </section>
+        )
+      }
+    </main>
+
+    {
+      car.data.results.length > 0 && (
+        <section class="border-y bg-zinc-50 py-20">
+          <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center font-bold text-3xl text-zinc-900">
+              Race Results
+            </h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {car.data.results.map((result) => (
+                <article class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md">
+                  {result.image && (
+                    <img
+                      src={result.image}
+                      alt={result.title}
+                      class="aspect-4/3 w-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  <div class="space-y-2 p-6">
+                    <h3 class="font-semibold text-lg text-zinc-900">
+                      {result.title}
+                    </h3>
+                    <p class="text-sm text-zinc-600">{result.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>

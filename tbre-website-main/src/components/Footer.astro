@@ -1,0 +1,113 @@
+---
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTiktok,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { MailIcon, NewspaperIcon } from "@lucide/astro";
+import { socials } from "@/config/site";
+
+type SocialIcon = (typeof socials)[number]["icon"];
+type FontAwesomeIcon = typeof faFacebook;
+type LucideIcon = typeof MailIcon;
+type SocialAsset =
+  | {
+      kind: "fa";
+      icon: FontAwesomeIcon;
+    }
+  | {
+      kind: "lucide";
+      icon: LucideIcon;
+    };
+
+const socialIcons = {
+  facebook: { kind: "fa", icon: faFacebook },
+  instagram: { kind: "fa", icon: faInstagram },
+  linkedin: { kind: "fa", icon: faLinkedin },
+  mail: { kind: "lucide", icon: MailIcon },
+  music: { kind: "fa", icon: faTiktok },
+  newspaper: { kind: "lucide", icon: NewspaperIcon },
+  x: { kind: "fa", icon: faXTwitter },
+  youtube: { kind: "fa", icon: faYoutube },
+} satisfies Record<SocialIcon, SocialAsset>;
+
+function getPathData(icon: FontAwesomeIcon) {
+  const pathData = icon.icon[4];
+  return Array.isArray(pathData) ? pathData.join(" ") : pathData;
+}
+---
+
+<footer
+  class="flex w-full flex-col items-center justify-evenly gap-y-4 border-tbre-yellow border-t-8 bg-tbre-blue p-8 text-white md:flex-row"
+>
+  <div class="flex justify-center space-x-4 md:w-1/3">
+    <p class="font-semibold text-sm">
+      Team Bath Racing Electric &copy; {new Date().getFullYear()}
+    </p>
+  </div>
+
+  <div class="flex justify-center md:w-1/3">
+    <a href="/" aria-label="Team Bath Racing Electric home">
+      <img
+        src="/tbre_logo_white.png"
+        alt="Team Bath Racing Electric logo"
+        width="200"
+        height="200"
+        class="h-auto w-50 transition hover:white-to-yellow"
+      />
+    </a>
+  </div>
+
+  <ul class="flex flex-wrap justify-center gap-3 md:w-1/3">
+    {
+      socials.map((link) => {
+        const icon = socialIcons[link.icon];
+
+        if (icon.kind === "fa") {
+          return (
+            <li>
+              <a
+                href={link.href}
+                rel="noopener noreferrer"
+                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition-all hover:bg-white/10 hover:text-tbre-yellow"
+                aria-label={link.name}
+                title={link.name}
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  role="img"
+                  viewBox={`0 0 ${icon.icon.icon[0]} ${icon.icon.icon[1]}`}
+                >
+                  <path d={getPathData(icon.icon)} />
+                </svg>
+              </a>
+            </li>
+          );
+        }
+
+        const Icon = icon.icon;
+
+        return (
+          <li>
+            <a
+              href={link.href}
+              rel="noopener noreferrer"
+              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+              class="inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition-all hover:bg-white/10 hover:text-tbre-yellow"
+              aria-label={link.name}
+              title={link.name}
+            >
+              <Icon aria-hidden="true" class="h-5 w-5" />
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</footer>

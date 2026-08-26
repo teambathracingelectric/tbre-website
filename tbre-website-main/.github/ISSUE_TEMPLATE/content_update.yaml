@@ -1,0 +1,39 @@
+name: Content update
+description: Request a correction or update to public website content.
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not submit private personal details, unpublished sponsor materials, or security issues in public issues.
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      description: Which page or content entry needs updating?
+      placeholder: /team or src/content/team/2026/...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content
+      description: What currently appears?
+    validations:
+      required: true
+  - type: textarea
+    id: requested
+    attributes:
+      label: Requested update
+      description: What should it say or show instead?
+    validations:
+      required: true
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Publishing permission
+      options:
+        - label: I confirm this content is suitable for the public website.
+          required: true

@@ -1,0 +1,26 @@
+---
+import GalleryLightbox from "@/components/GalleryLightbox.astro";
+import PageHero from "@/components/PageHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getGalleryImages } from "@/lib/content";
+
+const images = await getGalleryImages();
+---
+
+<BaseLayout title="Gallery" description="Capturing our journey through the years.">
+  <div class="min-h-screen bg-white">
+    <PageHero title="Gallery" description="Capturing our journey through the years." />
+
+    <section class="container mx-auto px-4 py-16">
+      <GalleryLightbox
+        showFilters
+        images={images.map((image) => ({
+          src: image.data.src,
+          alt: image.data.alt,
+          category: image.data.category,
+          featured: image.data.featured,
+        }))}
+      />
+    </section>
+  </div>
+</BaseLayout>
