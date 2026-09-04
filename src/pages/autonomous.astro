@@ -1,0 +1,467 @@
+---
+import ButtonLink from "@/components/ButtonLink.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const teamMembers = [
+  { initial: "J", role: "Sub-team Lead" },
+  { initial: "S", role: "Perception & SLAM" },
+  { initial: "R", role: "Control & VCU" },
+  { initial: "P", role: "Integration" },
+];
+
+const timeline = [
+  {
+    year: "2019",
+    description:
+      "Entered as one of the early adopters, winning the Business Presentation and ADS Design categories.",
+    current: true,
+  },
+  {
+    year: "2020",
+    description:
+      "Participated in the adapted virtual/online format due to pandemic constraints.",
+    current: false,
+  },
+  {
+    year: "2021 & 2022",
+    description:
+      "Achieved back-to-back driverless division trophy wins and category awards.",
+    current: true,
+  },
+  {
+    year: "2023 & 2024",
+    description:
+      "Continued competing in the UK at Silverstone alongside an expanding European campaign.",
+    current: false,
+  },
+  {
+    year: "2025",
+    description:
+      "Placed 5th overall and 3rd in dynamic events at Formula Student UK.",
+    current: true,
+  },
+  {
+    year: "2026",
+    description:
+      "Secured a victory in the driverless acceleration event during the July competition at Silverstone.",
+    current: true,
+  },
+];
+
+const systems = [
+  {
+    category: "Sense",
+    name: "Perception",
+    description:
+      "Cone detection and classification from camera and LiDAR, moving to a new sensor with custom CUDA kernels.",
+  },
+  {
+    category: "Locate",
+    name: "SLAM",
+    description:
+      "Where the car is and where the track goes, solved at once. Being rebuilt this season.",
+  },
+  {
+    category: "Decide",
+    name: "Control",
+    description:
+      "Path planning and vehicle control, moving to Model Predictive Control.",
+  },
+  {
+    category: "Command",
+    name: "VCU",
+    description:
+      "Mission select, state machine and the safety checks between software and car.",
+  },
+  {
+    category: "Act",
+    name: "Emergency Braking",
+    description:
+      "The EBS: autonomous braking under normal missions, and a fail-safe stop the moment anything looks wrong.",
+  },
+  {
+    category: "Act",
+    name: "Autonomous Steering",
+    description:
+      "A shaft-mounted motor and angle sensor that steer the car without shutting out the driver.",
+  },
+];
+
+const partners = [
+  {
+    name: "Racelogic",
+    tier: "Gold Sponsor",
+    description:
+      "VBOX data logging and GPS ground truth, so we can measure what the car actually did on track.",
+  },
+  {
+    name: "Vector",
+    tier: "Platinum Sponsor",
+    description:
+      "CAN tooling and licences for the bus between our software and the vehicle control unit.",
+  },
+  {
+    name: "Altium",
+    tier: "Gold Sponsor",
+    description:
+      "PCB design software behind the sensor pod wiring and the actuation control boards.",
+  },
+  {
+    name: "3Dconnexion",
+    tier: "Bronze Sponsor",
+    description:
+      "CAD input hardware used to design the sensor mounts and steering actuation.",
+  },
+];
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-white">
+    <!-- Hero -->
+    <section
+      id="top"
+      class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
+    >
+      <!-- Image placeholder -->
+      <div class="absolute inset-0 bg-zinc-900"></div>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div
+        class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
+      >
+        <h1 class="tracking-tighter">
+          <span class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl">
+            Welcome to <span class="font-bold">TBRe</span>
+          </span>
+
+          <span
+            class="mt-4 block font-semibold text-3xl leading-tight text-tbre-yellow sm:text-4xl"
+          >
+            Autonomous Integration
+          </span>
+        </h1>
+
+        <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9">
+          <a class="text-white transition-opacity hover:opacity-70" href="#team">
+            The Team
+          </a>
+          <a class="text-white transition-opacity hover:opacity-70" href="#timeline">
+            Timeline
+          </a>
+          <a class="text-white transition-opacity hover:opacity-70" href="#systems">
+            Our Systems
+          </a>
+          <a class="text-white transition-opacity hover:opacity-70" href="#partners">
+            Partners
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="mb-6 flex items-center gap-4">
+          <h2 class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
+            Meet the Team
+          </h2>
+
+          <div class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"></div>
+        </div>
+
+        <div class="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
+          <p class="max-w-2xl text-lg leading-relaxed text-zinc-600">
+            Seven engineers across software, controls and integration. The leads below own each
+            part of the system.
+          </p>
+
+          <div class="flex shrink-0 gap-8">
+            <div>
+              <div class="font-bold text-xl text-tbre-blue">2019</div>
+              <div class="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                Founded
+              </div>
+            </div>
+
+            <div>
+              <div class="font-bold text-xl text-tbre-blue">5</div>
+              <div class="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                Competition wins
+              </div>
+            </div>
+
+            <div>
+              <div class="font-bold text-xl text-tbre-orange">3</div>
+              <div class="mt-1 text-xs uppercase tracking-wider text-zinc-500">
+                Trophies
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            teamMembers.map((member) => (
+              <article class="flex items-center gap-5">
+                <div class="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-zinc-100">
+                  <span class="font-bold text-3xl text-tbre-blue/40">
+                    {member.initial}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 class="mb-1.5 font-semibold text-xl leading-tight text-zinc-900">
+                    Name TBC
+                  </h3>
+
+                  <p class="text-xs font-medium uppercase tracking-wider text-tbre-orange">
+                    {member.role}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="mt-14 grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:items-center">
+          <div class="h-72 rounded-lg bg-zinc-100 sm:h-80">
+            <img
+                src="/autonomous/tbreai-7.jpg"
+                alt="The autonomous sub-team on stage at Formula Student UK 2026"
+                class="rounded-lg object-cover lg:order-1"
+                loading="lazy"
+            />
+          </div>
+
+          <div class="space-y-6">
+            <p class="text-lg leading-relaxed text-zinc-600">
+              We are the sub-team that takes the driver out of the seat. Every layer of the
+              autonomous system is written in-house — cone detection from camera and LiDAR,
+              mapping and localisation, path planning, and the braking and steering hardware that
+              turns a plan into movement. Nothing arrives as a black box, so every member ends the
+              year having shipped something that ran at racing speed.
+            </p>
+
+            <p class="text-lg leading-relaxed text-zinc-600">
+              Next season the target is to drive TBRe17 autonomously at Formula Student Germany.
+              Getting there means Model Predictive Control for planning, a new SLAM system and
+              simulator we own end to end, MCAP logging so nothing is debugged twice — and a
+              bigger team of people who want to build it.
+            </p>
+
+            <ButtonLink href="/gallery">
+              Autonomous gallery →
+            </ButtonLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="py-20" data-reveal>
+    <div class="container mx-auto px-4">
+        <div class="mb-6 flex items-center gap-4">
+        <h2 class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
+            Timeline
+        </h2>
+
+        <div class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"></div>
+        </div>
+
+        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        The sub-team debuted its first autonomous vehicle when the UK competition
+        introduced the track-ready autonomous classes. Seven seasons of results since:
+        </p>
+
+        <!-- Horizontal timeline -->
+        <div class="overflow-x-auto pb-4">
+        <div class="min-w-[1100px]">
+            <div class="relative pt-8">
+            <!-- Continuous timeline line -->
+            <div class="absolute left-0 right-0 top-2 h-0.5 bg-zinc-200"></div>
+
+            <div class="grid grid-cols-6 gap-5">
+                {
+                timeline.map((item) => (
+                    <article class="relative flex min-h-[230px] flex-col">
+                    <!-- Timeline marker -->
+                    <div
+                        class:list={[
+                        "absolute -top-[30px] left-0 h-3 w-3 rounded-full",
+                        item.current ? "bg-tbre-blue" : "bg-zinc-400",
+                        ]}
+                    ></div>
+
+                    <!-- Year -->
+                    <div
+                        class:list={[
+                        "mb-3 font-bold text-xl",
+                        item.current ? "text-tbre-blue" : "text-zinc-500",
+                        ]}
+                    >
+                        {item.year}
+                    </div>
+
+                    <!-- Description -->
+                    <p class="mb-4 text-sm leading-relaxed text-zinc-600">
+                        {item.description}
+                    </p>
+
+                    <!-- Image -->
+                    <div class="mt-auto h-24 border border-zinc-200 bg-zinc-100"></div>
+                    </article>
+                ))
+                }
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Systems -->
+    <section id="systems" class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="mb-6 flex items-center gap-4">
+          <h2 class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
+            Our Systems
+          </h2>
+
+          <div class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"></div>
+        </div>
+
+        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+          Cones in, brake pressure out. Six modules carry the car around the track, and two more
+          keep us honest about whether it works.
+        </p>
+
+        <div class="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {
+            systems.map((system) => (
+              <article class="rounded-lg bg-tbre-blue p-5 text-white">
+                <div class="mb-2.5 text-xs font-semibold uppercase tracking-wider text-tbre-yellow">
+                  {system.category}
+                </div>
+
+                <h3 class="mb-2.5 font-semibold text-lg leading-tight">
+                  {system.name}
+                </h3>
+
+                <p class="text-sm leading-relaxed text-white/80">
+                  {system.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          <article class="rounded-lg bg-zinc-100 p-6">
+            <div class="mb-2.5 text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              Meta
+            </div>
+
+            <h3 class="mb-2.5 font-semibold text-xl text-zinc-900">
+              Sim
+            </h3>
+
+            <p class="text-sm leading-relaxed text-zinc-600">
+              Our own simulator. Every mission runs here before it runs on track, with physics we
+              can change and trust.
+            </p>
+          </article>
+
+          <article class="rounded-lg bg-zinc-100 p-6">
+            <div class="mb-2.5 text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              Meta
+            </div>
+
+            <h3 class="mb-2.5 font-semibold text-xl text-zinc-900">
+              Logs &amp; Tracking
+            </h3>
+
+            <p class="text-sm leading-relaxed text-zinc-600">
+              MCAP logging and inspection, so any run can be replayed, compared and
+              regression-tested.
+            </p>
+          </article>
+
+          <article class="flex flex-col items-start justify-center gap-4 rounded-lg border border-zinc-200 p-6">
+            <p class="font-medium leading-relaxed text-zinc-900">
+              Want to learn more about these projects and work on them yourself?
+            </p>
+
+            <p class="text-sm leading-relaxed text-zinc-600">
+              Open to University of Bath students across engineering, computer science, maths and
+              physics.
+            </p>
+
+            <ButtonLink href="/recruitment" variant="orange">
+              Join the team →
+            </ButtonLink>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" class="bg-zinc-50 py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="mb-6 flex items-center gap-4">
+          <h2 class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
+            Partners
+          </h2>
+
+          <div class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"></div>
+        </div>
+
+        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
+          The autonomous programme runs on hardware, software and expertise given to us by the
+          companies below — the same sponsor tiers as the main team.
+        </p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            partners.map((partner) => (
+              <article class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm">
+                <!-- Logo placeholder -->
+                <div class="flex h-28 items-center justify-center border-b border-zinc-100 bg-zinc-50 p-5">
+                  <span class="font-semibold text-zinc-400">
+                    {partner.name}
+                  </span>
+                </div>
+
+                <div class="p-5">
+                  <h3 class="mb-1 font-semibold text-lg text-zinc-900">
+                    {partner.name}
+                  </h3>
+
+                  <p class="mb-3 text-xs uppercase tracking-wider text-tbre-yellow">
+                    {partner.tier}
+                  </p>
+
+                  <p class="text-sm leading-relaxed text-zinc-600">
+                    {partner.description}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        <p>PLACEHOLDER SECTION PARTNER DETAILS REQUIRED</p>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <ButtonLink href="/sponsors">
+            Full Team Sponsorship Prospectus
+          </ButtonLink>
+
+          <ButtonLink href="/sponsors" variant="orange">
+            Autonomous Team Prospectus
+          </ButtonLink>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -5,8 +5,10 @@
 @theme {
   --color-tbre-blue: #105bab;
   --color-tbre-yellow: #ffc423;
+  --color-tbre-orange: #E6642A;
   --color-tbre-blue-cool: #1f2b46;
   --color-tbre-yellow-cool: #f0b323;
+  --color-tbre-orange-cool: #D7532A;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));

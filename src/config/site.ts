@@ -35,6 +35,7 @@ type NavigationLink = {
 export const navigation: NavigationLink[] = [
   { name: "Home", href: "/" },
   { name: "Team", href: "/team" },
+  { name: "Autonomous", href: "/autonomous" },
   { name: "Recruitment", href: "/recruitment", icon: "Sparkles" },
   { name: "Cars", href: "/cars" },
   { name: "Sponsors", href: "/sponsors" },
