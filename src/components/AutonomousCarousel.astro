@@ -1,0 +1,38 @@
+---
+interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="absolute inset-0" aria-hidden="true">
+  {
+    images.map((image, index) => (
+      <img
+        src={image}
+        alt=""
+        class:list={[
+          "hero-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
+          index === 0 ? "opacity-100" : "opacity-0",
+        ]}
+      />
+    ))
+  }
+</div>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
+
+  if (slides.length > 1) {
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.replace("opacity-100", "opacity-0");
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.replace("opacity-0", "opacity-100");
+    }, 5000);
+  }
+</script>

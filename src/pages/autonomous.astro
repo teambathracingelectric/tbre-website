@@ -1,6 +1,8 @@
 ---
 import ButtonLink from "@/components/ButtonLink.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroCarousel from "@/components/AutonomousCarousel.astro";
+import { ACTIVE_SEASON } from "@/config/site";
 
 const teamMembers = [
   { initial: "J", role: "Sub-team Lead" },
@@ -113,52 +115,68 @@ const partners = [
       "CAD input hardware used to design the sensor mounts and steering actuation.",
   },
 ];
+
+// Please feel free to change these as more content comes in
+const heroSlides = [
+  "autonomous/tbreai-2.jpg",
+  "autonomous/tbreai-1.jpg",
+  "autonomous/tbreai-4.jpg",
+  "autonomous/tbreai-6.jpg",
+];
+
 ---
 
 <BaseLayout>
   <div class="min-h-screen bg-white">
-    <!-- Hero -->
-    <section
-      id="top"
-      class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
+  <!-- Hero -->
+  <section
+    id="top"
+    class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
+  >
+    <HeroCarousel images={heroSlides} />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Hero content -->
+    <div
+      class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
     >
-      <!-- Image placeholder -->
-      <div class="absolute inset-0 bg-zinc-900"></div>
+      <h1 class="tracking-tighter">
+        <span
+          class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
+        >
+          Welcome to <span class="font-bold">TBRe</span>
+        </span>
 
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/60"></div>
+        <span
+          class="mt-4 block font-semibold text-3xl leading-tight text-tbre-yellow sm:text-4xl"
+        >
+          Autonomous Integration
+        </span>
+      </h1>
 
-      <div
-        class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
+      <nav
+        class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
       >
-        <h1 class="tracking-tighter">
-          <span class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl">
-            Welcome to <span class="font-bold">TBRe</span>
-          </span>
+        <a class="text-white transition-opacity hover:opacity-70" href="#team">
+          The Team
+        </a>
 
-          <span
-            class="mt-4 block font-semibold text-3xl leading-tight text-tbre-yellow sm:text-4xl"
-          >
-            Autonomous Integration
-          </span>
-        </h1>
+        <a class="text-white transition-opacity hover:opacity-70" href="#timeline">
+          Timeline
+        </a>
 
-        <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9">
-          <a class="text-white transition-opacity hover:opacity-70" href="#team">
-            The Team
-          </a>
-          <a class="text-white transition-opacity hover:opacity-70" href="#timeline">
-            Timeline
-          </a>
-          <a class="text-white transition-opacity hover:opacity-70" href="#systems">
-            Our Systems
-          </a>
-          <a class="text-white transition-opacity hover:opacity-70" href="#partners">
-            Partners
-          </a>
-        </nav>
-      </div>
-    </section>
+        <a class="text-white transition-opacity hover:opacity-70" href="#systems">
+          Our Systems
+        </a>
+
+        <a class="text-white transition-opacity hover:opacity-70" href="#partners">
+          Partners
+        </a>
+      </nav>
+    </div>
+  </section>
 
     <!-- Team -->
     <section id="team" class="py-20" data-reveal>
