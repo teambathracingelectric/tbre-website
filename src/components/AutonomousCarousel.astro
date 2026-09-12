@@ -1,22 +1,45 @@
 ---
-interface Props {
-  images: string[];
-  video?: string;
+interface Slide {
+  src: string;
+  alt?: string;
 }
 
-const { images, video } = Astro.props;
+interface Props {
+  images: Slide[];
+  /** Plays over the stills; they stay as the poster and the fallback. */
+  video?: string;
+  /** Milliseconds each still is held. */
+  interval?: number;
+  /**
+   * Sizing for the frame. It positions itself `relative` so the slides can
+   * stack inside it, so wrap it rather than passing `absolute` here.
+   */
+  class?: string;
+}
+
+const { images, video, interval = 5000, class: className } = Astro.props;
+
+// Decorative when no alt text is given, which is how the hero uses it.
+const decorative = images.every((image) => !image.alt);
 ---
 
-<div class="absolute inset-0" aria-hidden="true">
+<div
+  class:list={["relative", className]}
+  data-carousel
+  data-interval={interval}
+  aria-hidden={decorative ? "true" : undefined}
+>
   {
     images.map((image, index) => (
       <img
-        src={image}
-        alt=""
+        src={image.src}
+        alt={image.alt ?? ""}
+        data-carousel-slide
         class:list={[
-          "hero-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
+          "absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
           index === 0 ? "opacity-100" : "opacity-0",
         ]}
+        loading={index === 0 ? "eager" : "lazy"}
       />
     ))
   }
@@ -24,13 +47,14 @@ const { images, video } = Astro.props;
   {
     video && (
       <video
-        class="hero-video absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000 motion-reduce:hidden"
+        class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000 motion-reduce:hidden"
+        data-carousel-video
         src={video}
-        poster={images[0]}
+        poster={images[0]?.src}
         muted
         loop
         playsinline
-        preload="auto"
+        preload="none"
       />
     )
   }
@@ -39,48 +63,127 @@ const { images, video } = Astro.props;
 <script>
   import { prefersReducedMotion } from "@/lib/motion";
 
-  let timer: number | undefined;
+  const timers = new Map<Element, number>();
+  const onScreen = new Set<HTMLElement>();
+  let observer: IntersectionObserver | undefined;
 
-  function initHeroCarousel() {
-    // ClientRouter reuses the document, so clear the previous page's timer first.
-    if (timer !== undefined) {
-      window.clearInterval(timer);
-      timer = undefined;
-    }
+  function cycle(carousel: HTMLElement) {
+    const slides = Array.from(
+      carousel.querySelectorAll<HTMLElement>("[data-carousel-slide]"),
+    );
 
-    const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
-    const video = document.querySelector<HTMLVideoElement>(".hero-video");
+    if (slides.length < 2 || timers.has(carousel)) return;
 
-    // With a video the stills are only what shows underneath it while it loads, so
-    // they don't cycle. Reduced motion hides the video and the carousel takes over.
-    if (video && !prefersReducedMotion()) {
-      video
-        .play()
-        .then(() => video.classList.replace("opacity-0", "opacity-100"))
-        .catch(() => {
-          // Autoplay refused: leave the stills showing and cycle them instead.
-          startCarousel(slides);
-        });
+    const interval = Number(carousel.dataset.interval ?? 5000);
+    let current = slides.findIndex((slide) =>
+      slide.classList.contains("opacity-100"),
+    );
+
+    timers.set(
+      carousel,
+      window.setInterval(() => {
+        slides[current].classList.replace("opacity-100", "opacity-0");
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.replace("opacity-0", "opacity-100");
+      }, interval),
+    );
+  }
+
+  function stopCycling(carousel: HTMLElement) {
+    const timer = timers.get(carousel);
+
+    if (timer === undefined) return;
+
+    window.clearInterval(timer);
+    timers.delete(carousel);
+  }
+
+  function video(carousel: HTMLElement) {
+    return carousel.querySelector<HTMLVideoElement>("[data-carousel-video]");
+  }
+
+  function start(carousel: HTMLElement) {
+    if (carousel.dataset.mode === "static") return;
+
+    if (carousel.dataset.mode === "cycle") {
+      cycle(carousel);
 
       return;
     }
 
-    startCarousel(slides);
+    const element = video(carousel);
+
+    // preload="none" keeps the download off the critical path, and off the wire
+    // entirely under reduced motion, where the video is never played.
+    element
+      ?.play()
+      .then(() => element.classList.replace("opacity-0", "opacity-100"))
+      .catch(() => {
+        // Autoplay refused: fall back to cycling the stills.
+        carousel.dataset.mode = "cycle";
+        cycle(carousel);
+      });
   }
 
-  function startCarousel(slides: NodeListOf<HTMLElement>) {
-    if (slides.length < 2) return;
-
-    let currentSlide = 0;
-
-    timer = window.setInterval(() => {
-      slides[currentSlide].classList.replace("opacity-100", "opacity-0");
-
-      currentSlide = (currentSlide + 1) % slides.length;
-
-      slides[currentSlide].classList.replace("opacity-0", "opacity-100");
-    }, 5000);
+  function stop(carousel: HTMLElement) {
+    stopCycling(carousel);
+    video(carousel)?.pause();
   }
 
-  document.addEventListener("astro:page-load", initHeroCarousel);
+  function initCarousels() {
+    // ClientRouter reuses the document, so drop the previous page's state first.
+    for (const carousel of onScreen) stop(carousel);
+    onScreen.clear();
+    observer?.disconnect();
+
+    const carousels = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-carousel]"),
+    );
+
+    if (!carousels.length) return;
+
+    const reduced = prefersReducedMotion();
+
+    for (const carousel of carousels) {
+      // A video covers the stills entirely, so they don't cycle behind it.
+      // Reduced motion holds the first still and leaves the video alone: CSS
+      // hides it, so playing it would only cost bandwidth.
+      carousel.dataset.mode = reduced
+        ? "static"
+        : video(carousel)
+          ? "video"
+          : "cycle";
+    }
+
+    // Only run while on screen, and not at all in a background tab.
+    observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const carousel = entry.target as HTMLElement;
+
+          if (entry.isIntersecting) {
+            onScreen.add(carousel);
+
+            if (!document.hidden) start(carousel);
+          } else {
+            onScreen.delete(carousel);
+            stop(carousel);
+          }
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    for (const carousel of carousels) observer.observe(carousel);
+  }
+
+  document.addEventListener("astro:page-load", initCarousels);
+  document.addEventListener("visibilitychange", () => {
+    for (const carousel of onScreen) {
+      if (document.hidden) stop(carousel);
+      else start(carousel);
+    }
+  });
 </script>
