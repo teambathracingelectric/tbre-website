@@ -1,9 +1,10 @@
 ---
 interface Props {
   images: string[];
+  video?: string;
 }
 
-const { images } = Astro.props;
+const { images, video } = Astro.props;
 ---
 
 <div class="absolute inset-0" aria-hidden="true">
@@ -19,15 +20,60 @@ const { images } = Astro.props;
       />
     ))
   }
+
+  {
+    video && (
+      <video
+        class="hero-video absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000 motion-reduce:hidden"
+        src={video}
+        poster={images[0]}
+        muted
+        loop
+        playsinline
+        preload="auto"
+      />
+    )
+  }
 </div>
 
 <script>
-  const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
+  import { prefersReducedMotion } from "@/lib/motion";
 
-  if (slides.length > 1) {
+  let timer: number | undefined;
+
+  function initHeroCarousel() {
+    // ClientRouter reuses the document, so clear the previous page's timer first.
+    if (timer !== undefined) {
+      window.clearInterval(timer);
+      timer = undefined;
+    }
+
+    const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
+    const video = document.querySelector<HTMLVideoElement>(".hero-video");
+
+    // With a video the stills are only what shows underneath it while it loads, so
+    // they don't cycle. Reduced motion hides the video and the carousel takes over.
+    if (video && !prefersReducedMotion()) {
+      video
+        .play()
+        .then(() => video.classList.replace("opacity-0", "opacity-100"))
+        .catch(() => {
+          // Autoplay refused: leave the stills showing and cycle them instead.
+          startCarousel(slides);
+        });
+
+      return;
+    }
+
+    startCarousel(slides);
+  }
+
+  function startCarousel(slides: NodeListOf<HTMLElement>) {
+    if (slides.length < 2) return;
+
     let currentSlide = 0;
 
-    setInterval(() => {
+    timer = window.setInterval(() => {
       slides[currentSlide].classList.replace("opacity-100", "opacity-0");
 
       currentSlide = (currentSlide + 1) % slides.length;
@@ -35,4 +81,6 @@ const { images } = Astro.props;
       slides[currentSlide].classList.replace("opacity-0", "opacity-100");
     }, 5000);
   }
+
+  document.addEventListener("astro:page-load", initHeroCarousel);
 </script>
