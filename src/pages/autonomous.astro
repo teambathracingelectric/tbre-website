@@ -1,8 +1,9 @@
 ---
-import ButtonLink from "@/components/ButtonLink.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroCarousel from "@/components/AutonomousCarousel.astro";
+import AutonomousVideos from "@/components/AutonomousVideos.astro";
+import ButtonLink from "@/components/ButtonLink.astro";
 import { ACTIVE_SEASON } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const teamMembers = [
   { initial: "J", role: "Sub-team Lead" },
@@ -116,6 +117,30 @@ const partners = [
   },
 ];
 
+// `start` is the point (in seconds) the video jumps to each time it scrolls into
+// view. It still loops from the beginning once it reaches the end.
+const videos = [
+  {
+    label: "Live Run",
+    src: "/autonomous/TBReAI_2026_Live_Run.mp4",
+    start: 50,
+  },
+  {
+    label: "Trackdrive",
+    src: "/autonomous/TBReAI_2026_Live_Logs_Run.mp4",
+  },
+  {
+    label: "Acceleration",
+    src: "/autonomous/FSUK_26_-_Accelleration_Run.mp4",
+  },
+  {
+    label: "Simulator",
+    src: "/autonomous/TBReAI_2026_Sim_Video.mp4",
+  },
+];
+
+const heroVideo = "/autonomous/TBReAI_2025_FSUK_Montage.mp4";
+
 // Please feel free to change these as more content comes in
 const heroSlides = [
   "autonomous/tbreai-2.jpg",
@@ -123,7 +148,6 @@ const heroSlides = [
   "autonomous/tbreai-4.jpg",
   "autonomous/tbreai-6.jpg",
 ];
-
 ---
 
 <BaseLayout>
@@ -133,7 +157,7 @@ const heroSlides = [
     id="top"
     class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
   >
-    <HeroCarousel images={heroSlides} />
+    <HeroCarousel images={heroSlides} video={heroVideo} />
 
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/60"></div>
@@ -169,6 +193,10 @@ const heroSlides = [
 
         <a class="text-white transition-opacity hover:opacity-70" href="#systems">
           Our Systems
+        </a>
+
+        <a class="text-white transition-opacity hover:opacity-70" href="#in-action">
+          In Action
         </a>
 
         <a class="text-white transition-opacity hover:opacity-70" href="#partners">
@@ -421,6 +449,26 @@ const heroSlides = [
             </ButtonLink>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- See It in Action -->
+    <section id="in-action" class="py-20" data-reveal>
+      <div class="container mx-auto px-4">
+        <div class="mb-6 flex items-center gap-4">
+          <h2 class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl">
+            See It in Action
+          </h2>
+
+          <div class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"></div>
+        </div>
+
+        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+          The car at Formula Student UK 2026, and the same runs played back from our own
+          logs — what the car saw, where it thought it was, and the line it chose.
+        </p>
+
+        <AutonomousVideos videos={videos} />
       </div>
     </section>
 
