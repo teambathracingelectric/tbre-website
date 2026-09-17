@@ -3,7 +3,7 @@ team: AI
 teamDescription: The AI team focuses on developing and implementing autonomous driving
   systems, including perception, planning, and control algorithms to enable the car to
   navigate tracks without human intervention.
-contact: Wenzel Kinsky
+contact: James Morris
 members: "7"
 title: Senior Engineer
 degree: ME / EE / CS / IMEE / Maths / Physics

@@ -108,6 +108,8 @@ const { videos } = Astro.props;
     }
 
     async function playFrom(video: HTMLVideoElement) {
+      video.muted = true;
+      video.defaultMuted = true
       const start = Number(video.dataset.start ?? 0);
 
       if (video.readyState < 1) {

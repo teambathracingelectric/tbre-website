@@ -109,16 +109,20 @@ const decorative = images.every((image) => !image.alt);
 
     if (carousel.dataset.mode === "cycle") {
       cycle(carousel);
-
       return;
     }
 
     const element = video(carousel);
 
-    // preload="none" keeps the download off the critical path, and off the wire
-    // entirely under reduced motion, where the video is never played.
+    if (!element) return;
+
+    // Explicitly mute before attempting autoplay.
+    element.muted = true;
+    element.defaultMuted = true;
+    element.setAttribute("muted", "");
+
     element
-      ?.play()
+      .play()
       .then(() => element.classList.replace("opacity-0", "opacity-100"))
       .catch(() => {
         // Autoplay refused: fall back to cycling the stills.

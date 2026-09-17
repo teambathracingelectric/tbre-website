@@ -6,5 +6,3 @@ width: 600
 height: 400
 order: 6
 ---
-
-
