@@ -233,6 +233,7 @@ const autonomous = defineCollection({
           name: z.string(),
           tier: z.string(),
           description: z.string(),
+          logo: publicImagePath.optional(),
         }),
       )
       .optional(),
