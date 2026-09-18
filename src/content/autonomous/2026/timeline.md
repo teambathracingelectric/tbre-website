@@ -1,7 +1,7 @@
 ---
 section: timeline
 
-intro: "We entered Formula Student's new driverless class in 2019 with a car we converted ourselves. Seven seasons and ten awards later, here's how we got here."
+intro: "Every year the team is new. Since 2019 each intake has picked the driverless car up where the last one left it — seven seasons, ten awards and one full reboot later, here's how we got here."
 
 items:
   - year: "2019-20"
