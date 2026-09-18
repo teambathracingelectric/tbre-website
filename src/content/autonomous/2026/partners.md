@@ -1,24 +1,9 @@
 ---
 section: partners
 
-intro: "The autonomous programme runs on hardware, software and expertise given to us by the companies below — the same sponsor tiers as the main team."
+intro: "None of this happens on its own. The work we're able to do is only possible thanks to the sponsors and partners who help us along the way — with hardware, software, expertise and time. If you'd like to be part of what we build next, we'd love to hear from you."
 
-partners:
-  - name: "Racelogic"
-    tier: "Gold Sponsor"
-    description: "VBOX data logging and GPS ground truth, so we can measure what the car actually did on track."
-
-  - name: "Vector"
-    tier: "Platinum Sponsor"
-    description: "CAN tooling and licences for the bus between our software and the vehicle control unit."
-
-  - name: "Altium"
-    tier: "Gold Sponsor"
-    description: "PCB design software behind the sensor pod wiring and the actuation control boards."
-
-  - name: "3Dconnexion"
-    tier: "Bronze Sponsor"
-    description: "CAD input hardware used to design the sensor mounts and steering actuation."
+partners: []
 
 prospectusButton: "Full Team Sponsorship Prospectus"
 autonomousProspectusButton: "Autonomous Team Prospectus"
