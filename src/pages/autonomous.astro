@@ -138,6 +138,12 @@ const heroSlides = [
           </span>
         </h1>
 
+        <p
+          class="-mt-4 max-w-2xl text-lg font-normal leading-relaxed text-tbre-yellow sm:text-xl"
+        >
+          {hero?.tagline}
+        </p>
+
         <nav
           class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
         >
@@ -244,7 +250,7 @@ const heroSlides = [
         </div>
 
         <div
-          class="mt-14 grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:items-center"
+          class="mt-14 grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center"
         >
           <AutonomousCarousel
             images={teamPhotos}
