@@ -1,6 +1,6 @@
 ---
 section: in-action
 
-intro: "The car at Formula Student UK 2026, and the same runs played back from our own logs — what the car saw, where it thought it was, and the line it chose."
+intro: "Have a look at how the car ran this past year — on track at Formula Student UK 2026, the same runs replayed from our own logs, and the simulator where every one of them was driven first."
 
 ---

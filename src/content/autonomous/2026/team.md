@@ -1,7 +1,7 @@
 ---
 section: team
 
-intro: "Seven engineers across software, controls and integration. The leads below own each part of the system."
+intro: "Engineers across software, controls and integration. The leads below own each part of the system."
 
 stats:
   - figure: "2019"
@@ -29,9 +29,11 @@ members:
     image: "/autonomous/Sara.png"
 
 paragraphs:
-  - "We are the sub-team that takes the driver out of the seat. Every layer of the autonomous system is written in-house — cone detection from camera and LiDAR, mapping and localisation, path planning, and the braking and steering hardware that turns a plan into movement. Nothing arrives as a black box, so every member ends the year having shipped something that ran at racing speed."
+  - "TBRe is brilliant at supporting the students in the team to develop, learn and grow into competent engineers with great team-working skills. Autonomous Integration (TBReAI) is here to offer that same opportunity to coders, programmers and software engineers, who build our self-driving systems from scratch."
 
-  - "Next season the target is to drive TBRe17 autonomously at Formula Student Germany. Getting there means Model Predictive Control for planning, a new SLAM system and simulator we own end to end, MCAP logging so nothing is debugged twice — and a bigger team of people who want to build it."
+  - "TBReAI also gives the whole TBRe team access to more competitions and the chance to score more points. Formula Student UK runs a driverless class, FS-AI, where we compete on the organisers' ADS-DV — their Autonomous Driving System Dedicated Vehicle. We were the overall class champions in 2021, back to 5th overall in 2025, and have taken ten FSUK awards since 2019."
+
+  - "2026 brought our latest trophy, a win in Acceleration and our first since the team's resurrection in 2024, and we're keen to keep pushing. This season we're going to have every system ready to drive the main team's car, TBRe27, at Formula Student Germany in 2027. Getting there means integrating deeper with the main team on the mechanical and electrical systems that actuate steering and braking, so our sensors and our code can go racing on TBRe27."
 
 galleryButton: "Autonomous gallery →"
 ---
