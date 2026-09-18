@@ -1,19 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import AutonomousCarousel from "@/components/AutonomousCarousel.astro";
 import AutonomousVideos from "@/components/AutonomousVideos.astro";
 import ButtonLink from "@/components/ButtonLink.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 
 const autonomousPages = await getCollection("autonomous");
 
-const hero = autonomousPages.find(
-  (page) => page.data.section === "hero",
-)?.data;
+const hero = autonomousPages.find((page) => page.data.section === "hero")?.data;
 
-const team = autonomousPages.find(
-  (page) => page.data.section === "team",
-)?.data;
+const team = autonomousPages.find((page) => page.data.section === "team")?.data;
 
 const timelineContent = autonomousPages.find(
   (page) => page.data.section === "timeline",
@@ -464,9 +460,18 @@ const heroSlides = [
               <div
                 class="flex h-28 items-center justify-center border-b border-zinc-100 bg-zinc-50 p-5"
               >
-                <span class="font-semibold text-zinc-400">
-                  {partner.name}
-                </span>
+                {partner.logo ? (
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    class="max-h-16 w-auto max-w-[80%] object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span class="font-semibold text-zinc-400">
+                    {partner.name}
+                  </span>
+                )}
               </div>
 
               <div class="p-5">
