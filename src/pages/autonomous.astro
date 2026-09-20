@@ -105,7 +105,7 @@ const heroSlides = [
     <!-- Hero -->
     <section
       id="top"
-      class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
+      class="relative flex min-h-[440px] items-center justify-center overflow-hidden bg-zinc-900"
     >
       <div class="absolute inset-0">
         <AutonomousCarousel
@@ -118,18 +118,14 @@ const heroSlides = [
       <div class="absolute inset-0 bg-black/60"></div>
 
       <div
-        class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
+        class="container relative mx-auto flex min-h-[440px] flex-col items-center justify-center gap-9 px-4 text-center"
       >
         <h1 class="tracking-tighter">
           <span
-            class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
+            class="block font-bold text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
           >
             {hero?.title}{" "}
-            <span class="font-bold">
-              {hero?.subtitle}<span class="text-tbre-yellow">
-                {hero?.accent}
-              </span>
-            </span>
+            {hero?.subtitle}<span class="text-tbre-yellow">{hero?.accent}</span>
           </span>
         </h1>
 
@@ -381,7 +377,11 @@ const heroSlides = [
               {systemsContent?.joinText}
             </p>
 
-            <ButtonLink href="/recruitment#ai" variant="orange">
+            <ButtonLink
+              href="https://join.teambathracingelectric.com"
+              variant="orange"
+              external
+            >
               {systemsContent?.joinButton}
             </ButtonLink>
           </article>
