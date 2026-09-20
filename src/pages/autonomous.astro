@@ -103,10 +103,7 @@ const heroSlides = [
 <BaseLayout>
   <div class="min-h-screen bg-white">
     <!-- Hero -->
-    <section
-      id="top"
-      class="relative flex min-h-[440px] items-center justify-center overflow-hidden bg-zinc-900"
-    >
+    <section id="top" class="relative h-screen min-h-150 w-full">
       <div class="absolute inset-0">
         <AutonomousCarousel
           images={heroSlides}
@@ -115,58 +112,73 @@ const heroSlides = [
         />
       </div>
 
-      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
 
-      <div
-        class="container relative mx-auto flex min-h-[440px] flex-col items-center justify-center gap-9 px-4 text-center"
-      >
-        <h1 class="tracking-tighter">
-          <span
-            class="block font-bold text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
-          >
-            {hero?.title}{" "}
-            {hero?.subtitle}<span class="text-tbre-yellow">{hero?.accent}</span>
-          </span>
-        </h1>
-
-        <nav
-          class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="container px-4 text-center"
+          data-reveal-group
+          data-reveal-on="load"
         >
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#team"
+          <h1
+            class="mb-6 font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+            data-reveal-item
           >
-            The Team
-          </a>
+            <span class="text-white">{hero?.title}</span>{" "}
+            <span class="text-white">
+              {hero?.subtitle}<span class="text-tbre-yellow">
+                {hero?.accent}
+              </span>
+            </span>
+          </h1>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#timeline"
+          <p
+            class="mx-auto mb-8 max-w-2xl whitespace-pre-line text-pretty text-white text-xl"
+            data-reveal-item
           >
-            Timeline
-          </a>
+            {hero?.tagline}
+          </p>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#systems"
+          <nav
+            class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
+            data-reveal-item
           >
-            Our Systems
-          </a>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#team"
+            >
+              The Team
+            </a>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#in-action"
-          >
-            In Action
-          </a>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#timeline"
+            >
+              Timeline
+            </a>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#partners"
-          >
-            Partners
-          </a>
-        </nav>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#systems"
+            >
+              Our Systems
+            </a>
+
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#in-action"
+            >
+              In Action
+            </a>
+
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#partners"
+            >
+              Partners
+            </a>
+          </nav>
+        </div>
       </div>
     </section>
 
