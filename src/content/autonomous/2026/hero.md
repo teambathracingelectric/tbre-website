@@ -1,6 +1,7 @@
 ---
 section: hero
 
-title: "TBRe"
-subtitle: "AI"
+title: "Welcome to"
+subtitle: "TBRe"
+accent: "AI"
 ---
