@@ -183,12 +183,12 @@ const heroSlides = [
     </section>
 
     <!-- Team -->
-    <section id="team" class="pt-20 pb-10" data-reveal>
+    <section id="team" class="pt-16 pb-8" data-reveal>
       <div class="container mx-auto px-4">
-        <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <AutonomousCarousel
             images={teamPhotos}
-            class="h-72 overflow-hidden rounded-lg bg-zinc-100 sm:h-80"
+            class="h-64 overflow-hidden rounded-lg bg-zinc-100 sm:h-72"
           />
 
           <div class="space-y-6">
@@ -204,7 +204,7 @@ const heroSlides = [
           </div>
         </div>
 
-        <div class="mt-20 mb-6 flex items-center gap-4">
+        <div class="mt-16 mb-6 flex items-center gap-4">
           <h2
             class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
           >
@@ -217,7 +217,7 @@ const heroSlides = [
         </div>
 
         <div
-          class="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-start"
+          class="mb-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-start"
         >
           <p class="max-w-2xl text-lg leading-relaxed text-zinc-600">
             {team?.intro}
@@ -268,12 +268,8 @@ const heroSlides = [
     </section>
 
     <!-- Timeline -->
-    <section id="timeline" class="pt-4 pb-20" data-reveal>
+    <section id="timeline" class="pt-8 pb-16" data-reveal>
       <div class="container mx-auto px-4">
-        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
-          {timelineContent?.intro}
-        </p>
-
         <div class="overflow-x-auto pb-4">
           <div class="min-w-[1100px]">
             <div class="relative pt-8">
@@ -316,7 +312,7 @@ const heroSlides = [
     </section>
 
     <!-- Systems -->
-    <section id="systems" class="py-20" data-reveal>
+    <section id="systems" class="py-16" data-reveal>
       <div class="container mx-auto px-4">
         <div class="mb-6 flex items-center gap-4">
           <h2
@@ -330,7 +326,7 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {systemsContent?.intro}
         </p>
 
@@ -358,7 +354,7 @@ const heroSlides = [
           <img
             src="/autonomous/2026_System.jpg"
             alt="LiDAR, stereo cameras and compute unit being fitted to the ADS-DV at Formula Student UK 2026"
-            class="h-64 w-full rounded-lg object-cover lg:h-full"
+            class="h-52 w-full self-start rounded-lg object-cover lg:h-4/5"
             loading="lazy"
           />
         </div>
@@ -402,7 +398,7 @@ const heroSlides = [
     </section>
 
     <!-- See It in Action -->
-    <section id="in-action" class="py-20" data-reveal>
+    <section id="in-action" class="py-16" data-reveal>
       <div class="container mx-auto px-4">
         <div class="mb-6 flex items-center gap-4">
           <h2
@@ -416,7 +412,7 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {actionContent?.intro}
         </p>
 
@@ -425,7 +421,7 @@ const heroSlides = [
     </section>
 
     <!-- Partners -->
-    <section id="partners" class="bg-zinc-50 py-20" data-reveal>
+    <section id="partners" class="bg-zinc-50 py-16" data-reveal>
       <div class="container mx-auto px-4">
         <div class="mb-6 flex items-center gap-4">
           <h2
@@ -439,7 +435,7 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {partnersContent?.intro}
         </p>
 
