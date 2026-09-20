@@ -335,14 +335,14 @@ const heroSlides = [
             class="grid gap-4 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3"
           >
             {systems.map((system) => (
-              <article class="rounded-lg bg-tbre-blue p-4 text-white">
+              <article class="rounded-lg bg-tbre-blue p-5 text-white">
                 <div
-                  class="mb-2 text-xs font-semibold uppercase tracking-wider text-tbre-yellow"
+                  class="mb-2.5 text-xs font-semibold uppercase tracking-wider text-tbre-yellow"
                 >
                   {system.category}
                 </div>
 
-                <h3 class="mb-2 font-semibold text-lg leading-tight">
+                <h3 class="mb-2.5 font-semibold text-lg leading-tight">
                   {system.name}
                 </h3>
 
@@ -353,12 +353,14 @@ const heroSlides = [
             ))}
           </div>
 
-          <img
-            src="/autonomous/2026_System.jpg"
-            alt="LiDAR, stereo cameras and compute unit being fitted to the ADS-DV at Formula Student UK 2026"
-            class="h-52 w-full rounded-lg object-cover lg:h-full"
-            loading="lazy"
-          />
+          <div class="relative h-52 lg:h-auto">
+            <img
+              src="/autonomous/2026_System.jpg"
+              alt="LiDAR, stereo cameras and compute unit being fitted to the ADS-DV at Formula Student UK 2026"
+              class="absolute inset-0 h-full w-full rounded-lg object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         <div class="grid gap-5 lg:grid-cols-3">
