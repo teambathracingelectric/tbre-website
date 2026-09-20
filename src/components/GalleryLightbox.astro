@@ -148,7 +148,8 @@ const instanceId = `gallery-${Math.random().toString(36).slice(2)}`;
         gallery.querySelectorAll<HTMLElement>("[data-gallery-item]"),
       );
       let activeIndex = 0;
-      let activeCategory = "All";
+      let activeCategory =
+        new URLSearchParams(window.location.search).get("category") ?? "All";
 
       function visibleIndexes() {
         return itemButtons
@@ -212,23 +213,48 @@ const instanceId = `gallery-${Math.random().toString(36).slice(2)}`;
         });
       });
 
-      for (const filter of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
+      function applyFilter() {
+        // Update which filter button looks active
+        for (const button of gallery.querySelectorAll<HTMLElement>(
+          "[data-gallery-filter]",
+        )) {
+          const active = button.dataset.galleryFilter === activeCategory;
+
+          button.classList.toggle("bg-tbre-blue", active);
+          button.classList.toggle("text-white", active);
+          button.classList.toggle("bg-zinc-100", !active);
+          button.classList.toggle("text-zinc-900", !active);
+        }
+
+        // Show/hide the gallery images
+        itemButtons.forEach((button) => {
+          const visible =
+            activeCategory === "All" ||
+            button.dataset.galleryCategory === activeCategory;
+
+          button.classList.toggle("hidden", !visible);
+        });
+      }
+
+      for (const filter of gallery.querySelectorAll<HTMLElement>(
+        "[data-gallery-filter]",
+      )) {
         filter.addEventListener("click", () => {
           activeCategory = filter.dataset.galleryFilter ?? "All";
-          for (const button of gallery.querySelectorAll<HTMLElement>("[data-gallery-filter]")) {
-            const active = button.dataset.galleryFilter === activeCategory;
-            button.classList.toggle("bg-tbre-blue", active);
-            button.classList.toggle("text-white", active);
-            button.classList.toggle("bg-zinc-100", !active);
-            button.classList.toggle("text-zinc-900", !active);
-          }
-          itemButtons.forEach((button) => {
-            const visible =
-              activeCategory === "All" ||
-              button.dataset.galleryCategory === activeCategory;
-            button.classList.toggle("hidden", !visible);
-          });
+          applyFilter();
         });
+      }
+
+      // Apply the category from the URL when the page first loads
+      if (
+        activeCategory !== "All" &&
+        gallery.querySelector(
+          `[data-gallery-filter="${activeCategory}"]`,
+        )
+      ) {
+        applyFilter();
+      } else {
+        activeCategory = "All";
       }
 
       modal
