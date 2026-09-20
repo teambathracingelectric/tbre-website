@@ -120,25 +120,57 @@ const heroSlides = [
       <div
         class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
       >
-        <h1
-          class="font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
-        >
-          <span class="text-white">
-            {hero?.title}<span class="text-tbre-yellow">{hero?.subtitle}</span>
+        <h1 class="tracking-tighter">
+          <span
+            class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
+          >
+            {hero?.title}{" "}
+            <span class="font-bold">
+              {hero?.subtitle}<span class="text-tbre-yellow">
+                {hero?.accent}
+              </span>
+            </span>
           </span>
         </h1>
 
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <ButtonLink href="#team">The Team</ButtonLink>
+        <nav
+          class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
+        >
+          <a
+            class="text-white transition-opacity hover:opacity-70"
+            href="#team"
+          >
+            The Team
+          </a>
 
-          <ButtonLink href="#timeline">Timeline</ButtonLink>
+          <a
+            class="text-white transition-opacity hover:opacity-70"
+            href="#timeline"
+          >
+            Timeline
+          </a>
 
-          <ButtonLink href="#systems">Our Systems</ButtonLink>
+          <a
+            class="text-white transition-opacity hover:opacity-70"
+            href="#systems"
+          >
+            Our Systems
+          </a>
 
-          <ButtonLink href="#in-action">In Action</ButtonLink>
+          <a
+            class="text-white transition-opacity hover:opacity-70"
+            href="#in-action"
+          >
+            In Action
+          </a>
 
-          <ButtonLink href="#partners">Partners</ButtonLink>
-        </div>
+          <a
+            class="text-white transition-opacity hover:opacity-70"
+            href="#partners"
+          >
+            Partners
+          </a>
+        </nav>
       </div>
     </section>
 
