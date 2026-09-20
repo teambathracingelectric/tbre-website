@@ -2,6 +2,9 @@ export const SITE_URL = "https://teambathracingelectric.com";
 
 export const ACTIVE_SEASON = 2026;
 
+export const JOIN_URL = "https://join.teambathracingelectric.com";
+
+// Superseded by JOIN_URL, kept in case we need to point back at the form.
 export const APPLY_FORM_URL =
   "https://forms.office.com/Pages/ResponsePage.aspx?id=Ij1-N6FOLUKwrY_MiUBrnuaHFEKzAxRImIds5xrI0glUOEhZSVQ4OUhQUFJYMFdESVgyQzY2TDNWSC4u";
 

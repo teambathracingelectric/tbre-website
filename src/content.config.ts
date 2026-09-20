@@ -161,6 +161,8 @@ const autonomous = defineCollection({
     // Hero
     title: z.string().optional(),
     subtitle: z.string().optional(),
+    accent: z.string().optional(),
+    tagline: z.string().optional(),
     // General section content
     intro: z.string().optional(),
     // Team
@@ -232,6 +234,7 @@ const autonomous = defineCollection({
           name: z.string(),
           tier: z.string(),
           description: z.string(),
+          logo: publicImagePath.optional(),
         }),
       )
       .optional(),

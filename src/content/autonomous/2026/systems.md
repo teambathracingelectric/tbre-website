@@ -1,40 +1,40 @@
 ---
 section: systems
 
-intro: "Cones in, brake pressure out. Six modules carry the car around the track, and two more keep us honest about whether it works."
+intro: ""
 
 systems:
   - category: "Sense"
     name: "Perception"
-    description: "Cone detection and classification from camera and LiDAR, moving to a new sensor with custom CUDA kernels."
+    description: "LiDAR and stereo camera identify cone positions on track."
 
   - category: "Locate"
     name: "SLAM"
-    description: "Where the car is and where the track goes, solved at once. Being rebuilt this season."
+    description: "Maps the track and calculates the car's current position."
 
   - category: "Decide"
     name: "Control"
-    description: "Path planning and vehicle control, moving to Model Predictive Control."
+    description: "Generates the control signals to follow the optimal racing line."
 
   - category: "Command"
     name: "VCU"
-    description: "Mission select, state machine and the safety checks between software and car."
+    description: "Converts control signals into actuation."
 
   - category: "Act"
     name: "Emergency Braking"
-    description: "The EBS: autonomous braking under normal missions, and a fail-safe stop the moment anything looks wrong."
+    description: "Reliably brings the car to a safe stop."
 
   - category: "Act"
     name: "Autonomous Steering"
-    description: "A shaft-mounted motor and angle sensor that steer the car without shutting out the driver."
+    description: "The hardware that steers the car."
 
 tools:
   - name: "Sim"
-    description: "Our own simulator. Every mission runs here before it runs on track, with physics we can change and trust."
+    description: "An environment to test changes off track."
 
   - name: "Logs & Tracking"
-    description: "MCAP logging and inspection, so any run can be replayed, compared and regression-tested."
+    description: "Recording past performance for future analysis."
 
-joinText: "Want to learn more about these projects and work on them yourself?"
+joinText: "Want to get involved?"
 joinButton: "Join the team →"
 ---

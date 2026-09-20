@@ -1,19 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import AutonomousCarousel from "@/components/AutonomousCarousel.astro";
 import AutonomousVideos from "@/components/AutonomousVideos.astro";
 import ButtonLink from "@/components/ButtonLink.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 
 const autonomousPages = await getCollection("autonomous");
 
-const hero = autonomousPages.find(
-  (page) => page.data.section === "hero",
-)?.data;
+const hero = autonomousPages.find((page) => page.data.section === "hero")?.data;
 
-const team = autonomousPages.find(
-  (page) => page.data.section === "team",
-)?.data;
+const team = autonomousPages.find((page) => page.data.section === "team")?.data;
 
 const timelineContent = autonomousPages.find(
   (page) => page.data.section === "timeline",
@@ -27,10 +23,6 @@ const actionContent = autonomousPages.find(
   (page) => page.data.section === "in-action",
 )?.data;
 
-const partnersContent = autonomousPages.find(
-  (page) => page.data.section === "partners",
-)?.data;
-
 const stats = team?.stats ?? [];
 const teamMembers = team?.members ?? [];
 const teamParagraphs = team?.paragraphs ?? [];
@@ -39,8 +31,6 @@ const timeline = timelineContent?.items ?? [];
 
 const systems = systemsContent?.systems ?? [];
 const tools = systemsContent?.tools ?? [];
-
-const partners = partnersContent?.partners ?? [];
 
 // Team gallery photos are still media configuration rather than page copy.
 const teamPhotos = [
@@ -81,7 +71,7 @@ const videos = [
     start: 50,
   },
   {
-    label: "Trackdrive",
+    label: "Autocross",
     src: "/autonomous/TBReAI_2026_Live_Logs_Run.mp4",
   },
   {
@@ -107,10 +97,7 @@ const heroSlides = [
 <BaseLayout>
   <div class="min-h-screen bg-white">
     <!-- Hero -->
-    <section
-      id="top"
-      class="relative flex min-h-[660px] items-center justify-center overflow-hidden bg-zinc-900"
-    >
+    <section id="top" class="relative h-screen min-h-150 w-full">
       <div class="absolute inset-0">
         <AutonomousCarousel
           images={heroSlides}
@@ -119,70 +106,92 @@ const heroSlides = [
         />
       </div>
 
-      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
 
-      <div
-        class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
-      >
-        <h1 class="tracking-tighter">
-          <span
-            class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
-          >
-            {hero?.title}
-          </span>
-
-          <span
-            class="mt-4 block font-semibold text-3xl leading-tight text-tbre-yellow sm:text-4xl"
-          >
-            {hero?.subtitle}
-          </span>
-        </h1>
-
-        <nav
-          class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="container px-4 text-center"
+          data-reveal-group
+          data-reveal-on="load"
         >
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#team"
+          <h1
+            class="mb-6 font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+            data-reveal-item
           >
-            The Team
-          </a>
+            <span class="text-white">{hero?.title}</span>{" "}
+            <span class="text-white">
+              {hero?.subtitle}<span class="text-tbre-yellow">
+                {hero?.accent}
+              </span>
+            </span>
+          </h1>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#timeline"
+          <p
+            class="mx-auto mb-8 max-w-2xl whitespace-pre-line text-pretty text-white text-xl"
+            data-reveal-item
           >
-            Timeline
-          </a>
+            {hero?.tagline}
+          </p>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#systems"
+          <nav
+            class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
+            data-reveal-item
           >
-            Our Systems
-          </a>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#team"
+            >
+              The Team
+            </a>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#in-action"
-          >
-            In Action
-          </a>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#timeline"
+            >
+              Timeline
+            </a>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#partners"
-          >
-            Partners
-          </a>
-        </nav>
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#systems"
+            >
+              Our Systems
+            </a>
+
+            <a
+              class="text-white transition-opacity hover:opacity-70"
+              href="#in-action"
+            >
+              In Action
+            </a>
+          </nav>
+        </div>
       </div>
     </section>
 
     <!-- Team -->
-    <section id="team" class="py-20" data-reveal>
+    <section id="team" class="pt-16 pb-8" data-reveal>
       <div class="container mx-auto px-4">
-        <div class="mb-6 flex items-center gap-4">
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <AutonomousCarousel
+            images={teamPhotos}
+            class="h-64 overflow-hidden rounded-lg bg-zinc-100 sm:h-72"
+          />
+
+          <div class="space-y-6">
+            {teamParagraphs.map((paragraph) => (
+              <p class="text-lg leading-relaxed text-zinc-600">
+                {paragraph}
+              </p>
+            ))}
+
+            <ButtonLink href="/gallery?category=Autonomous">
+              {team?.galleryButton}
+            </ButtonLink>
+          </div>
+        </div>
+
+        <div class="mt-16 mb-6 flex items-center gap-4">
           <h2
             class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
           >
@@ -195,7 +204,7 @@ const heroSlides = [
         </div>
 
         <div
-          class="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-start"
+          class="mb-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-start"
         >
           <p class="max-w-2xl text-lg leading-relaxed text-zinc-600">
             {team?.intro}
@@ -242,49 +251,12 @@ const heroSlides = [
             </article>
           ))}
         </div>
-
-        <div
-          class="mt-14 grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:items-center"
-        >
-          <AutonomousCarousel
-            images={teamPhotos}
-            class="h-72 overflow-hidden rounded-lg bg-zinc-100 sm:h-80"
-          />
-
-          <div class="space-y-6">
-            {teamParagraphs.map((paragraph) => (
-              <p class="text-lg leading-relaxed text-zinc-600">
-                {paragraph}
-              </p>
-            ))}
-
-            <ButtonLink href="/gallery?category=Autonomous">
-              {team?.galleryButton}
-            </ButtonLink>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- Timeline -->
-    <section id="timeline" class="py-20" data-reveal>
+    <section id="timeline" class="pt-8 pb-16" data-reveal>
       <div class="container mx-auto px-4">
-        <div class="mb-6 flex items-center gap-4">
-          <h2
-            class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
-          >
-            Timeline
-          </h2>
-
-          <div
-            class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"
-          ></div>
-        </div>
-
-        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
-          {timelineContent?.intro}
-        </p>
-
         <div class="overflow-x-auto pb-4">
           <div class="min-w-[1100px]">
             <div class="relative pt-8">
@@ -327,7 +299,7 @@ const heroSlides = [
     </section>
 
     <!-- Systems -->
-    <section id="systems" class="py-20" data-reveal>
+    <section id="systems" class="py-16" data-reveal>
       <div class="container mx-auto px-4">
         <div class="mb-6 flex items-center gap-4">
           <h2
@@ -341,12 +313,14 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {systemsContent?.intro}
         </p>
 
         <div class="mb-5 grid gap-5 lg:grid-cols-[3fr_2fr]">
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            class="grid gap-4 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3"
+          >
             {systems.map((system) => (
               <article class="rounded-lg bg-tbre-blue p-5 text-white">
                 <div
@@ -366,12 +340,14 @@ const heroSlides = [
             ))}
           </div>
 
-          <img
-            src="/autonomous/2026_System.jpg"
-            alt="LiDAR, stereo cameras and compute unit being fitted to the ADS-DV at Formula Student UK 2026"
-            class="h-64 w-full rounded-lg object-cover lg:h-full"
-            loading="lazy"
-          />
+          <div class="relative h-52 lg:h-auto">
+            <img
+              src="/autonomous/2026_System.jpg"
+              alt="LiDAR, stereo cameras and compute unit being fitted to the ADS-DV at Formula Student UK 2026"
+              class="absolute inset-0 h-full w-full rounded-lg object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         <div class="grid gap-5 lg:grid-cols-3">
@@ -400,7 +376,11 @@ const heroSlides = [
               {systemsContent?.joinText}
             </p>
 
-            <ButtonLink href="/recruitment#ai" variant="orange">
+            <ButtonLink
+              href="https://join.teambathracingelectric.com"
+              variant="orange"
+              external
+            >
               {systemsContent?.joinButton}
             </ButtonLink>
           </article>
@@ -409,7 +389,7 @@ const heroSlides = [
     </section>
 
     <!-- See It in Action -->
-    <section id="in-action" class="py-20" data-reveal>
+    <section id="in-action" class="py-16" data-reveal>
       <div class="container mx-auto px-4">
         <div class="mb-6 flex items-center gap-4">
           <h2
@@ -423,74 +403,11 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-10 max-w-3xl text-lg leading-relaxed text-zinc-600">
+        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {actionContent?.intro}
         </p>
 
         <AutonomousVideos videos={videos} />
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section id="partners" class="bg-zinc-50 py-20" data-reveal>
-      <div class="container mx-auto px-4">
-        <div class="mb-6 flex items-center gap-4">
-          <h2
-            class="font-bold text-3xl text-zinc-900 tracking-tighter sm:text-4xl"
-          >
-            Partners
-          </h2>
-
-          <div
-            class="h-px flex-1 bg-gradient-to-r from-tbre-blue to-transparent"
-          ></div>
-        </div>
-
-        <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
-          {partnersContent?.intro}
-        </p>
-
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {partners.map((partner) => (
-            <article
-              class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm"
-            >
-              <div
-                class="flex h-28 items-center justify-center border-b border-zinc-100 bg-zinc-50 p-5"
-              >
-                <span class="font-semibold text-zinc-400">
-                  {partner.name}
-                </span>
-              </div>
-
-              <div class="p-5">
-                <h3 class="mb-1 font-semibold text-lg text-zinc-900">
-                  {partner.name}
-                </h3>
-
-                <p
-                  class="mb-3 text-xs uppercase tracking-wider text-tbre-yellow"
-                >
-                  {partner.tier}
-                </p>
-
-                <p class="text-sm leading-relaxed text-zinc-600">
-                  {partner.description}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <ButtonLink href="/sponsors">
-            {partnersContent?.prospectusButton}
-          </ButtonLink>
-
-          <ButtonLink href="/sponsors" variant="orange">
-            {partnersContent?.autonomousProspectusButton}
-          </ButtonLink>
-        </div>
       </div>
     </section>
   </div>
