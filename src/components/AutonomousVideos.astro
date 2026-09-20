@@ -1,0 +1,190 @@
+---
+interface Video {
+  label: string;
+  src: string;
+  /** Seconds to jump to each time this video comes into view. */
+  start?: number;
+}
+
+interface Props {
+  videos: Video[];
+}
+
+const { videos } = Astro.props;
+---
+
+<div data-autonomous-videos>
+  <div class="mb-8 flex flex-wrap items-center justify-center gap-4">
+    {
+      videos.map((video, index) => (
+        <button
+          type="button"
+          data-video-tab={index}
+          class:list={[
+            "cursor-pointer rounded-full px-4 py-2 font-medium text-sm transition-colors",
+            index === 0
+              ? "bg-tbre-blue text-white"
+              : "bg-zinc-100 text-zinc-900 hover:bg-zinc-200",
+          ]}
+        >
+          {video.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="mx-auto w-full lg:w-[70%]">
+    {
+      videos.map((video, index) => (
+        <div
+          data-video-panel={index}
+          class:list={[
+            "aspect-video overflow-hidden rounded-lg bg-zinc-900",
+            index !== 0 && "hidden",
+          ]}
+        >
+          <video
+            class="h-full w-full"
+            src={video.src}
+            data-start={video.start}
+            muted
+            loop
+            playsinline
+            controls
+            preload={index === 0 ? "metadata" : "none"}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  let observer: IntersectionObserver | undefined;
+
+  function initAutonomousVideos() {
+    // ClientRouter reuses the document, so drop the previous page's observer first.
+    observer?.disconnect();
+    observer = undefined;
+
+    const root = document.querySelector<HTMLElement>("[data-autonomous-videos]");
+
+    if (!root) return;
+
+    const tabs = Array.from(
+      root.querySelectorAll<HTMLButtonElement>("[data-video-tab]"),
+    );
+    const panels = Array.from(
+      root.querySelectorAll<HTMLElement>("[data-video-panel]"),
+    );
+
+    if (!tabs.length || !panels.length) return;
+
+    const ACTIVE = ["bg-tbre-blue", "text-white"];
+    const INACTIVE = ["bg-zinc-100", "text-zinc-900", "hover:bg-zinc-200"];
+
+    let activeIndex = 0;
+    let onScreen = false;
+
+    const videoIn = (panel: HTMLElement) =>
+      panel.querySelector<HTMLVideoElement>("video");
+
+    /**
+     * Jumping part-way into a file needs the server to serve part of a file
+     * (an HTTP range request). Cloudflare does; some local servers don't. When
+     * the video says it can't seek that far, fetch the whole thing as a blob,
+     * which always can.
+     */
+    async function makeSeekable(video: HTMLVideoElement) {
+      try {
+        const response = await fetch(video.currentSrc || video.src);
+        video.src = URL.createObjectURL(await response.blob());
+        await new Promise((resolve) =>
+          video.addEventListener("loadedmetadata", resolve, { once: true }),
+        );
+      } catch {
+        // Leave it be: it will simply play from the start.
+      }
+    }
+
+    async function playFrom(video: HTMLVideoElement) {
+      video.muted = true;
+      video.defaultMuted = true
+      const start = Number(video.dataset.start ?? 0);
+
+      if (video.readyState < 1) {
+        // Every video but the first is preload="none", so nothing has been fetched
+        // yet and waiting for metadata would wait forever. Ask for it explicitly.
+        video.preload = "metadata";
+        video.load();
+
+        await new Promise((resolve) =>
+          video.addEventListener("loadedmetadata", resolve, { once: true }),
+        );
+      }
+
+      if (start > 0 && start < video.duration) {
+        const seekable = video.seekable;
+
+        if (
+          seekable.length === 0 ||
+          seekable.end(seekable.length - 1) < start
+        ) {
+          await makeSeekable(video);
+        }
+
+        video.currentTime = start;
+      }
+
+      // Muted, so this is allowed without a click.
+      video.play().catch(() => {});
+    }
+
+    function show(index: number) {
+      activeIndex = index;
+
+      tabs.forEach((tab, i) => {
+        tab.classList.remove(...(i === index ? INACTIVE : ACTIVE));
+        tab.classList.add(...(i === index ? ACTIVE : INACTIVE));
+      });
+
+      panels.forEach((panel, i) => {
+        panel.classList.toggle("hidden", i !== index);
+
+        const video = videoIn(panel);
+
+        if (video && i !== index) video.pause();
+      });
+
+      const video = videoIn(panels[index]);
+
+      if (video && onScreen) playFrom(video);
+    }
+
+    tabs.forEach((tab, index) => tab.addEventListener("click", () => show(index)));
+
+    // Nothing plays until you scroll to it, and it stops again when you leave.
+    observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          onScreen = entry.isIntersecting;
+
+          const video = videoIn(panels[activeIndex]);
+
+          if (!video) continue;
+
+          if (onScreen) {
+            playFrom(video);
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(root);
+  }
+
+  document.addEventListener("astro:page-load", initAutonomousVideos);
+</script>

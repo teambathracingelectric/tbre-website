@@ -144,7 +144,107 @@ const gallery = defineCollection({
   }),
 });
 
+const autonomous = defineCollection({
+  loader: glob({
+    base: "./src/content/autonomous/2026",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: z.object({
+    section: z.enum([
+      "hero",
+      "team",
+      "timeline",
+      "systems",
+      "in-action",
+      "partners",
+    ]),
+    // Hero
+    title: z.string().optional(),
+    subtitle: z.string().optional(),
+    accent: z.string().optional(),
+    tagline: z.string().optional(),
+    // General section content
+    intro: z.string().optional(),
+    // Team
+    stats: z
+      .array(
+        z.object({
+          figure: z.string(),
+          label: z.string(),
+        }),
+      )
+      .optional(),
+    members: z
+      .array(
+        z.object({
+          name: z.string(),
+          role: z.string(),
+          image: publicImagePath,
+        }),
+      )
+      .optional(),
+    paragraphs: z.array(z.string()).optional(),
+    galleryButton: z.string().optional(),
+    // Timeline
+    items: z
+      .array(
+        z.object({
+          year: z.string(),
+          title: z.string(),
+          description: z.string(),
+          image: publicImagePath,
+          alt: z.string(),
+        }),
+      )
+      .optional(),
+    // Systems
+    systems: z
+      .array(
+        z.object({
+          category: z.string(),
+          name: z.string(),
+          description: z.string(),
+        }),
+      )
+      .optional(),
+    tools: z
+      .array(
+        z.object({
+          name: z.string(),
+          description: z.string(),
+        }),
+      )
+      .optional(),
+    joinText: z.string().optional(),
+    joinButton: z.string().optional(),
+    // In action
+    videos: z
+      .array(
+        z.object({
+          label: z.string(),
+          src: publicImagePath.or(z.string()),
+          start: z.number().optional(),
+        }),
+      )
+      .optional(),
+    // Partners
+    partners: z
+      .array(
+        z.object({
+          name: z.string(),
+          tier: z.string(),
+          description: z.string(),
+          logo: publicImagePath.optional(),
+        }),
+      )
+      .optional(),
+    prospectusButton: z.string().optional(),
+    autonomousProspectusButton: z.string().optional(),
+  }),
+});
+
 export const collections = {
+  autonomous,
   blog,
   cars,
   events,

@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-import { SITE_URL, socialRedirects } from "./src/config/site";
+import { JOIN_URL, SITE_URL, socialRedirects } from "./src/config/site";
 
 export default defineConfig({
   site: SITE_URL,
@@ -14,6 +14,7 @@ export default defineConfig({
   },
   redirects: {
     ...socialRedirects,
+    "/recruitment": JOIN_URL,
     // old website redirects
     "/about-us": "/",
     "/contact-us": "/",

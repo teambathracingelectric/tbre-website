@@ -1,7 +1,7 @@
 ---
 type Props = {
   href: string;
-  variant?: "blue" | "yellow" | "ghost";
+  variant?: "blue" | "yellow" | "ghost" | "orange";
   external?: boolean;
   class?: string;
   [key: string]: unknown;
@@ -19,6 +19,7 @@ const classes = [
   variant === "blue" && "bg-tbre-blue text-white hover:bg-tbre-blue/90",
   variant === "yellow" && "bg-tbre-yellow text-white hover:bg-tbre-yellow/90",
   variant === "ghost" && "text-zinc-900 hover:bg-zinc-100",
+  variant === "orange" && "bg-tbre-orange text-white hover:bg-tbre-orange/90",
   className,
 ];
 ---

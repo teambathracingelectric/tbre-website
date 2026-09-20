@@ -2,6 +2,9 @@ export const SITE_URL = "https://teambathracingelectric.com";
 
 export const ACTIVE_SEASON = 2026;
 
+export const JOIN_URL = "https://join.teambathracingelectric.com";
+
+// Superseded by JOIN_URL, kept in case we need to point back at the form.
 export const APPLY_FORM_URL =
   "https://forms.office.com/Pages/ResponsePage.aspx?id=Ij1-N6FOLUKwrY_MiUBrnuaHFEKzAxRImIds5xrI0glUOEhZSVQ4OUhQUFJYMFdESVgyQzY2TDNWSC4u";
 
@@ -35,6 +38,7 @@ type NavigationLink = {
 export const navigation: NavigationLink[] = [
   { name: "Home", href: "/" },
   { name: "Team", href: "/team" },
+  { name: "Autonomous", href: "/autonomous" },
   { name: "Recruitment", href: "/recruitment", icon: "Sparkles" },
   { name: "Cars", href: "/cars" },
   { name: "Sponsors", href: "/sponsors" },
