@@ -1,7 +1,7 @@
 ---
 import PageHero from "@/components/PageHero.astro";
 import ShowMoreText from "@/components/ShowMoreText.astro";
-import { APPLY_FORM_URL } from "@/config/site";
+import { JOIN_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getRecruitmentRoles } from "@/lib/content";
 import { slugify } from "@/utils";
@@ -79,7 +79,7 @@ const teams = Array.from(
               </div>
               <div class="mt-6 flex justify-center">
                 <a
-                  href={APPLY_FORM_URL}
+                  href={JOIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex h-10 items-center justify-center rounded-md bg-tbre-yellow px-8 font-medium text-sm text-white transition-colors hover:bg-tbre-yellow/90"
