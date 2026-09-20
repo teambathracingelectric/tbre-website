@@ -120,63 +120,30 @@ const heroSlides = [
       <div
         class="container relative mx-auto flex min-h-[660px] flex-col items-center justify-center gap-9 px-4 text-center"
       >
-        <h1 class="tracking-tighter">
-          <span
-            class="block font-normal text-5xl leading-tight text-white sm:text-6xl md:text-7xl"
-          >
-            {hero?.title}
-          </span>
-
-          <span
-            class="mt-4 block font-semibold text-3xl leading-tight text-tbre-yellow sm:text-4xl"
-          >
-            {hero?.subtitle}
+        <h1
+          class="font-bold text-5xl tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+        >
+          <span class="text-white">
+            {hero?.title}<span class="text-tbre-yellow">{hero?.subtitle}</span>
           </span>
         </h1>
 
-        <nav
-          class="flex flex-wrap justify-center gap-6 text-sm font-medium tracking-wide sm:gap-9"
-        >
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#team"
-          >
-            The Team
-          </a>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <ButtonLink href="#team">The Team</ButtonLink>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#timeline"
-          >
-            Timeline
-          </a>
+          <ButtonLink href="#timeline">Timeline</ButtonLink>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#systems"
-          >
-            Our Systems
-          </a>
+          <ButtonLink href="#systems">Our Systems</ButtonLink>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#in-action"
-          >
-            In Action
-          </a>
+          <ButtonLink href="#in-action">In Action</ButtonLink>
 
-          <a
-            class="text-white transition-opacity hover:opacity-70"
-            href="#partners"
-          >
-            Partners
-          </a>
-        </nav>
+          <ButtonLink href="#partners">Partners</ButtonLink>
+        </div>
       </div>
     </section>
 
     <!-- Team -->
-    <section id="team" class="py-20" data-reveal>
+    <section id="team" class="pt-20 pb-10" data-reveal>
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
           <AutonomousCarousel
@@ -261,7 +228,7 @@ const heroSlides = [
     </section>
 
     <!-- Timeline -->
-    <section id="timeline" class="py-20" data-reveal>
+    <section id="timeline" class="pt-4 pb-20" data-reveal>
       <div class="container mx-auto px-4">
         <p class="mb-12 max-w-3xl text-lg leading-relaxed text-zinc-600">
           {timelineContent?.intro}
