@@ -1,7 +1,7 @@
 ---
 section: timeline
 
-intro: "Every year the team is new. Since 2019 each intake has picked the driverless car up where the last one left it — seven seasons, ten awards and one full reboot later, here's how we got here."
+intro: ""
 
 items:
   - year: "2019-20"

@@ -1,40 +1,40 @@
 ---
 section: systems
 
-intro: "The hard part of driverless isn't any single system — it's getting all of them working at once. Plenty of teams have strong parts that never meet. So this year we're building a working version of every block below, owned end to end by the students who built it, and running them together on track as early as we can."
+intro: ""
 
 systems:
   - category: "Sense"
     name: "Perception"
-    description: "LiDAR and stereo camera turned into a list of cones the car can trust. Everything downstream inherits its mistakes, which makes it the biggest single lever we have."
+    description: "LiDAR and stereo camera identify cone positions on track."
 
   - category: "Locate"
     name: "SLAM"
-    description: "Builds the map of the track and works out where the car sits in it. Once a lap is mapped, the car stops reacting cone to cone and starts driving a track it already knows."
+    description: "Maps the track and calculates the car's current position."
 
   - category: "Decide"
     name: "Control"
-    description: "Turns the map into a racing line, and the line into steering and throttle. This is where lap time comes from, and where the move to Model Predictive Control should buy us the most."
+    description: "Generates the control signals to follow the optimal racing line."
 
   - category: "Command"
     name: "VCU"
-    description: "The gatekeeper between our code and the car. It holds the mission state, converts what the software asks for into what the car can safely do, and refuses anything that doesn't add up."
+    description: "Converts control signals into actuation."
 
   - category: "Act"
     name: "Emergency Braking"
-    description: "Brakes the car in normal running, and stops it on its own the moment anything looks wrong. No autonomous car passes scrutineering without one, so it decides whether we run at all."
+    description: "Reliably brings the car to a safe stop."
 
   - category: "Act"
     name: "Autonomous Steering"
-    description: "A motor and angle sensor on the steering column that can drive the car and still hand it straight back to a driver. Designed with the main team so TBRe27 loses nothing by carrying it."
+    description: "The hardware that steers the car."
 
 tools:
   - name: "Sim"
-    description: "Our own Unity simulator, so a mission is driven hundreds of times before it's driven once for real. Track time is the scarcest thing we have, and this is how we stop wasting it."
+    description: "An environment to test changes off track."
 
   - name: "Logs & Tracking"
-    description: "Every run is recorded and replayable, so something seen once on track can be taken apart at a desk. It stops the same bug being debugged twice, and backs up what we tell the judges."
+    description: "Recording past performance for future analysis."
 
-joinText: "Want to learn more about these projects and work on them yourself?"
+joinText: "Want to get involved?"
 joinButton: "Join the team →"
 ---

@@ -1,7 +1,7 @@
 ---
 section: team
 
-intro: "Engineers across software, controls and integration. The leads below own each part of the system."
+intro: ""
 
 stats:
   - figure: "2019"
