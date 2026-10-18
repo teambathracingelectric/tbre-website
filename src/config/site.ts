@@ -9,7 +9,7 @@ export const APPLY_FORM_URL =
   "https://forms.office.com/Pages/ResponsePage.aspx?id=Ij1-N6FOLUKwrY_MiUBrnuaHFEKzAxRImIds5xrI0glUOEhZSVQ4OUhQUFJYMFdESVgyQzY2TDNWSC4u";
 
 export const SPONSORSHIP_PROSPECTUS_URL =
-  "https://drive.google.com/file/d/1oTeHoMViRoouj5Zl5DmZSOH-BuBCpAAd/view";
+  "/2026-27_TBRe_Sponsorship_prospectus.pdf";
 
 export const CROWDFUNDING_URL =
   "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";

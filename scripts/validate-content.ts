@@ -31,7 +31,10 @@ async function walk(dir: string): Promise<string[]> {
 async function readEntry(filePath: string): Promise<Entry | null> {
   if (!/\.(md|mdx)$/.test(filePath)) return null;
   const text = await readFile(filePath, "utf8");
-  const match = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  const normalized = text.replace(/^\uFEFF/, "");
+  const match = normalized.match(
+    /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)([\s\S]*)$/,
+  );
   if (!match) throw new Error(`${filePath}: missing frontmatter`);
   const relative = path.relative(contentRoot, filePath);
   const [collection, ...rest] = relative.split(path.sep);
