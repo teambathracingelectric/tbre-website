@@ -3,7 +3,7 @@ id: anaglyph
 season: 2026
 name: Anaglyph
 level: Silver Sponsors
-logo: /sponsors/2026/anaglyph.jpg
+logo: /sponsors/2026/anaglyph.webp
 link: https://www.anaglyph.co.uk/
 active: true
 order: 4002
