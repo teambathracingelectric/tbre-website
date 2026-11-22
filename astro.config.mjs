@@ -22,4 +22,10 @@ export default defineConfig({
     "/team-members": "/team",
   },
   adapter: cloudflare(),
+  security: {
+    // Ko-fi posts its webhook (a cross-origin form POST) to /api/adopt-a-cell/kofi, which
+    // Astro's origin check would reject. That route authenticates with Ko-fi's verification
+    // token instead, and it is the only POST route on the site.
+    checkOrigin: false,
+  },
 });

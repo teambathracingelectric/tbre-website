@@ -51,6 +51,34 @@ pnpm format
 pnpm clean
 ```
 
+## Adopt a cell
+
+`/crowdfunding/adopt-a-cell` raises money for the cells in the 2027 accumulator. Each £5 "Buy a
+Cell" donation on Ko-fi adopts one cell, towards a goal of 346 (spares included). The pack drawn on
+the page is the 2026 one; the 2027 design is not public, so keep its CAD and cell details out of
+this repository.
+
+- `src/pages/crowdfunding/adopt-a-cell.astro` is the page; `src/lib/adopt-a-cell/` holds its
+  logic (`allocate.ts` decides who owns which cell, `stage.ts` is the 3D exploded view).
+- Ko-fi has no API for reading donations, only webhooks. `POST /api/adopt-a-cell/kofi` receives
+  them and stores each payment in the `ADOPT_DB` D1 database; `GET /api/adopt-a-cell/state` serves
+  names, cell counts and totals to the page. Emails and messages are never stored or published,
+  and donations marked private on Ko-fi show as "Anonymous".
+- Add `?demo` to the page URL to preview it with example supporters.
+- `public/adopt-a-cell/pack.glb` and `src/lib/adopt-a-cell/cells.json` are generated from the
+  Inventor export of the 2026 pack. The source CAD is not kept in this repository.
+
+To switch it on after deploying:
+
+1. Set `KOFI_URL` in `src/config/site.ts` to the team's Ko-fi page, and set its donation unit to
+   £5 named "Buy a Cell".
+2. `pnpm exec wrangler secret put KOFI_VERIFICATION_TOKEN` (from Ko-fi's webhook settings, under
+   Advanced) and `pnpm exec wrangler secret put DONOR_SALT` (any long random string).
+3. In Ko-fi's webhook settings, set the URL to
+   `https://teambathracingelectric.com/api/adopt-a-cell/kofi` and send a test.
+
+For local testing, put the two secrets in `.dev.vars` and run `pnpm dev`.
+
 ## Cloudflare Deployment
 
 This project is deployed to Cloudflare using the Astro Cloudflare adapter and

@@ -1,0 +1,209 @@
+---
+import AdoptACellMap from "@/components/AdoptACellMap.astro";
+import { KOFI_URL } from "@/config/site";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { GOAL_CELLS } from "@/lib/adopt-a-cell/allocate";
+import "@/styles/adopt-a-cell.css";
+---
+
+<BaseLayout
+  title="Adopt a cell"
+  description={`Our 2027 car needs ${GOAL_CELLS} new lithium-ion cells. £5 adopts one and puts your name on it.`}
+  image="/adopt-a-cell/poster.webp"
+>
+  <div class="aac" data-adopt-a-cell>
+    <section class="stage" data-stage>
+      <div class="stage-sticky">
+        <canvas data-canvas aria-hidden="true"></canvas>
+        <div class="meter" data-meter>
+          <p class="meter-line">
+            <strong data-cells>–</strong> of {GOAL_CELLS} cells adopted
+            <span class="meter-raised" data-raised></span>
+          </p>
+          <div
+            class="meter-bar"
+            role="progressbar"
+            aria-label="Cells adopted"
+            aria-valuemin="0"
+            aria-valuemax={GOAL_CELLS}
+            aria-valuenow="0"
+          >
+            <i data-fill></i>
+          </div>
+        </div>
+        <div class="tip" data-stage-tip hidden></div>
+      </div>
+
+      <div class="chapters">
+        <article class="chapter chapter-hero">
+          <div class="card">
+            <h1>Put your name on a cell in our next battery</h1>
+            <p>
+              Our 2027 car needs {GOAL_CELLS} new lithium-ion cells, spares
+              included. £5 adopts one, and your name goes on it for the season.
+            </p>
+            <p class="actions">
+              <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
+                Adopt a cell for £5
+              </a>
+              <a class="link" href="#cells">See who’s in the pack</a>
+            </p>
+          </div>
+        </article>
+        <article class="chapter">
+          <div class="card">
+            <h2>One box powers the whole car</h2>
+            <p>
+              The accumulator holds every cell, plus the fuses, contactors and
+              electronics that watch over them. The 2027 design is still under
+              wraps, so the pack shown here is the one from our 2026 car.
+            </p>
+            <dl class="facts">
+              <div><dt>Cells needed</dt><dd>{GOAL_CELLS}</dd></div>
+              <div><dt>Per cell</dt><dd>£5</dd></div>
+              <div><dt>Goal</dt><dd>£{(GOAL_CELLS * 5).toLocaleString("en-GB")}</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="chapter">
+          <div class="card">
+            <h2>It comes apart into modules</h2>
+            <p>
+              Take the container away and the pack splits into modules. Each one
+              stays under 120 volts, so it can be built and serviced safely on
+              the bench.
+            </p>
+          </div>
+        </article>
+        <article class="chapter">
+          <div class="card">
+            <h2>Inside a module</h2>
+            <p>
+              Every module is a block of cylindrical lithium-ion cells, each a
+              little bigger than an AA battery, joined into groups by busbars.
+              These cells are what your £5 buys.
+            </p>
+          </div>
+        </article>
+        <article class="chapter">
+          <div class="card">
+            <h2>Yellow cells are taken</h2>
+            <p>
+              Each one has a supporter’s name on it. Point at a cell to see
+              whose. The grey ones are still waiting.
+            </p>
+            <p class="actions">
+              <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
+                Adopt a cell for £5
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cells" id="cells">
+      <div class="cells-head">
+        <h2>The pack, cell by cell</h2>
+        <p>
+          Every cell in the pack shown above, drawn where it sits in its
+          module. Each one adopted pays for a cell in the 2027 pack or one of
+          the spares we carry so a bad cell can’t end a weekend. Pick a
+          supporter to find their cells.
+        </p>
+        <p class="demo-note" data-demo-note hidden>
+          Showing example names, not real supporters.
+        </p>
+      </div>
+      <div class="cells-grid">
+        <figure class="map">
+          <AdoptACellMap />
+          <figcaption>
+            <span class="key key-taken">Adopted</span>
+            <span class="key key-free">Available</span>
+            <span class="key key-sel">Selected supporter</span>
+          </figcaption>
+          <div class="tip" data-map-tip hidden></div>
+        </figure>
+        <div class="board">
+          <div class="board-head">
+            <h3>Supporters</h3>
+            <div class="seg" role="group" aria-label="Sort supporters">
+              <button type="button" data-sort="cells" aria-pressed="true">
+                Most cells
+              </button>
+              <button type="button" data-sort="latest" aria-pressed="false">
+                Latest
+              </button>
+            </div>
+          </div>
+          <div class="board-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" class="num">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col" class="num">Cells</th>
+                  <th scope="col" class="num">Given</th>
+                </tr>
+              </thead>
+              <tbody data-board></tbody>
+            </table>
+            <p class="empty" data-board-empty hidden>
+              No cells adopted yet.
+              <a class="link" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
+                Adopt the first one.
+              </a>
+            </p>
+          </div>
+          <p class="board-foot" data-board-foot></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li>
+          <h3>Buy a Cell on Ko-fi</h3>
+          <p>Each cell is £5. Adopt one, or as many as you like in one go.</p>
+        </li>
+        <li>
+          <h3>Choose the name to show</h3>
+          <p>
+            We use the name you give Ko-fi. Mark your donation private and
+            you’ll appear as Anonymous.
+          </p>
+        </li>
+        <li>
+          <h3>Watch your cells light up</h3>
+          <p>
+            Cells are handed out in order of donation and appear here within a
+            minute or so.
+          </p>
+        </li>
+      </ol>
+      <p class="actions">
+        <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
+          Adopt a cell for £5
+        </a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { initAdoptACell } from "@/lib/adopt-a-cell/page";
+
+  let cleanup: (() => void) | undefined;
+
+  // Fires on first load and after every ClientRouter navigation.
+  document.addEventListener("astro:page-load", () => {
+    const root = document.querySelector<HTMLElement>("[data-adopt-a-cell]");
+    if (root) cleanup = initAdoptACell(root);
+  });
+  document.addEventListener("astro:before-swap", () => {
+    cleanup?.();
+    cleanup = undefined;
+  });
+</script>

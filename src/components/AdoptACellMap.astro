@@ -1,0 +1,43 @@
+---
+// Side elevation of the six modules, drawn from the CAD cell positions: two along the car,
+// three across it, in the same arrangement the 3D view ends on.
+import data from "@/lib/adopt-a-cell/cells.json";
+
+const R = data.cellSize[0] / 2 - 0.6;
+const PAD = R + 12;
+const GAP = 24;
+const LABEL = 26;
+const modules = [...new Set(data.cells.map((c) => c.m))].map((m) => {
+  const cs = data.cells.filter((c) => c.m === m);
+  const xs = cs.map((c) => c.p[0]);
+  const zs = cs.map((c) => c.p[2]);
+  return {
+    m,
+    col: Math.floor(m / 3),
+    row: m % 3,
+    x0: Math.min(...xs),
+    z1: Math.max(...zs),
+    w: Math.max(...xs) - Math.min(...xs) + PAD * 2,
+    h: Math.max(...zs) - Math.min(...zs) + PAD * 2,
+  };
+});
+const MW = Math.max(...modules.map((mod) => mod.w));
+const MH = Math.max(...modules.map((mod) => mod.h));
+const left = (mod: (typeof modules)[number]) => 1 + mod.col * (MW + GAP);
+const top = (mod: (typeof modules)[number]) =>
+  LABEL + mod.row * (MH + LABEL + 10);
+const W = MW * 2 + GAP + 2;
+const H = 3 * (MH + LABEL + 10);
+---
+<svg class="aac-map" data-map viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Map of every cell in the battery pack. Use the supporters table to find a supporter's cells.">
+  {modules.map((mod) => (
+    <g>
+      <text x={left(mod) + 3} y={top(mod) - 8} class="cm-label">Module {mod.m + 1}</text>
+      <rect x={left(mod)} y={top(mod)} width={MW} height={MH} rx="8" class="cm-shell" />
+    </g>
+  ))}
+  {data.cells.map((c, i) => {
+    const mod = modules[c.m];
+    return <circle cx={left(mod) + PAD + c.p[0] - mod.x0} cy={top(mod) + PAD + mod.z1 - c.p[2]} r={R} data-i={i} data-id={c.id} class="aac-cell" />;
+  })}
+</svg>
