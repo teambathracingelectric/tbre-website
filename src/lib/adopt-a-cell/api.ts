@@ -1,6 +1,12 @@
 // Ko-fi webhook receiver and public state for the adopt-a-cell page.
 // Kept free of Cloudflare imports so it can be unit tested with plain Node.
-import { buildState, CURRENCY, cleanName, type Donation } from "./allocate.ts";
+import {
+  buildState,
+  CELL_PRICE_PENCE,
+  CURRENCY,
+  cleanName,
+  type Donation,
+} from "./allocate.ts";
 
 type Statement = {
   bind(...values: unknown[]): Statement;
@@ -13,7 +19,40 @@ export type AdoptEnv = {
   ADOPT_DB?: { prepare(sql: string): Statement };
   KOFI_VERIFICATION_TOKEN?: string;
   DONOR_SALT?: string;
+  /**
+   * The Ko-fi shop product that sells cells: its link code (the part after ko-fi.com/s/) or the
+   * whole link. When set, only shop orders for this product count, at one cell per unit bought.
+   * When unset, every GBP payment counts by amount.
+   */
+  KOFI_CELL_PRODUCT?: string;
 };
+
+/** Accepts "abc123", "ko-fi.com/s/abc123" or "https://ko-fi.com/s/abc123/". */
+export function productCode(value: string) {
+  return (
+    value
+      .trim()
+      .replace(/[?#].*$/, "")
+      .replace(/\/+$/, "")
+      .split("/")
+      .at(-1)
+      ?.toLowerCase() ?? ""
+  );
+}
+
+/** Units of the cell product in a Shop Order payload; 0 if it isn't in the order. */
+function cellsBought(payload: Record<string, unknown>, code: string) {
+  if (payload.type !== "Shop Order" || !Array.isArray(payload.shop_items)) {
+    return 0;
+  }
+  let units = 0;
+  for (const item of payload.shop_items as Record<string, unknown>[]) {
+    if (productCode(String(item?.direct_link_code ?? "")) !== code) continue;
+    const quantity = Number(item.quantity ?? 1);
+    units += Number.isInteger(quantity) && quantity > 0 ? quantity : 1;
+  }
+  return units;
+}
 
 type Row = {
   donor_key: string;
@@ -85,9 +124,14 @@ export async function handleKofi(
   }
 
   const txn = String(payload.kofi_transaction_id ?? payload.message_id ?? "");
-  const amountPence = Math.round(
+  let amountPence = Math.round(
     Number.parseFloat(String(payload.amount ?? "0")) * 100,
   );
+  const product = productCode(env.KOFI_CELL_PRODUCT ?? "");
+  if (product) {
+    // Only the cell product counts, priced per unit so other items in the same order don't.
+    amountPence = cellsBought(payload, product) * CELL_PRICE_PENCE;
+  }
   const currency = String(payload.currency ?? "");
   // Acknowledge anything genuinely from Ko-fi so it stops retrying; only count GBP payments.
   if (

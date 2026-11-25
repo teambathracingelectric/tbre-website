@@ -2,6 +2,7 @@
 import { ArrowRight } from "@lucide/astro";
 import { CROWDFUNDING_URL, CROWDFUNDING_VIDEO_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CELL_PRICE_LABEL } from "@/lib/adopt-a-cell/allocate";
 ---
 
 <BaseLayout
@@ -85,7 +86,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </span>
           <span class="text-zinc-600">
-            £5 puts your name on one of the cells that will power the car.
+            {CELL_PRICE_LABEL} puts your name on one of the cells that will power the car.
           </span>
         </a>
       </div>

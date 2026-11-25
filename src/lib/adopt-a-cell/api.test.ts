@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { type AdoptEnv, handleKofi, handleState } from "./api.ts";
+import { type AdoptEnv, handleKofi, handleState, productCode } from "./api.ts";
 
 // Minimal stand-in for D1: just enough for the statements the handlers use.
 function fakeEnv(): Required<AdoptEnv> & { rows: Map<string, unknown[]> } {
@@ -9,6 +9,7 @@ function fakeEnv(): Required<AdoptEnv> & { rows: Map<string, unknown[]> } {
     rows,
     KOFI_VERIFICATION_TOKEN: "secret-token",
     DONOR_SALT: "salt",
+    KOFI_CELL_PRODUCT: "",
     ADOPT_DB: {
       prepare(sql: string) {
         let args: unknown[] = [];
@@ -49,7 +50,7 @@ const hook = (over: Record<string, unknown> = {}) => {
     is_public: true,
     from_name: "Jo Bloggs",
     message: "gl",
-    amount: "15.00",
+    amount: "22.50",
     url: "https://ko-fi.com/x",
     email: "jo@example.com",
     currency: "GBP",
@@ -68,11 +69,11 @@ const hook = (over: Record<string, unknown> = {}) => {
 };
 const getState = async (env: AdoptEnv) => await (await handleState(env)).json();
 
-test("a £15 donation adopts three cells", async () => {
+test("a £22.50 donation adopts three cells", async () => {
   const env = fakeEnv();
   assert.deepEqual((await handleKofi(hook(), env)).status, 200);
   const s = await getState(env);
-  assert.deepEqual(s.totals, { cells: 3, amountPence: 1500, donors: 1 });
+  assert.deepEqual(s.totals, { cells: 3, amountPence: 2250, donors: 1 });
   assert.deepEqual(s.donors[0].name, "Jo Bloggs");
   assert.deepEqual(JSON.stringify(s).includes("example.com"), false);
 });
@@ -99,7 +100,7 @@ test("same email merges; private donation hides the name", async () => {
   await handleKofi(
     hook({
       kofi_transaction_id: "t2",
-      amount: "5.00",
+      amount: "7.50",
       is_public: false,
       timestamp: "2026-11-22T13:00:00Z",
     }),
@@ -122,4 +123,38 @@ test("non-GBP payments are acknowledged but not counted", async () => {
 test("without a database or token the webhook asks Ko-fi to retry and state is empty", async () => {
   assert.deepEqual((await handleKofi(hook(), {})).status, 503);
   assert.deepEqual((await getState({})).totals.cells, 0);
+});
+
+const order = (items: unknown, over: Record<string, unknown> = {}) =>
+  hook({ type: "Shop Order", amount: "30.00", shop_items: items, ...over });
+
+test("with a cell product set, only that product counts, per unit", async () => {
+  const env = { ...fakeEnv(), KOFI_CELL_PRODUCT: "https://ko-fi.com/s/AbC123" };
+  await handleKofi(
+    order([
+      { direct_link_code: "abc123", variation_name: "", quantity: 2 },
+      { direct_link_code: "sticker9", variation_name: "", quantity: 5 },
+    ]),
+    env,
+  );
+  const s = await getState(env);
+  assert.deepEqual(s.totals, { cells: 2, amountPence: 1500, donors: 1 });
+});
+
+test("with a cell product set, donations and other products are ignored", async () => {
+  const env = { ...fakeEnv(), KOFI_CELL_PRODUCT: "abc123" };
+  assert.deepEqual(await (await handleKofi(hook(), env)).text(), "Ignored");
+  await handleKofi(
+    order([{ direct_link_code: "sticker9", quantity: 1 }], {
+      kofi_transaction_id: "t2",
+    }),
+    env,
+  );
+  assert.deepEqual(env.rows.size, 0);
+});
+
+test("product codes are read from a code or a full link", () => {
+  assert.deepEqual(productCode("abc123"), "abc123");
+  assert.deepEqual(productCode("ko-fi.com/s/ABC123/"), "abc123");
+  assert.deepEqual(productCode("https://ko-fi.com/s/abc123?ref=x"), "abc123");
 });

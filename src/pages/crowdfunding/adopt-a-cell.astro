@@ -2,13 +2,17 @@
 import AdoptACellMap from "@/components/AdoptACellMap.astro";
 import { KOFI_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { GOAL_CELLS } from "@/lib/adopt-a-cell/allocate";
+import {
+  CELL_PRICE_LABEL,
+  CELL_PRICE_PENCE,
+  GOAL_CELLS,
+} from "@/lib/adopt-a-cell/allocate";
 import "@/styles/adopt-a-cell.css";
 ---
 
 <BaseLayout
   title="Adopt a cell"
-  description={`Our 2027 car needs ${GOAL_CELLS} new lithium-ion cells. £5 adopts one and puts your name on it.`}
+  description={`Our 2027 car needs ${GOAL_CELLS} new lithium-ion cells. ${CELL_PRICE_LABEL} adopts one and puts your name on it.`}
   image="/adopt-a-cell/poster.webp"
 >
   <div class="aac" data-adopt-a-cell>
@@ -39,12 +43,12 @@ import "@/styles/adopt-a-cell.css";
           <div class="card">
             <h1>Put your name on a cell in our next battery</h1>
             <p>
-              Our 2027 car needs {GOAL_CELLS} new lithium-ion cells, spares
-              included. £5 adopts one, and your name goes on it for the season.
+              The battery in our 2027 car is made of {GOAL_CELLS} lithium-ion
+              cells. {CELL_PRICE_LABEL} adopts one, and your name goes on it for the season.
             </p>
             <p class="actions">
               <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
-                Adopt a cell for £5
+                Adopt a cell for {CELL_PRICE_LABEL}
               </a>
               <a class="link" href="#cells">See who’s in the pack</a>
             </p>
@@ -60,8 +64,8 @@ import "@/styles/adopt-a-cell.css";
             </p>
             <dl class="facts">
               <div><dt>Cells needed</dt><dd>{GOAL_CELLS}</dd></div>
-              <div><dt>Per cell</dt><dd>£5</dd></div>
-              <div><dt>Goal</dt><dd>£{(GOAL_CELLS * 5).toLocaleString("en-GB")}</dd></div>
+              <div><dt>Per cell</dt><dd>{CELL_PRICE_LABEL}</dd></div>
+              <div><dt>Goal</dt><dd>£{((GOAL_CELLS * CELL_PRICE_PENCE) / 100).toLocaleString("en-GB")}</dd></div>
             </dl>
           </div>
         </article>
@@ -81,7 +85,7 @@ import "@/styles/adopt-a-cell.css";
             <p>
               Every module is a block of cylindrical lithium-ion cells, each a
               little bigger than an AA battery, joined into groups by busbars.
-              These cells are what your £5 buys.
+              These cells are what your {CELL_PRICE_LABEL} buys.
             </p>
           </div>
         </article>
@@ -94,7 +98,7 @@ import "@/styles/adopt-a-cell.css";
             </p>
             <p class="actions">
               <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
-                Adopt a cell for £5
+                Adopt a cell for {CELL_PRICE_LABEL}
               </a>
             </p>
           </div>
@@ -107,8 +111,7 @@ import "@/styles/adopt-a-cell.css";
         <h2>The pack, cell by cell</h2>
         <p>
           Every cell in the pack shown above, drawn where it sits in its
-          module. Each one adopted pays for a cell in the 2027 pack or one of
-          the spares we carry so a bad cell can’t end a weekend. Pick a
+          module. Each one adopted pays for a cell in the 2027 pack. Pick a
           supporter to find their cells.
         </p>
         <p class="demo-note" data-demo-note hidden>
@@ -166,7 +169,7 @@ import "@/styles/adopt-a-cell.css";
       <ol>
         <li>
           <h3>Buy a Cell on Ko-fi</h3>
-          <p>Each cell is £5. Adopt one, or as many as you like in one go.</p>
+          <p>Each cell is {CELL_PRICE_LABEL}. Adopt one, or as many as you like in one go.</p>
         </li>
         <li>
           <h3>Choose the name to show</h3>
@@ -185,7 +188,7 @@ import "@/styles/adopt-a-cell.css";
       </ol>
       <p class="actions">
         <a class="btn" href={KOFI_URL} target="_blank" rel="noopener noreferrer">
-          Adopt a cell for £5
+          Adopt a cell for {CELL_PRICE_LABEL}
         </a>
       </p>
     </section>

@@ -14,7 +14,7 @@ export const SPONSORSHIP_PROSPECTUS_URL =
 export const CROWDFUNDING_URL =
   "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
 
-// Ko-fi page with the £5 "Buy a Cell" option, used by /crowdfunding/adopt-a-cell.
+// Ko-fi page with the £7.50 "Buy a Cell" option, used by /crowdfunding/adopt-a-cell.
 // TODO: replace with the real page before launch.
 export const KOFI_URL = "https://ko-fi.com/teambathracingelectric";
 

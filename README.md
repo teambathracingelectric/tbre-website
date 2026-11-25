@@ -53,8 +53,8 @@ pnpm clean
 
 ## Adopt a cell
 
-`/crowdfunding/adopt-a-cell` raises money for the cells in the 2027 accumulator. Each £5 "Buy a
-Cell" donation on Ko-fi adopts one cell, towards a goal of 346 (spares included). The pack drawn on
+`/crowdfunding/adopt-a-cell` raises money for the cells in the 2027 accumulator. Each £7.50 "Buy a
+Cell" donation on Ko-fi adopts one cell, towards a goal of 408, the whole pack. The pack drawn on
 the page is the 2026 one; the 2027 design is not public, so keep its CAD and cell details out of
 this repository.
 
@@ -71,10 +71,15 @@ this repository.
 To switch it on after deploying:
 
 1. Set `KOFI_URL` in `src/config/site.ts` to the team's Ko-fi page, and set its donation unit to
-   £5 named "Buy a Cell".
+   £7.50 named "Buy a Cell".
 2. `pnpm exec wrangler secret put KOFI_VERIFICATION_TOKEN` (from Ko-fi's webhook settings, under
    Advanced) and `pnpm exec wrangler secret put DONOR_SALT` (any long random string).
-3. In Ko-fi's webhook settings, set the URL to
+3. If cells are sold as a Ko-fi shop product, `pnpm exec wrangler secret put KOFI_CELL_PRODUCT`
+   with the product's link (`https://ko-fi.com/s/<code>`) or just its code. Only orders for that
+   product then count, at one cell per unit bought, and donations and other shop sales are
+   ignored. Without it, every GBP payment counts at £7.50 a cell. Ko-fi sends one webhook for the
+   whole account, so this filter is how the page tells the cell product apart.
+4. In Ko-fi's webhook settings, set the URL to
    `https://teambathracingelectric.com/api/adopt-a-cell/kofi` and send a test.
 
 For local testing, put the two secrets in `.dev.vars` and run `pnpm dev`.

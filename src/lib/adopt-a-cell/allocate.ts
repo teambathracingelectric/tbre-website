@@ -1,11 +1,14 @@
 // Turns a list of donations into the public "who owns which cell" state.
 // Shared by the API routes (src/pages/api/adopt-a-cell) and the page script.
 
-/** Cells the 2027 pack needs, spares included. This is the fundraising goal. */
-export const GOAL_CELLS = 346;
 /** Cells drawn on the page (cells.json, from the 2026 pack). Adoptions stop being placed here. */
 export const TOTAL_CELLS = 408;
-const CELL_PRICE_PENCE = 500;
+/** The fundraising goal: every cell drawn on the page. */
+export const GOAL_CELLS = TOTAL_CELLS;
+/** Price of one cell. Change it here and the page text, goal and allocation all follow. */
+export const CELL_PRICE_PENCE = 750;
+/** The price as shown on the page, e.g. "£7.50". */
+export const CELL_PRICE_LABEL = `£${(CELL_PRICE_PENCE / 100).toFixed(CELL_PRICE_PENCE % 100 ? 2 : 0)}`;
 export const CURRENCY = "GBP";
 
 export interface Donation {
@@ -85,7 +88,7 @@ export function buildState(
     // Latest name wins, but a donor who was ever private stays private.
     donor.hidden ||= !d.isPublic;
     donor.name = donor.hidden ? ANON : cleanName(d.name);
-    // Whole cells are bought from the donor's running total, so 2 x £2.50 still adopts one.
+    // Whole cells are bought from the donor's running total, so 2 x £3.75 still adopts one.
     const want = Math.floor(donor.amountPence / CELL_PRICE_PENCE) - donor.cells;
     for (let i = 0; i < want; i++) {
       donor.cells++;
