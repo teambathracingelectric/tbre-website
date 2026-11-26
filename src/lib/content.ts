@@ -59,9 +59,13 @@ export async function getTeamBySeason(season = ACTIVE_SEASON) {
     });
 }
 
+// Members in this category are shown as a centred feature above the roster,
+// without a category heading.
+export const DIRECTOR_CATEGORY = "Head of TBRe";
+
 // Categories listed here appear first, in this order; any others follow alphabetically.
 const TEAM_CATEGORY_ORDER = [
-  "Head of TBRe",
+  DIRECTOR_CATEGORY,
   "TBRe Technical",
   "TBReAI",
   "Business Operations",
