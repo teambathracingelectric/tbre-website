@@ -320,9 +320,15 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
-          {systemsContent?.intro}
-        </p>
+        <div class="mb-8 flex flex-col items-start gap-6">
+          <p class="max-w-3xl text-lg leading-relaxed text-zinc-600">
+            {systemsContent?.intro}
+          </p>
+
+          <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+            Read our Technical Roadmap
+          </ButtonLink>
+        </div>
 
         <div class="mb-5 grid gap-5 lg:grid-cols-[3fr_2fr]">
           <div
@@ -415,6 +421,12 @@ const heroSlides = [
         </p>
 
         <AutonomousVideos videos={videos} />
+
+        <div class="mt-10 flex justify-center">
+          <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+            Read our Technical Roadmap
+          </ButtonLink>
+        </div>
       </div>
     </section>
   </div>

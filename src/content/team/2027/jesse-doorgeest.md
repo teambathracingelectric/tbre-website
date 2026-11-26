@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: TBReAI
 name: Jesse Doorgeest
-role: TBC
+role: Autonomous Braking Lead
 image: /team/2027/Jesse_Doorgeest.png
 lead: false
 active: true

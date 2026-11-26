@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: Business Operations
 name: Toby Hirsch
-role: TBC
+role: Sponsorship Lead
 image: /team/2027/Toby_Hirsch.png
 lead: false
 active: true

@@ -1,9 +1,9 @@
 ---
 season: 2027
-category: TBC
+category: TBRe Technical
 name: Ibraheem Rodrigues
-role: TBC
+role: Technical Director
 image: /team/2027/Ibraheem_Rodrigues.png
-lead: false
+lead: true
 active: true
 ---

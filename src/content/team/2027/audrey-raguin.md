@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: Business Operations
 name: Audrey Raguin
-role: TBC
+role: Events Lead
 image: /team/2027/Audrey_Raguin.png
 lead: false
 active: true

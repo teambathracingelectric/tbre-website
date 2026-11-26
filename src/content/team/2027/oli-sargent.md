@@ -1,9 +1,9 @@
 ---
 season: 2027
-category: TBC
+category: Business Operations
 name: Oli Sargent
-role: TBC
+role: Business Director
 image: /team/2027/Oli_Sargent.png
-lead: false
+lead: true
 active: true
 ---

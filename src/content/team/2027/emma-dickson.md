@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: Business Operations
 name: Emma Dickson
-role: TBC
+role: BPP Lead
 image: /team/2027/Emma_Dickson.png
 lead: false
 active: true

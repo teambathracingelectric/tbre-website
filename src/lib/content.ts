@@ -52,7 +52,24 @@ export async function getTeamBySeason(season = ACTIVE_SEASON) {
       category,
       members: categoryMembers.sort(sortTeamMembers),
     }))
-    .sort((a, b) => a.category.localeCompare(b.category, "en-GB"));
+    .sort((a, b) => {
+      const rankDiff =
+        teamCategoryRank(a.category) - teamCategoryRank(b.category);
+      return rankDiff || a.category.localeCompare(b.category, "en-GB");
+    });
+}
+
+// Categories listed here appear first, in this order; any others follow alphabetically.
+const TEAM_CATEGORY_ORDER = [
+  "Head of TBRe",
+  "TBRe Technical",
+  "TBReAI",
+  "Business Operations",
+];
+
+function teamCategoryRank(category: string) {
+  const index = TEAM_CATEGORY_ORDER.indexOf(category);
+  return index === -1 ? TEAM_CATEGORY_ORDER.length : index;
 }
 
 export type TeamCategoryGroup = Awaited<

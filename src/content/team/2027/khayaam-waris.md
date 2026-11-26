@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: TBRe Technical
 name: Khayaam Waris
-role: TBC
+role: Chief Engineer
 image: /team/2027/Khayaam_Waris.png
 lead: false
 active: true

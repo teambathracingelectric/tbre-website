@@ -1,9 +1,9 @@
 ---
 season: 2027
-category: TBC
+category: TBReAI
 name: James Morris
-role: TBC
+role: TBReAI Director
 image: /team/2027/James_Morris.png
-lead: false
+lead: true
 active: true
 ---

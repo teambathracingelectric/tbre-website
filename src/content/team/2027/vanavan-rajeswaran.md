@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: TBRe Technical
 name: Vanavan Rajeswaran
-role: TBC
+role: ""
 image: /team/2027/Vanavan_Rajeswaran.png
 lead: false
 active: true

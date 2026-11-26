@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: TBRe Technical
 name: Miles Dawson
-role: TBC
+role: Testing Lead
 image: /team/2027/Miles_Dawson.png
 lead: false
 active: true

@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: TBRe Technical
 name: Josh Mobsby
-role: TBC
+role: Vehicle Dynamics Lead
 image: /team/2027/Josh_Mobsby.png
 lead: false
 active: true

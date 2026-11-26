@@ -1,8 +1,8 @@
 ---
 season: 2027
-category: TBC
+category: Business Operations
 name: Anna Sanchez
-role: TBC
+role: Branding Lead
 image: /team/2027/Anna_Sanchez.png
 lead: false
 active: true
