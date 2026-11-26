@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import AutonomousCarousel from "@/components/AutonomousCarousel.astro";
 import AutonomousVideos from "@/components/AutonomousVideos.astro";
 import ButtonLink from "@/components/ButtonLink.astro";
+import { AI_TECHNICAL_ROADMAP_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const autonomousPages = await getCollection("autonomous");
@@ -185,9 +186,15 @@ const heroSlides = [
               </p>
             ))}
 
-            <ButtonLink href="/gallery?category=Autonomous">
-              {team?.galleryButton}
-            </ButtonLink>
+            <div class="flex flex-wrap gap-3">
+              <ButtonLink href="/gallery?category=Autonomous">
+                {team?.galleryButton}
+              </ButtonLink>
+
+              <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+                Read our Technical Roadmap
+              </ButtonLink>
+            </div>
           </div>
         </div>
 
