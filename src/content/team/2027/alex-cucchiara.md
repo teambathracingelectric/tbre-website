@@ -1,9 +1,9 @@
 ---
 season: 2027
 category: TBC
-name: HVAC
+name: Alex Cucchiara
 role: TBC
-image: /team/2027/HVAC.png
+image: /team/2027/Alex_Cucchiara.png
 lead: false
 active: true
 ---
