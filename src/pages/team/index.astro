@@ -1,7 +1,6 @@
 ---
 import { ArrowLeft } from "@lucide/astro";
 import ButtonLink from "@/components/ButtonLink.astro";
-import PageHero from "@/components/PageHero.astro";
 import TeamRoster from "@/components/TeamRoster.astro";
 import { ACTIVE_SEASON } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -39,12 +38,13 @@ const { previousSeason } = getAdjacentSeasons(
       )
     }
 
-    <PageHero
-      title="Meet Our Team"
-      description="The dedicated individuals behind our Formula Student success, pushing the boundaries of engineering excellence."
-      heightClass="h-[50vh] min-h-[400px]"
+    <TeamRoster
+      categories={categories}
+      intro={{
+        title: "Meet the Team",
+        description:
+          "Here are the leads keeping our competition team of 300+ students running.",
+      }}
     />
-
-    <TeamRoster categories={categories} />
   </div>
 </BaseLayout>

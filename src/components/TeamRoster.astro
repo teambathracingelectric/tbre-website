@@ -4,9 +4,15 @@ import { DIRECTOR_CATEGORY, type TeamCategoryGroup } from "@/lib/content";
 
 interface Props {
   categories: TeamCategoryGroup[];
+  intro?: {
+    title: string;
+    description?: string;
+    /** Background photo behind the intro; faded so dark text stays readable. */
+    image?: string;
+  };
 }
 
-const { categories: allCategories } = Astro.props;
+const { categories: allCategories, intro } = Astro.props;
 
 const directors =
   allCategories.find((category) => category.category === DIRECTOR_CATEGORY)
@@ -23,13 +29,53 @@ const directorEntries = await Promise.all(
 );
 ---
 
-<section class="container mx-auto space-y-20 px-4 py-16">
+{
+  directorEntries.length > 0 && (
+    <section class={intro ? "relative overflow-hidden" : undefined}>
+      {intro && (
+        <>
+          <img
+            src={intro.image ?? "/car.jpg"}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-linear-to-r from-white/90 via-white/75 to-white/50" />
+          <div class="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-white" />
+        </>
+      )}
+      <div
+        class:list={[
+          "relative container mx-auto space-y-20 px-4",
+          intro ? "py-16 md:py-24" : "pt-16",
+        ]}
+      >
   {
     directorEntries.map(({ member, Content, hasBody }) => (
       <div
-        class="mx-auto flex max-w-2xl flex-col items-center space-y-6 text-center"
+        class:list={[
+          intro
+            ? "grid items-center gap-10 md:grid-cols-[1fr_auto]"
+            : "mx-auto flex max-w-2xl flex-col items-center space-y-6 text-center",
+        ]}
         data-reveal-group
       >
+        {intro && (
+          <div class="space-y-6 md:space-y-8" data-reveal-item>
+            <h1 class="font-bold text-6xl text-zinc-900 leading-none tracking-tighter underline decoration-8 decoration-tbre-yellow underline-offset-[0.15em] md:text-7xl lg:text-8xl xl:text-9xl">
+              {intro.title}
+            </h1>
+            {intro.description && (
+              <p class="max-w-2xl text-xl font-medium text-zinc-800 md:text-2xl">{intro.description}</p>
+            )}
+          </div>
+        )}
+        <div
+          class:list={[
+            "flex flex-col items-center space-y-6 text-center",
+            intro && "md:justify-self-end",
+          ]}
+        >
         <div
           class="w-48 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow md:w-60"
           data-reveal-item
@@ -66,9 +112,16 @@ const directorEntries = await Promise.all(
             <Content />
           </div>
         )}
+        </div>
       </div>
     ))
   }
+      </div>
+    </section>
+  )
+}
+
+<section class="container mx-auto space-y-20 px-4 py-16">
   {
     categories.map((category) => (
       <div class="space-y-8">

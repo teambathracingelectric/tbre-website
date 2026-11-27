@@ -63,7 +63,11 @@ const { Content } = await render(car);
     </section>
 
     <section class="relative h-[60vh] min-h-125 w-full">
-      <img src={car.data.image} alt={car.data.name} class="absolute inset-0 h-full w-full object-cover" />
+      {car.data.image ? (
+        <img src={car.data.image} alt={car.data.name} class="absolute inset-0 h-full w-full object-cover" />
+      ) : (
+        <div class="absolute inset-0 bg-tbre-blue-cool" />
+      )}
       <div class="absolute inset-0 bg-linear-to-b from-black/50 to-white" />
       <div class="absolute inset-0 flex items-end justify-start p-8">
         <div class="container mx-auto px-4">
@@ -83,14 +87,16 @@ const { Content } = await render(car);
             <Content />
           </div>
         </div>
-        <img
-          src={car.data.image}
-          alt={`${car.data.name} detail`}
-          width="600"
-          height="400"
-          class="mt-16 rounded-lg object-cover"
-          loading="lazy"
-        />
+        {car.data.image && (
+          <img
+            src={car.data.image}
+            alt={`${car.data.name} detail`}
+            width="600"
+            height="400"
+            class="mt-16 rounded-lg object-cover"
+            loading="lazy"
+          />
+        )}
       </section>
 
       {

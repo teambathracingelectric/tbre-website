@@ -105,7 +105,9 @@ async function main() {
 
   for (const entry of entries) {
     if (entry.collection === "cars") {
-      requiredImage(errors, entry, "image", entry.data.image);
+      if (entry.data.image) {
+        requiredImage(errors, entry, "image", entry.data.image);
+      }
       for (const [index, image] of ((entry.data.gallery as unknown[]) ?? []).entries()) {
         requiredImage(errors, entry, `gallery[${index}].url`, (image as { url?: unknown }).url);
       }

@@ -9,7 +9,7 @@ const cars = defineCollection({
   schema: z.object({
     year: z.coerce.number().int(),
     name: z.string(),
-    image: publicImagePath,
+    image: publicImagePath.optional(),
     listed: z.boolean().default(true),
     published: z.boolean().default(true),
     gallery: z
