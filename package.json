@@ -19,6 +19,7 @@
     "optimise:svg": "svgo -rf ./public -o ./public",
     "preview": "astro preview",
     "start": "astro preview",
+    "test": "node --test \"src/**/*.test.ts\"",
     "unused": "knip --cache",
     "validate:content": "tsx scripts/validate-content.ts"
   },
@@ -29,13 +30,15 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@lucide/astro": "^1.33.0",
     "astro": "^7.2.4",
-    "motion": "^13.1.1"
+    "motion": "^13.1.1",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@biomejs/biome": "^2.5.10",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.2.0",
+    "@types/three": "^0.180.0",
     "knip": "^6.32.2",
     "svgo": "^4.0.2",
     "tailwindcss": "^4.3.3",

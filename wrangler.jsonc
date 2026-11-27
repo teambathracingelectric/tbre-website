@@ -9,6 +9,12 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
+  // Adopt-a-cell donations (see README). No database_id: Wrangler creates the database on
+  // first deploy. Secrets: KOFI_VERIFICATION_TOKEN, DONOR_SALT,
+  // and optionally KOFI_CELL_PRODUCT (the Ko-fi shop product that sells cells).
+  "d1_databases": [
+    { "binding": "ADOPT_DB", "database_name": "tbre-adopt-a-cell" }
+  ],
   "observability": {
     "enabled": true
   },

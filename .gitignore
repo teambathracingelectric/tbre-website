@@ -20,3 +20,6 @@ dist/
 
 # agents
 .claude
+
+# local Worker secrets
+.dev.vars
