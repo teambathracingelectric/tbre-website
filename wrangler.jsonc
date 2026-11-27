@@ -3,12 +3,25 @@
   "compatibility_date": "2026-07-07",
   "compatibility_flags": ["global_fetch_strictly_public"],
   "name": "tbre-website",
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  // The adapter's handler plus the adopt-a-cell Durable Object (src/worker.ts).
+  "main": "./src/worker.ts",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page"
   },
+  // Adopt-a-cell donations (see README): a SQLite-backed Durable Object, created by the first
+  // deploy with no extra Cloudflare permissions (unlike a D1 database). Never rename or delete
+  // the class or remove this migration: that would delete the stored donations. Secrets:
+  // KOFI_VERIFICATION_TOKEN and DONOR_SALT, set by the deploy job from GitHub secrets of the
+  // same names.
+  "durable_objects": {
+    "bindings": [{ "name": "ADOPT_STORE", "class_name": "AdoptStore" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["AdoptStore"] }],
+  // The Ko-fi shop product that sells cells: only its orders count (src/lib/adopt-a-cell/api.ts).
+  // Public, so a plain variable rather than a secret.
+  "vars": { "KOFI_CELL_PRODUCT": "https://ko-fi.com/s/5915de60c9" },
   "observability": {
     "enabled": true
   },

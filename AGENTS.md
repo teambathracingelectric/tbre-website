@@ -1,7 +1,8 @@
 # TBRe Website
 
 Team Bath Racing Electric's official website. It is a static Astro site using
-Tailwind CSS and pnpm.
+Tailwind CSS and pnpm. The only server-rendered routes are under
+`src/pages/api/`.
 
 ## Toolchain
 
@@ -21,6 +22,7 @@ Tailwind CSS and pnpm.
 - `pnpm check` - type-check Astro pages.
 - `pnpm typecheck` - run Astro sync and TypeScript build checks.
 - `pnpm validate:content` - validate content data and referenced public assets.
+- `pnpm test` - run unit tests (`src/**/*.test.ts`, Node's built-in runner).
 - `pnpm format` - format files with Biome.
 
 Run the smallest relevant checks for the change. For content-only edits, prefer
@@ -35,6 +37,10 @@ and `pnpm build` when practical.
 - `src/styles/globals.css` contains global styles.
 - `src/config/site.ts` holds operational constants such as active season,
   application form, prospectus, and crowdfunding links.
+- `src/lib/adopt-a-cell/`, `src/pages/crowdfunding/adopt-a-cell.astro` and
+  `src/pages/api/adopt-a-cell/` are the adopt-a-cell fundraiser (see README). Its donations
+  live in the `AdoptStore` Durable Object, exported from the Worker entry `src/worker.ts`
+  (wrangler.jsonc `main`); never rename that class or drop its migration.
 - `src/content/` contains editable site content:
   - `cars`: one Markdown file per car/year.
   - `team`: one Markdown file per displayed team member assignment.

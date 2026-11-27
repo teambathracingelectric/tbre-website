@@ -14,8 +14,14 @@ export const SPONSORSHIP_PROSPECTUS_URL =
 export const AI_TECHNICAL_ROADMAP_URL =
   "/TBReAI_Technical_Roadmap_2024-2028.pdf";
 
-export const CROWDFUNDING_URL =
-  "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
+// export const CROWDFUNDING_URL =
+//   "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
+export const CROWDFUNDING_URL = "https://ko-fi.com/teambathracingelectric";
+
+// The Ko-fi shop product that sells cells (£7.50 each), where /crowdfunding/adopt-a-cell's
+// buttons go. The Worker's KOFI_CELL_PRODUCT secret names the same product, so only its orders
+// count towards the pack (see README, "Adopt a cell").
+export const KOFI_URL = "https://ko-fi.com/s/5915de60c9";
 
 export const CROWDFUNDING_VIDEO_URL =
   "https://drive.google.com/file/d/1sMVqW0zc0rLuVHism1pvRp4gWXs0-rpI/preview";

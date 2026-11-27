@@ -2,6 +2,7 @@
 import { ArrowRight } from "@lucide/astro";
 import { CROWDFUNDING_URL, CROWDFUNDING_VIDEO_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CELL_PRICE_LABEL } from "@/lib/adopt-a-cell/allocate";
 ---
 
 <BaseLayout
@@ -49,21 +50,21 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           ></iframe>
         </div>
         <div class="max-w-none space-y-2 text-zinc-900">
-          <p class="text-lg">The launch of our Crowdfunder is now live!</p>
+          <p class="text-lg">You can now support us on Ko-fi!</p>
           <p class="text-lg">
-            This year we are seeking success and can&apos;t wait to showcase our hard
+            In 2027 we are seeking success and can&apos;t wait to showcase our hard
             work at competitions around the globe, but we couldn&apos;t do this without
             your help.
           </p>
           <p class="text-lg">
             Your donation goes towards a student led team full of passionate students
             of all different degrees, ages and backgrounds. With over 200 members, we
-            need you to join us on this journey to help meet our goals for the 2026
-            season, including our target of £4,000 for this Crowdfunder, the progression
-            of TBReAI and the leap towards a four-wheel drive car.
+            need you to join us on this journey. Every donation on Ko-fi helps our 2027
+            season, the progression of TBReAI and the leap towards a four-wheel drive
+            car.
           </p>
           <p class="text-lg">
-            Led by students, designed by students, raced by students. Help us make 2026
+            Led by students, designed by students, raced by students. Help us make 2027
             the best season yet!
           </p>
         </div>
@@ -75,6 +76,18 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         >
           Support Our Campaign{" "}
           <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </a>
+        <a
+          href="/crowdfunding/adopt-a-cell"
+          class="group flex flex-col gap-1 rounded-lg border border-zinc-200 p-6 transition-colors hover:border-tbre-blue"
+        >
+          <span class="inline-flex items-center gap-2 font-semibold text-lg text-zinc-900">
+            Adopt a cell in our 2027 battery
+            <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </span>
+          <span class="text-zinc-600">
+            {CELL_PRICE_LABEL} puts your name on one of the cells that will power the car.
+          </span>
         </a>
       </div>
     </section>
