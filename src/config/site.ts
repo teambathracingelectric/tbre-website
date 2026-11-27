@@ -1,6 +1,6 @@
 export const SITE_URL = "https://teambathracingelectric.com";
 
-export const ACTIVE_SEASON = 2026;
+export const ACTIVE_SEASON = 2027;
 
 export const JOIN_URL = "https://join.teambathracingelectric.com";
 
@@ -11,6 +11,11 @@ export const APPLY_FORM_URL =
 export const SPONSORSHIP_PROSPECTUS_URL =
   "/2026-27_TBRe_Sponsorship_prospectus.pdf";
 
+export const AI_TECHNICAL_ROADMAP_URL =
+  "/TBReAI_Technical_Roadmap_2024-2028.pdf";
+
+// export const CROWDFUNDING_URL =
+//   "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
 export const CROWDFUNDING_URL = "https://ko-fi.com/teambathracingelectric";
 
 // The Ko-fi shop product that sells cells (£7.50 each), where /crowdfunding/adopt-a-cell's

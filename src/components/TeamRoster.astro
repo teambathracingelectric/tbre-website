@@ -1,12 +1,125 @@
 ---
-import type { TeamCategoryGroup } from "@/lib/content";
+import { render } from "astro:content";
+import { DIRECTOR_CATEGORY, type TeamCategoryGroup } from "@/lib/content";
 
 interface Props {
   categories: TeamCategoryGroup[];
+  intro?: {
+    title: string;
+    description?: string;
+    /** Background photo behind the intro; faded so dark text stays readable. */
+    image?: string;
+  };
 }
 
-const { categories } = Astro.props;
+const { categories: allCategories, intro } = Astro.props;
+
+const directors =
+  allCategories.find((category) => category.category === DIRECTOR_CATEGORY)
+    ?.members ?? [];
+const categories = allCategories.filter(
+  (category) => category.category !== DIRECTOR_CATEGORY,
+);
+const directorEntries = await Promise.all(
+  directors.map(async (member) => ({
+    member,
+    Content: (await render(member)).Content,
+    hasBody: Boolean(member.body?.trim()),
+  })),
+);
 ---
+
+{
+  directorEntries.length > 0 && (
+    <section class={intro ? "relative overflow-hidden" : undefined}>
+      {intro && (
+        <>
+          <img
+            src={intro.image ?? "/car.jpg"}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-linear-to-r from-white/90 via-white/75 to-white/50" />
+          <div class="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-white" />
+        </>
+      )}
+      <div
+        class:list={[
+          "relative container mx-auto space-y-20 px-4",
+          intro ? "py-16 md:py-24" : "pt-16",
+        ]}
+      >
+  {
+    directorEntries.map(({ member, Content, hasBody }) => (
+      <div
+        class:list={[
+          intro
+            ? "grid items-center gap-10 md:grid-cols-[1fr_auto]"
+            : "mx-auto flex max-w-2xl flex-col items-center space-y-6 text-center",
+        ]}
+        data-reveal-group
+      >
+        {intro && (
+          <div class="space-y-6 md:space-y-8" data-reveal-item>
+            <h1 class="font-bold text-6xl text-zinc-900 leading-none tracking-tighter underline decoration-8 decoration-tbre-yellow underline-offset-[0.15em] md:text-7xl lg:text-8xl xl:text-9xl">
+              {intro.title}
+            </h1>
+            {intro.description && (
+              <p class="max-w-2xl text-xl font-medium text-zinc-800 md:text-2xl">{intro.description}</p>
+            )}
+          </div>
+        )}
+        <div
+          class:list={[
+            "flex flex-col items-center space-y-6 text-center",
+            intro && "md:justify-self-end",
+          ]}
+        >
+        <div
+          class="w-48 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow md:w-60"
+          data-reveal-item
+        >
+          <div class="aspect-[434/600] overflow-hidden">
+            <img
+              src={member.data.image ?? "/placeholder.png"}
+              alt={member.data.name}
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="space-y-1" data-reveal-item>
+          <h2 class="font-bold text-2xl text-zinc-900 md:text-3xl">
+            {member.data.link ? (
+              <a
+                href={member.data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-tbre-yellow transition-all hover:text-tbre-yellow"
+              >
+                {member.data.name}
+              </a>
+            ) : (
+              member.data.name
+            )}
+          </h2>
+          {member.data.role && (
+            <p class="font-semibold text-tbre-blue">{member.data.role}</p>
+          )}
+        </div>
+        {hasBody && (
+          <div class="space-y-4 text-zinc-600 leading-relaxed" data-reveal-item>
+            <Content />
+          </div>
+        )}
+        </div>
+      </div>
+    ))
+  }
+      </div>
+    </section>
+  )
+}
 
 <section class="container mx-auto space-y-20 px-4 py-16">
   {
@@ -18,7 +131,7 @@ const { categories } = Astro.props;
         </div>
 
         <div
-          class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5"
           data-reveal-group
         >
           {category.members.map((member) => (
@@ -26,7 +139,7 @@ const { categories } = Astro.props;
               class="overflow-hidden rounded-lg border border-zinc-200 bg-white shadow transition-all hover:-translate-y-1 hover:shadow-lg"
               data-reveal-item
             >
-              <div class="relative aspect-square overflow-hidden">
+              <div class="relative aspect-[434/600] overflow-hidden">
                 {member.data.lead && (
                   <span class="absolute top-2 right-2 z-10 rounded-full bg-tbre-blue px-2.5 py-0.5 font-semibold text-white text-xs">
                     Lead
@@ -39,8 +152,8 @@ const { categories } = Astro.props;
                   loading="lazy"
                 />
               </div>
-              <div class="space-y-1.5 p-4">
-                <h3 class="font-semibold text-zinc-900 leading-none">
+              <div class="space-y-1 p-3">
+                <h3 class="font-semibold text-sm text-zinc-900 leading-tight md:text-base">
                   {member.data.link ? (
                     <a
                       href={member.data.link}
@@ -55,7 +168,7 @@ const { categories } = Astro.props;
                   )}
                 </h3>
                 {member.data.role && (
-                  <p class="text-sm text-zinc-600">{member.data.role}</p>
+                  <p class="text-xs text-zinc-600 md:text-sm">{member.data.role}</p>
                 )}
               </div>
             </article>

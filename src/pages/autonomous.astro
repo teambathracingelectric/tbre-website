@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import AutonomousCarousel from "@/components/AutonomousCarousel.astro";
 import AutonomousVideos from "@/components/AutonomousVideos.astro";
 import ButtonLink from "@/components/ButtonLink.astro";
+import { AI_TECHNICAL_ROADMAP_URL } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const autonomousPages = await getCollection("autonomous");
@@ -185,9 +186,15 @@ const heroSlides = [
               </p>
             ))}
 
-            <ButtonLink href="/gallery?category=Autonomous">
-              {team?.galleryButton}
-            </ButtonLink>
+            <div class="flex flex-wrap gap-3">
+              <ButtonLink href="/gallery?category=Autonomous">
+                {team?.galleryButton}
+              </ButtonLink>
+
+              <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+                Read our Technical Roadmap
+              </ButtonLink>
+            </div>
           </div>
         </div>
 
@@ -313,9 +320,15 @@ const heroSlides = [
           ></div>
         </div>
 
-        <p class="mb-8 max-w-3xl text-lg leading-relaxed text-zinc-600">
-          {systemsContent?.intro}
-        </p>
+        <div class="mb-8 flex flex-col items-start gap-6">
+          <p class="max-w-3xl text-lg leading-relaxed text-zinc-600">
+            {systemsContent?.intro}
+          </p>
+
+          <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+            Read our Technical Roadmap
+          </ButtonLink>
+        </div>
 
         <div class="mb-5 grid gap-5 lg:grid-cols-[3fr_2fr]">
           <div
@@ -408,6 +421,12 @@ const heroSlides = [
         </p>
 
         <AutonomousVideos videos={videos} />
+
+        <div class="mt-10 flex justify-center">
+          <ButtonLink href={AI_TECHNICAL_ROADMAP_URL} variant="orange" external>
+            Read our Technical Roadmap
+          </ButtonLink>
+        </div>
       </div>
     </section>
   </div>
