@@ -8,15 +8,39 @@ import {
   type Donation,
 } from "./allocate.ts";
 
-type Statement = {
-  bind(...values: unknown[]): Statement;
-  run(): Promise<unknown>;
-  all<T>(): Promise<{ results: T[] }>;
+/** One Ko-fi payment as stored. No emails or messages are kept. */
+export type DonationRow = {
+  txn_id: string;
+  ts: string;
+  type: string;
+  donor_key: string;
+  name: string;
+  is_public: number;
+  amount_pence: number;
+  currency: string;
+};
+
+/** What the page reads back: no transaction ids, types or currencies. */
+export type Row = Pick<
+  DonationRow,
+  "donor_key" | "name" | "is_public" | "amount_pence" | "ts"
+>;
+
+/** The donations store (the AdoptStore Durable Object in store.ts), as the handlers use it. */
+export type AdoptStoreApi = {
+  /** Adds a payment; a repeat of one already stored (same txn_id) is ignored. */
+  add(row: DonationRow): Promise<unknown>;
+  /** Every payment, oldest first. */
+  rows(): Promise<Row[]>;
 };
 
 /** The parts of the Worker environment this feature uses. */
 export type AdoptEnv = {
-  ADOPT_DB?: { prepare(sql: string): Statement };
+  /** Durable Object namespace for AdoptStore (wrangler.jsonc). One instance holds every donation. */
+  ADOPT_STORE?: {
+    idFromName(name: string): unknown;
+    get(id: unknown): AdoptStoreApi;
+  };
   KOFI_VERIFICATION_TOKEN?: string;
   DONOR_SALT?: string;
   /**
@@ -54,33 +78,14 @@ function cellsBought(payload: Record<string, unknown>, code: string) {
   return units;
 }
 
-type Row = {
-  donor_key: string;
-  name: string;
-  is_public: number;
-  amount_pence: number;
-  ts: string;
-};
-
-// One row per Ko-fi payment. No emails or messages are stored.
-const SCHEMA = `CREATE TABLE IF NOT EXISTS donations (
-  txn_id TEXT PRIMARY KEY,
-  ts TEXT NOT NULL,
-  type TEXT NOT NULL,
-  donor_key TEXT NOT NULL,
-  name TEXT NOT NULL,
-  is_public INTEGER NOT NULL,
-  amount_pence INTEGER NOT NULL,
-  currency TEXT NOT NULL
-)`;
-
-const ready = new WeakMap<object, Promise<unknown>>();
+/**
+ * The one AdoptStore instance that holds every donation. A Durable Object rather than a D1
+ * database because publishing the Worker creates it, with no extra Cloudflare permissions
+ * (the deploy token can't create D1 databases).
+ */
 function database(env: AdoptEnv) {
-  const db = env.ADOPT_DB;
-  if (!db) return null;
-  // Create the table on first use so a fresh database needs no manual setup.
-  if (!ready.has(db)) ready.set(db, db.prepare(SCHEMA).run());
-  return { db, ready: ready.get(db) as Promise<unknown> };
+  const ns = env.ADOPT_STORE;
+  return ns ? ns.get(ns.idFromName("donations")) : null;
 }
 
 const encoder = new TextEncoder();
@@ -150,38 +155,23 @@ export async function handleKofi(
   const time = new Date(String(payload.timestamp ?? "")).getTime();
   const ts = new Date(Number.isFinite(time) ? time : Date.now()).toISOString();
 
-  await store.ready;
-  await store.db
-    .prepare(
-      "INSERT OR IGNORE INTO donations (txn_id, ts, type, donor_key, name, is_public, amount_pence, currency) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    )
-    .bind(
-      txn,
-      ts,
-      String(payload.type ?? "Donation").slice(0, 32),
-      donorKey,
-      cleanName(String(payload.from_name ?? "")),
-      payload.is_public === true ? 1 : 0,
-      amountPence,
-      currency,
-    )
-    .run();
+  await store.add({
+    txn_id: txn,
+    ts,
+    type: String(payload.type ?? "Donation").slice(0, 32),
+    donor_key: donorKey,
+    name: cleanName(String(payload.from_name ?? "")),
+    is_public: payload.is_public === true ? 1 : 0,
+    amount_pence: amountPence,
+    currency,
+  });
   return new Response("OK");
 }
 
 /** GET: names, cell counts and totals. Never emails or donor keys. */
 export async function handleState(env: AdoptEnv): Promise<Response> {
   const store = database(env);
-  let rows: Row[] = [];
-  if (store) {
-    await store.ready;
-    const query = await store.db
-      .prepare(
-        "SELECT donor_key, name, is_public, amount_pence, ts FROM donations ORDER BY ts",
-      )
-      .all<Row>();
-    rows = query.results;
-  }
+  const rows: Row[] = store ? await store.rows() : [];
   const donations: Donation[] = rows.map((row) => ({
     donorKey: row.donor_key,
     name: row.name,

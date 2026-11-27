@@ -61,28 +61,36 @@ this repository.
 - `src/pages/crowdfunding/adopt-a-cell.astro` is the page; `src/lib/adopt-a-cell/` holds its
   logic (`allocate.ts` decides who owns which cell, `stage.ts` is the 3D exploded view).
 - Ko-fi has no API for reading donations, only webhooks. `POST /api/adopt-a-cell/kofi` receives
-  them and stores each payment in the `ADOPT_DB` D1 database; `GET /api/adopt-a-cell/state` serves
-  names, cell counts and totals to the page. Emails and messages are never stored or published,
-  and donations marked private on Ko-fi show as "Anonymous".
+  them and stores each payment in `AdoptStore`, a SQLite-backed Durable Object
+  (`src/lib/adopt-a-cell/store.ts`, exported from the Worker entry `src/worker.ts`);
+  `GET /api/adopt-a-cell/state` serves names, cell counts and totals to the page. Emails and
+  messages are never stored or published, and donations marked private on Ko-fi show as
+  "Anonymous". It's a Durable Object, not a D1 database, because publishing the Worker creates
+  it with the permission the deploy token already has; the token can't create D1 databases and
+  nobody on the team has the Cloudflare login. Never rename the class or drop its migration in
+  `wrangler.jsonc`: that deletes the donations.
 - Add `?demo` to the page URL to preview it with example supporters.
 - `public/adopt-a-cell/pack.glb` and `src/lib/adopt-a-cell/cells.json` are generated from the
   Inventor export of the 2026 pack. The source CAD is not kept in this repository.
 
-To switch it on after deploying:
+To switch it on (no Cloudflare login needed):
 
-1. `KOFI_URL` in `src/config/site.ts` is where the page's buttons go: the cell product
-   (`https://ko-fi.com/s/5915de60c9`, £7.50 a cell). Publish the product on Ko-fi to launch.
-2. `pnpm exec wrangler secret put KOFI_VERIFICATION_TOKEN` (from Ko-fi's webhook settings, under
-   Advanced) and `pnpm exec wrangler secret put DONOR_SALT` (any long random string).
-3. If cells are sold as a Ko-fi shop product, `pnpm exec wrangler secret put KOFI_CELL_PRODUCT`
-   with the product's link (`https://ko-fi.com/s/<code>`) or just its code. Only orders for that
-   product then count, at one cell per unit bought, and donations and other shop sales are
-   ignored. Without it, every GBP payment counts at £7.50 a cell. Ko-fi sends one webhook for the
-   whole account, so this filter is how the page tells the cell product apart.
-4. In Ko-fi's webhook settings, set the URL to
-   `https://teambathracingelectric.com/api/adopt-a-cell/kofi` and send a test.
+1. `KOFI_URL` in `src/config/site.ts` is where the page's buttons go, and `KOFI_CELL_PRODUCT` in
+   `wrangler.jsonc` is the product whose orders count: both are the cell product,
+   `https://ko-fi.com/s/5915de60c9`, at £7.50 a cell, one cell per unit bought. Donations and
+   other shop sales are ignored. Ko-fi sends one webhook for the whole account, so this filter is
+   how the page tells the cell product apart.
+2. In this repository's GitHub settings (Settings → Secrets and variables → Actions), add
+   `KOFI_VERIFICATION_TOKEN` (Ko-fi → Settings → API → Webhooks → Advanced) and `DONOR_SALT` (a
+   long random string, e.g. `openssl rand -hex 32`; never change it, it groups each buyer's
+   cells). The deploy job's "Set adopt-a-cell secrets" step copies them onto the Worker; re-run
+   the latest Deploy (or push to `main`) after adding them.
+3. In Ko-fi's webhook settings, set the URL to
+   `https://teambathracingelectric.com/api/adopt-a-cell/kofi` and send a test. Until the
+   secrets are set it answers 503, so Ko-fi retries later and nothing is lost.
 
-For local testing, put the two secrets in `.dev.vars` and run `pnpm dev`.
+For local testing, put the two secrets in `.dev.vars` and run `pnpm dev`; to test the built
+Worker with `wrangler dev --config dist/server/wrangler.json`, put `.dev.vars` in `dist/server/`.
 
 ## Cloudflare Deployment
 

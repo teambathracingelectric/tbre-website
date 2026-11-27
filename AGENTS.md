@@ -38,7 +38,9 @@ and `pnpm build` when practical.
 - `src/config/site.ts` holds operational constants such as active season,
   application form, prospectus, and crowdfunding links.
 - `src/lib/adopt-a-cell/`, `src/pages/crowdfunding/adopt-a-cell.astro` and
-  `src/pages/api/adopt-a-cell/` are the adopt-a-cell fundraiser (see README).
+  `src/pages/api/adopt-a-cell/` are the adopt-a-cell fundraiser (see README). Its donations
+  live in the `AdoptStore` Durable Object, exported from the Worker entry `src/worker.ts`
+  (wrangler.jsonc `main`); never rename that class or drop its migration.
 - `src/content/` contains editable site content:
   - `cars`: one Markdown file per car/year.
   - `team`: one Markdown file per displayed team member assignment.
