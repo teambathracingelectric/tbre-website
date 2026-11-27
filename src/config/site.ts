@@ -11,8 +11,7 @@ export const APPLY_FORM_URL =
 export const SPONSORSHIP_PROSPECTUS_URL =
   "/2026-27_TBRe_Sponsorship_prospectus.pdf";
 
-export const CROWDFUNDING_URL =
-  "https://www.crowdfunder.co.uk/p/team-bath-racing-electric-2026-1";
+export const CROWDFUNDING_URL = "https://ko-fi.com/teambathracingelectric";
 
 // The Ko-fi shop product that sells cells (£7.50 each), where /crowdfunding/adopt-a-cell's
 // buttons go. The Worker's KOFI_CELL_PRODUCT secret names the same product, so only its orders
