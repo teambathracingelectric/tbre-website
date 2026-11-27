@@ -70,8 +70,8 @@ this repository.
 
 To switch it on after deploying:
 
-1. Set `KOFI_URL` in `src/config/site.ts` to the team's Ko-fi page, and set its donation unit to
-   £7.50 named "Buy a Cell".
+1. `KOFI_URL` in `src/config/site.ts` is where the page's buttons go: the cell product
+   (`https://ko-fi.com/s/5915de60c9`, £7.50 a cell). Publish the product on Ko-fi to launch.
 2. `pnpm exec wrangler secret put KOFI_VERIFICATION_TOKEN` (from Ko-fi's webhook settings, under
    Advanced) and `pnpm exec wrangler secret put DONOR_SALT` (any long random string).
 3. If cells are sold as a Ko-fi shop product, `pnpm exec wrangler secret put KOFI_CELL_PRODUCT`
