@@ -1,44 +1,42 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { type AdoptEnv, handleKofi, handleState, productCode } from "./api.ts";
+import {
+  type AdoptEnv,
+  type DonationRow,
+  handleKofi,
+  handleState,
+  productCode,
+} from "./api.ts";
 
-// Minimal stand-in for D1: just enough for the statements the handlers use.
-function fakeEnv(): Required<AdoptEnv> & { rows: Map<string, unknown[]> } {
-  const rows = new Map<string, unknown[]>();
+// Stand-in for the AdoptStore Durable Object: the same add/rows contract, in memory.
+function fakeEnv(): Required<AdoptEnv> & { rows: Map<string, DonationRow> } {
+  const rows = new Map<string, DonationRow>();
+  const store = {
+    add(row: DonationRow) {
+      if (rows.has(row.txn_id)) return Promise.resolve(false);
+      rows.set(row.txn_id, row);
+      return Promise.resolve(true);
+    },
+    rows() {
+      return Promise.resolve(
+        [...rows.values()]
+          .map(({ donor_key, name, is_public, amount_pence, ts }) => ({
+            donor_key,
+            name,
+            is_public,
+            amount_pence,
+            ts,
+          }))
+          .sort((x, y) => x.ts.localeCompare(y.ts)),
+      );
+    },
+  };
   return {
     rows,
     KOFI_VERIFICATION_TOKEN: "secret-token",
     DONOR_SALT: "salt",
     KOFI_CELL_PRODUCT: "",
-    ADOPT_DB: {
-      prepare(sql: string) {
-        let args: unknown[] = [];
-        const stmt = {
-          bind(...v: unknown[]) {
-            args = v;
-            return stmt;
-          },
-          run() {
-            if (sql.startsWith("INSERT") && !rows.has(String(args[0])))
-              rows.set(String(args[0]), args);
-            return Promise.resolve();
-          },
-          all<T>() {
-            const results = [...rows.values()]
-              .map((r) => ({
-                ts: r[1],
-                donor_key: r[3],
-                name: r[4],
-                is_public: r[5],
-                amount_pence: r[6],
-              }))
-              .sort((a, b) => String(a.ts).localeCompare(String(b.ts)));
-            return Promise.resolve({ results: results as T[] });
-          },
-        };
-        return stmt;
-      },
-    },
+    ADOPT_STORE: { idFromName: (name: string) => name, get: () => store },
   };
 }
 const hook = (over: Record<string, unknown> = {}) => {

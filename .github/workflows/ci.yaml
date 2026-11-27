@@ -100,3 +100,21 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # Adopt-a-cell's secrets, from GitHub secrets of the same names, so nobody needs the
+      # Cloudflare login to set them. Only the ones set in GitHub are sent; the rest are left
+      # as they are on the Worker. Values never reach the log.
+      - name: Set adopt-a-cell secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
+          DONOR_SALT: ${{ secrets.DONOR_SALT }}
+        run: |
+          json=$(jq -n 'env | {KOFI_VERIFICATION_TOKEN, DONOR_SALT} | with_entries(select(.value != null and .value != ""))')
+          if [ "$json" = "{}" ]; then
+            echo "No adopt-a-cell secrets in GitHub yet; skipping."
+            exit 0
+          fi
+          echo "Setting: $(echo "$json" | jq -r 'keys | join(", ")')"
+          echo "$json" | pnpm exec wrangler secret bulk
