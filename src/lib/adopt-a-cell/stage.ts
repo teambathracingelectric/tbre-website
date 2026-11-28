@@ -16,7 +16,8 @@ interface Opts {
   section: HTMLElement;
   canvas: HTMLCanvasElement;
   tip: HTMLElement;
-  modelUrl: string;
+  /** The CAD export's bytes. Fetched by the caller so it downloads alongside this module. */
+  model: Promise<ArrayBuffer>;
   describe(tip: HTMLElement, cell: number): void;
   onPick(cell: number): void;
 }
@@ -120,54 +121,65 @@ export function createStage(o: Opts): Stage {
     home: THREE.Vector3;
   }
   const parts = new Map<string, Part>();
-  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load(
-    o.modelUrl,
-    (gltf) => {
-      for (const obj of [...gltf.scene.children]) {
-        const mats: THREE.Material[] = [];
-        obj.traverse((n) => {
-          const mesh = n as THREE.Mesh;
-          if (!mesh.isMesh) return;
-          const mat = (mesh.material as THREE.MeshStandardMaterial).clone();
-          // The CAD's colours are per-part labels; mute them so the cells carry the colour.
-          const hsl = mat.color.getHSL({ h: 0, s: 0, l: 0 });
-          mat.color.setHSL(hsl.h, hsl.s * 0.3, hsl.l);
-          if (obj.name === "tsac") {
-            mat.color.set("#9aa6b6");
-            mat.metalness = 0.7;
-            mat.roughness = 0.32;
-            mat.side = THREE.DoubleSide;
-          }
-          if (/_shell[AB]$/.test(obj.name)) {
-            mat.color.set("#d8dde4");
-            mat.metalness = 0;
-            mat.roughness = 0.7;
-          }
-          if (/_bus/.test(obj.name)) {
-            mat.color.set("#c9773f");
-            mat.metalness = 0.9;
-            mat.roughness = 0.35;
-          }
-          mesh.material = mat;
-          mats.push(mat);
-        });
-        const mm = /^m(\d)_/.exec(obj.name);
-        (mm ? moduleGroups[+mm[1]] : pack).add(obj);
-        parts.set(obj.name, { obj, mats, home: obj.position.clone() });
-      }
-      o.canvas.classList.add("ready");
-      dirty = true;
-    },
-    undefined,
-    (err) => {
-      console.warn("Model failed to load", err);
-      o.canvas.classList.add("ready");
-    },
-  );
+  // The cells above are drawn without the model, so the canvas shows as soon as it first renders
+  // (see the animation loop). The CAD parts fade in whenever the model arrives, which on a slow
+  // phone connection can be after the visitor has scrolled through every chapter.
+  let partsIn = 0; // 0..1, multiplies every part's opacity
+  let fadeFrom = -1; // animation time the fade started; -1 until the model is in
+  let disposed = false;
+  const onModelError = (err: unknown) => {
+    if (!disposed) console.warn("Model failed to load", err);
+  };
+  o.model.then((bytes) => {
+    if (disposed) return;
+    new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).parse(
+      bytes,
+      "",
+      (gltf) => {
+        if (disposed) return;
+        for (const obj of [...gltf.scene.children]) {
+          const mats: THREE.Material[] = [];
+          obj.traverse((n) => {
+            const mesh = n as THREE.Mesh;
+            if (!mesh.isMesh) return;
+            const mat = (mesh.material as THREE.MeshStandardMaterial).clone();
+            // The CAD's colours are per-part labels; mute them so the cells carry the colour.
+            const hsl = mat.color.getHSL({ h: 0, s: 0, l: 0 });
+            mat.color.setHSL(hsl.h, hsl.s * 0.3, hsl.l);
+            if (obj.name === "tsac") {
+              mat.color.set("#9aa6b6");
+              mat.metalness = 0.7;
+              mat.roughness = 0.32;
+              mat.side = THREE.DoubleSide;
+            }
+            if (/_shell[AB]$/.test(obj.name)) {
+              mat.color.set("#d8dde4");
+              mat.metalness = 0;
+              mat.roughness = 0.7;
+            }
+            if (/_bus/.test(obj.name)) {
+              mat.color.set("#c9773f");
+              mat.metalness = 0.9;
+              mat.roughness = 0.35;
+            }
+            mesh.material = mat;
+            mats.push(mat);
+          });
+          const mm = /^m(\d)_/.exec(obj.name);
+          (mm ? moduleGroups[+mm[1]] : pack).add(obj);
+          parts.set(obj.name, { obj, mats, home: obj.position.clone() });
+        }
+        fadeFrom = 0; // the animation loop picks the real start time
+        dirty = true;
+      },
+      onModelError,
+    );
+  }, onModelError);
 
-  const setOpacity = (name: string, v: number) => {
+  const setOpacity = (name: string, value: number) => {
     const p = parts.get(name);
     if (!p) return;
+    const v = value * partsIn;
     p.obj.visible = v > 0.02;
     for (const m of p.mats) {
       m.transparent = v < 0.99;
@@ -384,12 +396,22 @@ export function createStage(o: Opts): Stage {
     { signal },
   );
 
+  let shown = false;
   renderer.setAnimationLoop((t) => {
     if (!visible || !w) return;
+    if (fadeFrom === 0) fadeFrom = t;
+    if (fadeFrom > 0 && partsIn < 1) {
+      partsIn = reduce ? 1 : clamp01((t - fadeFrom) / 700);
+      dirty = true;
+    }
     if (!dirty && reduce) return;
     pose(t);
     renderer.render(scene, camera);
     dirty = false;
+    if (!shown) {
+      shown = true;
+      o.canvas.classList.add("ready");
+    }
   });
 
   return {
@@ -403,6 +425,7 @@ export function createStage(o: Opts): Stage {
     },
     // Called when the visitor navigates away (the site uses Astro's ClientRouter).
     dispose() {
+      disposed = true;
       life.abort();
       resizer.disconnect();
       watcher.disconnect();

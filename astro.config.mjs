@@ -15,6 +15,8 @@ export default defineConfig({
   redirects: {
     ...socialRedirects,
     "/recruitment": JOIN_URL,
+    // Adopt a cell used to live here, before it became the crowdfunding page.
+    "/crowdfunding/adopt-a-cell": "/crowdfunding",
     // old website redirects
     "/about-us": "/",
     "/contact-us": "/",

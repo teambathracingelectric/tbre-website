@@ -1,5 +1,5 @@
 /*
- * Styles for /crowdfunding/adopt-a-cell. Everything is nested under .aac so nothing leaks into
+ * Styles for /crowdfunding (adopt a cell). Everything is nested under .aac so nothing leaks into
  * the rest of the site. Plain CSS rather than utilities because the 3D stage, cell map and
  * supporters table are styled by state classes that the page script toggles.
  */

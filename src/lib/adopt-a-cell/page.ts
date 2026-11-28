@@ -1,4 +1,4 @@
-// Client behaviour for /crowdfunding/adopt-a-cell: loads who owns which cell, then keeps the
+// Client behaviour for /crowdfunding (adopt a cell): loads who owns which cell, then keeps the
 // progress meter, the 2D cell map, the supporters table and the 3D view in step.
 import type { State } from "./allocate.ts";
 import cellsData from "./cells.json";
@@ -237,16 +237,26 @@ export function initAdoptACell(root: HTMLElement): () => void {
         if (document.visibilityState === "visible") void load();
       }, REFRESH_MS);
 
-  // ---- 3D view: loaded after first paint; everything above works without it ----
+  // ---- 3D view: everything above works without it ----
+  // Start both big downloads (three.js and the 1.8 MB model) now and side by side. Fetched one
+  // after the other, a phone on mobile data could scroll past every chapter before the pack showed.
+  const stageModule = import("./stage.ts");
+  const model = fetch(`${ASSETS}/pack.glb`, { signal }).then((response) => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.arrayBuffer();
+  });
+  // startStage reports these failures; this only stops unhandled rejections if it never runs.
+  model.catch(() => {});
+  stageModule.catch(() => {});
   const startStage = async () => {
     try {
-      const { createStage } = await import("./stage.ts");
+      const { createStage } = await stageModule;
       if (signal.aborted) return;
       stage = createStage({
         section: stageEl,
         canvas: find<HTMLCanvasElement>("[data-canvas]"),
         tip: find<HTMLElement>("[data-stage-tip]"),
-        modelUrl: `${ASSETS}/pack.glb`,
+        model,
         describe,
         onPick: (cell) => {
           const owner = ownerIndex(cell);

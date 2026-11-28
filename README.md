@@ -53,12 +53,12 @@ pnpm clean
 
 ## Adopt a cell
 
-`/crowdfunding/adopt-a-cell` raises money for the cells in the 2027 accumulator. Each £7.50 "Buy a
+`/crowdfunding` (adopt a cell) raises money for the cells in the 2027 accumulator. Each £7.50 "Buy a
 Cell" donation on Ko-fi adopts one cell, towards a goal of 408, the whole pack. The pack drawn on
 the page is the 2026 one; the 2027 design is not public, so keep its CAD and cell details out of
 this repository.
 
-- `src/pages/crowdfunding/adopt-a-cell.astro` is the page; `src/lib/adopt-a-cell/` holds its
+- `src/pages/crowdfunding.astro` is the page; `src/lib/adopt-a-cell/` holds its
   logic (`allocate.ts` decides who owns which cell, `stage.ts` is the 3D exploded view).
 - Ko-fi has no API for reading donations, only webhooks. `POST /api/adopt-a-cell/kofi` receives
   them and stores each payment in `AdoptStore`, a SQLite-backed Durable Object
